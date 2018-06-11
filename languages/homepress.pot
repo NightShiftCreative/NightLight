@@ -1,0 +1,1397 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sprout\n"
+"POT-Creation-Date: 2018-03-09 23:03-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: Rype Creative\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x;_ex;_nx;esc_attr__;esc_attr_e;esc_attr_x;"
+"esc_html__;esc_html_e;esc_html_x;_n_noop;_nx_noop\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:10
+msgid "404"
+msgstr ""
+
+#: 404.php:11
+msgid "Page not found."
+msgstr ""
+
+#: 404.php:12
+msgid "Oops! The page you are looking for does not exist."
+msgstr ""
+
+#: 404.php:16
+msgid "Go Back Home"
+msgstr ""
+
+#: admin/admin_map.php:12
+msgid "Clear Location"
+msgstr ""
+
+#: admin/breadcrumbs.php:10
+msgid "Home"
+msgstr ""
+
+#: admin/breadcrumbs.php:178 admin/breadcrumbs.php:182
+#: admin/breadcrumbs.php:186 admin/breadcrumbs.php:193
+#: admin/breadcrumbs.php:197 admin/breadcrumbs.php:202
+msgid "Archives"
+msgstr ""
+
+#: admin/breadcrumbs.php:213
+msgid "Author: "
+msgstr ""
+
+#: admin/breadcrumbs.php:218
+msgid "Page"
+msgstr ""
+
+#: admin/breadcrumbs.php:223
+msgid "Search results for:"
+msgstr ""
+
+#: admin/breadcrumbs.php:228
+msgid "Error 404"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:334
+msgid "Install Required Plugins"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:335
+msgid "Install Plugins"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:337
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:339
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:340
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:343
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:349
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:355
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:361
+#, php-format
+msgid "There is an update available for: %1$s."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:367
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:373
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:378
+msgid "Begin installing plugin"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:383
+msgid "Begin updating plugin"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:388
+msgid "Begin activating plugin"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:392
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:393
+#: admin/plugins/class-tgm-plugin-activation.php:912
+#: admin/plugins/class-tgm-plugin-activation.php:2618
+#: admin/plugins/class-tgm-plugin-activation.php:3666
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:394
+#: admin/plugins/class-tgm-plugin-activation.php:3244
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:395
+#: admin/plugins/class-tgm-plugin-activation.php:3037
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:397
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:399
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:401
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:402
+msgid "Dismiss this notice"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:403
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:404
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:607
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:608
+msgid "Update Required"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:1019
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:1019
+#: admin/plugins/class-tgm-plugin-activation.php:1022
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:1022
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:1206
+#: admin/plugins/class-tgm-plugin-activation.php:3033
+msgid "and"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2067
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2358
+msgid "Required"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2361
+msgid "Recommended"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2377
+msgid "WordPress Repository"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2380
+msgid "External Source"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2383
+msgid "Pre-Packaged"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2400
+msgid "Not Installed"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2404
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2406
+msgid "Active"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2412
+msgid "Required Update not Available"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2415
+msgid "Requires Update"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2418
+msgid "Update recommended"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2427
+#, php-format
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2473
+#, php-format
+msgid "All <span class=\"count\">(%s)</span>"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2477
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2481
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2485
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2567
+msgid "unknown"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2575
+msgid "Installed version:"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2583
+msgid "Minimum required version:"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2595
+msgid "Available version:"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2618
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2632
+msgid "Plugin"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2633
+msgid "Source"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2634
+msgid "Type"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2638
+msgid "Version"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2639
+msgid "Status"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2688
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2693
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2699
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2769
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2802
+msgid "Install"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2808
+msgid "Update"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2811
+msgid "Activate"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2842
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2844
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2885
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2887
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:2993
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:3019
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:3243
+msgid "Plugin activation failed."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:3583
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:3587
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:3589
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:3593
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:3595
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:3595
+#: admin/plugins/class-tgm-plugin-activation.php:3603
+msgid "Show Details"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:3595
+#: admin/plugins/class-tgm-plugin-activation.php:3603
+msgid "Hide Details"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:3596
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:3598
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:3601
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:3603
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:3604
+msgid "All installations have been completed."
+msgstr ""
+
+#: admin/plugins/class-tgm-plugin-activation.php:3606
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: admin/theme_options.php:151
+msgid "Made by"
+msgstr ""
+
+#: admin/theme_options.php:152
+msgid "Support"
+msgstr ""
+
+#: admin/theme_options.php:156
+msgid "Version "
+msgstr ""
+
+#: admin/theme_options.php:160
+msgid "Save Changes"
+msgstr ""
+
+#: admin/theme_options.php:162 admin/theme_options.php:1053
+msgid "Settings Saved Successfully"
+msgstr ""
+
+#: admin/theme_options.php:185 admin/theme_options.php:202
+msgid "General"
+msgstr ""
+
+#: admin/theme_options.php:186
+msgid "Contact & Social"
+msgstr ""
+
+#: admin/theme_options.php:187 admin/theme_options.php:479
+msgid "Header"
+msgstr ""
+
+#: admin/theme_options.php:188 admin/theme_options.php:681
+msgid "Page Banners"
+msgstr ""
+
+#: admin/theme_options.php:189 admin/theme_options.php:740
+msgid "Home Page"
+msgstr ""
+
+#: admin/theme_options.php:190 admin/theme_options.php:810
+msgid "Members"
+msgstr ""
+
+#: admin/theme_options.php:191 admin/theme_options.php:870 footer.php:15
+#: functions.php:659
+msgid "Footer"
+msgstr ""
+
+#: admin/theme_options.php:192 admin/theme_options.php:923
+msgid "Styling"
+msgstr ""
+
+#: admin/theme_options.php:199
+msgid "Loading..."
+msgstr ""
+
+#: admin/theme_options.php:205
+msgid "Site Width"
+msgstr ""
+
+#: admin/theme_options.php:209
+msgid ""
+"Set the site width within the range of 700 - 1200px. The default value is "
+"1170px."
+msgstr ""
+
+#: admin/theme_options.php:214 admin/theme_options.php:718
+#: admin/theme_options.php:724
+msgid "Pixels"
+msgstr ""
+
+#: admin/theme_options.php:218
+msgid "Global Background Image"
+msgstr ""
+
+#: admin/theme_options.php:220 admin/theme_options.php:337
+#: admin/theme_options.php:580 admin/theme_options.php:597
+#: admin/theme_options.php:614 admin/theme_options.php:666
+#: admin/theme_options.php:693 admin/theme_options.php:892 functions.php:173
+msgid "Upload Image"
+msgstr ""
+
+#: admin/theme_options.php:221 admin/theme_options.php:338
+#: admin/theme_options.php:581 admin/theme_options.php:598
+#: admin/theme_options.php:615 admin/theme_options.php:667
+#: admin/theme_options.php:694 admin/theme_options.php:893 functions.php:85
+msgid "Remove"
+msgstr ""
+
+#: admin/theme_options.php:225
+msgid "Global Background Display"
+msgstr ""
+
+#: admin/theme_options.php:227 admin/theme_options.php:673
+#: admin/theme_options.php:700 admin/theme_options.php:899
+msgid "Cover"
+msgstr ""
+
+#: admin/theme_options.php:228 admin/theme_options.php:674
+#: admin/theme_options.php:701 admin/theme_options.php:900
+msgid "Fixed"
+msgstr ""
+
+#: admin/theme_options.php:229 admin/theme_options.php:675
+#: admin/theme_options.php:702 admin/theme_options.php:901
+msgid "Tiled"
+msgstr ""
+
+#: admin/theme_options.php:234
+msgid "Icon Style"
+msgstr ""
+
+#: admin/theme_options.php:236
+msgid "Font Awesome"
+msgstr ""
+
+#: admin/theme_options.php:237
+msgid "Line Icons"
+msgstr ""
+
+#: admin/theme_options.php:243
+msgid "Enable RTL(Right to Left) layout"
+msgstr ""
+
+#: admin/theme_options.php:248
+msgid "Font Settings"
+msgstr ""
+
+#: admin/theme_options.php:258
+msgid "All fonts are generated from"
+msgstr ""
+
+#: admin/theme_options.php:258
+msgid "Google Fonts"
+msgstr ""
+
+#: admin/theme_options.php:259
+msgid "Heading Font Face"
+msgstr ""
+
+#: admin/theme_options.php:261 admin/theme_options.php:274
+msgid "Choose a font..."
+msgstr ""
+
+#: admin/theme_options.php:272
+msgid "Body Font Face"
+msgstr ""
+
+#: admin/theme_options.php:287
+msgid "Reset to default fonts"
+msgstr ""
+
+#: admin/theme_options.php:292
+msgid "Google Maps Settings"
+msgstr ""
+
+#: admin/theme_options.php:294
+msgid "Google Maps API Key"
+msgstr ""
+
+#: admin/theme_options.php:298
+msgid ""
+"Provide your unique Google maps API key. <a target=\"_blank\" href=\"https://"
+"developers.google.com/maps/documentation/javascript/get-api-key\">Click "
+"here</a> to get a key."
+msgstr ""
+
+#: admin/theme_options.php:306
+msgid "Default Map Zoom"
+msgstr ""
+
+#: admin/theme_options.php:310
+msgid ""
+"The map zoom ranges from 1 - 19. Zoom level 1 being the most zoomed out."
+msgstr ""
+
+#: admin/theme_options.php:318
+msgid "Default Map Latitude"
+msgstr ""
+
+#: admin/theme_options.php:323
+msgid "Default Map Longitude"
+msgstr ""
+
+#: admin/theme_options.php:328
+msgid "Custom Pin Image"
+msgstr ""
+
+#: admin/theme_options.php:332
+msgid ""
+"Replace the default map pin with a custom image. Recommended size: 50x50 "
+"pixels."
+msgstr ""
+
+#: admin/theme_options.php:344
+msgid "Global Contact Details"
+msgstr ""
+
+#: admin/theme_options.php:347
+msgid "Phone"
+msgstr ""
+
+#: admin/theme_options.php:352 admin/theme_options.php:819
+#: template_parts/register_form.php:101
+msgid "Email"
+msgstr ""
+
+#: admin/theme_options.php:356
+msgid "Social Media"
+msgstr ""
+
+#: admin/theme_options.php:404
+msgid "Company Location"
+msgstr ""
+
+#: admin/theme_options.php:411
+msgid "Latitude"
+msgstr ""
+
+#: admin/theme_options.php:416
+msgid "Longitude"
+msgstr ""
+
+#: admin/theme_options.php:422
+msgid "Contact Page"
+msgstr ""
+
+#: admin/theme_options.php:425
+msgid "Display Contact Details Section"
+msgstr ""
+
+#: admin/theme_options.php:429
+msgid "Contact Form Title"
+msgstr ""
+
+#: admin/theme_options.php:434
+msgid "Text Before Form"
+msgstr ""
+
+#: admin/theme_options.php:439
+msgid "Text After Form"
+msgstr ""
+
+#: admin/theme_options.php:444
+msgid "Contact Form Success Message"
+msgstr ""
+
+#: admin/theme_options.php:445 js/dynamic_scripts.php:23
+msgid "Thanks! Your email has been delivered!"
+msgstr ""
+
+#: admin/theme_options.php:449
+msgid "Contact Form Source"
+msgstr ""
+
+#: admin/theme_options.php:452
+msgid "Default Contact Form"
+msgstr ""
+
+#: admin/theme_options.php:454
+msgid "Contact Form 7 Plugin"
+msgstr ""
+
+#: admin/theme_options.php:467
+msgid "Contact From 7 ID"
+msgstr ""
+
+#: admin/theme_options.php:469
+msgid "Provide the ID of the contact form you would like displayed"
+msgstr ""
+
+#: admin/theme_options.php:482
+msgid "Top Bar Options"
+msgstr ""
+
+#: admin/theme_options.php:486
+msgid "Display top bar"
+msgstr ""
+
+#: admin/theme_options.php:490
+msgid "Top Bar First Field"
+msgstr ""
+
+#: admin/theme_options.php:501
+msgid "Top Bar Second Field"
+msgstr ""
+
+#: admin/theme_options.php:512
+msgid "Top Bar Third Field"
+msgstr ""
+
+#: admin/theme_options.php:523
+msgid "Top Bar Fourth Field"
+msgstr ""
+
+#: admin/theme_options.php:542
+msgid "Select a header style"
+msgstr ""
+
+#: admin/theme_options.php:547
+msgid "Default Header"
+msgstr ""
+
+#: admin/theme_options.php:551
+msgid "Classic Header"
+msgstr ""
+
+#: admin/theme_options.php:555
+msgid "Transparent Header"
+msgstr ""
+
+#: admin/theme_options.php:561
+msgid "Enable sticky header"
+msgstr ""
+
+#: admin/theme_options.php:566
+msgid "Enable header container"
+msgstr ""
+
+#: admin/theme_options.php:570
+msgid "Logo"
+msgstr ""
+
+#: admin/theme_options.php:574
+msgid "Recommended size: 172 x 50 pixels."
+msgstr ""
+
+#: admin/theme_options.php:587
+msgid "Logo Transparent"
+msgstr ""
+
+#: admin/theme_options.php:591
+msgid ""
+"This logo will be used if the transparent header is activated. Recommended "
+"size: 172 x 50 pixels."
+msgstr ""
+
+#: admin/theme_options.php:604
+msgid "Favicon"
+msgstr ""
+
+#: admin/theme_options.php:608
+msgid ""
+"A favicon, also known as a shortcut icon, website icon, tab icon, URL icon "
+"or bookmark icon, is a file named favicon.ico and \n"
+"                                    containing one or more small icons, most "
+"commonly 16x16 pixels."
+msgstr ""
+
+#: admin/theme_options.php:621
+msgid "Above Phone Text"
+msgstr ""
+
+#: admin/theme_options.php:622 functions.php:215
+msgid "Call us anytime"
+msgstr ""
+
+#: admin/theme_options.php:623 admin/theme_options.php:629
+msgid "*Only for default header style"
+msgstr ""
+
+#: admin/theme_options.php:627
+msgid "Above Email Text"
+msgstr ""
+
+#: admin/theme_options.php:628 functions.php:216
+msgid "Drop us a line"
+msgstr ""
+
+#: admin/theme_options.php:634
+msgid "Display Header Search Form"
+msgstr ""
+
+#: admin/theme_options.php:645
+msgid "Menu Call to Action Page"
+msgstr ""
+
+#: admin/theme_options.php:647 admin/theme_options.php:834
+#: admin/theme_options.php:856
+msgid "Select page"
+msgstr ""
+
+#: admin/theme_options.php:659
+msgid "Menu Call to Action Text"
+msgstr ""
+
+#: admin/theme_options.php:660
+msgid "Submit Property"
+msgstr ""
+
+#: admin/theme_options.php:664
+msgid "Header Background Image"
+msgstr ""
+
+#: admin/theme_options.php:671
+msgid "Header Background Display"
+msgstr ""
+
+#: admin/theme_options.php:684
+msgid "Page Banner Background Image"
+msgstr ""
+
+#: admin/theme_options.php:688
+msgid ""
+"Set the global banner background image for all pages/posts. This can be "
+"overridden on individual pages/posts."
+msgstr ""
+
+#: admin/theme_options.php:698
+msgid "Page Banner Background Display"
+msgstr ""
+
+#: admin/theme_options.php:707
+msgid "Title Alignment"
+msgstr ""
+
+#: admin/theme_options.php:709
+msgid "Left"
+msgstr ""
+
+#: admin/theme_options.php:710
+msgid "Center"
+msgstr ""
+
+#: admin/theme_options.php:711
+msgid "Right"
+msgstr ""
+
+#: admin/theme_options.php:716
+msgid "Padding Top"
+msgstr ""
+
+#: admin/theme_options.php:722
+msgid "Padding Bottom"
+msgstr ""
+
+#: admin/theme_options.php:729
+msgid "Display Breadcrumb"
+msgstr ""
+
+#: admin/theme_options.php:734
+msgid "Display Search Form"
+msgstr ""
+
+#: admin/theme_options.php:743
+msgid "Home Page Sub-Header Options"
+msgstr ""
+
+#: admin/theme_options.php:747
+msgid "What to display for home page sub-header?"
+msgstr ""
+
+#: admin/theme_options.php:751
+msgid "Slider from <b><i>slides</i></b> custom post type"
+msgstr ""
+
+#: admin/theme_options.php:755
+msgid "Slider Revolution"
+msgstr ""
+
+#: admin/theme_options.php:759
+msgid "Default Banner"
+msgstr ""
+
+#: admin/theme_options.php:765
+msgid "Slider Layout"
+msgstr ""
+
+#: admin/theme_options.php:767
+msgid "Minimal"
+msgstr ""
+
+#: admin/theme_options.php:768
+msgid "Detailed"
+msgstr ""
+
+#: admin/theme_options.php:773
+msgid "Number of Slides"
+msgstr ""
+
+#: admin/theme_options.php:778
+msgid "Transition Between Slides"
+msgstr ""
+
+#: admin/theme_options.php:780
+msgid "Slide"
+msgstr ""
+
+#: admin/theme_options.php:781
+msgid "Fade"
+msgstr ""
+
+#: admin/theme_options.php:786
+msgid "Slide Duration (in ms)"
+msgstr ""
+
+#: admin/theme_options.php:792
+msgid "Auto Start Slider"
+msgstr ""
+
+#: admin/theme_options.php:798
+msgid "Slider Revolution Alias"
+msgstr ""
+
+#: admin/theme_options.php:813
+msgid "Member Display Name"
+msgstr ""
+
+#: admin/theme_options.php:815 template_parts/register_form.php:93
+msgid "Username"
+msgstr ""
+
+#: admin/theme_options.php:816
+msgid "First Name"
+msgstr ""
+
+#: admin/theme_options.php:817
+msgid "First & Last Name"
+msgstr ""
+
+#: admin/theme_options.php:818
+msgid "Display Name"
+msgstr ""
+
+#: admin/theme_options.php:824
+msgid "Select Member Login Page"
+msgstr ""
+
+#: admin/theme_options.php:828
+msgid "Create a page and assign it the Login template."
+msgstr ""
+
+#: admin/theme_options.php:846
+msgid "Select Member Register Page"
+msgstr ""
+
+#: admin/theme_options.php:850
+msgid "Create a page and assign it the Register template."
+msgstr ""
+
+#: admin/theme_options.php:874
+msgid "Hide Footer Widget Area"
+msgstr ""
+
+#: admin/theme_options.php:878
+msgid "Number of footer columns"
+msgstr ""
+
+#: admin/theme_options.php:890
+msgid "Footer Background Image"
+msgstr ""
+
+#: admin/theme_options.php:897
+msgid "Footer Background Display"
+msgstr ""
+
+#: admin/theme_options.php:906
+msgid "Bottom Bar"
+msgstr ""
+
+#: admin/theme_options.php:910
+msgid "Display Bottom Bar"
+msgstr ""
+
+#: admin/theme_options.php:914
+msgid "Bottom Bar Text"
+msgstr ""
+
+#: admin/theme_options.php:926
+msgid "Global Styles"
+msgstr ""
+
+#: admin/theme_options.php:929
+msgid "Background Color"
+msgstr ""
+
+#: admin/theme_options.php:934
+msgid "Main Color"
+msgstr ""
+
+#: admin/theme_options.php:939
+msgid "Complementary Color"
+msgstr ""
+
+#: admin/theme_options.php:946
+msgid "Top Bar Styles"
+msgstr ""
+
+#: admin/theme_options.php:949
+msgid "Top Bar Background Color"
+msgstr ""
+
+#: admin/theme_options.php:954
+msgid "Top Bar Text Color"
+msgstr ""
+
+#: admin/theme_options.php:959
+msgid "Top Bar Social Icons Color"
+msgstr ""
+
+#: admin/theme_options.php:966
+msgid "Header Styles"
+msgstr ""
+
+#: admin/theme_options.php:969
+msgid "Header Background Color"
+msgstr ""
+
+#: admin/theme_options.php:974
+msgid "Header Text Color"
+msgstr ""
+
+#: admin/theme_options.php:979
+msgid "Header Icon Color"
+msgstr ""
+
+#: admin/theme_options.php:985
+msgid "Header Menu Background Color"
+msgstr ""
+
+#: admin/theme_options.php:987
+msgid "*Only for Default Header style"
+msgstr ""
+
+#: admin/theme_options.php:993
+msgid "Page Banner Styles"
+msgstr ""
+
+#: admin/theme_options.php:996
+msgid "Page Banner Background Color"
+msgstr ""
+
+#: admin/theme_options.php:1001
+msgid "Page Banner Title Color"
+msgstr ""
+
+#: admin/theme_options.php:1008
+msgid "Footer Styles"
+msgstr ""
+
+#: admin/theme_options.php:1011
+msgid "Footer Background Color"
+msgstr ""
+
+#: admin/theme_options.php:1016
+msgid "Footer Header Color"
+msgstr ""
+
+#: admin/theme_options.php:1021
+msgid "Footer Text Color"
+msgstr ""
+
+#: admin/theme_options.php:1026
+msgid "Footer Link Color"
+msgstr ""
+
+#: admin/theme_options.php:1031
+msgid "Bottom Bar Background Color"
+msgstr ""
+
+#: admin/theme_options.php:1036
+msgid "Bottom Bar Text Color"
+msgstr ""
+
+#: comments.php:28 comments.php:50
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:29 comments.php:51
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:30 comments.php:52
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:38
+msgid "Comments"
+msgstr ""
+
+#: comments.php:57
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:67
+#, php-format
+msgid ""
+"View Available <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
+"and attributes %s:"
+msgstr ""
+
+#: functions.php:86
+msgid "Name"
+msgstr ""
+
+#: functions.php:87
+msgid "New Testimonial"
+msgstr ""
+
+#: functions.php:88
+msgid "Position"
+msgstr ""
+
+#: functions.php:89
+msgid "Image URL"
+msgstr ""
+
+#: functions.php:90
+msgid "Testimonial"
+msgstr ""
+
+#: functions.php:112 functions.php:113
+msgid "on"
+msgstr ""
+
+#: functions.php:170
+msgid "Username and password are required fields."
+msgstr ""
+
+#: functions.php:171
+msgid "You forgot to enter your"
+msgstr ""
+
+#: functions.php:172
+msgid "Sorry! You entered an invalid"
+msgstr ""
+
+#: functions.php:174
+msgid "Please enter an email address!"
+msgstr ""
+
+#: functions.php:337
+msgid ""
+"Google Maps <strong>requires</strong> an API key! Please provide your key in "
+"the theme options. If you do not have one, <a href=\"https://developers."
+"google.com/maps/documentation/javascript/get-api-key\" target=\"_blank"
+"\">click here</a>."
+msgstr ""
+
+#: functions.php:366 functions.php:401
+msgid "Contact"
+msgstr ""
+
+#: functions.php:374
+msgid ""
+"Welcome to RypeCore. This is your first post. Edit or delete it, then start "
+"writing! Here are some steps to help you get started."
+msgstr ""
+
+#: functions.php:376
+msgid "1. Configure Permalinks"
+msgstr ""
+
+#: functions.php:377
+msgid "2. Creating the Home Page"
+msgstr ""
+
+#: functions.php:378
+msgid "3. Update Reading Settings"
+msgstr ""
+
+#: functions.php:379
+msgid "4. Creating Properties Listing Page"
+msgstr ""
+
+#: functions.php:386
+msgid "Welcome to RypeCore"
+msgstr ""
+
+#: functions.php:458
+msgid "Archived Content"
+msgstr ""
+
+#: functions.php:546
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:603
+msgid "Login to Reply"
+msgstr ""
+
+#: functions.php:603
+msgid "Reply"
+msgstr ""
+
+#: functions.php:604
+msgid "Edit"
+msgstr ""
+
+#: functions.php:610
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:624
+msgid "Page Sidebar"
+msgstr ""
+
+#: functions.php:634
+msgid "Blog Sidebar"
+msgstr ""
+
+#: search.php:9
+msgid "search results found"
+msgstr ""
+
+#: search.php:14
+msgid "Blog Post >"
+msgstr ""
+
+#: search.php:15
+msgid "Page >"
+msgstr ""
+
+#: search.php:16
+msgid "Property >"
+msgstr ""
+
+#: search.php:17
+msgid "Agent >"
+msgstr ""
+
+#: search.php:23 template_parts/loop_blog.php:78 template_parts/loop_page.php:4
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: searchform.php:2
+msgid "Search..."
+msgstr ""
+
+#: template_parts/contact_details.php:24
+msgid "Email Us"
+msgstr ""
+
+#: template_parts/contact_details.php:32
+msgid "Call Us"
+msgstr ""
+
+#: template_parts/contact_details.php:40
+msgid "Visit Us"
+msgstr ""
+
+#: template_parts/contact_details.php:48
+msgid "Connect With Us"
+msgstr ""
+
+#: template_parts/contact_form.php:25
+msgid "Please install required plugins to display the contact form."
+msgstr ""
+
+#: template_parts/login_form.php:9
+msgid "Don't have an account yet?"
+msgstr ""
+
+#: template_parts/login_form.php:10
+msgid "Register here!"
+msgstr ""
+
+#: template_parts/login_form.php:18
+msgid "The passord or username you entered was incorrect. Please try again."
+msgstr ""
+
+#: template_parts/login_form.php:41 template_parts/register_form.php:115
+msgid "You are logged in as"
+msgstr ""
+
+#: template_parts/login_form.php:42 template_parts/register_form.php:116
+msgid "Logout?"
+msgstr ""
+
+#: template_parts/loop_blog.php:20
+msgid "Posted by"
+msgstr ""
+
+#: template_parts/loop_blog.php:20
+msgid "in"
+msgstr ""
+
+#: template_parts/loop_blog.php:30
+msgid "Read More"
+msgstr ""
+
+#: template_parts/loop_blog.php:64
+msgid "&raquo; Previous"
+msgstr ""
+
+#: template_parts/loop_blog.php:65
+msgid "Next &raquo;"
+msgstr ""
+
+#: template_parts/register_form.php:19
+msgid "Please enter a username"
+msgstr ""
+
+#: template_parts/register_form.php:26
+msgid "Please enter a password"
+msgstr ""
+
+#: template_parts/register_form.php:33
+msgid "Please enter an email"
+msgstr ""
+
+#: template_parts/register_form.php:52
+msgid "Your account has been created."
+msgstr ""
+
+#: template_parts/register_form.php:52
+msgid "Login here."
+msgstr ""
+
+#: template_parts/register_form.php:70
+msgid "Already have an account?"
+msgstr ""
+
+#: template_parts/register_form.php:71
+msgid "Login here!"
+msgstr ""
+
+#: template_parts/register_form.php:97
+msgid "Password"
+msgstr ""
+
+#: template_parts/register_form.php:104
+msgid "Create Account"
+msgstr ""
+
+#: template_parts/slider_home.php:94
+msgid "No slides have been posted yet."
+msgstr ""
+
+#: template_parts/subheader.php:62
+msgid "Blog"
+msgstr ""
+
+#: template_parts/top_bar.php:54
+msgid "Login"
+msgstr ""
+
+#: template_parts/top_bar.php:55
+msgid "Register"
+msgstr ""
+
+#: template_parts/top_bar.php:84
+msgid "Logout"
+msgstr ""
