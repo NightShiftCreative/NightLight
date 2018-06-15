@@ -598,10 +598,10 @@ include('admin/breadcrumbs.php');
 /*-----------------------------------------------------------------------------------*/
 if( !function_exists('rypecore_get_icon') ){
     function rypecore_get_icon($type, $fa_name, $line_name = null, $dripicon_name = null, $class = null) {
-        if($type == 'line') {
+        if($type == 'line' && $line_name != 'n/a') {
             if(empty($line_name)) { $line_name = $fa_name; }
             return '<i class="fa icon-'.$line_name.' icon icon-line '.$class.'"></i>';
-        } else if($type == 'dripicon') {
+        } else if($type == 'dripicon' && $dripicon_name != 'n/a') {
             if(empty($dripicon_name)) { $dripicon_name = $fa_name; }
             return '<i class="fa dripicons-'.$dripicon_name.' icon icon-dripicon'.$class.'"></i>';
         } else {
