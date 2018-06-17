@@ -86,11 +86,9 @@ function rypecore_admin_scripts() {
         /* localize scripts */
         $translation_array = array( 
             'remove_text' => __( 'Remove', 'rypecore' ),
+            'save_text' => __( 'Save', 'rypecore' ),
             'name_text' => __( 'Name', 'rypecore' ),
-            'new_testimonial' => __( 'New Testimonial', 'rypecore' ),
-            'position' => __( 'Position', 'rypecore' ),
             'image_url' => __( 'Image URL', 'rypecore' ),
-            'testimonial' => __( 'Testimonial', 'rypecore' ),
         );
         wp_localize_script( 'rypecore-admin-js', 'rypecore_local_script', $translation_array );
     }

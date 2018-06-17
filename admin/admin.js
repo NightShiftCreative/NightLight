@@ -161,6 +161,22 @@ jQuery(document).ready(function($) {
 			axis: 'y',
 			curosr: 'move',
             distance: 10,
+            update: function(event, ui) {
+	        	$(this).closest('.widget-inside').find('.widget-control-save').removeAttr('disabled');
+	        	$(this).closest('.widget-inside').find('.widget-control-save').val(rypecore_local_script.save_text);
+	        }
+		});
+	});
+
+	$(document).on('widget-updated', function(e, widget){
+	    $('.sortable-list').sortable({
+			axis: 'y',
+			curosr: 'move',
+            distance: 10,
+            update: function(event, ui) {
+	        	$(this).closest('.widget-inside').find('.widget-control-save').removeAttr('disabled');
+	        	$(this).closest('.widget-inside').find('.widget-control-save').val(rypecore_local_script.save_text);
+	        }
 		});
 	});
 
