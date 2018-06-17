@@ -1,4 +1,5 @@
 <?php 
+    //Individual page banner settings (these overwrite global settings)
     $page_id = rypecore_get_page_id();
     $values = get_post_custom( $page_id );
     $banner_source = isset( $values['rypecore_banner_source'] ) ? esc_attr( $values['rypecore_banner_source'][0] ) : 'image_banner';
@@ -26,9 +27,6 @@ if($banner_source == 'slides' ) {
 
 <section <?php if($page_layout_container == 'true') { echo 'class="module"'; } ?>>
     <div class="<?php if($page_layout_container != 'true') { echo 'container-fluid'; } else { echo 'container'; } ?>">
-
-        <div class='pin'></div>
-        <div class='pin-shadow'></div>
 
 		<div class="row">
 			<?php if($page_layout == 'full') { ?>
