@@ -9,9 +9,17 @@ $theme_url = esc_url( get_template_directory_uri() );
 
 if(isset($_GET['rtl'])) { $rtl = $_GET['rtl']; } else { $rtl = esc_attr(get_option('rypecore_rtl')); } 
 
+//Get banner settings
 $banner_slider_transition = get_option('rypecore_page_banner_slider_transition', 'horizontal');
 $banner_slider_duration = get_option('rypecore_page_banner_slider_duration', 5000);
 $banner_slider_auto_start = get_option('rypecore_page_banner_slider_auto_start', 'true');
+
+//Get currency options
+$currency_symbol = esc_attr(get_option('rypecore_currency_symbol', '$'));
+$currency_symbol_position = esc_attr(get_option('rypecore_currency_symbol_position', 'before'));
+$currency_thousand = esc_attr(get_option('rypecore_thousand_separator', ','));
+$currency_decimal = esc_attr(get_option('rypecore_decimal_separator', '.'));
+$currency_decimal_num = esc_attr(get_option('rypecore_num_decimal', '0'));
 
 //Contact form messaging
 $contact_form_success = esc_attr(get_option('rypecore_contact_form_success', esc_html__('Thanks! Your email has been delivered!', 'rypecore')) );
@@ -51,6 +59,11 @@ $dynamic_script .= "var rtl = '{$rtl}';";
 $dynamic_script .= "var banner_slider_transition = '{$banner_slider_transition}';";
 $dynamic_script .= "var banner_slider_duration = '{$banner_slider_duration}';";
 $dynamic_script .= "var banner_slider_auto_start = '{$banner_slider_auto_start}';";
+$dynamic_script .= "var currency_symbol = '{$currency_symbol}';";
+$dynamic_script .= "var currency_symbol_position = '{$currency_symbol_position}';";
+$dynamic_script .= "var currency_thousand = '{$currency_thousand}';";
+$dynamic_script .= "var currency_decimal = '{$currency_decimal}';";
+$dynamic_script .= "var currency_decimal_num = '{$currency_decimal_num}';";
 $dynamic_script .= "var contact_form_success = '{$contact_form_success}';";
 
 //CHOSEN SELECT RTL SUPPORT
