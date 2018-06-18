@@ -27,7 +27,6 @@
         }
     }
 
-    $banner_display = isset( $values['rypecore_banner_display'] ) ? esc_attr( $values['rypecore_banner_display'][0] ) : 'true';
     $banner_title = isset( $values['rypecore_banner_title'] ) ? $values['rypecore_banner_title'][0] : '';
     $banner_text = isset( $values['rypecore_banner_text'] ) ? $values['rypecore_banner_text'][0] : '';
     $banner_bg_img = isset( $values['rypecore_banner_bg_img'] ) ? esc_attr( $values['rypecore_banner_bg_img'][0] ) : '';
@@ -41,8 +40,6 @@
     $banner_padding_top = isset( $values['rypecore_banner_padding_top'] ) ? esc_attr( $values['rypecore_banner_padding_top'][0] ) : '';
     $banner_padding_bottom = isset( $values['rypecore_banner_padding_bottom'] ) ? esc_attr( $values['rypecore_banner_padding_bottom'][0] ) : '';
 ?>
-
-<?php if($banner_display == 'true') { ?>
 
 <section class="module subheader <?php if($page_banner_title_align == 'right') { echo 'align-right'; } else if($page_banner_title_align == 'center') { echo 'align-center'; } else { echo 'align-left'; } ?> <?php if($page_banner_display_search == 'true') { echo 'has-search-form'; } ?> <?php if(!empty($banner_bg_img)) { echo rypecore_bgDisplay($banner_bg_display); } else if(!empty($page_banner_bg)) { echo rypecore_bgDisplay($page_banner_bg_display); } ?>" 
 	<?php 
@@ -128,5 +125,3 @@
     <?php } ?>
 
 </section>
-
-<?php } ?>
