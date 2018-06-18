@@ -239,17 +239,6 @@
     if(!empty($page_banner_padding_bottom)) { $misc_css .= "padding-bottom:{$page_banner_padding_bottom}px;"; }
     $misc_css .= "}";
 
-    //JOB TYPE COLORS
-    if(function_exists('get_job_listing_types')) {
-        foreach (get_job_listing_types() as $type) {
-            $term_data = get_option('taxonomy_'.$type->term_id);
-            if (isset($term_data['color'])) { $term_color = $term_data['color']; } else { $term_color = ''; } 
-            if(!empty($term_color)) {
-                $misc_css .= ".job_listing .job-type.".$type->slug." { border-color:{$term_color}; color:{$term_color}; }"; 
-            }
-        }
-    }
-
     //FOOTER BG IMAGE
     if(!empty($footer_bg)) { $misc_css .= "footer { background-image:url({$footer_bg}); }"; } 
 
