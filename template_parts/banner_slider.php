@@ -87,6 +87,7 @@
 			    	<?php } ?>
 
 				<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
 			    <?php else: ?>
 			    <?php endif; ?>
 
