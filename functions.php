@@ -554,6 +554,29 @@ function rypecore_get_template_part( $file, $template_args = array(), $cache_arg
 }
 
 /*-----------------------------------------------------------------------------------*/
+/*  Generate Page Banners
+/*-----------------------------------------------------------------------------------*/
+function rypecore_generate_page_banner($values) {
+    $banner_source = isset( $values['rypecore_banner_source'] ) ? esc_attr( $values['rypecore_banner_source'][0] ) : 'image_banner';
+    $banner_display = isset( $values['rypecore_banner_display'] ) ? esc_attr( $values['rypecore_banner_display'][0] ) : 'true';
+    $banner_slider_rev_alias = isset( $values['rypecore_banner_slider_rev_alias'] ) ? esc_attr( $values['rypecore_banner_slider_rev_alias'][0] ) : '';
+    
+    if($banner_display == 'true') {
+        do_action( 'rao_before_page_banner');
+        if($banner_source == 'slides' ) {
+            rypecore_get_template_part('template_parts/banner_slider', ['post_id' => $page_id]); 
+        } else if($banner_source == 'slider_revolution') {
+            echo do_shortcode($banner_slider_rev_alias);
+        } else if($banner_source == 'image_banner') {
+            get_template_part('template_parts/subheader'); 
+        } else {
+            do_action( 'rao_custom_banner_source', $banner_source);
+        }
+        do_action( 'rao_after_page_banner');
+    }
+}
+
+/*-----------------------------------------------------------------------------------*/
 /*  Get Page Column Classes
 /*-----------------------------------------------------------------------------------*/
 function rypecore_get_page_col_classes($page_layout = 'full', $sidebar_size = null) {
