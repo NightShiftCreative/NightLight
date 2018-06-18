@@ -790,6 +790,9 @@ function rypecore_theme_options_page() {
                                 <option value="large" <?php if(esc_attr(get_option('rypecore_page_sidebar_size', 'small')) == 'large') { echo 'selected'; } ?>><?php echo esc_html_e('Large', 'rypecore'); ?></option>
                             </select>
                         </div>
+
+                        <!-- hook in for other add-ons -->
+                        <?php do_action( 'rao_after_page_banner_theme_options'); ?>
                         
                     </div><!-- end page banner -->
 
