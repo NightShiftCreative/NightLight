@@ -179,8 +179,7 @@ jQuery(document).ready(function($) {
 		contactForm.find('.form-loader').show();
 	    contactForm.find('.error').remove();
 
-        var successMessage = '';
-        successMessage = contact_form_success;
+        var successMessage = $(this).find('.alert-box.success').html();
 
 	    var hasError = false;
 
