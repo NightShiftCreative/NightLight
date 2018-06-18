@@ -21,10 +21,6 @@ $currency_thousand = esc_attr(get_option('rypecore_thousand_separator', ','));
 $currency_decimal = esc_attr(get_option('rypecore_decimal_separator', '.'));
 $currency_decimal_num = esc_attr(get_option('rypecore_num_decimal', '0'));
 
-//Contact form messaging
-$contact_form_success = esc_attr(get_option('rypecore_contact_form_success', esc_html__('Thanks! Your email has been delivered!', 'rypecore')) );
-
-
 $dynamic_script = '';
 
 //STICKY HEADER
