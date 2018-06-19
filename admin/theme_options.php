@@ -681,7 +681,7 @@ function rypecore_theme_options_page() {
 
                         <div class="admin-module">
                             <label for="header_menu_button_text"><?php echo esc_html_e('Menu Call to Action Text', 'rypecore'); ?></label><br/>
-                            <input type="text" id="header_menu_button_text" name="rypecore_header_menu_button_text" value="<?php echo esc_attr( get_option('rypecore_header_menu_button_text', esc_html__('Post Job', 'rypecore')) ); ?>" />
+                            <input type="text" id="header_menu_button_text" name="rypecore_header_menu_button_text" value="<?php echo esc_attr( get_option('rypecore_header_menu_button_text', esc_html__('Contact Us', 'rypecore')) ); ?>" />
                         </div>
 
                         <div class="admin-module">
