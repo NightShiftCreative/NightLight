@@ -25,14 +25,14 @@
             <?php if($page_layout == 'full') { ?>
                 <div class="col-lg-12 <?php if($page_layout_container != 'true') { echo 'col-full'; } ?>">
 					<?php get_template_part('template_parts/loop_page'); ?>
-					<?php get_template_part('template_parts/login_form'); ?>
+					<?php get_template_part('template_parts/members/login_form'); ?>
 				</div>
             <?php } ?>
 
             <?php if($page_layout == 'right sidebar' || $page_layout == 'left sidebar') { ?>
                 <div class="<?php echo $col_class['content']; ?>">
 					<?php get_template_part('template_parts/loop_page'); ?>
-					<?php get_template_part('template_parts/login_form'); ?>
+					<?php get_template_part('template_parts/members/login_form'); ?>
 				</div>
                 <div class="<?php echo $col_class['sidebar']; ?>"><?php if(is_active_sidebar($page_layout_widget_area)) { dynamic_sidebar( $page_layout_widget_area ); } ?></div>
             <?php } ?>
