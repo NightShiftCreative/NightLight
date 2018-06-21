@@ -226,6 +226,9 @@ function rypecore_load_header_settings() {
     $header_vars['members_display_name'] = esc_attr(get_option('rypecore_members_display_name', 'username'));
     $header_vars['members_login_page'] = esc_attr(get_option('rypecore_members_login_page'));
     $header_vars['members_register_page'] = esc_attr(get_option('rypecore_members_register_page'));
+    $header_vars['members_dashboard_page'] = esc_attr(get_option('rypecore_members_dashboard_page'));
+    $header_vars['members_edit_profile_page'] = esc_attr(get_option('rypecore_members_edit_profile_page'));
+    $header_vars['members_favorites_page'] = esc_attr(get_option('rypecore_members_favorites_page'));
 
     //custom filters (for rype add-ons)
     $header_vars = apply_filters( 'rao_custom_header_vars', $header_vars);
