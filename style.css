@@ -1039,11 +1039,12 @@ header.header-default.navbar-fixed { position:relative; }
 
 .blog-post-img { position:relative; display:block; }
 .blog-post-date { 
+	color:white;
 	position:absolute; 
-	background:url(images/hexagon.png) no-repeat;
+	background:#04d2c8;
 	line-height:1.1; 
 	bottom:-21px;
-	padding-top:7px; 
+	padding:13px; 
 	left:40px; 
 	font-size:12px; 
 	width:90px;
