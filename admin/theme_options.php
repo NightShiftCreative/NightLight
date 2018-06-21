@@ -88,9 +88,12 @@ function register_rypecore_theme_options() {
     register_setting( 'rypecore-settings-group', 'rypecore_page_sidebar_size' );  
 
     //register member settings
-    register_setting( 'rypecore-settings-group', 'rypecore_members_login_page' );
-    register_setting( 'rypecore-settings-group', 'rypecore_members_register_page' );
     register_setting( 'rypecore-settings-group', 'rypecore_members_display_name' );
+    register_setting( 'rypecore-settings-group', 'rypecore_members_login_page' );
+    register_setting( 'rypecore-settings-group', 'rypecore_members_register_page' ); 
+    register_setting( 'rypecore-settings-group', 'rypecore_members_dashboard_page' );
+    register_setting( 'rypecore-settings-group', 'rypecore_members_edit_profile_page' );
+    register_setting( 'rypecore-settings-group', 'rypecore_members_favorites_page' );
 
     //register footer settings
     register_setting( 'rypecore-settings-group', 'rypecore_hide_footer_widget_area' );
@@ -848,6 +851,72 @@ function rypecore_theme_options_page() {
                                     $pages = get_pages(); 
                                     foreach ( $pages as $page ) { ?>
                                     <option value="<?php echo get_page_link( $page->ID ); ?>" <?php if(esc_attr(get_option('rypecore_members_register_page')) == get_page_link( $page->ID )) { echo 'selected'; } ?>>
+                                        <?php echo esc_attr($page->post_title); ?>
+                                    </option>
+                                <?php } ?>
+                            </select>
+                        </div>
+
+                        <div class="admin-module">   
+                            <label class="left"><?php echo esc_html_e('Select Member Dashboard Page', 'rypecore'); ?></label>
+                            <div class="more-info">
+                                <div class="more-info-question">?</div>
+                                <div class="more-info-content">
+                                    <?php esc_html_e('Create a page and assign it the Dashboard template.', 'rypecore'); ?>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <select name="rypecore_members_dashboard_page">
+                                <option value="">
+                                <?php echo esc_attr( esc_html__( 'Select page', 'rypecore' ) ); ?></option> 
+                                    <?php 
+                                    $pages = get_pages(); 
+                                    foreach ( $pages as $page ) { ?>
+                                    <option value="<?php echo get_page_link( $page->ID ); ?>" <?php if(esc_attr(get_option('rypecore_members_dashboard_page')) == get_page_link( $page->ID )) { echo 'selected'; } ?>>
+                                        <?php echo esc_attr($page->post_title); ?>
+                                    </option>
+                                <?php } ?>
+                            </select>
+                        </div>
+
+                        <div class="admin-module">   
+                            <label class="left"><?php echo esc_html_e('Select Member Edit Profile Page', 'rypecore'); ?></label>
+                            <div class="more-info">
+                                <div class="more-info-question">?</div>
+                                <div class="more-info-content">
+                                    <?php esc_html_e('Create a page and assign it the Edit Profile template.', 'rypecore'); ?>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <select name="rypecore_members_edit_profile_page">
+                                <option value="">
+                                <?php echo esc_attr( esc_html__( 'Select page', 'rypecore' ) ); ?></option> 
+                                    <?php 
+                                    $pages = get_pages(); 
+                                    foreach ( $pages as $page ) { ?>
+                                    <option value="<?php echo get_page_link( $page->ID ); ?>" <?php if(esc_attr(get_option('rypecore_members_edit_profile_page')) == get_page_link( $page->ID )) { echo 'selected'; } ?>>
+                                        <?php echo esc_attr($page->post_title); ?>
+                                    </option>
+                                <?php } ?>
+                            </select>
+                        </div>
+
+                        <div class="admin-module">   
+                            <label class="left"><?php echo esc_html_e('Select Member Favorites Page', 'rypecore'); ?></label>
+                            <div class="more-info">
+                                <div class="more-info-question">?</div>
+                                <div class="more-info-content">
+                                    <?php esc_html_e('Create a page and assign it the Favorites template.', 'rypecore'); ?>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <select name="rypecore_members_favorites_page">
+                                <option value="">
+                                <?php echo esc_attr( esc_html__( 'Select page', 'rypecore' ) ); ?></option> 
+                                    <?php 
+                                    $pages = get_pages(); 
+                                    foreach ( $pages as $page ) { ?>
+                                    <option value="<?php echo get_page_link( $page->ID ); ?>" <?php if(esc_attr(get_option('rypecore_members_favorites_page')) == get_page_link( $page->ID )) { echo 'selected'; } ?>>
                                         <?php echo esc_attr($page->post_title); ?>
                                     </option>
                                 <?php } ?>
