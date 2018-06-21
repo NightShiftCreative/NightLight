@@ -19,7 +19,7 @@
         </div>
 
         <!-- hook in for Rype Add-Ons -->
-        <?php do_action( 'rao_dashboard_widgets'); ?>
+        <?php do_action( 'rao_after_dashboard'); ?>
 
 	<?php } else {
         get_template_part('template_parts/members/alert_not_logged_in');
