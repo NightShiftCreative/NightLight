@@ -565,7 +565,7 @@ function rypecore_generate_page_banner($values) {
     $banner_slider_rev_alias = isset( $values['rypecore_banner_slider_rev_alias'] ) ? esc_attr( $values['rypecore_banner_slider_rev_alias'][0] ) : '';
     
     if($banner_display == 'true') {
-        do_action( 'rao_before_page_banner');
+        do_action( 'rao_before_page_banner', $values);
         if($banner_source == 'slides' ) {
             rypecore_get_template_part('template_parts/banner_slider', ['post_id' => $page_id]); 
         } else if($banner_source == 'slider_revolution') {
@@ -575,7 +575,7 @@ function rypecore_generate_page_banner($values) {
         } else {
             do_action( 'rao_custom_banner_source', $banner_source);
         }
-        do_action( 'rao_after_page_banner');
+        do_action( 'rao_after_page_banner', $values);
     }
 }
 

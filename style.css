@@ -1441,10 +1441,17 @@ header.header-default.navbar-fixed { position:relative; }
 	padding:30px;
 	border-radius:5px;
 	border:1px solid rgba(0, 0, 0, 0.06);
-	width:30%;
-	text-align:center;
+	width:32%;
+	margin-right:2%;
+	margin-bottom:2%;
+	float:left;
 }
-.user-dashboard-widget span { font-size:35px; font-weight:600; display:block; }
+.user-dashboard-widget:nth-child(4) { margin-right:0; }
+
+.user-dashboard-widget.stat { border-top:2px solid #04d2c8; border-radius:0px 0px 5px 5px; text-align:center;  }
+.user-dashboard-widget.stat > span { font-size:35px; font-weight:600; display:block; }
+
+.user-dashboard-widget-full { width:100%; }
 
 /** FAVORITES **/
 .favorites-listing { margin:0; background:white; }

@@ -923,6 +923,9 @@ function rypecore_theme_options_page() {
                             </select>
                         </div>
 
+                        <!-- hook in for Rype Add-Ons -->
+                        <?php do_action('rao_after_member_theme_options'); ?>
+
                     </div><!-- end members -->
 
                     <div id="footer" class="tab-content">

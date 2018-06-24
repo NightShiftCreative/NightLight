@@ -6,7 +6,7 @@
 
     	<h3><?php esc_html_e('Welcome back,', 'rypecore'); ?> <strong><?php echo esc_attr($current_user->user_login); ?>!</strong></h3>
     		
-    	<div class="user-dashboard-widget">
+    	<div class="user-dashboard-widget stat">
             <span>
                 <?php 
                 if(function_exists('rao_show_user_likes_count')) {
@@ -25,4 +25,5 @@
         get_template_part('template_parts/members/alert_not_logged_in');
     } ?>
 
+    <div class="clear"></div>
 </div><!-- end user dashboard -->
