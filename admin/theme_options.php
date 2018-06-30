@@ -571,7 +571,7 @@ function rypecore_theme_options_page() {
                             <label class="selectable-item <?php if($header_style == 'default') { echo 'active'; } ?>" for="header_style_default">
                                 <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/admin/images/default-header.png" alt="" /><br/>
                                 <input type="radio" id="header_style_default" name="rypecore_header_style" value="default" <?php checked('default', $header_style, true) ?> />
-                                <?php echo esc_html_e('Default Header', 'rypecore'); ?>
+                                <?php echo esc_html_e('Menu Bar Header', 'rypecore'); ?>
                             </label>
                             <label class="selectable-item <?php if($header_style == 'classic') { echo 'active'; } ?>" for="header_style_classic">
                                 <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/admin/images/classic-header.png" alt="" /><br/>
