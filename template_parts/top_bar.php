@@ -84,6 +84,7 @@ $avatar_img = wp_get_attachment_image($avatar_id, array('16', '16'), "", array( 
                                 <?php if(!empty($header_vars['members_dashboard_page'])) { ?><li><a href="<?php echo $header_vars['members_dashboard_page']; ?>"><?php echo rypecore_get_icon($header_vars['icon_set'], 'dashboard', 'layers', 'meter'); ?><?php esc_html_e( 'Dashboard', 'rypecore' ); ?></a></li><?php } ?>
                                 <?php if(!empty($header_vars['members_edit_profile_page'])) { ?><li><a href="<?php echo $header_vars['members_edit_profile_page']; ?>"><?php echo rypecore_get_icon($header_vars['icon_set'], 'cog', 'cog', 'gear'); ?><?php esc_html_e( 'Edit Profile', 'rypecore' ); ?></a></li><?php } ?>
                                 <?php if(!empty($header_vars['members_favorites_page'])) { ?><li><a href="<?php echo $header_vars['members_favorites_page']; ?>"><?php echo rypecore_get_icon($header_vars['icon_set'], 'heart'); ?><?php esc_html_e( 'Favorites', 'rypecore' ); ?></a></li><?php } ?>
+                                <?php do_action('rao_after_top_bar_member_menu'); ?>
                                 <li><a href="<?php echo wp_logout_url(get_permalink()); ?>"><?php echo rypecore_get_icon($header_vars['icon_set'], 'sign-out', 'enter-left', 'enter'); ?><?php esc_html_e( 'Logout', 'rypecore' ); ?></a></li>
                             </ul>
                         </div>

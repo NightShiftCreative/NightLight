@@ -13,7 +13,7 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 		$post_favorites_args = array(
 	        'post_type' => $all_types,
-	        'posts_per_page' => -1,
+	        'posts_per_page' => 12,
 	        'paged' => $paged,
 	        'meta_query' => array (
 	            array (
@@ -34,12 +34,12 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 			<?php esc_html_e('Favorites', 'rypecore'); ?>
 		</h4>
 
-		<table class="favorites-listing">
-			<tr class="favorites-listing-header">
-	            <td class="favorites-listing-img"><?php esc_html_e('Image', 'rypecore'); ?></td>
+		<table class="user-dashboard-table favorites-listing">
+			<tr class="user-dashboard-table-header favorites-listing-header">
+	            <td class="user-dashboard-table-img favorites-listing-img"><?php esc_html_e('Image', 'rypecore'); ?></td>
 	            <td class="favorites-listing-title"><?php esc_html_e('Title', 'rypecore'); ?></td>
 	            <td class="favorites-listing-type"><?php esc_html_e('Post Type', 'rypecore'); ?></td>
-	            <td class="favorites-listing-actions"><?php esc_html_e('Actions', 'rypecore'); ?></td>
+	            <td class="user-dashboard-table-actions favorites-listing-actions"><?php esc_html_e('Actions', 'rypecore'); ?></td>
 	        </tr>
 
 	        <?php if ( $post_favorites_query->have_posts() ) : while ( $post_favorites_query->have_posts() ) : $post_favorites_query->the_post(); ?>
@@ -55,20 +55,43 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 				} ?>
 
 	        	<tr>
-	        		<td class="favorites-listing-img"><?php if(has_post_thumbnail()) { the_post_thumbnail('thumb'); } else { echo '--'; } ?></td>
+	        		<td class="user-dashboard-table-img favorites-listing-img"><?php if(has_post_thumbnail()) { the_post_thumbnail('thumb'); } else { echo '--'; } ?></td>
 	        		<td class="favorites-listing-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
 	        		<td class="favorites-listing-type"><?php echo $post_type; ?></td>
-	        		<td class="favorites-listing-actions">
+	        		<td class="user-dashboard-table-actions favorites-listing-actions">
 	        			<a href="<?php the_permalink(); ?>"><?php echo rypecore_get_icon($icon_set, 'eye', 'eye', 'preview'); ?><?php esc_html_e('View', 'rypecore'); ?></a>
 	        			<?php if(function_exists('rao_get_post_likes_button')) { echo rao_get_post_likes_button(get_the_ID()).' Unlike'; } ?>
 	        		</td>
 	        	</tr>
-	        <?php endwhile; ?>
-	        <?php else: ?>
-	        	<tr><td colspan="3"><?php esc_html_e('You have not liked any posts.', 'rypecore'); ?></td></tr>
-                <?php wp_reset_postdata(); ?>
-	        <?php endif; ?>
-		</table>
+		    <?php endwhile; ?>
+		        </table>
+		        <?php wp_reset_postdata();
+		        $big = 999999999; // need an unlikely integer
+
+		        $args = array(
+		            'base'         => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+		            'format'       => '/page/%#%',
+		            'total'        => $post_favorites_query->max_num_pages,
+		            'current'      => max( 1, get_query_var('paged') ),
+		            'show_all'     => False,
+		            'end_size'     => 1,
+		            'mid_size'     => 2,
+		            'prev_next'    => True,
+		            'prev_text'    => esc_html__('&raquo; Previous', 'rypecore'),
+		            'next_text'    => esc_html__('Next &raquo;', 'rypecore'),
+		            'type'         => 'plain',
+		            'add_args'     => False,
+		            'add_fragment' => '',
+		            'before_page_number' => '',
+		            'after_page_number' => ''
+		        );
+		        ?>
+		        <div class="page-list"><?php echo paginate_links( $args ); ?> </div>
+		    <?php else: ?>
+		        </table>
+		        <p><?php esc_html_e('You have not liked any posts yet.', 'rypecore'); ?></p>
+		        <?php wp_reset_postdata(); ?>
+		    <?php endif; ?>
 
 		<!-- hook in for Rype Add-Ons -->
         <?php do_action( 'rao_after_favorites'); ?>
