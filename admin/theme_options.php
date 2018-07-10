@@ -189,14 +189,14 @@ function rypecore_theme_options_page() {
 
                 <td class="theme-options-nav-container" valign="top">
                     <ul class="ui-tabs-nav">
-                        <li><a href="#general"><i class="fa fa-globe"></i> <span class="ui-tab-text"><?php echo esc_html_e('General', 'rypecore'); ?></span></a></li>
-                        <li><a href="#contact" onclick="refreshMap()"><i class="fa fa-comment"></i> <span class="ui-tab-text"><?php echo esc_html_e('Contact & Social', 'rypecore'); ?></span></a></li>
-                        <li><a href="#header"><div class="header-icon"><div class="header-icon-head"></div><div class="header-icon-content"></div></div> <span class="ui-tab-text"><?php echo esc_html_e('Header', 'rypecore'); ?></span><div class="clear"></div></a></li>
-                        <li><a href="#page-banner"><div class="header-icon page-banner-icon"><div class="header-icon-head"></div><div class="header-icon-banner"></div><div class="header-icon-content"></div></div> <span class="ui-tab-text"><?php echo esc_html_e('Page Banners & Sidebars', 'rypecore'); ?></span><div class="clear"></div></a></li>
-                        <li><a href="#members"><i class="fa fa-key"></i> <span class="ui-tab-text"><?php echo esc_html_e('Members', 'rypecore'); ?></span></a></li>
-                        <li><a href="#footer"><div class="header-icon"><div class="header-icon-content"></div><div class="header-icon-head"></div></div> <span class="ui-tab-text"><?php echo esc_html_e('Footer', 'rypecore'); ?></span><div class="clear"></div></a></li>
-                        <li><a href="#styling"><i class="fa fa-tint"></i> <span class="ui-tab-text"><?php echo esc_html_e('Styling', 'rypecore'); ?></span></a></li>
-                        <li><a href="#currency"><i class="fa fa-money"></i> <span class="ui-tab-text"><?php echo esc_html_e('Currency & Numbers', 'rypecore'); ?></span></a></li>
+                        <li><a href="#general" title="<?php echo esc_html_e('General', 'rypecore'); ?>"><i class="fa fa-globe"></i> <span class="ui-tab-text"><?php echo esc_html_e('General', 'rypecore'); ?></span></a></li>
+                        <li><a href="#contact" title="<?php echo esc_html_e('Contact & Social', 'rypecore'); ?>" onclick="refreshMap()"><i class="fa fa-comment"></i> <span class="ui-tab-text"><?php echo esc_html_e('Contact & Social', 'rypecore'); ?></span></a></li>
+                        <li><a href="#header" title="<?php echo esc_html_e('Header', 'rypecore'); ?>"><div class="header-icon"><div class="header-icon-head"></div><div class="header-icon-content"></div></div> <span class="ui-tab-text"><?php echo esc_html_e('Header', 'rypecore'); ?></span><div class="clear"></div></a></li>
+                        <li><a href="#page-banner" title="<?php echo esc_html_e('Page Banners & Sidebars', 'rypecore'); ?>"><div class="header-icon page-banner-icon"><div class="header-icon-head"></div><div class="header-icon-banner"></div><div class="header-icon-content"></div></div> <span class="ui-tab-text"><?php echo esc_html_e('Page Banners & Sidebars', 'rypecore'); ?></span><div class="clear"></div></a></li>
+                        <li><a href="#members" title="<?php echo esc_html_e('Members', 'rypecore'); ?>"><i class="fa fa-key"></i> <span class="ui-tab-text"><?php echo esc_html_e('Members', 'rypecore'); ?></span></a></li>
+                        <li><a href="#footer" title="<?php echo esc_html_e('Footer', 'rypecore'); ?>"><div class="header-icon"><div class="header-icon-content"></div><div class="header-icon-head"></div></div> <span class="ui-tab-text"><?php echo esc_html_e('Footer', 'rypecore'); ?></span><div class="clear"></div></a></li>
+                        <li><a href="#styling" title="<?php echo esc_html_e('Styling', 'rypecore'); ?>"><i class="fa fa-tint"></i> <span class="ui-tab-text"><?php echo esc_html_e('Styling', 'rypecore'); ?></span></a></li>
+                        <li><a href="#currency" title="<?php echo esc_html_e('Currency & Numbers', 'rypecore'); ?>"><i class="fa fa-money"></i> <span class="ui-tab-text"><?php echo esc_html_e('Currency & Numbers', 'rypecore'); ?></span></a></li>
                         <?php do_action( 'rao_after_theme_option_menu'); ?>
                     </ul>
                 </td>

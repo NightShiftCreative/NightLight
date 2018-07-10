@@ -76,6 +76,8 @@
     height:auto;
     line-height:normal;
     font-weight:600;
+    font-size:13px;
+    vertical-align: top;
     transition:all 0.4s;
 }
 .admin-module input[type="button"]:hover, 
@@ -83,7 +85,7 @@
     background:#5750ba;
 }
 
-.admin-module .button-secondary { padding:10px; height:auto; line-height:normal; }
+.admin-module .button-secondary { padding:10px; height:auto; line-height:normal; font-size:13px; }
 
 .admin-module-note { display:block; font-weight:400; margin-top:5px; font-size:12px; color:#a8a8a8; font-style:italic; }
 
@@ -420,7 +422,6 @@ input[type=checkbox].toggle-switch-checkbox { display: none; }
         padding:0; 
         margin:0; 
         width:100%; 
-        background:#23a5e1; 
         color:rgba(0, 0, 0, 0.5);
         text-align:center;
     }
@@ -433,5 +434,20 @@ input[type=checkbox].toggle-switch-checkbox { display: none; }
     .rc-theme-options .ui-tabs-nav li a span.ui-tab-text { display:none; }
 
     .rc-theme-options .header-icon { float:none; margin:4px auto 0px auto; }
+
+    .admin-module-label { margin-bottom:10px; }
+    .admin-module-label, .admin-module-field { width:100%; display:block; padding-right:0; }
+
+    .admin-module input,
+    .admin-module select,
+    .admin-module textarea,
+    .admin-module .chosen-container,
+    .admin-module .chosen-container .chosen-single { width:100%; }
+
+    .selectable-item,
+    .admin-module-header-style .selectable-item { width:100%; display:block; }
+
+    .upload_image_button,
+    .button-secondary.remove { margin-top:5px; }
 
 }
