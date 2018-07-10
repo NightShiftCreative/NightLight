@@ -202,10 +202,14 @@ jQuery(document).ready(function($) {
     $('.toggle-switch-label').on('click', function() {
         if($(this).parent().find('.toggle-switch-checkbox').is(':checked')) {
             $(this).parent().attr('title', 'Disabled');
+            $(this).find('span').text(rypecore_local_script.off);
+            $(this).find('span').removeClass('on');
         } else {
             $(this).parent().attr('title', 'Active');
+            $(this).find('span').text(rypecore_local_script.on);
+            $(this).find('span').addClass('on');
         }
-    }); 
+	});  
 
     /********************************************/
     /* CONTACT FORM ID */

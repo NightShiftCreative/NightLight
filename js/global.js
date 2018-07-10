@@ -153,6 +153,38 @@ jQuery(document).ready(function($) {
         });
     });
 
+    /***************************************************************************/
+    //SLICK SLIDER - TAXONOMY
+    /***************************************************************************/
+    $('.slider-wrap-tax').each(function (idx, item) {
+        var carouselId = "slider-wrap-tax-" + idx;
+        this.id = carouselId;
+        $(this).find('.slider.slider-tax').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            prevArrow: $('#' + carouselId + ' .slider-nav-tax .slider-prev'),
+            nextArrow: $('#' + carouselId + ' .slider-nav-tax .slider-next'),
+            adaptiveHeight: true,
+            rtl: rtl,
+            responsive: [
+                {
+                  breakpoint: 700,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                  }
+                },
+                {
+                  breakpoint: 480,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                  }
+                }
+            ]
+        });
+    });
+
 	//INITIATE SLIDES
 	$('.slide').addClass('initialized');
 

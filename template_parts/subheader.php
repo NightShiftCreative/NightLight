@@ -114,14 +114,8 @@
 	</div><!-- end container -->
 
     <!-- BREADCRUMBS -->
-    <?php if($page_banner_display_breadcrumb == 'true') { ?>
-        <div class="breadcrumb-container">
-            <div class="container">
-                <div class="<?php if($page_banner_title_align == 'right') { echo 'right'; } else if($page_banner_title_align == 'center') { echo 'center'; } else { echo 'left'; } ?>"> 
-                    <?php rypecore_breadcrumbs(); ?>
-                </div>
-            </div>
-        </div>
-    <?php } ?>
+    <?php if($page_banner_display_breadcrumb == 'true') { 
+        rypecore_breadcrumbs($page_banner_title_align); 
+    } ?>
 
 </section>

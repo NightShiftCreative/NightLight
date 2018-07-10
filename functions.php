@@ -17,6 +17,7 @@ add_theme_support( 'title-tag' ); //Add Title Tag Support
 add_theme_support( 'post-thumbnails' ); //Add post thumbnail support
 add_image_size( 'listing-thumbnail', 200, 200, array( 'center', 'center' ) );
 add_image_size( 'listing-thumbnail-small', 150, 100, false );
+do_action('rao_theme_support');
 
 /*-----------------------------------------------------------------------------------*/
 /*  Require bundled plugins (using TGM activation)
@@ -89,6 +90,8 @@ function rypecore_admin_scripts() {
             'save_text' => __( 'Save', 'rypecore' ),
             'name_text' => __( 'Name', 'rypecore' ),
             'image_url' => __( 'Image URL', 'rypecore' ),
+            'on' => __( 'On', 'rypecore' ),
+            'off' => __( 'Off', 'rypecore' ),
         );
         wp_localize_script( 'rypecore-admin-js', 'rypecore_local_script', $translation_array );
     }
@@ -632,6 +635,18 @@ if( !function_exists('rypecore_get_icon') ){
             return '<i class="fa fa-'.$fa_name.' icon '.$class.'"></i>';
         }
     }
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  Tooltips
+/*-----------------------------------------------------------------------------------*/
+function rypecore_tooltip($toggle, $content, $class = null) {
+    $output = '';
+    $output .= '<div class="rc-tooltip '.$class.'">';
+    $output .= '<div class="rc-tooltip-toggle">'.$toggle.'</div>';
+    $output .= '<div class="rc-tooltip-content"><div class="rc-tooltip-content-inner">'.$content.'</div></div>';
+    $output .= '</div>';
+    return $output;
 }
 
 /*-----------------------------------------------------------------------------------*/

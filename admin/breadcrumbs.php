@@ -1,7 +1,7 @@
 <?php
 
 // Breadcrumbs
-function rypecore_breadcrumbs() {
+function rypecore_breadcrumbs($page_banner_title_align) {
        
     // Settings
     $separator          = '&gt;';
@@ -14,10 +14,23 @@ function rypecore_breadcrumbs() {
        
     // Get the query & post information
     global $post,$wp_query;
+
+    // Set alignment
+    if($page_banner_title_align == 'right') { 
+        $align_class = 'right'; 
+    } else if($page_banner_title_align == 'center') { 
+        $align_class = 'center'; 
+    } else { 
+        $align_class = 'left'; 
+    }
        
     // Do not display on the homepage
     if ( !is_front_page() ) {
-       
+
+        echo '<div class="breadcrumb-container">';
+        echo '<div class="container">';
+        echo '<div class="'.$align_class.'">';
+
         // Build the breadcrums
         echo '<ul id="' . $breadcrums_id . '" class="' . $breadcrums_class . '">';
            
@@ -231,6 +244,9 @@ function rypecore_breadcrumbs() {
         }
        
         echo '</ul>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
            
     }
        
