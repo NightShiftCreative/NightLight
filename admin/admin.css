@@ -33,6 +33,7 @@
 .admin-module-label { width:25%; font-size:13px; font-weight:700; padding-right:3%; vertical-align:top; }
 .admin-module-label label { margin-bottom:0; }
 .admin-module-field { width:75%; }
+.admin-module-field p { margin:6px 0px; }
 
 .admin-module input,
 .admin-module select,
@@ -308,37 +309,6 @@
 .favicon-preview { width:20px; }
 
 .rc-theme-options .reset-fonts { display:block; margin-top:10px; }
-
-/** SORTABLE **/
-.sortable-item {
-    border:1px solid #d4dce1;
-    border-radius:3px;
-    margin-bottom:20px;
-    padding:14px;
-    position:relative;
-    cursor:move;
-    background: #ffffff; /* Old browsers */
-    background: -moz-linear-gradient(top, #ffffff 0%, #e2eaec 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #ffffff 0%,#e2eaec 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #ffffff 0%,#e2eaec 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e2eaec',GradientType=0 ); /* IE6-9 */
-}
-
-.sortable-item .sortable-item-action { cursor:pointer; margin-top:11px; }
-
-.sort-arrows {
-    display:none;
-    position: absolute;
-    margin-left: -33px;
-    top:-1px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    border-right: none;
-    width: 18px;
-    height: 20px;
-    text-align: center;
-    color:#a8a8a8;
-    background:white;
-}
 
 /** TOGGLE SWITCH **/
 .toggle-switch {

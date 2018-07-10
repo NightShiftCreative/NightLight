@@ -135,67 +135,6 @@ jQuery(document).ready(function($) {
     /***************************************************************************/
     $(".admin-module select").chosen({disable_search_threshold: 5});
 
-	/********************************************/
-	/* MORE INFO */
-	/********************************************/
-	$( ".more-info" ).hover(
-	  function() {
-	    $( this ).find('.more-info-content').stop(true, true).fadeIn();
-	  }, function() {
-	    $( this ).find('.more-info-content').stop(true, true).fadeOut();
-	  }
-	);
-	
-	/********************************************/
-	/* SORTABLE ITEMS */
-	/********************************************/
-	$('.sortable-item').mouseover(function() {
-		$(this).find('.sort-arrows').stop(true, true).show();
-	});
-	$('.sortable-item').mouseout(function() {
-		$(this).find('.sort-arrows').stop(true, true).hide();
-	});
-	
-	$(document).ready(function () {
-		$('.sortable-list').sortable({
-			axis: 'y',
-			curosr: 'move',
-            distance: 10,
-            update: function(event, ui) {
-	        	$(this).closest('.widget-inside').find('.widget-control-save').removeAttr('disabled');
-	        	$(this).closest('.widget-inside').find('.widget-control-save').val(rypecore_local_script.save_text);
-	        }
-		});
-	});
-
-	$(document).on('widget-updated', function(e, widget){
-	    $('.sortable-list').sortable({
-			axis: 'y',
-			curosr: 'move',
-            distance: 10,
-            update: function(event, ui) {
-	        	$(this).closest('.widget-inside').find('.widget-control-save').removeAttr('disabled');
-	        	$(this).closest('.widget-inside').find('.widget-control-save').val(rypecore_local_script.save_text);
-	        }
-		});
-	});
-
-    /********************************************/
-    /* SORTABLE ITEM SETTINGS */
-    /********************************************/
-    $(document).on('click','.advanced-options-toggle', function (event) { 
-        event.preventDefault();
-        var settingsID = $(this).attr('href');
-        var link = $(this);
-        $(settingsID).slideToggle('fast', function() {
-            if ($(this).is(':visible')) {
-                 link.html('<i class="fa fa-gear"></i> Hide Settings');                
-            } else {
-                 link.html('<i class="fa fa-gear"></i> Additional Settings');                
-            } 
-        });
-    });
-
     /********************************************/
     /* TOGGLE SWITCH */
     /********************************************/
