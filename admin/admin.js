@@ -209,7 +209,7 @@ jQuery(document).ready(function($) {
             $(this).find('span').text(rypecore_local_script.on);
             $(this).find('span').addClass('on');
         }
-	});  
+    }); 
 
     /********************************************/
     /* CONTACT FORM ID */
