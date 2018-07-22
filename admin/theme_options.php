@@ -578,7 +578,7 @@ function rypecore_theme_options_page() {
                                 
                                     <div class="admin-module no-border admin-module-contact-form-default hide-soft <?php if($contact_form_source == 'default') { echo 'show'; } ?>">
                                         <?php if(!function_exists('rao_main_contact_form')) { 
-                                            echo '<i>You need to install and/or activate the required bundled plugin: <b>Rype Real Estate</b></i>'; 
+                                            echo '<i>You need to install and/or activate the required bundled plugin: <b>Rype Add-ons</b></i>'; 
                                         } ?>
                                     </div>
 
