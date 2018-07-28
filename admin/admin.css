@@ -14,8 +14,8 @@
 .right-bump { margin-right:25px; }
 .left-bump { margin-left:25px; }
 
-.no-padding-top { padding-top:0; }
-.no-padding-bottom { padding-bottom:0; }
+.no-padding-top, .admin-module.no-padding-top { padding-top:0; }
+.no-padding-bottom, .admin-module.no-padding-bottom { padding-bottom:0; }
 
 .sidebar-icon { float:left; width:55px; }
 
@@ -33,6 +33,9 @@
     border:1px solid #eeeeee;
 }
 .admin-module-bg h3 { padding-top:0; margin-top:0; }
+
+.admin-module.two-col .admin-module { width:48%; float:left; border:none; margin:0; padding:0; }
+.admin-module.two-col .admin-module:first-child { margin-right:2%; }
 
 .admin-module-label { width:25%; font-size:13px; font-weight:700; padding-right:3%; vertical-align:top; }
 .admin-module-label label { margin-bottom:0; }
@@ -72,7 +75,7 @@
 .admin-module input[type="radio"] { border-radius:100%; }
 .admin-module input[type=radio]:checked:before { width:10px; height:10px;  margin:6px;}
 
-.admin-module input[type="button"], .admin-button  {
+.admin-module input[type="button"], .admin-button, .wp-core-ui .button.admin-button {
     border:none;
     border-bottom:2px solid #3c3782;
     background:none;
@@ -104,9 +107,30 @@
 
 .loader { margin-right:10px; margin-top:38px; float:right; display:none; }
 
+/** ALERT BOX **/
+.admin-alert-box {
+    background:#d7ecc7;
+    color:#709058;
+    border-left:3px solid #709058;
+    padding:20px;
+    border-radius:0px 4px 4px 0px;
+}
+
+.admin-alert-box.admin-error {
+    background:#edc5c5;
+    color:#a54c4c;
+    border-color:#a54c4c;
+}
+
+.admin-alert-box.admin-info {
+    background:#c2d9eb;
+    color:#4f7da1;
+    border-color:#4f7da1;
+}
+
 /** ACCORDIONS **/
 .rc-accordion.ui-accordion { margin-bottom:20px; }
-.rc-accordion .accordion-tab .fa.fa-chevron-right { 
+.rc-accordion .accordion-tab .fa.fa-chevron-right, .rc-accordion .accordion-tab .fa.fa-chevron-down { 
     background:#d1dce2; 
     border-radius:5px 0px 0px 5px;
     width:55px;
@@ -130,7 +154,8 @@
     transition:all 0.4s;
 }
 .rc-accordion.ui-accordion .ui-accordion-header-active { background:#48429b; color:white; border-radius:5px 5px 0px 0px; }
-.rc-accordion.ui-accordion .ui-accordion-header-active .fa.fa-chevron-right { background:#36317d; color:white; border-radius:5px 0px 0px 0px; }
+.rc-accordion.ui-accordion .ui-accordion-header-active .fa.fa-chevron-right,
+.rc-accordion.ui-accordion .ui-accordion-header-active .fa.fa-chevron-down { background:#36317d; color:white; border-radius:5px 0px 0px 0px; }
 .rc-accordion.ui-accordion .ui-accordion-header .ui-icon { display:none; }
 
 .rc-accordion.ui-accordion .ui-accordion-content {
