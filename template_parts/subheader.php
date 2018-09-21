@@ -100,8 +100,8 @@
                 <?php } ?>      
     		</h1>
 
-            <!-- RYPE ADD-ONS HOOK -->
-            <?php do_action( 'rao_after_subheader_title', $values); ?>
+            <!-- RYPE BASICS HOOK -->
+            <?php do_action( 'rype_basics_after_subheader_title', $values); ?>
         </div>
 
         <!-- SEARCH FILTER -->

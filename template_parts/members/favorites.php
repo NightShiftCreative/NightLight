@@ -27,9 +27,9 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 		?>
 
 		<h4>
-			<?php if(function_exists('rao_show_user_likes_count')) {
-			    $show_user_likes_count = rao_show_user_likes_count($current_user); 
-			    echo rao_sl_format_count($show_user_likes_count );
+			<?php if(function_exists('rype_basics_show_user_likes_count')) {
+			    $show_user_likes_count = rype_basics_show_user_likes_count($current_user); 
+			    echo rype_basics_sl_format_count($show_user_likes_count );
 			} ?>
 			<?php esc_html_e('Favorites', 'rypecore'); ?>
 		</h4>
@@ -60,7 +60,7 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	        		<td class="favorites-listing-type"><?php echo $post_type; ?></td>
 	        		<td class="user-dashboard-table-actions favorites-listing-actions">
 	        			<a href="<?php the_permalink(); ?>"><?php echo rypecore_get_icon($icon_set, 'eye', 'eye', 'preview'); ?><?php esc_html_e('View', 'rypecore'); ?></a>
-	        			<?php if(function_exists('rao_get_post_likes_button')) { echo rao_get_post_likes_button(get_the_ID()).' Unlike'; } ?>
+	        			<?php if(function_exists('rype_basics_get_post_likes_button')) { echo rype_basics_get_post_likes_button(get_the_ID()).' Unlike'; } ?>
 	        		</td>
 	        	</tr>
 		    <?php endwhile; ?>
@@ -93,8 +93,8 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 		        <?php wp_reset_postdata(); ?>
 		    <?php endif; ?>
 
-		<!-- hook in for Rype Add-Ons -->
-        <?php do_action( 'rao_after_favorites'); ?>
+		<!-- hook in for Rype Basics -->
+        <?php do_action( 'rype_basics_after_favorites'); ?>
 
 	<?php } else {
         get_template_part('template_parts/members/alert_not_logged_in');

@@ -19,7 +19,7 @@
                                         <ul class="blog-post-details">
                                             <li><?php echo rypecore_get_icon($icon_set, 'user'); ?><?php esc_html_e('Posted by', 'rypecore'); ?> <?php the_author_link(); ?> <?php esc_html_e('in', 'rypecore'); ?> <?php the_category(', '); ?></li>
                                             <li><?php echo rypecore_get_icon($icon_set, 'comment', 'bubble-dots', 'pencil'); ?><?php comments_number(); ?></li>
-                                            <?php do_action( 'rao_after_post_meta'); ?>
+                                            <?php do_action( 'rype_basics_after_post_meta'); ?>
                                         </ul>
                                         <?php 
                                         if(is_single()) { 

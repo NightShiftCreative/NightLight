@@ -2,7 +2,6 @@
 
 // create settings menu
 add_action('admin_menu', 'rypecore_theme_options_create_menu');
-
 function rypecore_theme_options_create_menu() {
 
     //create new top-level menu
@@ -24,11 +23,6 @@ function register_rypecore_theme_options() {
     register_setting( 'rypecore-settings-group', 'rypecore_preloader_img' );
     register_setting( 'rypecore-settings-group', 'rypecore_heading_font' );
     register_setting( 'rypecore-settings-group', 'rypecore_body_font' );
-    register_setting( 'rypecore-settings-group', 'rypecore_google_maps_api' );
-    register_setting( 'rypecore-settings-group', 'rypecore_home_default_map_zoom' );
-    register_setting( 'rypecore-settings-group', 'rypecore_home_default_map_latitude' );
-    register_setting( 'rypecore-settings-group', 'rypecore_home_default_map_longitude' );
-    register_setting( 'rypecore-settings-group', 'rypecore_google_maps_pin' );
 
     //register contact & social
     register_setting( 'rypecore-settings-group', 'rypecore_phone' );
@@ -131,7 +125,7 @@ function register_rypecore_theme_options() {
     register_setting( 'rypecore-settings-group', 'rypecore_num_decimal' );
 
     //register add-on settings
-    do_action( 'rao_theme_option_register_settings');
+    do_action( 'rype_basics_theme_option_register_settings');
 }
 
 function rypecore_theme_options_page() {
@@ -197,7 +191,7 @@ function rypecore_theme_options_page() {
                         <li><a href="#footer" title="<?php echo esc_html_e('Footer', 'rypecore'); ?>"><div class="header-icon"><div class="header-icon-content"></div><div class="header-icon-head"></div></div> <span class="ui-tab-text"><?php echo esc_html_e('Footer', 'rypecore'); ?></span><div class="clear"></div></a></li>
                         <li><a href="#styling" title="<?php echo esc_html_e('Styling', 'rypecore'); ?>"><i class="fa fa-tint"></i> <span class="ui-tab-text"><?php echo esc_html_e('Styling', 'rypecore'); ?></span></a></li>
                         <li><a href="#currency" title="<?php echo esc_html_e('Currency & Numbers', 'rypecore'); ?>"><i class="fa fa-money"></i> <span class="ui-tab-text"><?php echo esc_html_e('Currency & Numbers', 'rypecore'); ?></span></a></li>
-                        <?php do_action( 'rao_after_theme_option_menu'); ?>
+                        <?php do_action( 'rype_basics_after_theme_option_menu'); ?>
                     </ul>
                 </td>
 
@@ -354,69 +348,6 @@ function rypecore_theme_options_page() {
                                 </tr>
                             </table>
                         </div>
-
-                        <br/><br/><h3><?php esc_html_e('Google Maps Settings', 'rypecore'); ?></h3>
-
-                        <table class="admin-module">
-                            <tr>
-                                <td class="admin-module-label">
-                                    <label><?php esc_html_e('Google Maps API Key', 'rypecore'); ?></label>
-                                    <div class="admin-module-note"><?php echo wp_kses_post(__('Provide your unique Google maps API key. <a target="_blank" href="https://developers.google.com/maps/documentation/javascript/get-api-key">Click here</a> to get a key.', 'rypecore')); ?></div>
-                                </td>
-                                <td class="admin-module-field">
-                                    <input type="text" id="google_maps_api" name="rypecore_google_maps_api" value="<?php echo esc_attr( get_option('rypecore_google_maps_api') ); ?>" />
-                                </td>
-                            </tr>
-                        </table>
-
-                        <table class="admin-module">
-                            <tr>
-                                <td class="admin-module-label">
-                                    <label><?php esc_html_e('Default Map Zoom', 'rypecore'); ?></label>
-                                    <div class="admin-module-note"><?php echo esc_html_e('The map zoom ranges from 1 - 19. Zoom level 1 being the most zoomed out.', 'rypecore'); ?></div>
-                                </td>
-                                <td class="admin-module-field">
-                                    <input type="number" min="1" max="19" id="home_default_map_zoom" name="rypecore_home_default_map_zoom" value="<?php echo esc_attr( get_option('rypecore_home_default_map_zoom', 10) ); ?>" />
-                                </td>
-                            </tr>
-                        </table>
-
-                        <table class="admin-module">
-                            <tr>
-                                <td class="admin-module-label">
-                                    <label><?php esc_html_e('Default Map Latitude', 'rypecore'); ?></label>
-                                </td>
-                                <td class="admin-module-field">
-                                    <input type="text" id="home_default_map_latitude" name="rypecore_home_default_map_latitude" value="<?php echo esc_attr( get_option('rypecore_home_default_map_latitude', 39.2904) ); ?>" />
-                                </td>
-                            </tr>
-                        </table>
-
-                        <table class="admin-module">
-                            <tr>
-                                <td class="admin-module-label">
-                                    <label><?php esc_html_e('Default Map Longitude', 'rypecore'); ?></label>
-                                </td>
-                                <td class="admin-module-field">
-                                    <input type="text" id="home_default_map_longitude" name="rypecore_home_default_map_longitude" value="<?php echo esc_attr( get_option('rypecore_home_default_map_longitude', -76.5000) ); ?>" />
-                                </td>
-                            </tr>
-                        </table>
-
-                        <table class="admin-module no-border">
-                            <tr>
-                                <td class="admin-module-label">
-                                    <label><?php esc_html_e('Custom Pin Image', 'rypecore'); ?></label>
-                                    <div class="admin-module-note"><?php echo esc_html_e('Replace the default map pin with a custom image. Recommended size: 50x50 pixels.', 'rypecore'); ?></div>
-                                </td>
-                                <td class="admin-module-field">
-                                    <input type="text" id="google_maps_pin" name="rypecore_google_maps_pin" value="<?php echo esc_attr( get_option('rypecore_google_maps_pin') ); ?>" />
-                                    <input id="_btn" class="upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'rypecore'); ?>" />
-                                    <span class="button-secondary remove"><?php echo esc_html_e('Remove', 'rypecore'); ?></span>
-                                </td>
-                            </tr>
-                        </table>
-                        
                     </div><!-- end general -->
 
                     <div id="contact" class="tab-content">
@@ -577,7 +508,7 @@ function rypecore_theme_options_page() {
                                     <label for="contact_form_source_contact_7"><?php echo esc_html_e('Contact Form 7 Plugin', 'rypecore'); ?></label>
                                 
                                     <div class="admin-module no-border admin-module-contact-form-default hide-soft <?php if($contact_form_source == 'default') { echo 'show'; } ?>">
-                                        <?php if(!function_exists('rao_main_contact_form')) { 
+                                        <?php if(!function_exists('rype_basics_main_contact_form')) { 
                                             echo '<i>You need to install and/or activate the required bundled plugin: <b>Rype Add-ons</b></i>'; 
                                         } ?>
                                     </div>
@@ -1013,7 +944,7 @@ function rypecore_theme_options_page() {
                         </table>
 
                         <!-- hook in for other add-ons -->
-                        <?php do_action( 'rao_after_page_banner_theme_options'); ?>
+                        <?php do_action( 'rype_basics_after_page_banner_theme_options'); ?>
                         
                     </div><!-- end page banner -->
 
@@ -1145,8 +1076,8 @@ function rypecore_theme_options_page() {
                             </tr>
                         </table>
 
-                        <!-- hook in for Rype Add-Ons -->
-                        <?php do_action('rao_after_member_theme_options'); ?>
+                        <!-- hook in for Rype Basics -->
+                        <?php do_action('rype_basics_after_member_theme_options'); ?>
 
                     </div><!-- end members -->
 
@@ -1446,7 +1377,7 @@ function rypecore_theme_options_page() {
                         </table>
                     </div>
 
-                    <?php do_action( 'rao_after_theme_option_content'); ?>
+                    <?php do_action( 'rype_basics_after_theme_option_content'); ?>
 
                 </td>
             </tr>

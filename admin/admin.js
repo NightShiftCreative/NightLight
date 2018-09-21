@@ -117,8 +117,6 @@ jQuery(document).ready(function($) {
 				$(this).find('.icon').removeClass('fa-chevron-down');
 				$(this).find('.icon').addClass('fa-chevron-right');
 			}
-			
-			
 		});
 	});
 

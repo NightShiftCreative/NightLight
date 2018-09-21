@@ -61,7 +61,7 @@
   .sidebar, .sidebar-left { padding-left:15px; padding-right:15px; }
 
   /** FOOTER **/
-  .footer-widget { margin-bottom:50px; }
+  .widget-footer { margin-bottom:50px; }
   footer h4 { margin-bottom:20px; }
 
 }

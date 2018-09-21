@@ -9,17 +9,17 @@
     	<div class="user-dashboard-widget stat">
             <span>
                 <?php 
-                if(function_exists('rao_show_user_likes_count')) {
-                    $show_user_likes_count = rao_show_user_likes_count($current_user); 
-                    echo rao_sl_format_count($show_user_likes_count );
+                if(function_exists('rype_basics_show_user_likes_count')) {
+                    $show_user_likes_count = rype_basics_show_user_likes_count($current_user); 
+                    echo rype_basics_sl_format_count($show_user_likes_count );
                 } else { echo '0'; }
                 ?>
             </span> 
             <?php esc_html_e('Favorites', 'rypecore'); ?>
         </div>
 
-        <!-- hook in for Rype Add-Ons -->
-        <?php do_action( 'rao_after_dashboard'); ?>
+        <!-- hook in for Rype Basics -->
+        <?php do_action( 'rype_basics_after_dashboard'); ?>
 
 	<?php } else {
         get_template_part('template_parts/members/alert_not_logged_in');

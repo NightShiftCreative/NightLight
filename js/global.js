@@ -83,7 +83,7 @@ jQuery(document).ready(function($) {
     //ACCORDIONS
     /***************************************************************************/
     $(function() {
-        $( "#accordion" ).accordion({
+        $( ".accordion" ).accordion({
             heightStyle: "content",
             closedSign: '<i class="fa fa-minus"></i>',
             openedSign: '<i class="fa fa-plus"></i>'

@@ -17,8 +17,8 @@ add_theme_support( 'title-tag' ); //Add Title Tag Support
 add_theme_support( 'post-thumbnails' ); //Add post thumbnail support
 add_image_size( 'listing-thumbnail', 200, 200, array( 'center', 'center' ) );
 add_image_size( 'listing-thumbnail-small', 150, 100, false );
-add_theme_support( 'rype-add-ons' ); //Rype Add-Ons support
-do_action('rao_theme_support');
+add_theme_support( 'rype-basics' ); //Rype Basics support
+do_action('rype_basics_theme_support');
 
 /*-----------------------------------------------------------------------------------*/
 /*  Require bundled plugins (using TGM activation)
@@ -31,13 +31,14 @@ function rypecore_register_required_plugins() {
 
     $plugins = array(
         array(
-            'name'         => 'Rype Add-ons', // The plugin name.
-            'slug'         => 'rype-add-ons', // The plugin slug (typically the folder name).
-            'source'       => 'https://github.com/RypeCreative/Rype-Add-Ons/archive/1.0.0.zip', // The plugin source.
+            'name'         => 'Rype Basics', // The plugin name.
+            'slug'         => 'rype-basics', // The plugin slug (typically the folder name).
+            'source'       => 'https://github.com/RypeCreative/Rype-Basics/archive/1.0.0.zip', // The plugin source.
             'required'     => true, // If false, the plugin is only 'recommended' instead of required.
             'version'      => '1.0.0',
             'force_activation'   => false,
             'force_deactivation' => false,
+            'external_url' => 'http://rypecreative.com',
         ),
     );
 
@@ -62,15 +63,12 @@ function rypecore_register_required_plugins() {
 function rypecore_admin_scripts() {
     if (is_admin()) {
 
-        $google_maps_api = esc_attr(get_option('rypecore_google_maps_api'));
-
         //custom scripts
 		wp_enqueue_script('rypecore-admin-js', get_template_directory_uri() . '/admin/admin.js', array('jquery','media-upload','thickbox', 'wp-color-picker'), '', true);
 		wp_enqueue_style('rypecore-admin-css',  get_template_directory_uri() . '/admin/admin.css', array(), '3.0', 'all');
     	wp_enqueue_style('font-awesome',  get_template_directory_uri() . '/css/font-awesome/css/font-awesome.min.css', array(), '', 'all');
         wp_enqueue_script( 'chosen', get_template_directory_uri() . '/assets/chosen-1.6.2/chosen.jquery.min.js', array( 'jquery' ), '', true );
         wp_enqueue_style('chosen',  get_template_directory_uri() . '/assets/chosen-1.6.2/chosen.min.css', array(), '', 'all');
-        wp_enqueue_script( 'rypecore-google-maps', 'https://maps.googleapis.com/maps/api/js?key='.$google_maps_api.'&libraries=places', '', '', false );
 
         //wordpress pre-loaded scripts
         if(function_exists( 'wp_enqueue_media' )) { wp_enqueue_media(); } else { wp_enqueue_script('media-upload'); }
@@ -149,8 +147,6 @@ add_action('wp_enqueue_scripts', 'rypecore_load_stylesheets');
 function rypecore_load_scripts() {
 	if (!is_admin()) {
 
-        $google_maps_api = esc_attr(get_option('rypecore_google_maps_api'));
-
 		/* Enqueue Scripts */
 		wp_enqueue_script( 'html5shiv', get_template_directory_uri() . '/js/html5shiv.js', '', '', false );
 	    wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '', true );
@@ -162,7 +158,6 @@ function rypecore_load_scripts() {
         wp_enqueue_script('jquery-ui-accordion');
         wp_enqueue_script('jquery-ui-tabs');
         wp_enqueue_script( 'rypecore-global', get_template_directory_uri() . '/js/global.js', array( 'jquery' ), '', true );
-        wp_enqueue_script( 'rypecore-google-maps', 'https://maps.googleapis.com/maps/api/js?key='.$google_maps_api.'&libraries=places', '', '', false );
 
         if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 
@@ -233,7 +228,7 @@ function rypecore_load_header_settings() {
     $header_vars['members_favorites_page'] = esc_attr(get_option('rypecore_members_favorites_page'));
 
     //custom filters (for rype add-ons)
-    $header_vars = apply_filters( 'rao_custom_header_vars', $header_vars);
+    $header_vars = apply_filters( 'rype_basics_custom_header_vars', $header_vars);
 
     return $header_vars;
 }
@@ -340,18 +335,6 @@ add_filter( 'body_class', function( $classes ) {
     $global_bg_display = rypecore_bgDisplay(esc_attr(get_option('rypecore_global_bg_display')));
     return array_merge( $classes, array($global_bg_display) );
 } );
-
-/* Add Google Maps API Key notice */
-function rypecore_add_google_maps_api_notice() {
-    $google_maps_api = esc_attr(get_option('rypecore_google_maps_api'));
-
-    if(empty($google_maps_api)) {
-        $class = 'notice notice-error is-dismissible';
-        $message = wp_kses_post(__( 'Google Maps <strong>requires</strong> an API key! Please provide your key in the theme options. If you do not have one, <a href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank">click here</a>.', 'rypecore' ));
-        printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), $message ); 
-    }
-}
-add_action( 'admin_notices', 'rypecore_add_google_maps_api_notice' );
 
 /*-----------------------------------------------------------------------------------*/
 /*  Gets Page ID
@@ -567,7 +550,7 @@ function rypecore_generate_page_banner($values) {
     $banner_shortcode = isset( $values['rypecore_banner_shortcode'] ) ? $values['rypecore_banner_shortcode'][0] : '';
     
     if($banner_display == 'true') {
-        do_action( 'rao_before_page_banner', $values);
+        do_action( 'rype_basics_before_page_banner', $values);
         if($banner_source == 'slides' ) {
             rypecore_get_template_part('template_parts/banner_slider', ['post_id' => $page_id]); 
         } else if($banner_source == 'shortcode') {
@@ -575,9 +558,9 @@ function rypecore_generate_page_banner($values) {
         } else if($banner_source == 'image_banner') {
             get_template_part('template_parts/subheader'); 
         } else {
-            do_action( 'rao_custom_banner_source', $banner_source);
+            do_action( 'rype_basics_custom_banner_source', $banner_source);
         }
-        do_action( 'rao_after_page_banner', $values);
+        do_action( 'rype_basics_after_page_banner', $values);
     }
 }
 
@@ -634,18 +617,6 @@ if( !function_exists('rypecore_get_icon') ){
             return '<i class="fa fa-'.$fa_name.' icon '.$class.'"></i>';
         }
     }
-}
-
-/*-----------------------------------------------------------------------------------*/
-/*  Tooltips
-/*-----------------------------------------------------------------------------------*/
-function rypecore_tooltip($toggle, $content, $class = null) {
-    $output = '';
-    $output .= '<div class="rc-tooltip '.$class.'">';
-    $output .= '<div class="rc-tooltip-toggle">'.$toggle.'</div>';
-    $output .= '<div class="rc-tooltip-content"><div class="rc-tooltip-content-inner">'.$content.'</div></div>';
-    $output .= '</div>';
-    return $output;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -762,20 +733,6 @@ function rypecore_comment_list($comment, $args, $depth) {
 			</div>
 		</div><!-- end row -->
 	<?php
-}
-
-/*  Returns formatted price */
-function rypecore_format_price($price) {
-    $currency_symbol = get_option('rypecore_currency_symbol', '$');
-    $currency_symbol_position = get_option('rypecore_currency_symbol_position', 'before');
-    $currency_thousand = get_option('rypecore_thousand_separator', ',');
-    $currency_decimal = get_option('rypecore_decimal_separator', '.');
-    $currency_decimal_num = get_option('rypecore_num_decimal', '0');
-
-    if(!empty($price)) { $price = number_format($price, $currency_decimal_num, $currency_decimal, $currency_thousand); }
-    if($currency_symbol_position == 'before') { $price = $currency_symbol.$price; } else { $price = $price.$currency_symbol; }
-
-    return $price;
 }
 
 /*-----------------------------------------------------------------------------------*/

@@ -24,7 +24,7 @@
     padding:20px 0px;
     border-bottom:1px solid rgba(0, 0, 0, 0.08);
 }
-.admin-module.no-border { border:none; }
+.admin-module.no-border, .admin-module:last-child { border:none; }
 
 .admin-module-bg {
     background:#f8f8f8;
@@ -56,7 +56,8 @@
     border-radius: 4px;
 }
 
-.admin-module .chosen-container-single { min-width:200px; }
+.admin-module .chosen-container-single { width:auto !important; min-width:200px; }
+.admin-module .chosen-container-single .chosen-single { width:100%; }
 .admin-module .chosen-container-single .chosen-single div { margin-top:10px; }
 .admin-module .chosen-container-active.chosen-with-drop .chosen-single { background:white; }
 .admin-module .chosen-container-active.chosen-with-drop .chosen-single div b { background-position:-16px 2px; }
@@ -212,6 +213,7 @@ input[type=checkbox].toggle-switch-checkbox { display: none; }
     border-radius:3px;
     padding:20px 10px;
     width:21%;
+    min-height:115px;
     display:inline-block;
     text-align:center;
     margin-right:1%;
@@ -230,7 +232,14 @@ input[type=checkbox].toggle-switch-checkbox { display: none; }
 #map-canvas-one-pin { max-width:100%; height:250px; }
 #latitude-input, #longitude-input { width:100%; }
 .remove-pin { margin-top: 22px; }
-#pac-input { margin-top:10px; padding:10px; background:white; }
+#pac-input { 
+    margin-top:10px; 
+    padding:9px; 
+    background:white;
+    box-shadow:none;
+    width:80%;
+    border:1px solid rgba(0, 0, 0, 0.1); 
+}
 
 .admin-module-company-location .admin-module { float:left; width:36%; padding-top:0; }
 .admin-module-company-location .admin-module:first-child { margin-right:2%; }

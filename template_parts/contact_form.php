@@ -19,8 +19,8 @@ $contact_form_id = esc_attr(get_option('rypecore_contact_form_id'));
     echo do_shortcode('[contact-form-7 id="'. $contact_form_id .'" title="'.esc_attr($contact_form_title).'"]');
 } else {
 
-    if(function_exists('rao_main_contact_form')) {
-        rao_main_contact_form(); 
+    if(function_exists('rype_basics_main_contact_form')) {
+        rype_basics_main_contact_form(); 
     } else {
         esc_html_e('Please install required plugins to display the contact form.', 'rypecore');
     }
