@@ -117,13 +117,6 @@ function register_rypecore_theme_options() {
     register_setting( 'rypecore-settings-group', 'rypecore_style_bottom_bar_bg' );
     register_setting( 'rypecore-settings-group', 'rypecore_style_bottom_bar_text' );
 
-    //register currency settings
-    register_setting( 'rypecore-settings-group', 'rypecore_currency_symbol' );
-    register_setting( 'rypecore-settings-group', 'rypecore_currency_symbol_position' );
-    register_setting( 'rypecore-settings-group', 'rypecore_thousand_separator' );
-    register_setting( 'rypecore-settings-group', 'rypecore_decimal_separator' );
-    register_setting( 'rypecore-settings-group', 'rypecore_num_decimal' );
-
     //register add-on settings
     do_action( 'rype_basics_theme_option_register_settings');
 }
@@ -190,7 +183,6 @@ function rypecore_theme_options_page() {
                         <li><a href="#members" title="<?php echo esc_html_e('Members', 'rypecore'); ?>"><i class="fa fa-key"></i> <span class="ui-tab-text"><?php echo esc_html_e('Members', 'rypecore'); ?></span></a></li>
                         <li><a href="#footer" title="<?php echo esc_html_e('Footer', 'rypecore'); ?>"><div class="header-icon"><div class="header-icon-content"></div><div class="header-icon-head"></div></div> <span class="ui-tab-text"><?php echo esc_html_e('Footer', 'rypecore'); ?></span><div class="clear"></div></a></li>
                         <li><a href="#styling" title="<?php echo esc_html_e('Styling', 'rypecore'); ?>"><i class="fa fa-tint"></i> <span class="ui-tab-text"><?php echo esc_html_e('Styling', 'rypecore'); ?></span></a></li>
-                        <li><a href="#currency" title="<?php echo esc_html_e('Currency & Numbers', 'rypecore'); ?>"><i class="fa fa-money"></i> <span class="ui-tab-text"><?php echo esc_html_e('Currency & Numbers', 'rypecore'); ?></span></a></li>
                         <?php do_action( 'rype_basics_after_theme_option_menu'); ?>
                     </ul>
                 </td>
@@ -1326,56 +1318,6 @@ function rypecore_theme_options_page() {
                         </div>
 
                     </div><!-- end styling -->
-
-                    <div id="currency" class="tab-content">
-                        <h2><?php echo esc_html_e('Currency & Numbers', 'rypecore'); ?></h2>
-
-                        <?php
-                        $currency_symbol_default = '$';
-                        $currency_symbol_position_default = 'before';
-                        $thousand_separator_default = ',';
-                        $decimal_separator_default = '.';
-                        $num_decimal_default = '0';
-                        ?>
-
-                        <table class="admin-module">
-                            <tr>
-                                <td class="admin-module-label"><label><?php echo esc_html_e('Currency Symbol', 'rypecore'); ?></label></td>
-                                <td class="admin-module-field"><input type="text" id="currency_symbol" name="rypecore_currency_symbol" value="<?php echo esc_attr( get_option('rypecore_currency_symbol', $currency_symbol_default) ); ?>" /></td>
-                            </tr>
-                        </table>
-
-                        <table class="admin-module">
-                            <tr>
-                                <td class="admin-module-label"><label><?php echo esc_html_e('Currency Symbol Position', 'rypecore'); ?></label></td>
-                                <td class="admin-module-field">
-                                    <p><input type="radio" id="currency_symbol_position" name="rypecore_currency_symbol_position" value="before" <?php if(esc_attr( get_option('rypecore_currency_symbol_position', $currency_symbol_position_default)) == 'before') { echo 'checked'; } ?> /><?php echo esc_html_e('Display before price', 'rypecore'); ?></p>
-                                    <p><input type="radio" id="currency_symbol_position" name="rypecore_currency_symbol_position" value="after" <?php if(esc_attr( get_option('rypecore_currency_symbol_position', $currency_symbol_position_default)) == 'after') { echo 'checked'; } ?> /><?php echo esc_html_e('Display after price', 'rypecore'); ?></p>
-                                </td>
-                            </tr>
-                        </table>
-
-                        <table class="admin-module">
-                            <tr>
-                                <td class="admin-module-label"><label><?php echo esc_html_e('Thousand Separator', 'rypecore'); ?></label></td>
-                                <td class="admin-module-field"><input type="text" id="thousand_separator" name="rypecore_thousand_separator" value="<?php echo esc_attr( get_option('rypecore_thousand_separator', $thousand_separator_default) ); ?>" /></td>
-                            </tr>
-                        </table>
-
-                        <table class="admin-module">
-                            <tr>
-                                <td class="admin-module-label"><label><?php echo esc_html_e('Decimal Separator', 'rypecore'); ?></label></td>
-                                <td class="admin-module-field"><input type="text" id="decimal_separator" name="rypecore_decimal_separator" value="<?php echo esc_attr( get_option('rypecore_decimal_separator', $decimal_separator_default) ); ?>" /></td>
-                            </tr>
-                        </table>
-
-                        <table class="admin-module no-border">
-                            <tr>
-                                <td class="admin-module-label"><label for="num_decimal"><?php echo esc_html_e('Number of Decimals', 'rypecore'); ?></label></td>
-                                <td class="admin-module-field"><input type="number" min="0" max="5" id="num_decimal" name="rypecore_num_decimal" value="<?php echo esc_attr( get_option('rypecore_num_decimal', $num_decimal_default) ); ?>" /></td>
-                            </tr>
-                        </table>
-                    </div>
 
                     <?php do_action( 'rype_basics_after_theme_option_content'); ?>
 
