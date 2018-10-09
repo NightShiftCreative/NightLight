@@ -307,7 +307,7 @@ input[type="file"] {
 
 .chosen-container { margin-bottom:20px; width:100% !important; }
 .chosen-container.chosen-with-drop .chosen-single { border:1px solid rgba(0, 0, 0, 0.1); background:white; }
-.chosen-container .chosen-single {
+.chosen-container .chosen-single, .chosen-container-multi .chosen-choices {
 	border:1px solid rgba(0, 0, 0, 0.1);
 	box-shadow:none;
 	border-radius:3px;
@@ -475,6 +475,7 @@ textarea.border,
 	padding:20px;
 	font-size:18px;
 	background:white;
+	cursor:pointer;
 }
 .ui-accordion .ui-accordion-header-active { margin-bottom:0; color:white; background:#59aee9; }
 .ui-accordion .ui-accordion-content-active { margin-bottom:25px; }
@@ -483,7 +484,6 @@ textarea.border,
 .accordion-footer { font-style:italic; font-size:12px; }
 .accordion-footer a { color:#04d2c8; font-weight:600; margin-left:8px; margin-right:8px; }
 
-.ui-accordion .ui-accordion-header { cursor:pointer; }
 .ui-accordion .ui-accordion-header:before {
     content: "\f105";
     font-family: FontAwesome;
@@ -584,14 +584,14 @@ textarea.border,
 .video-cover-no-img { min-height:300px; }
 
 /** TOOLTIPS **/
-.rc-tooltip { display:inline-block; position:relative; }
-.rc-tooltip-toggle { cursor:pointer; }
+.rype-tooltip { display:inline-block; position:relative; }
+.rype-tooltip-toggle { cursor:pointer; }
 
-.rc-tooltip:hover .rc-tooltip-content { opacity:1; height:auto;}
-.rc-tooltip:hover .rc-tooltip-content-inner { margin-top:10px; }
-.rc-tooltip:hover .rc-tooltip-content-inner:before { top:-4px; }
+.rype-tooltip:hover .rype-tooltip-content { opacity:1; height:auto;}
+.rype-tooltip:hover .rype-tooltip-content-inner { margin-top:10px; }
+.rype-tooltip:hover .rype-tooltip-content-inner:before { top:-4px; }
 
-.rc-tooltip .rc-tooltip-content { 
+.rype-tooltip .rype-tooltip-content { 
 	opacity:0;
 	height:0;
 	overflow:hidden;
@@ -604,7 +604,7 @@ textarea.border,
     transform:translateX(-50%);
     transition:all 0.4s;
 }
-.rc-tooltip .rc-tooltip-content-inner {
+.rype-tooltip .rype-tooltip-content-inner {
 	background:white;
 	border:1px solid rgba(0, 0, 0, 0.14);
 	border-top:2px solid #d15d33;
@@ -620,7 +620,7 @@ textarea.border,
     line-height:normal;
     transition:all 0.4s;
 }
-.rc-tooltip .rc-tooltip-content-inner:before {
+.rype-tooltip .rype-tooltip-content-inner:before {
     content: ' ';
     height: 0;
     position: absolute;
