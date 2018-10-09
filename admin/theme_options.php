@@ -618,7 +618,7 @@ function rypecore_theme_options_page() {
 
                         <div class="admin-module admin-module-header-style no-border">
                             <label style="font-weight:700;"><?php echo esc_html_e('Select a header style', 'rypecore'); ?></label><br/>
-                            <?php $header_style = get_option('rypecore_header_style', 'transparent'); ?>
+                            <?php $header_style = get_option('rypecore_header_style', 'default'); ?>
                             <label class="selectable-item <?php if($header_style == 'default') { echo 'active'; } ?>" for="header_style_default">
                                 <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/admin/images/default-header.png" alt="" /><br/>
                                 <input type="radio" id="header_style_default" name="rypecore_header_style" value="default" <?php checked('default', $header_style, true) ?> />
