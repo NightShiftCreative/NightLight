@@ -1059,9 +1059,9 @@ header.header-default.navbar-fixed { position:relative; }
 .blog-post-details > li { margin-right:13px; font-size:13px; color:#9eaab2; list-style:none !important; display:inline; }
 .blog-post-details > li:first-child { margin-left:0 !important; }
 
-.post-share .rc-tooltip-content ul { margin:0 !important; position:relative; }
-.post-share .rc-tooltip-content ul li { display:inline-block; width:auto; margin:0; position:static !important;}
-.post-share .rc-tooltip-content ul li a { 
+.post-share .rype-tooltip-content ul { margin:0 !important; position:relative; }
+.post-share .rype-tooltip-content ul li { display:inline-block; width:auto; margin:0; position:static !important;}
+.post-share .rype-tooltip-content ul li a { 
     padding:0px 4px !important;
     display:block; 
     border-right:1px solid rgba(255, 255, 255, 0.2);
