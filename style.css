@@ -905,8 +905,8 @@ header.header-default.navbar-fixed { position:relative; }
 	background:#8d92a4 url(images/page-banner-default.jpg) no-repeat center;
 	background-size:cover;
 	color:white;
-	padding-top:160px;
-	padding-bottom:40px;
+	padding-top:100px;
+	padding-bottom:100px;
 	letter-spacing:0.5px;
 	position:relative;
     z-index:1;
