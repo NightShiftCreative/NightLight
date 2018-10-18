@@ -115,6 +115,9 @@
     border-left:3px solid #709058;
     padding:13px 20px;
     border-radius:0px 4px 4px 0px;
+    margin-top:-1px;
+    position:relative;
+    z-index:1;
 }
 
 .admin-alert-box.admin-error {
@@ -128,6 +131,16 @@
     color:#4f7da1;
     border-color:#4f7da1;
 }
+
+.admin-alert-box.admin-warning {
+    background:#f9e8bf;
+    color:#c49e44;
+    border-color:#c49e44;
+}
+
+.admin-alert-close { cursor:pointer; margin-top:2px; }
+
+.admin-alert-box.settings-saved { display:none; }
 
 /** ACCORDIONS **/
 .ns-accordion.ui-accordion { margin-bottom:20px; }
@@ -241,11 +254,14 @@ input[type=checkbox].toggle-switch-checkbox { display: none; }
     border:1px solid rgba(0, 0, 0, 0.1); 
 }
 
-.admin-module-company-location .admin-module { float:left; width:36%; padding-top:0; }
+.admin-module-company-location .admin-module { float:left; width:40%; padding-top:0; }
 .admin-module-company-location .admin-module:first-child { margin-right:2%; }
 .admin-module-company-location .admin-module td { vertical-align:middle; }
 .admin-module-company-location .admin-module input { width:100%; min-width:auto; }
 .admin-module-company-location .remove-pin { margin-top:0; }
+
+#side-sortables .remove-pin { margin:5px 0px; display:block; width:100%; }
+#side-sortables .admin-module.admin-module-coordinates { width:100%; }
 /**********************************************/
 /** END GLOBAL **/
 /**********************************************/
