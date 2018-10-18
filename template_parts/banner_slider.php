@@ -1,6 +1,6 @@
 <?php
     //Global Settings
-    $icon_set = esc_attr(get_option('rypecore_icon_set', 'fa'));
+    $icon_set = esc_attr(get_option('ns_core_icon_set', 'fa'));
 
     //Page Settings
     if(!empty($template_args['post_id'])) {
@@ -8,10 +8,10 @@
     } else {
         $values = get_post_custom( $post->ID );
     }
-    $banner_source = isset( $values['rypecore_banner_source'] ) ? esc_attr( $values['rypecore_banner_source'][0] ) : 'image_banner';
-    $banner_slider_cat = isset( $values['rypecore_banner_slider_cat'] ) ? esc_attr( $values['rypecore_banner_slider_cat'][0] ) : '';
-    $banner_slider_layout = isset( $values['rypecore_banner_slider_layout'] ) ? esc_attr( $values['rypecore_banner_slider_layout'][0] ) : 'minimal';
-    $banner_slider_num = isset( $values['rypecore_banner_slider_num'] ) ? esc_attr( $values['rypecore_banner_slider_num'][0] ) : '3';
+    $banner_source = isset( $values['ns_basics_banner_source'] ) ? esc_attr( $values['ns_basics_banner_source'][0] ) : 'image_banner';
+    $banner_slider_cat = isset( $values['ns_basics_banner_slider_cat'] ) ? esc_attr( $values['ns_basics_banner_slider_cat'][0] ) : '';
+    $banner_slider_layout = isset( $values['ns_basics_banner_slider_layout'] ) ? esc_attr( $values['ns_basics_banner_slider_layout'][0] ) : 'minimal';
+    $banner_slider_num = isset( $values['ns_basics_banner_slider_num'] ) ? esc_attr( $values['ns_basics_banner_slider_num'][0] ) : '3';
 ?>
 
 <?php
@@ -40,13 +40,13 @@
 
 			    	<?php
 				    	$slide_values = get_post_custom( $post->ID );
-                        $slide_text_align = isset( $slide_values['rypecore_slide_text_align'] ) ? esc_attr( $slide_values['rypecore_slide_text_align'][0] ) : '';
-						$slide_button_link = isset( $slide_values['rypecore_slide_button_link'] ) ? $slide_values['rypecore_slide_button_link'][0] : '';
-						$slide_button_text = isset( $slide_values['rypecore_slide_button_text'] ) ? $slide_values['rypecore_slide_button_text'][0] : 'Contact Us';	
-                        $slide_overlay = isset( $slide_values['rypecore_slide_overlay'] ) ? $slide_values['rypecore_slide_overlay'][0] : 'true';
-                        $slide_overlay_opacity = isset( $slide_values['rypecore_slide_overlay_opacity'] ) ? $slide_values['rypecore_slide_overlay_opacity'][0] : '0.25';
-                        $slide_overlay_color = isset( $slide_values['rypecore_slide_overlay_color'] ) ? $slide_values['rypecore_slide_overlay_color'][0] : '#000000';
-                        $slide_overlay_rgb = rypecore_hex2rgb($slide_overlay_color);
+                        $slide_text_align = isset( $slide_values['ns_basics_slide_text_align'] ) ? esc_attr( $slide_values['ns_basics_slide_text_align'][0] ) : '';
+						$slide_button_link = isset( $slide_values['ns_slide_button_link'] ) ? $slide_values['ns_slide_button_link'][0] : '';
+						$slide_button_text = isset( $slide_values['ns_slide_button_text'] ) ? $slide_values['ns_slide_button_text'][0] : 'Contact Us';	
+                        $slide_overlay = isset( $slide_values['ns_slide_overlay'] ) ? $slide_values['ns_slide_overlay'][0] : 'true';
+                        $slide_overlay_opacity = isset( $slide_values['ns_slide_overlay_opacity'] ) ? $slide_values['ns_slide_overlay_opacity'][0] : '0.25';
+                        $slide_overlay_color = isset( $slide_values['ns_slide_overlay_color'] ) ? $slide_values['ns_slide_overlay_color'][0] : '#000000';
+                        $slide_overlay_rgb = ns_core_hex2rgb($slide_overlay_color);
 
 			    		$url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); 
 					    
@@ -62,7 +62,7 @@
 							<div class="container">
 								<div class="slide-content">
             						<h1><?php the_title(); ?></h1>
-                                    <p class="slide-text"><?php echo rypecore_excerpt(20); ?></p>
+                                    <p class="slide-text"><?php echo ns_core_excerpt(20); ?></p>
             						<?php if(!empty($slide_button_text)) { echo '<a href="'.$slide_button_link.'" class="button alt button-icon"><i class="fa fa-angle-right"></i>'.$slide_button_text.'</a>'; } ?>
             					</div>
 							</div>
@@ -77,7 +77,7 @@
 							<div class="container">
                                 <div class="slide-content">
     								<h1><?php the_title(); ?></h1>
-                                    <p class="slide-text"><?php echo rypecore_excerpt(20); ?></p>
+                                    <p class="slide-text"><?php echo ns_core_excerpt(20); ?></p>
                                     <div class="slider-simple-buttons">
     									<?php if(!empty($slide_button_text)) { echo '<a href="'.$slide_button_link.'" class="button alt">'.$slide_button_text.'</a>'; } ?>
     								</div>
@@ -98,7 +98,7 @@
 <?php } else { ?>
 	<section class="module subheader">
 		<div class="container">
-			<p><?php echo rypecore_get_icon($icon_set, 'pencil'); ?> <?php esc_html_e('No slides have been posted yet.', 'rypecore'); ?> <?php if(is_user_logged_in()) { echo '<i><b><a target="_blank" href="'. esc_url(home_url('/')) .'wp-admin/post-new.php?post_type=slides">Click here</a> to add a new slide.</b></i>'; } ?></p>
+			<p><?php echo ns_core_get_icon($icon_set, 'pencil'); ?> <?php esc_html_e('No slides have been posted yet.', 'ns-core'); ?> <?php if(is_user_logged_in()) { echo '<i><b><a target="_blank" href="'. esc_url(home_url('/')) .'wp-admin/post-new.php?post_type=slides">Click here</a> to add a new slide.</b></i>'; } ?></p>
 		</div>
 	</section>
 <?php } ?>

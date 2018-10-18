@@ -8,7 +8,7 @@
  * or theme author for support.
  *
  * @package   TGM-Plugin-Activation
- * @version   2.6.1 for parent theme Rypecore for publication on ThemeForest
+ * @version   2.6.1 for parent theme NightLight for publication on ThemeForest
  * @link      http://tgmpluginactivation.com/
  * @author    Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright Copyright (c) 2011, Thomas Griffin
@@ -331,77 +331,77 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 			// Load class strings.
 			$this->strings = array(
-				'page_title'                      => esc_html__( 'Install Required Plugins', 'rypecore' ),
-				'menu_title'                      => esc_html__( 'Install Plugins', 'rypecore' ),
+				'page_title'                      => esc_html__( 'Install Required Plugins', 'ns-core' ),
+				'menu_title'                      => esc_html__( 'Install Plugins', 'ns-core' ),
 				/* translators: %s: plugin name. */
-				'installing'                      => esc_html__( 'Installing Plugin: %s', 'rypecore' ),
+				'installing'                      => esc_html__( 'Installing Plugin: %s', 'ns-core' ),
 				/* translators: %s: plugin name. */
-				'updating'                        => esc_html__( 'Updating Plugin: %s', 'rypecore' ),
-				'oops'                            => esc_html__( 'Something went wrong with the plugin API.', 'rypecore' ),
+				'updating'                        => esc_html__( 'Updating Plugin: %s', 'ns-core' ),
+				'oops'                            => esc_html__( 'Something went wrong with the plugin API.', 'ns-core' ),
 				'notice_can_install_required'     => _n_noop(
 					/* translators: 1: plugin name(s). */
 					'This theme requires the following plugin: %1$s.',
 					'This theme requires the following plugins: %1$s.',
-					'rypecore'
+					'ns-core'
 				),
 				'notice_can_install_recommended'  => _n_noop(
 					/* translators: 1: plugin name(s). */
 					'This theme recommends the following plugin: %1$s.',
 					'This theme recommends the following plugins: %1$s.',
-					'rypecore'
+					'ns-core'
 				),
 				'notice_ask_to_update'            => _n_noop(
 					/* translators: 1: plugin name(s). */
 					'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.',
 					'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.',
-					'rypecore'
+					'ns-core'
 				),
 				'notice_ask_to_update_maybe'      => _n_noop(
 					/* translators: 1: plugin name(s). */
 					'There is an update available for: %1$s.',
 					'There are updates available for the following plugins: %1$s.',
-					'rypecore'
+					'ns-core'
 				),
 				'notice_can_activate_required'    => _n_noop(
 					/* translators: 1: plugin name(s). */
 					'The following required plugin is currently inactive: %1$s.',
 					'The following required plugins are currently inactive: %1$s.',
-					'rypecore'
+					'ns-core'
 				),
 				'notice_can_activate_recommended' => _n_noop(
 					/* translators: 1: plugin name(s). */
 					'The following recommended plugin is currently inactive: %1$s.',
 					'The following recommended plugins are currently inactive: %1$s.',
-					'rypecore'
+					'ns-core'
 				),
 				'install_link'                    => _n_noop(
 					'Begin installing plugin',
 					'Begin installing plugins',
-					'rypecore'
+					'ns-core'
 				),
 				'update_link'                     => _n_noop(
 					'Begin updating plugin',
 					'Begin updating plugins',
-					'rypecore'
+					'ns-core'
 				),
 				'activate_link'                   => _n_noop(
 					'Begin activating plugin',
 					'Begin activating plugins',
-					'rypecore'
+					'ns-core'
 				),
-				'return'                          => esc_html__( 'Return to Required Plugins Installer', 'rypecore' ),
-				'dashboard'                       => esc_html__( 'Return to the Dashboard', 'rypecore' ),
-				'plugin_activated'                => esc_html__( 'Plugin activated successfully.', 'rypecore' ),
-				'activated_successfully'          => esc_html__( 'The following plugin was activated successfully:', 'rypecore' ),
+				'return'                          => esc_html__( 'Return to Required Plugins Installer', 'ns-core' ),
+				'dashboard'                       => esc_html__( 'Return to the Dashboard', 'ns-core' ),
+				'plugin_activated'                => esc_html__( 'Plugin activated successfully.', 'ns-core' ),
+				'activated_successfully'          => esc_html__( 'The following plugin was activated successfully:', 'ns-core' ),
 				/* translators: 1: plugin name. */
-				'plugin_already_active'           => esc_html__( 'No action taken. Plugin %1$s was already active.', 'rypecore' ),
+				'plugin_already_active'           => esc_html__( 'No action taken. Plugin %1$s was already active.', 'ns-core' ),
 				/* translators: 1: plugin name. */
-				'plugin_needs_higher_version'     => esc_html__( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'rypecore' ),
+				'plugin_needs_higher_version'     => esc_html__( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'ns-core' ),
 				/* translators: 1: dashboard link. */
-				'complete'                        => esc_html__( 'All plugins installed and activated successfully. %1$s', 'rypecore' ),
-				'dismiss'                         => esc_html__( 'Dismiss this notice', 'rypecore' ),
-				'notice_cannot_install_activate'  => esc_html__( 'There are one or more required or recommended plugins to install, update or activate.', 'rypecore' ),
-				'contact_admin'                   => esc_html__( 'Please contact the administrator of this site for help.', 'rypecore' ),
+				'complete'                        => esc_html__( 'All plugins installed and activated successfully. %1$s', 'ns-core' ),
+				'dismiss'                         => esc_html__( 'Dismiss this notice', 'ns-core' ),
+				'notice_cannot_install_activate'  => esc_html__( 'There are one or more required or recommended plugins to install, update or activate.', 'ns-core' ),
+				'contact_admin'                   => esc_html__( 'Please contact the administrator of this site for help.', 'ns-core' ),
 			);
 
 			do_action( 'tgmpa_register' );
@@ -604,8 +604,8 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			$actions['update'] = sprintf(
 				'<a href="%1$s" title="%2$s" class="edit">%3$s</a>',
 				esc_url( $this->get_tgmpa_status_url( 'update' ) ),
-				esc_attr__( 'This plugin needs to be updated to be compatible with your theme.', 'rypecore' ),
-				esc_html__( 'Update Required', 'rypecore' )
+				esc_attr__( 'This plugin needs to be updated to be compatible with your theme.', 'ns-core' ),
+				esc_html__( 'Update Required', 'ns-core' )
 			);
 
 			return $actions;
@@ -909,7 +909,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 				// Display message based on if all plugins are now active or not.
 				if ( $this->is_tgmpa_complete() ) {
-					echo '<p>', sprintf( esc_html( $this->strings['complete'] ), '<a href="' . esc_url( self_admin_url() ) . '">' . esc_html__( 'Return to the Dashboard', 'rypecore' ) . '</a>' ), '</p>';
+					echo '<p>', sprintf( esc_html( $this->strings['complete'] ), '<a href="' . esc_url( self_admin_url() ) . '">' . esc_html__( 'Return to the Dashboard', 'ns-core' ) . '</a>' ), '</p>';
 					echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 				} else {
 					echo '<p><a href="', esc_url( $this->get_tgmpa_url() ), '" target="_parent">', esc_html( $this->strings['return'] ), '</a></p>';
@@ -1016,10 +1016,10 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					if ( true === $GLOBALS['wp_filesystem']->move( $from_path, $to_path ) ) {
 						return trailingslashit( $to_path );
 					} else {
-						return new WP_Error( 'rename_failed', esc_html__( 'The remote plugin package does not contain a folder with the desired slug and renaming did not work.', 'rypecore' ) . ' ' . esc_html__( 'Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', 'rypecore' ), array( 'found' => $subdir_name, 'expected' => $desired_slug ) );
+						return new WP_Error( 'rename_failed', esc_html__( 'The remote plugin package does not contain a folder with the desired slug and renaming did not work.', 'ns-core' ) . ' ' . esc_html__( 'Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', 'ns-core' ), array( 'found' => $subdir_name, 'expected' => $desired_slug ) );
 					}
 				} elseif ( empty( $subdir_name ) ) {
-					return new WP_Error( 'packaged_wrong', esc_html__( 'The remote plugin package consists of more than one file, but the files are not packaged in a folder.', 'rypecore' ) . ' ' . esc_html__( 'Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', 'rypecore' ), array( 'found' => $subdir_name, 'expected' => $desired_slug ) );
+					return new WP_Error( 'packaged_wrong', esc_html__( 'The remote plugin package consists of more than one file, but the files are not packaged in a folder.', 'ns-core' ) . ' ' . esc_html__( 'Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', 'ns-core' ), array( 'found' => $subdir_name, 'expected' => $desired_slug ) );
 				}
 			}
 
@@ -1203,12 +1203,12 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 						$count          = count( $plugin_group );
 						$linked_plugins = array_map( array( 'TGMPA_Utils', 'wrap_in_em' ), $linked_plugins );
 						$last_plugin    = array_pop( $linked_plugins ); // Pop off last name to prep for readability.
-						$imploded       = empty( $linked_plugins ) ? $last_plugin : ( implode( ', ', $linked_plugins ) . ' ' . esc_html_x( 'and', 'plugin A *and* plugin B', 'rypecore' ) . ' ' . $last_plugin );
+						$imploded       = empty( $linked_plugins ) ? $last_plugin : ( implode( ', ', $linked_plugins ) . ' ' . esc_html_x( 'and', 'plugin A *and* plugin B', 'ns-core' ) . ' ' . $last_plugin );
 
 						$rendered .= sprintf(
 							$line_template,
 							sprintf(
-								translate_nooped_plural( $this->strings[ $type ], $count, 'rypecore' ),
+								translate_nooped_plural( $this->strings[ $type ], $count, 'ns-core' ),
 								$imploded,
 								$count
 							)
@@ -1256,14 +1256,14 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				if ( $install_count > 0 ) {
 					$action_links['install'] = sprintf(
 						$link_template,
-						translate_nooped_plural( $this->strings['install_link'], $install_count, 'rypecore' ),
+						translate_nooped_plural( $this->strings['install_link'], $install_count, 'ns-core' ),
 						esc_url( $this->get_tgmpa_status_url( 'install' ) )
 					);
 				}
 				if ( $update_count > 0 ) {
 					$action_links['update'] = sprintf(
 						$link_template,
-						translate_nooped_plural( $this->strings['update_link'], $update_count, 'rypecore' ),
+						translate_nooped_plural( $this->strings['update_link'], $update_count, 'ns-core' ),
 						esc_url( $this->get_tgmpa_status_url( 'update' ) )
 					);
 				}
@@ -1272,7 +1272,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			if ( current_user_can( 'activate_plugins' ) && $activate_count > 0 ) {
 				$action_links['activate'] = sprintf(
 					$link_template,
-					translate_nooped_plural( $this->strings['activate_link'], $activate_count, 'rypecore' ),
+					translate_nooped_plural( $this->strings['activate_link'], $activate_count, 'ns-core' ),
 					esc_url( $this->get_tgmpa_status_url( 'activate' ) )
 				);
 			}
@@ -2064,7 +2064,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				esc_html(
 					sprintf(
 						/* translators: %s: version number */
-						__( 'TGMPA v%s', 'rypecore' ),
+						__( 'TGMPA v%s', 'ns-core' ),
 						self::TGMPA_VERSION
 					)
 				),
@@ -2355,10 +2355,10 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 */
 		protected function get_plugin_advise_type_text( $required ) {
 			if ( true === $required ) {
-				return esc_html__( 'Required', 'rypecore' );
+				return esc_html__( 'Required', 'ns-core' );
 			}
 
-			return esc_html__( 'Recommended', 'rypecore' );
+			return esc_html__( 'Recommended', 'ns-core' );
 		}
 
 		/**
@@ -2374,13 +2374,13 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			switch ( $type ) {
 				case 'repo':
-					$string = esc_html__( 'WordPress Repository', 'rypecore' );
+					$string = esc_html__( 'WordPress Repository', 'ns-core' );
 					break;
 				case 'external':
-					$string = esc_html__( 'External Source', 'rypecore' );
+					$string = esc_html__( 'External Source', 'ns-core' );
 					break;
 				case 'bundled':
-					$string = esc_html__( 'Pre-Packaged', 'rypecore' );
+					$string = esc_html__( 'Pre-Packaged', 'ns-core' );
 					break;
 			}
 
@@ -2397,25 +2397,25 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 */
 		protected function get_plugin_status_text( $slug ) {
 			if ( ! $this->tgmpa->is_plugin_installed( $slug ) ) {
-				return esc_html__( 'Not Installed', 'rypecore' );
+				return esc_html__( 'Not Installed', 'ns-core' );
 			}
 
 			if ( ! $this->tgmpa->is_plugin_active( $slug ) ) {
-				$install_status = esc_html__( 'Installed But Not Activated', 'rypecore' );
+				$install_status = esc_html__( 'Installed But Not Activated', 'ns-core' );
 			} else {
-				$install_status = esc_html__( 'Active', 'rypecore' );
+				$install_status = esc_html__( 'Active', 'ns-core' );
 			}
 
 			$update_status = '';
 
 			if ( $this->tgmpa->does_plugin_require_update( $slug ) && false === $this->tgmpa->does_plugin_have_update( $slug ) ) {
-				$update_status = esc_html__( 'Required Update not Available', 'rypecore' );
+				$update_status = esc_html__( 'Required Update not Available', 'ns-core' );
 
 			} elseif ( $this->tgmpa->does_plugin_require_update( $slug ) ) {
-				$update_status = esc_html__( 'Requires Update', 'rypecore' );
+				$update_status = esc_html__( 'Requires Update', 'ns-core' );
 
 			} elseif ( false !== $this->tgmpa->does_plugin_have_update( $slug ) ) {
-				$update_status = esc_html__( 'Update recommended', 'rypecore' );
+				$update_status = esc_html__( 'Update recommended', 'ns-core' );
 			}
 
 			if ( '' === $update_status ) {
@@ -2424,7 +2424,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			return sprintf(
 				/* translators: 1: install status, 2: update status */
-				_x( '%1$s, %2$s', 'Install/Update Status', 'rypecore' ),
+				_x( '%1$s, %2$s', 'Install/Update Status', 'ns-core' ),
 				$install_status,
 				$update_status
 			);
@@ -2470,19 +2470,19 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				switch ( $type ) {
 					case 'all':
 						/* translators: 1: number of plugins. */
-						$text = _nx( 'All <span class="count">(%s)</span>', 'All <span class="count">(%s)</span>', $count, 'plugins', 'rypecore' );
+						$text = _nx( 'All <span class="count">(%s)</span>', 'All <span class="count">(%s)</span>', $count, 'plugins', 'ns-core' );
 						break;
 					case 'install':
 						/* translators: 1: number of plugins. */
-						$text = _n( 'To Install <span class="count">(%s)</span>', 'To Install <span class="count">(%s)</span>', $count, 'rypecore' );
+						$text = _n( 'To Install <span class="count">(%s)</span>', 'To Install <span class="count">(%s)</span>', $count, 'ns-core' );
 						break;
 					case 'update':
 						/* translators: 1: number of plugins. */
-						$text = _n( 'Update Available <span class="count">(%s)</span>', 'Update Available <span class="count">(%s)</span>', $count, 'rypecore' );
+						$text = _n( 'Update Available <span class="count">(%s)</span>', 'Update Available <span class="count">(%s)</span>', $count, 'ns-core' );
 						break;
 					case 'activate':
 						/* translators: 1: number of plugins. */
-						$text = _n( 'To Activate <span class="count">(%s)</span>', 'To Activate <span class="count">(%s)</span>', $count, 'rypecore' );
+						$text = _n( 'To Activate <span class="count">(%s)</span>', 'To Activate <span class="count">(%s)</span>', $count, 'ns-core' );
 						break;
 					default:
 						$text = '';
@@ -2564,7 +2564,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 			$output = array();
 
 			if ( $this->tgmpa->is_plugin_installed( $item['slug'] ) ) {
-				$installed = ! empty( $item['installed_version'] ) ? $item['installed_version'] : _x( 'unknown', 'as in: "version nr unknown"', 'rypecore' );
+				$installed = ! empty( $item['installed_version'] ) ? $item['installed_version'] : _x( 'unknown', 'as in: "version nr unknown"', 'ns-core' );
 
 				$color = '';
 				if ( ! empty( $item['minimum_version'] ) && $this->tgmpa->does_plugin_require_update( $item['slug'] ) ) {
@@ -2572,7 +2572,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				}
 
 				$output[] = sprintf(
-					'<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . esc_html__( 'Installed version:', 'rypecore' ) . '</p>',
+					'<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . esc_html__( 'Installed version:', 'ns-core' ) . '</p>',
 					$color,
 					$installed
 				);
@@ -2580,7 +2580,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			if ( ! empty( $item['minimum_version'] ) ) {
 				$output[] = sprintf(
-					'<p><span style="min-width: 32px; text-align: right; float: right;">%1$s</span>' . esc_html__( 'Minimum required version:', 'rypecore' ) . '</p>',
+					'<p><span style="min-width: 32px; text-align: right; float: right;">%1$s</span>' . esc_html__( 'Minimum required version:', 'ns-core' ) . '</p>',
 					$item['minimum_version']
 				);
 			}
@@ -2592,7 +2592,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				}
 
 				$output[] = sprintf(
-					'<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . esc_html__( 'Available version:', 'rypecore' ) . '</p>',
+					'<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . esc_html__( 'Available version:', 'ns-core' ) . '</p>',
 					$color,
 					$item['available_version']
 				);
@@ -2615,7 +2615,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 * @since 2.2.0
 		 */
 		public function no_items() {
-			echo esc_html__( 'No plugins to install, update or activate.', 'rypecore' ) . ' <a href="' . esc_url( self_admin_url() ) . '"> ' . esc_html__( 'Return to the Dashboard', 'rypecore' ) . '</a>';
+			echo esc_html__( 'No plugins to install, update or activate.', 'ns-core' ) . ' <a href="' . esc_url( self_admin_url() ) . '"> ' . esc_html__( 'Return to the Dashboard', 'ns-core' ) . '</a>';
 			echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 		}
 
@@ -2629,14 +2629,14 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		public function get_columns() {
 			$columns = array(
 				'cb'     => '<input type="checkbox" />',
-				'plugin' => esc_html__( 'Plugin', 'rypecore' ),
-				'source' => esc_html__( 'Source', 'rypecore' ),
-				'type'   => esc_html__( 'Type', 'rypecore' ),
+				'plugin' => esc_html__( 'Plugin', 'ns-core' ),
+				'source' => esc_html__( 'Source', 'ns-core' ),
+				'type'   => esc_html__( 'Type', 'ns-core' ),
 			);
 
 			if ( 'all' === $this->view_context || 'update' === $this->view_context ) {
-				$columns['version'] = esc_html__( 'Version', 'rypecore' );
-				$columns['status']  = esc_html__( 'Status', 'rypecore' );
+				$columns['version'] = esc_html__( 'Version', 'ns-core' );
+				$columns['status']  = esc_html__( 'Status', 'ns-core' );
 			}
 
 			return apply_filters( 'tgmpa_table_columns', $columns );
@@ -2685,18 +2685,18 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 			// Display the 'Install' action link if the plugin is not yet available.
 			if ( ! $this->tgmpa->is_plugin_installed( $item['slug'] ) ) {
 				/* translators: %2$s: plugin name in screen reader markup */
-				$actions['install'] = esc_html__( 'Install %2$s', 'rypecore' );
+				$actions['install'] = esc_html__( 'Install %2$s', 'ns-core' );
 			} else {
 				// Display the 'Update' action link if an update is available and WP complies with plugin minimum.
 				if ( false !== $this->tgmpa->does_plugin_have_update( $item['slug'] ) && $this->tgmpa->can_plugin_update( $item['slug'] ) ) {
 					/* translators: %2$s: plugin name in screen reader markup */
-					$actions['update'] = esc_html__( 'Update %2$s', 'rypecore' );
+					$actions['update'] = esc_html__( 'Update %2$s', 'ns-core' );
 				}
 
 				// Display the 'Activate' action link, but only if the plugin meets the minimum version.
 				if ( $this->tgmpa->can_plugin_activate( $item['slug'] ) ) {
 					/* translators: %2$s: plugin name in screen reader markup */
-					$actions['activate'] = esc_html__( 'Activate %2$s', 'rypecore' );
+					$actions['activate'] = esc_html__( 'Activate %2$s', 'ns-core' );
 				}
 			}
 
@@ -2766,7 +2766,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				<tr class="plugin-update-tr">
 					<td colspan="', absint( $this->get_column_count() ), '" class="plugin-update colspanchange">
 						<div class="update-message">',
-							esc_html__( 'Upgrade message from the plugin author:', 'rypecore' ),
+							esc_html__( 'Upgrade message from the plugin author:', 'ns-core' ),
 							' <strong>', wp_kses_data( $item['upgrade_notice'] ), '</strong>
 						</div>
 					</td>
@@ -2799,16 +2799,16 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			if ( 'update' !== $this->view_context && 'activate' !== $this->view_context ) {
 				if ( current_user_can( 'install_plugins' ) ) {
-					$actions['tgmpa-bulk-install'] = esc_html__( 'Install', 'rypecore' );
+					$actions['tgmpa-bulk-install'] = esc_html__( 'Install', 'ns-core' );
 				}
 			}
 
 			if ( 'install' !== $this->view_context ) {
 				if ( current_user_can( 'update_plugins' ) ) {
-					$actions['tgmpa-bulk-update'] = esc_html__( 'Update', 'rypecore' );
+					$actions['tgmpa-bulk-update'] = esc_html__( 'Update', 'ns-core' );
 				}
 				if ( current_user_can( 'activate_plugins' ) ) {
-					$actions['tgmpa-bulk-activate'] = esc_html__( 'Activate', 'rypecore' );
+					$actions['tgmpa-bulk-activate'] = esc_html__( 'Activate', 'ns-core' );
 				}
 			}
 
@@ -2839,9 +2839,9 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				// Did user actually select any plugins to install/update ?
 				if ( empty( $_POST['plugin'] ) ) {
 					if ( 'install' === $install_type ) {
-						$message = esc_html__( 'No plugins were selected to be installed. No action taken.', 'rypecore' );
+						$message = esc_html__( 'No plugins were selected to be installed. No action taken.', 'ns-core' );
 					} else {
-						$message = esc_html__( 'No plugins were selected to be updated. No action taken.', 'rypecore' );
+						$message = esc_html__( 'No plugins were selected to be updated. No action taken.', 'ns-core' );
 					}
 
 					echo '<div id="message" class="error"><p>', esc_html( $message ), '</p></div>';
@@ -2882,9 +2882,9 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				// No need to proceed further if we have no plugins to handle.
 				if ( empty( $plugins_to_install ) ) {
 					if ( 'install' === $install_type ) {
-						$message = esc_html__( 'No plugins are available to be installed at this time.', 'rypecore' );
+						$message = esc_html__( 'No plugins are available to be installed at this time.', 'ns-core' );
 					} else {
-						$message = esc_html__( 'No plugins are available to be updated at this time.', 'rypecore' );
+						$message = esc_html__( 'No plugins are available to be updated at this time.', 'ns-core' );
 					}
 
 					echo '<div id="message" class="error"><p>', esc_html( $message ), '</p></div>';
@@ -2990,7 +2990,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 				// Did user actually select any plugins to activate ?
 				if ( empty( $_POST['plugin'] ) ) {
-					echo '<div id="message" class="error"><p>', esc_html__( 'No plugins were selected to be activated. No action taken.', 'rypecore' ), '</p></div>';
+					echo '<div id="message" class="error"><p>', esc_html__( 'No plugins were selected to be activated. No action taken.', 'ns-core' ), '</p></div>';
 
 					return false;
 				}
@@ -3016,7 +3016,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 				// Return early if there are no plugins to activate.
 				if ( empty( $plugins_to_activate ) ) {
-					echo '<div id="message" class="error"><p>', esc_html__( 'No plugins are available to be activated at this time.', 'rypecore' ), '</p></div>';
+					echo '<div id="message" class="error"><p>', esc_html__( 'No plugins are available to be activated at this time.', 'ns-core' ), '</p></div>';
 
 					return false;
 				}
@@ -3030,11 +3030,11 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 					$count        = count( $plugin_names ); // Count so we can use _n function.
 					$plugin_names = array_map( array( 'TGMPA_Utils', 'wrap_in_strong' ), $plugin_names );
 					$last_plugin  = array_pop( $plugin_names ); // Pop off last name to prep for readability.
-					$imploded     = empty( $plugin_names ) ? $last_plugin : ( implode( ', ', $plugin_names ) . ' ' . esc_html_x( 'and', 'plugin A *and* plugin B', 'rypecore' ) . ' ' . $last_plugin );
+					$imploded     = empty( $plugin_names ) ? $last_plugin : ( implode( ', ', $plugin_names ) . ' ' . esc_html_x( 'and', 'plugin A *and* plugin B', 'ns-core' ) . ' ' . $last_plugin );
 
 					printf( // WPCS: xss ok.
 						'<div id="message" class="updated"><p>%1$s %2$s.</p></div>',
-						esc_html( _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'rypecore' ) ),
+						esc_html( _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'ns-core' ) ),
 						$imploded
 					);
 
@@ -3240,8 +3240,8 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					 * @since 2.2.0
 					 */
 					public function activate_strings() {
-						$this->strings['activation_failed']  = esc_html__( 'Plugin activation failed.', 'rypecore' );
-						$this->strings['activation_success'] = esc_html__( 'Plugin activated successfully.', 'rypecore' );
+						$this->strings['activation_failed']  = esc_html__( 'Plugin activation failed.', 'ns-core' );
+						$this->strings['activation_success'] = esc_html__( 'Plugin activated successfully.', 'ns-core' );
 					}
 
 					/**
@@ -3580,30 +3580,30 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 						if ( 'update' === $this->options['install_type'] ) {
 							parent::add_strings();
 							/* translators: 1: plugin name, 2: action number 3: total number of actions. */
-							$this->upgrader->strings['skin_before_update_header'] = esc_html__( 'Updating Plugin %1$s (%2$d/%3$d)', 'rypecore' );
+							$this->upgrader->strings['skin_before_update_header'] = esc_html__( 'Updating Plugin %1$s (%2$d/%3$d)', 'ns-core' );
 						} else {
 							/* translators: 1: plugin name, 2: error message. */
                             $update_error_allowed = array('strong' => array());
-							$this->upgrader->strings['skin_update_failed_error'] = wp_kses(__( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'rypecore' ), $update_error_allowed);
+							$this->upgrader->strings['skin_update_failed_error'] = wp_kses(__( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'ns-core' ), $update_error_allowed);
 							/* translators: 1: plugin name. */
-							$this->upgrader->strings['skin_update_failed'] = esc_html__( 'The installation of %1$s failed.', 'rypecore' );
+							$this->upgrader->strings['skin_update_failed'] = esc_html__( 'The installation of %1$s failed.', 'ns-core' );
 
 							if ( $this->tgmpa->is_automatic ) {
 								// Automatic activation strings.
-								$this->upgrader->strings['skin_upgrade_start'] = esc_html__( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'rypecore' );
+								$this->upgrader->strings['skin_upgrade_start'] = esc_html__( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'ns-core' );
 								/* translators: 1: plugin name. */
-								$this->upgrader->strings['skin_update_successful'] = esc_html__( '%1$s installed and activated successfully.', 'rypecore' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', 'rypecore' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'rypecore' ) . '</span>.</a>';
-								$this->upgrader->strings['skin_upgrade_end']       = esc_html__( 'All installations and activations have been completed.', 'rypecore' );
+								$this->upgrader->strings['skin_update_successful'] = esc_html__( '%1$s installed and activated successfully.', 'ns-core' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', 'ns-core' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'ns-core' ) . '</span>.</a>';
+								$this->upgrader->strings['skin_upgrade_end']       = esc_html__( 'All installations and activations have been completed.', 'ns-core' );
 								/* translators: 1: plugin name, 2: action number 3: total number of actions. */
-								$this->upgrader->strings['skin_before_update_header'] = esc_html__( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'rypecore' );
+								$this->upgrader->strings['skin_before_update_header'] = esc_html__( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'ns-core' );
 							} else {
 								// Default installation strings.
-								$this->upgrader->strings['skin_upgrade_start'] = esc_html__( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'rypecore' );
+								$this->upgrader->strings['skin_upgrade_start'] = esc_html__( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'ns-core' );
 								/* translators: 1: plugin name. */
-								$this->upgrader->strings['skin_update_successful'] = esc_html__( '%1$s installed successfully.', 'rypecore' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', 'rypecore' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'rypecore' ) . '</span>.</a>';
-								$this->upgrader->strings['skin_upgrade_end']       = esc_html__( 'All installations have been completed.', 'rypecore' );
+								$this->upgrader->strings['skin_update_successful'] = esc_html__( '%1$s installed successfully.', 'ns-core' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', 'ns-core' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'ns-core' ) . '</span>.</a>';
+								$this->upgrader->strings['skin_upgrade_end']       = esc_html__( 'All installations have been completed.', 'ns-core' );
 								/* translators: 1: plugin name, 2: action number 3: total number of actions. */
-								$this->upgrader->strings['skin_before_update_header'] = esc_html__( 'Installing Plugin %1$s (%2$d/%3$d)', 'rypecore' );
+								$this->upgrader->strings['skin_before_update_header'] = esc_html__( 'Installing Plugin %1$s (%2$d/%3$d)', 'ns-core' );
 							}
 						}
 					}
@@ -3663,7 +3663,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 							echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 							$update_actions['dashboard'] = sprintf(
 								esc_html( $this->tgmpa->strings['complete'] ),
-								'<a href="' . esc_url( self_admin_url() ) . '">' . esc_html__( 'Return to the Dashboard', 'rypecore' ) . '</a>'
+								'<a href="' . esc_url( self_admin_url() ) . '">' . esc_html__( 'Return to the Dashboard', 'ns-core' ) . '</a>'
 							);
 						} else {
 							$update_actions['tgmpa_page'] = '<a href="' . esc_url( $this->tgmpa->get_tgmpa_url() ) . '" target="_parent">' . esc_html( $this->tgmpa->strings['return'] ) . '</a>';

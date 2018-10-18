@@ -13,15 +13,15 @@
         $values = get_post_custom( $post->ID );
     }
 
-    $cta_title = isset( $values['rypecore_cta_title'] ) ? $values['rypecore_cta_title'][0] : '';
-    $cta_text = isset( $values['rypecore_cta_text'] ) ? $values['rypecore_cta_text'][0] : '';
-    $cta_button_text = isset( $values['rypecore_cta_button_text'] ) ? esc_attr( $values['rypecore_cta_button_text'][0] ) : '';
-    $cta_button_url = isset( $values['rypecore_cta_button_url'] ) ? esc_attr( $values['rypecore_cta_button_url'][0] ) : '';
-    $cta_bg_img = isset( $values['rypecore_cta_bg_img'] ) ? esc_attr( $values['rypecore_cta_bg_img'][0] ) : '';
-    $cta_bg_display = isset( $values['rypecore_cta_bg_display'] ) ? esc_attr( $values['rypecore_cta_bg_display'][0] ) : '';
+    $cta_title = isset( $values['ns_basics_cta_title'] ) ? $values['ns_basics_cta_title'][0] : '';
+    $cta_text = isset( $values['ns_basics_cta_text'] ) ? $values['ns_basics_cta_text'][0] : '';
+    $cta_button_text = isset( $values['ns_basics_cta_button_text'] ) ? esc_attr( $values['ns_basics_cta_button_text'][0] ) : '';
+    $cta_button_url = isset( $values['ns_basics_cta_button_url'] ) ? esc_attr( $values['ns_basics_cta_button_url'][0] ) : '';
+    $cta_bg_img = isset( $values['ns_basics_cta_bg_img'] ) ? esc_attr( $values['ns_basics_cta_bg_img'][0] ) : '';
+    $cta_bg_display = isset( $values['ns_basics_cta_bg_display'] ) ? esc_attr( $values['ns_basics_cta_bg_display'][0] ) : '';
 ?>
 
-<section class="module cta <?php if(!empty($cta_bg_img)) { echo rypecore_bgDisplay($cta_bg_display); } ?>"
+<section class="module cta <?php if(!empty($cta_bg_img)) { echo ns_core_bgDisplay($cta_bg_display); } ?>"
     <?php 
          if(!empty($cta_bg_img)) { echo 'style="background-image:url('.$cta_bg_img.');"';  }
     ?>>

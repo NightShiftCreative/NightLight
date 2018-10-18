@@ -1,10 +1,10 @@
 <?php
 	// Global page banner settings
-	$page_banner_bg = esc_attr(get_option('rypecore_page_banner_bg'));
-	$page_banner_bg_display = esc_attr(get_option('rypecore_page_banner_bg_display'));
-	$page_banner_title_align = esc_attr(get_option('rypecore_page_banner_title_align'));
-	$page_banner_display_breadcrumb = esc_attr(get_option('rypecore_page_banner_display_breadcrumb'));
-	$page_banner_display_search = esc_attr(get_option('rypecore_page_banner_display_search'));
+	$page_banner_bg = esc_attr(get_option('ns_core_page_banner_bg'));
+	$page_banner_bg_display = esc_attr(get_option('ns_core_page_banner_bg_display'));
+	$page_banner_title_align = esc_attr(get_option('ns_core_page_banner_title_align'));
+	$page_banner_display_breadcrumb = esc_attr(get_option('ns_core_page_banner_display_breadcrumb'));
+	$page_banner_display_search = esc_attr(get_option('ns_core_page_banner_display_search'));
 
     //Individual page banner settings (these overwrite global settings)
     if(!empty($template_args['post_id'])) {
@@ -27,21 +27,21 @@
         }
     }
 
-    $banner_title = isset( $values['rypecore_banner_title'] ) ? $values['rypecore_banner_title'][0] : '';
-    $banner_text = isset( $values['rypecore_banner_text'] ) ? $values['rypecore_banner_text'][0] : '';
-    $banner_bg_img = isset( $values['rypecore_banner_bg_img'] ) ? esc_attr( $values['rypecore_banner_bg_img'][0] ) : '';
-    $banner_bg_display = isset( $values['rypecore_banner_bg_display'] ) ? esc_attr( $values['rypecore_banner_bg_display'][0] ) : '';
-    $banner_overlay = isset( $values['rypecore_banner_overlay'] ) ? esc_attr( $values['rypecore_banner_overlay'][0] ) : '';
-    $banner_overlay_opacity = isset( $values['rypecore_banner_overlay_opacity'] ) ? esc_attr( $values['rypecore_banner_overlay_opacity'][0] ) : '0.25';
-    $banner_overlay_color = isset( $values['rypecore_banner_overlay_color'] ) ? esc_attr( $values['rypecore_banner_overlay_color'][0] ) : '#000000';
-    $banner_overlay_rgb = rypecore_hex2rgb($banner_overlay_color);
-    $banner_text_align = isset( $values['rypecore_banner_text_align'] ) ? esc_attr( $values['rypecore_banner_text_align'][0] ) : '';
+    $banner_title = isset( $values['ns_basics_banner_title'] ) ? $values['ns_basics_banner_title'][0] : '';
+    $banner_text = isset( $values['ns_basics_banner_text'] ) ? $values['ns_basics_banner_text'][0] : '';
+    $banner_bg_img = isset( $values['ns_basics_banner_bg_img'] ) ? esc_attr( $values['ns_basics_banner_bg_img'][0] ) : '';
+    $banner_bg_display = isset( $values['ns_basics_banner_bg_display'] ) ? esc_attr( $values['ns_basics_banner_bg_display'][0] ) : '';
+    $banner_overlay = isset( $values['ns_basics_banner_overlay'] ) ? esc_attr( $values['ns_basics_banner_overlay'][0] ) : '';
+    $banner_overlay_opacity = isset( $values['ns_basics_banner_overlay_opacity'] ) ? esc_attr( $values['ns_basics_banner_overlay_opacity'][0] ) : '0.25';
+    $banner_overlay_color = isset( $values['ns_basics_banner_overlay_color'] ) ? esc_attr( $values['ns_basics_banner_overlay_color'][0] ) : '#000000';
+    $banner_overlay_rgb = ns_core_hex2rgb($banner_overlay_color);
+    $banner_text_align = isset( $values['ns_basics_banner_text_align'] ) ? esc_attr( $values['ns_basics_banner_text_align'][0] ) : '';
     if(!empty($banner_text_align) && $banner_text_align != $page_banner_title_align) { $page_banner_title_align = $banner_text_align; }
-    $banner_padding_top = isset( $values['rypecore_banner_padding_top'] ) ? esc_attr( $values['rypecore_banner_padding_top'][0] ) : '';
-    $banner_padding_bottom = isset( $values['rypecore_banner_padding_bottom'] ) ? esc_attr( $values['rypecore_banner_padding_bottom'][0] ) : '';
+    $banner_padding_top = isset( $values['ns_basics_banner_padding_top'] ) ? esc_attr( $values['ns_basics_banner_padding_top'][0] ) : '';
+    $banner_padding_bottom = isset( $values['ns_basics_banner_padding_bottom'] ) ? esc_attr( $values['ns_basics_banner_padding_bottom'][0] ) : '';
 ?>
 
-<section class="module subheader <?php if($page_banner_title_align == 'right') { echo 'align-right'; } else if($page_banner_title_align == 'center') { echo 'align-center'; } else { echo 'align-left'; } ?> <?php if($page_banner_display_search == 'true') { echo 'has-search-form'; } ?> <?php if(!empty($banner_bg_img)) { echo rypecore_bgDisplay($banner_bg_display); } else if(!empty($page_banner_bg)) { echo rypecore_bgDisplay($page_banner_bg_display); } ?>" 
+<section class="module subheader <?php if($page_banner_title_align == 'right') { echo 'align-right'; } else if($page_banner_title_align == 'center') { echo 'align-center'; } else { echo 'align-left'; } ?> <?php if($page_banner_display_search == 'true') { echo 'has-search-form'; } ?> <?php if(!empty($banner_bg_img)) { echo ns_core_bgDisplay($banner_bg_display); } else if(!empty($page_banner_bg)) { echo ns_core_bgDisplay($page_banner_bg_display); } ?>" 
 	<?php 
         $custom_style = '';
 		if(!empty($banner_bg_img)) { 
@@ -73,7 +73,7 @@
     				bloginfo('title');
     			} else if(is_singular('post')) {
                     $page_for_posts = get_option('page_for_posts', true);
-                    if(!empty($page_for_posts)) { echo get_the_title( get_option('page_for_posts', true) ); } else { esc_html_e('Blog', 'rypecore'); }
+                    if(!empty($page_for_posts)) { echo get_the_title( get_option('page_for_posts', true) ); } else { esc_html_e('Blog', 'ns-core'); }
                 } else if(is_page() || is_home() || is_single()) {
                     single_post_title();
                 } else if(is_archive()) {
@@ -100,8 +100,8 @@
                 <?php } ?>      
     		</h1>
 
-            <!-- RYPE BASICS HOOK -->
-            <?php do_action( 'rype_basics_after_subheader_title', $values); ?>
+            <!-- NS BASICS HOOK -->
+            <?php do_action( 'ns_basics_after_subheader_title', $values); ?>
         </div>
 
         <!-- SEARCH FILTER -->
@@ -115,7 +115,7 @@
 
     <!-- BREADCRUMBS -->
     <?php if($page_banner_display_breadcrumb == 'true') { 
-        rypecore_breadcrumbs($page_banner_title_align); 
+        ns_core_breadcrumbs($page_banner_title_align); 
     } ?>
 
 </section>

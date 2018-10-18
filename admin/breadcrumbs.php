@@ -1,13 +1,13 @@
 <?php
 
 // Breadcrumbs
-function rypecore_breadcrumbs($page_banner_title_align) {
+function ns_core_breadcrumbs($page_banner_title_align) {
        
     // Settings
     $separator          = '&gt;';
     $breadcrums_id      = 'breadcrumbs';
     $breadcrums_class   = 'breadcrumbs';
-    $home_title         = esc_html__('Home', 'rypecore');
+    $home_title         = esc_html__('Home', 'ns-core');
       
     // If you have any custom post types with custom taxonomies, put the taxonomy name below (e.g. product_cat)
     $custom_taxonomy    = 'product_cat';
@@ -190,31 +190,31 @@ function rypecore_breadcrumbs($page_banner_title_align) {
             // Day archive
                
             // Year link
-            echo '<li class="item-year item-year-' . get_the_time('Y') . '"><a class="bread-year bread-year-' . get_the_time('Y') . '" href="' . get_year_link( get_the_time('Y') ) . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' '. esc_html__('Archives', 'rypecore').'</a></li>';
+            echo '<li class="item-year item-year-' . get_the_time('Y') . '"><a class="bread-year bread-year-' . get_the_time('Y') . '" href="' . get_year_link( get_the_time('Y') ) . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' '. esc_html__('Archives', 'ns-core').'</a></li>';
             echo '<li class="separator separator-' . get_the_time('Y') . '"> ' . $separator . ' </li>';
                
             // Month link
-            echo '<li class="item-month item-month-' . get_the_time('m') . '"><a class="bread-month bread-month-' . get_the_time('m') . '" href="' . get_month_link( get_the_time('Y'), get_the_time('m') ) . '" title="' . get_the_time('M') . '">' . get_the_time('M') . ' '. esc_html__('Archives', 'rypecore') .'</a></li>';
+            echo '<li class="item-month item-month-' . get_the_time('m') . '"><a class="bread-month bread-month-' . get_the_time('m') . '" href="' . get_month_link( get_the_time('Y'), get_the_time('m') ) . '" title="' . get_the_time('M') . '">' . get_the_time('M') . ' '. esc_html__('Archives', 'ns-core') .'</a></li>';
             echo '<li class="separator separator-' . get_the_time('m') . '"> ' . $separator . ' </li>';
                
             // Day display
-            echo '<li class="item-current item-' . get_the_time('j') . '"><strong class="bread-current bread-' . get_the_time('j') . '"> ' . get_the_time('jS') . ' ' . get_the_time('M') . ' '. esc_html__('Archives', 'rypecore') .'</strong></li>';
+            echo '<li class="item-current item-' . get_the_time('j') . '"><strong class="bread-current bread-' . get_the_time('j') . '"> ' . get_the_time('jS') . ' ' . get_the_time('M') . ' '. esc_html__('Archives', 'ns-core') .'</strong></li>';
                
         } else if ( is_month() ) {
                
             // Month Archive
                
             // Year link
-            echo '<li class="item-year item-year-' . get_the_time('Y') . '"><a class="bread-year bread-year-' . get_the_time('Y') . '" href="' . get_year_link( get_the_time('Y') ) . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' '. esc_html__('Archives', 'rypecore') .'</a></li>';
+            echo '<li class="item-year item-year-' . get_the_time('Y') . '"><a class="bread-year bread-year-' . get_the_time('Y') . '" href="' . get_year_link( get_the_time('Y') ) . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' '. esc_html__('Archives', 'ns-core') .'</a></li>';
             echo '<li class="separator separator-' . get_the_time('Y') . '"> ' . $separator . ' </li>';
                
             // Month display
-            echo '<li class="item-month item-month-' . get_the_time('m') . '"><strong class="bread-month bread-month-' . get_the_time('m') . '" title="' . get_the_time('M') . '">' . get_the_time('M') . ' '. esc_html__('Archives', 'rypecore') .'</strong></li>';
+            echo '<li class="item-month item-month-' . get_the_time('m') . '"><strong class="bread-month bread-month-' . get_the_time('m') . '" title="' . get_the_time('M') . '">' . get_the_time('M') . ' '. esc_html__('Archives', 'ns-core') .'</strong></li>';
                
         } else if ( is_year() ) {
                
             // Display year archive
-            echo '<li class="item-current item-current-' . get_the_time('Y') . '"><strong class="bread-current bread-current-' . get_the_time('Y') . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' '. esc_html__('Archives', 'rypecore') .'</strong></li>';
+            echo '<li class="item-current item-current-' . get_the_time('Y') . '"><strong class="bread-current bread-current-' . get_the_time('Y') . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' '. esc_html__('Archives', 'ns-core') .'</strong></li>';
                
         } else if ( is_author() ) {
                
@@ -225,22 +225,22 @@ function rypecore_breadcrumbs($page_banner_title_align) {
             $userdata = get_userdata( $author );
                
             // Display author name
-            echo '<li class="item-current item-current-' . $userdata->user_nicename . '"><strong class="bread-current bread-current-' . $userdata->user_nicename . '" title="' . $userdata->display_name . '">' . esc_html__('Author: ', 'rypecore') . $userdata->display_name . '</strong></li>';
+            echo '<li class="item-current item-current-' . $userdata->user_nicename . '"><strong class="bread-current bread-current-' . $userdata->user_nicename . '" title="' . $userdata->display_name . '">' . esc_html__('Author: ', 'ns-core') . $userdata->display_name . '</strong></li>';
            
         } else if ( get_query_var('paged') ) {
                
             // Paginated archives
-            echo '<li class="item-current item-current-' . get_query_var('paged') . '"><strong class="bread-current bread-current-' . get_query_var('paged') . '" title="Page ' . get_query_var('paged') . '">'. esc_html__('Page', 'rypecore') . ' ' . get_query_var('paged') . '</strong></li>';
+            echo '<li class="item-current item-current-' . get_query_var('paged') . '"><strong class="bread-current bread-current-' . get_query_var('paged') . '" title="Page ' . get_query_var('paged') . '">'. esc_html__('Page', 'ns-core') . ' ' . get_query_var('paged') . '</strong></li>';
                
         } else if ( is_search() ) {
            
             // Search results page
-            echo '<li class="item-current item-current-' . get_search_query() . '"><strong class="bread-current bread-current-' . get_search_query() . '" title="Search results for: ' . get_search_query() . '">'. esc_html__('Search results for:', 'rypecore') . ' ' . get_search_query() . '</strong></li>';
+            echo '<li class="item-current item-current-' . get_search_query() . '"><strong class="bread-current bread-current-' . get_search_query() . '" title="Search results for: ' . get_search_query() . '">'. esc_html__('Search results for:', 'ns-core') . ' ' . get_search_query() . '</strong></li>';
            
         } elseif ( is_404() ) {
                
             // 404 page
-            echo '<li>' . esc_html__('Error 404', 'rypecore') . '</li>';
+            echo '<li>' . esc_html__('Error 404', 'ns-core') . '</li>';
         }
        
         echo '</ul>';

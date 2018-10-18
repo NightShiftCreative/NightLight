@@ -196,7 +196,7 @@ jQuery(document).ready(function($) {
         var pass = $("input#user_pass").val();
         if (user == "" || pass == "") {
         	$('.login-form .alert-box').remove();
-            $('.login-form').prepend('<div class="alert-box error"><i class="fa fa-warning"></i> '+ rypecore_local_script.login_error +'</div>');
+            $('.login-form').prepend('<div class="alert-box error"><i class="fa fa-warning"></i> '+ ns_core_local_script.login_error +'</div>');
             return false;
         }
     });
@@ -218,7 +218,7 @@ jQuery(document).ready(function($) {
 	    contactForm.find('.requiredField').each(function() {
 	        if($.trim($(this).val()) == '') {
 	          var labelText = $(this).attr('placeholder');
-	          contactForm.find('.contact-form-fields').prepend('<div class="alert-box error"><span>'+rypecore_local_script.contact_form_error+'</span> '+labelText+'.</div>');
+	          contactForm.find('.contact-form-fields').prepend('<div class="alert-box error"><span>'+ns_core_local_script.contact_form_error+'</span> '+labelText+'.</div>');
 	          $(this).addClass('inputError');
               $('.form-loader').hide();
 	          hasError = true;
@@ -226,7 +226,7 @@ jQuery(document).ready(function($) {
 	          var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 	          if(!emailReg.test($.trim($(this).val()))) {
 	            var labelText = $(this).prev('label').text();
-	            contactForm.find('.contact-form-fields').prepend('<div class="alert-box error"><span>'+rypecore_local_script.contact_form_error_email+'</span> email.</div>');
+	            contactForm.find('.contact-form-fields').prepend('<div class="alert-box error"><span>'+ns_core_local_script.contact_form_error_email+'</span> email.</div>');
 	            $(this).addClass('inputError');
 	            hasError = true;
 	          }

@@ -1,18 +1,18 @@
 <?php
-    $home_default_map_zoom = esc_attr(get_option('rypecore_home_default_map_zoom', 10));
-    $home_default_map_latitude = esc_attr(get_option('rypecore_home_default_map_latitude', 39.2904));
+    $home_default_map_zoom = esc_attr(get_option('ns_real_estate_default_map_zoom', 10));
+    $home_default_map_latitude = esc_attr(get_option('ns_real_estate_default_map_latitude', 39.2904));
     if(empty($home_default_map_latitude)) { $home_default_map_latitude = 39.2904; }
-    $home_default_map_longitude = esc_attr(get_option('rypecore_home_default_map_longitude', -76.5000));
+    $home_default_map_longitude = esc_attr(get_option('ns_real_estate_default_map_longitude', -76.5000));
     if(empty($home_default_map_longitude)) { $home_default_map_longitude = -76.5000; }
 
-    $google_maps_pin = esc_attr(get_option('rypecore_google_maps_pin'));
+    $google_maps_pin = esc_attr(get_option('ns_real_estate_google_maps_pin'));
     if(empty($google_maps_pin)) { $google_maps_pin = esc_url( get_template_directory_uri() ).'/images/pin.png'; }
 ?>
 
-<input type=button id="remove-pin" class="remove-pin right" value="<?php echo esc_html_e('Clear Location', 'rypecore'); ?>">
+<input type=button id="remove-pin" class="remove-pin right" value="<?php echo esc_html_e('Clear Location', 'ns-core'); ?>">
 <div class="clear"></div>
                                 
-<input size="25" id="pac-input" name="rypecore_address" class="controls" type="text" placeholder="Search" value="<?php if(is_admin() && $_GET['page'] == 'theme_options') { echo esc_attr(get_option('rypecore_address')); } ?>">
+<input size="25" id="pac-input" name="ns_core_address" class="controls" type="text" placeholder="Search" value="<?php if(is_admin() && $_GET['page'] == 'theme_options') { echo esc_attr(get_option('ns_core_address')); } ?>">
 <div id="map-canvas-one-pin"></div>
 
 <script>         

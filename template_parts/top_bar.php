@@ -1,5 +1,5 @@
 <?php
-$header_vars = rypecore_load_header_settings();
+$header_vars = ns_core_load_header_settings();
 
 //GET CURRENT USER INFO
 $current_user = wp_get_current_user();
@@ -26,11 +26,11 @@ $avatar_img = wp_get_attachment_image($avatar_id, array('16', '16'), "", array( 
                 
                 <?php if($topbar_field == 'email') { ?>
                     
-                    <?php if(!empty($header_vars['email'])) { echo '<a class="top-bar-item left" href="mailto:'.$header_vars['email'].'">'.rypecore_get_icon($header_vars['icon_set'], 'envelope', '', 'mail').$header_vars['email'].'</a>'; } ?>
+                    <?php if(!empty($header_vars['email'])) { echo '<a class="top-bar-item left" href="mailto:'.$header_vars['email'].'">'.ns_core_get_icon($header_vars['icon_set'], 'envelope', '', 'mail').$header_vars['email'].'</a>'; } ?>
                 
                 <?php } else if($topbar_field == 'phone') { ?>
                     
-                    <?php if(!empty($header_vars['phone'])) { echo '<a class="top-bar-item left" href="tel:'.$header_vars['phone'].'">'.rypecore_get_icon($header_vars['icon_set'], 'phone', 'telephone').$header_vars['phone'].'</a>'; } ?>
+                    <?php if(!empty($header_vars['phone'])) { echo '<a class="top-bar-item left" href="tel:'.$header_vars['phone'].'">'.ns_core_get_icon($header_vars['icon_set'], 'phone', 'telephone').$header_vars['phone'].'</a>'; } ?>
                 
                 <?php } else if($topbar_field == 'social') { ?>
                     
@@ -51,8 +51,8 @@ $avatar_img = wp_get_attachment_image($avatar_id, array('16', '16'), "", array( 
                     <!-- start member actions -->
                     <?php if(!is_user_logged_in()) { ?>
                         <div class="top-bar-item top-bar-member-actions left">
-                            <a href="<?php echo esc_url($header_vars['members_login_page']); ?>" class="login-link"><?php echo rypecore_get_icon($header_vars['icon_set'], 'sign-in', 'enter-right', 'exit'); ?><?php esc_html_e( 'Login', 'rypecore' ); ?></a>
-                            <a href="<?php echo esc_url($header_vars['members_register_page']); ?>" class="register-link"><?php echo rypecore_get_icon($header_vars['icon_set'], 'user-plus', 'user', 'user'); ?><?php esc_html_e( 'Register', 'rypecore' ); ?></a>
+                            <a href="<?php echo esc_url($header_vars['members_login_page']); ?>" class="login-link"><?php echo ns_core_get_icon($header_vars['icon_set'], 'sign-in', 'enter-right', 'exit'); ?><?php esc_html_e( 'Login', 'ns-core' ); ?></a>
+                            <a href="<?php echo esc_url($header_vars['members_register_page']); ?>" class="register-link"><?php echo ns_core_get_icon($header_vars['icon_set'], 'user-plus', 'user', 'user'); ?><?php esc_html_e( 'Register', 'ns-core' ); ?></a>
                         </div>
                     <?php } else {  ?>
                         <div class="top-bar-item top-bar-member-actions <?php if($header_vars['members_display_avatar'] == 'true') { echo 'has-avatar'; } ?> left">
@@ -81,11 +81,11 @@ $avatar_img = wp_get_attachment_image($avatar_id, array('16', '16'), "", array( 
                                 <i class="fa icon fa-caret-down"></i>
                             </div>
                             <ul class="member-sub-menu">
-                                <?php if(!empty($header_vars['members_dashboard_page'])) { ?><li><a href="<?php echo $header_vars['members_dashboard_page']; ?>"><?php echo rypecore_get_icon($header_vars['icon_set'], 'dashboard', 'layers', 'meter'); ?><?php esc_html_e( 'Dashboard', 'rypecore' ); ?></a></li><?php } ?>
-                                <?php if(!empty($header_vars['members_edit_profile_page'])) { ?><li><a href="<?php echo $header_vars['members_edit_profile_page']; ?>"><?php echo rypecore_get_icon($header_vars['icon_set'], 'cog', 'cog', 'gear'); ?><?php esc_html_e( 'Edit Profile', 'rypecore' ); ?></a></li><?php } ?>
-                                <?php if(!empty($header_vars['members_favorites_page'])) { ?><li><a href="<?php echo $header_vars['members_favorites_page']; ?>"><?php echo rypecore_get_icon($header_vars['icon_set'], 'heart'); ?><?php esc_html_e( 'Favorites', 'rypecore' ); ?></a></li><?php } ?>
+                                <?php if(!empty($header_vars['members_dashboard_page'])) { ?><li><a href="<?php echo $header_vars['members_dashboard_page']; ?>"><?php echo ns_core_get_icon($header_vars['icon_set'], 'dashboard', 'layers', 'meter'); ?><?php esc_html_e( 'Dashboard', 'ns-core' ); ?></a></li><?php } ?>
+                                <?php if(!empty($header_vars['members_edit_profile_page'])) { ?><li><a href="<?php echo $header_vars['members_edit_profile_page']; ?>"><?php echo ns_core_get_icon($header_vars['icon_set'], 'cog', 'cog', 'gear'); ?><?php esc_html_e( 'Edit Profile', 'ns-core' ); ?></a></li><?php } ?>
+                                <?php if(!empty($header_vars['members_favorites_page'])) { ?><li><a href="<?php echo $header_vars['members_favorites_page']; ?>"><?php echo ns_core_get_icon($header_vars['icon_set'], 'heart'); ?><?php esc_html_e( 'Favorites', 'ns-core' ); ?></a></li><?php } ?>
                                 <?php do_action('rype_basics_after_top_bar_member_menu'); ?>
-                                <li><a href="<?php echo wp_logout_url(get_permalink()); ?>"><?php echo rypecore_get_icon($header_vars['icon_set'], 'sign-out', 'enter-left', 'enter'); ?><?php esc_html_e( 'Logout', 'rypecore' ); ?></a></li>
+                                <li><a href="<?php echo wp_logout_url(get_permalink()); ?>"><?php echo ns_core_get_icon($header_vars['icon_set'], 'sign-out', 'enter-left', 'enter'); ?><?php esc_html_e( 'Logout', 'ns-core' ); ?></a></li>
                             </ul>
                         </div>
                     <?php } ?>

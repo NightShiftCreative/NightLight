@@ -1,6 +1,6 @@
 /****************************************************/
 /** GLOBAL **/
-/** Shared styles between rypecore and rype add-ons **/
+/** Shared styles between NightLight and NS Basics **/
 /****************************************************/
 
 .left { float:left; }
@@ -78,12 +78,12 @@
 
 .admin-module input[type="button"], .admin-button, .wp-core-ui .button.admin-button {
     border:none;
-    border-bottom:2px solid #3c3782;
+    box-shadow:none;
     background:none;
-    background:#48429b;
+    background:#3e3ef4;
     color:white;
     border-radius:4px;
-    padding: 10px;
+    padding: 11px 10px;
     cursor:pointer;
     display:inline-block;
     min-width:0;
@@ -97,7 +97,7 @@
 }
 .admin-module input[type="button"]:hover, 
 .admin-button:hover {
-    background:#5750ba;
+    background:#6d6ee1;
 }
 
 .admin-module .button-secondary { padding:10px; height:auto; line-height:normal; font-size:13px; }
@@ -113,7 +113,7 @@
     background:#d7ecc7;
     color:#709058;
     border-left:3px solid #709058;
-    padding:20px;
+    padding:13px 20px;
     border-radius:0px 4px 4px 0px;
 }
 
@@ -130,8 +130,8 @@
 }
 
 /** ACCORDIONS **/
-.rc-accordion.ui-accordion { margin-bottom:20px; }
-.rc-accordion .accordion-tab .fa.fa-chevron-right, .rc-accordion .accordion-tab .fa.fa-chevron-down { 
+.ns-accordion.ui-accordion { margin-bottom:20px; }
+.ns-accordion .accordion-tab .fa.fa-chevron-right, .ns-accordion .accordion-tab .fa.fa-chevron-down { 
     background:#d1dce2; 
     border-radius:5px 0px 0px 5px;
     width:55px;
@@ -143,7 +143,7 @@
     margin-right:10px;
     transition:all 0.4s;
 }
-.rc-accordion.ui-accordion .ui-accordion-header {
+.ns-accordion.ui-accordion .ui-accordion-header {
     background: #e7eff4;
     border-radius:5px;
     border:none;
@@ -154,12 +154,12 @@
     padding:0;
     transition:all 0.4s;
 }
-.rc-accordion.ui-accordion .ui-accordion-header-active { background:#48429b; color:white; border-radius:5px 5px 0px 0px; }
-.rc-accordion.ui-accordion .ui-accordion-header-active .fa.fa-chevron-right,
-.rc-accordion.ui-accordion .ui-accordion-header-active .fa.fa-chevron-down { background:#36317d; color:white; border-radius:5px 0px 0px 0px; }
-.rc-accordion.ui-accordion .ui-accordion-header .ui-icon { display:none; }
+.ns-accordion.ui-accordion .ui-accordion-header-active { background:#48429b; color:white; border-radius:5px 5px 0px 0px; }
+.ns-accordion.ui-accordion .ui-accordion-header-active .fa.fa-chevron-right,
+.ns-accordion.ui-accordion .ui-accordion-header-active .fa.fa-chevron-down { background:#36317d; color:white; border-radius:5px 0px 0px 0px; }
+.ns-accordion.ui-accordion .ui-accordion-header .ui-icon { display:none; }
 
-.rc-accordion.ui-accordion .ui-accordion-content {
+.ns-accordion.ui-accordion .ui-accordion-content {
     border: 1px solid #d6d6d6;
     padding:25px;
     margin:0;

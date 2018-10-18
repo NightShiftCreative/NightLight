@@ -1,5 +1,5 @@
 <?php 
-    function rypecore_adjust_brightness($hex, $steps) {
+    function ns_core_adjust_brightness($hex, $steps) {
         // Steps should be between -255 and 255. Negative = darker, positive = lighter
         $steps = max(-255, min(255, $steps));
 
@@ -26,7 +26,7 @@
         return '#'.$r_hex.$g_hex.$b_hex;
     } 
 
-    function rypecore_hex2rgb($hex) {
+    function ns_core_hex2rgb($hex) {
        $hex = str_replace("#", "", $hex);
 
        if(strlen($hex) == 3) {
@@ -45,8 +45,8 @@
     /************************************************************************/
     /* THEME OPTION FONTS */
     /************************************************************************/
-    $heading_font = esc_attr(get_option('rypecore_heading_font', 'Varela Round'));
-    $body_font = esc_attr(get_option('rypecore_body_font', 'Varela Round'));
+    $heading_font = esc_attr(get_option('ns_core_heading_font', 'Varela Round'));
+    $body_font = esc_attr(get_option('ns_core_body_font', 'Varela Round'));
     $font_css = "";
 
     if(!empty($heading_font) && $heading_font != 'Varela Round') { 
@@ -61,39 +61,39 @@
         $font_css .= ".button, input[type='submit'] { font-family:'{$body_font}', Arial; }";
     }
 
-    wp_add_inline_style( 'rypecore-dynamic-styles', $font_css );
+    wp_add_inline_style( 'ns-core-dynamic-styles', $font_css );
 
     /************************************************************************/
     /* THEME OPTION COLOR STYLES */
     /************************************************************************/
-    $style_global_bg = get_option('rypecore_style_global_bg', '#ecf2f6');
-    $style_global_main = get_option('rypecore_style_global_main', '#59aee9');
-    $style_global_main_bright = rypecore_adjust_brightness($style_global_main, 25);
-    $style_global_main_dark = rypecore_adjust_brightness($style_global_main, -25);
-    $style_global_main_rgb = rypecore_hex2rgb($style_global_main);
+    $style_global_bg = get_option('ns_core_style_global_bg', '#ecf2f6');
+    $style_global_main = get_option('ns_core_style_global_main', '#59aee9');
+    $style_global_main_bright = ns_core_adjust_brightness($style_global_main, 25);
+    $style_global_main_dark = ns_core_adjust_brightness($style_global_main, -25);
+    $style_global_main_rgb = ns_core_hex2rgb($style_global_main);
     $style_global_main_rgb0 = $style_global_main_rgb[0];
     $style_global_main_rgb1 = $style_global_main_rgb[1];
     $style_global_main_rgb2 = $style_global_main_rgb[2];
-    $style_global_comp = get_option('rypecore_style_global_comp', '#4fba6f');
-    $style_global_comp_bright = rypecore_adjust_brightness($style_global_comp, 25);
-    $style_top_bar_bg = get_option('rypecore_style_top_bar_bg', '#48a0dc');
-    $style_top_bar_submenu = rypecore_adjust_brightness($style_top_bar_bg, -50);
-    $style_top_bar_text = get_option('rypecore_style_top_bar_text', '#ffffff');
-    $style_top_bar_social = get_option('rypecore_style_top_bar_social', '#ffffff');
-    $style_header_bg = get_option('rypecore_style_header_bg', '#ffffff');
-    $style_header_text = get_option('rypecore_style_header_text', '#464646');
-    $style_header_icon = get_option('rypecore_style_header_icon', '#59aee9');
-    $style_header_menu = get_option('rypecore_style_header_menu', '#323746');
-    $style_header_submenu = rypecore_adjust_brightness($style_header_menu, -50);
-    $style_header_subsubmenu = rypecore_adjust_brightness($style_header_menu, -70);
-    $style_page_banner_bg = get_option('rypecore_style_page_banner_bg', '#8d92a4');
-    $style_page_banner_title = get_option('rypecore_style_page_banner_title', '#ffffff');
-    $style_footer_bg = get_option('rypecore_style_footer_bg', '#323746');
-    $style_footer_header = get_option('rypecore_style_footer_header', '#ffffff');
-    $style_footer_text = get_option('rypecore_style_footer_text', '#8e95ac');
-    $style_footer_link = get_option('rypecore_style_footer_link', '#68b4e8');
-    $style_bottom_bar_bg = get_option('rypecore_style_bottom_bar_bg', '#262a35');
-    $style_bottom_bar_text = get_option('rypecore_style_bottom_bar_text', '#8e95ac');
+    $style_global_comp = get_option('ns_core_style_global_comp', '#4fba6f');
+    $style_global_comp_bright = ns_core_adjust_brightness($style_global_comp, 25);
+    $style_top_bar_bg = get_option('ns_core_style_top_bar_bg', '#48a0dc');
+    $style_top_bar_submenu = ns_core_adjust_brightness($style_top_bar_bg, -50);
+    $style_top_bar_text = get_option('ns_core_style_top_bar_text', '#ffffff');
+    $style_top_bar_social = get_option('ns_core_style_top_bar_social', '#ffffff');
+    $style_header_bg = get_option('ns_core_style_header_bg', '#ffffff');
+    $style_header_text = get_option('ns_core_style_header_text', '#464646');
+    $style_header_icon = get_option('ns_core_style_header_icon', '#59aee9');
+    $style_header_menu = get_option('ns_core_style_header_menu', '#323746');
+    $style_header_submenu = ns_core_adjust_brightness($style_header_menu, -50);
+    $style_header_subsubmenu = ns_core_adjust_brightness($style_header_menu, -70);
+    $style_page_banner_bg = get_option('ns_core_style_page_banner_bg', '#8d92a4');
+    $style_page_banner_title = get_option('ns_core_style_page_banner_title', '#ffffff');
+    $style_footer_bg = get_option('ns_core_style_footer_bg', '#323746');
+    $style_footer_header = get_option('ns_core_style_footer_header', '#ffffff');
+    $style_footer_text = get_option('ns_core_style_footer_text', '#8e95ac');
+    $style_footer_link = get_option('ns_core_style_footer_link', '#68b4e8');
+    $style_bottom_bar_bg = get_option('ns_core_style_bottom_bar_bg', '#262a35');
+    $style_bottom_bar_text = get_option('ns_core_style_bottom_bar_text', '#8e95ac');
 
     $dynamic_css = '';
     
@@ -210,17 +210,17 @@
         $dynamic_css .= ".bottom-bar a { color: {$style_bottom_bar_text}; }";
     }
 
-    wp_add_inline_style( 'rypecore-dynamic-styles', $dynamic_css );
+    wp_add_inline_style( 'ns-core-dynamic-styles', $dynamic_css );
 
     /************************************************************************/
     /* MISC STYLES */
     /************************************************************************/
-    $site_width = esc_attr(get_option('rypecore_site_width'));
-    $global_bg = esc_attr(get_option('rypecore_global_bg'));
-    $header_bg = esc_attr(get_option('rypecore_header_bg'));
-    $page_banner_padding_top = esc_attr(get_option('rypecore_page_banner_padding_top'));
-    $page_banner_padding_bottom = esc_attr(get_option('rypecore_page_banner_padding_bottom'));
-    $footer_bg = esc_attr(get_option('rypecore_footer_bg'));
+    $site_width = esc_attr(get_option('ns_core_site_width'));
+    $global_bg = esc_attr(get_option('ns_core_global_bg'));
+    $header_bg = esc_attr(get_option('ns_core_header_bg'));
+    $page_banner_padding_top = esc_attr(get_option('ns_core_page_banner_padding_top'));
+    $page_banner_padding_bottom = esc_attr(get_option('ns_core_page_banner_padding_bottom'));
+    $footer_bg = esc_attr(get_option('ns_core_footer_bg'));
 
     $misc_css = "";
 
@@ -242,13 +242,13 @@
     //FOOTER BG IMAGE
     if(!empty($footer_bg)) { $misc_css .= "footer { background-image:url({$footer_bg}); }"; } 
 
-    wp_add_inline_style( 'rypecore-dynamic-styles', $misc_css );
+    wp_add_inline_style( 'ns-core-dynamic-styles', $misc_css );
 
 
     /************************************************************************/
     /* RTL(Right to Left) STYLES */
     /************************************************************************/
-    if(isset($_GET['rtl'])) { $rtl = $_GET['rtl']; } else { $rtl = esc_attr(get_option('rypecore_rtl')); }  
+    if(isset($_GET['rtl'])) { $rtl = $_GET['rtl']; } else { $rtl = esc_attr(get_option('ns_core_rtl')); }  
 
     if($rtl == 'true') {
         $rtl_css = "";
@@ -296,7 +296,7 @@
         $rtl_css .= ".widget-footer .widget-divider, .widget-sidebar .widget-divider { margin-right:0; margin-left:auto; }";
         
 
-        wp_add_inline_style( 'rypecore-dynamic-styles', $rtl_css );
+        wp_add_inline_style( 'ns-core-dynamic-styles', $rtl_css );
     }
     
 ?>
