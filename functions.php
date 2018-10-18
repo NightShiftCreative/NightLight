@@ -2,7 +2,7 @@
 /*-----------------------------------------------------------------------------------*/
 /*	Load Text Domain
 /*-----------------------------------------------------------------------------------*/
-load_theme_textdomain( 'rypecore', get_template_directory() . '/languages' );
+load_theme_textdomain( 'ns-core', get_template_directory() . '/languages' );
 
 /*-----------------------------------------------------------------------------------*/
 /*	Content Width
@@ -18,32 +18,32 @@ add_theme_support( 'post-thumbnails' ); //Add post thumbnail support
 add_image_size( 'listing-thumbnail', 200, 200, array( 'center', 'center' ) );
 add_image_size( 'listing-thumbnail-small', 150, 100, false );
 add_theme_support( 'ns-basics' ); //NS Basics support
-do_action('rype_basics_theme_support');
+do_action('ns_basics_theme_support');
 
 /*-----------------------------------------------------------------------------------*/
-/*  Require bundled plugins (using TGM activation)
+/*  Require plugins (using TGM activation)
 /*-----------------------------------------------------------------------------------*/
 require_once get_template_directory() . '/admin/plugins/class-tgm-plugin-activation.php';
 
-add_action( 'tgmpa_register', 'rypecore_register_required_plugins' );
+add_action( 'tgmpa_register', 'ns_core_register_required_plugins' );
 
-function rypecore_register_required_plugins() {
+function ns_core_register_required_plugins() {
 
     $plugins = array(
         array(
-            'name'         => 'Rype Basics', // The plugin name.
-            'slug'         => 'rype-basics', // The plugin slug (typically the folder name).
-            'source'       => 'https://github.com/RypeCreative/Rype-Basics/archive/1.0.0.zip', // The plugin source.
+            'name'         => 'NightShift Basics', // The plugin name.
+            'slug'         => 'ns-basics', // The plugin slug (typically the folder name).
+            'source'       => 'https://github.com/NightShiftCreative/NS-Basics/archive/1.0.0.zip', // The plugin source.
             'required'     => true, // If false, the plugin is only 'recommended' instead of required.
             'version'      => '1.0.0',
             'force_activation'   => false,
             'force_deactivation' => false,
-            'external_url' => 'http://rypecreative.com',
+            'external_url' => 'http://nightshiftcreative.co/',
         ),
     );
 
     $config = array(
-        'id'           => 'rypecore',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+        'id'           => 'ns-core',                 // Unique ID for hashing notices for multiple instances of TGMPA.
         'default_path' => '',                      // Default absolute path to bundled plugins.
         'menu'         => 'tgmpa-install-plugins', // Menu slug.
         'has_notices'  => true,                    // Show admin notices or not.
@@ -60,12 +60,12 @@ function rypecore_register_required_plugins() {
 /*-----------------------------------------------------------------------------------*/
 /*	Include Admin Scripts
 /*-----------------------------------------------------------------------------------*/
-function rypecore_admin_scripts() {
+function ns_core_admin_scripts() {
     if (is_admin()) {
 
         //custom scripts
-		wp_enqueue_script('rypecore-admin-js', get_template_directory_uri() . '/admin/admin.js', array('jquery','media-upload','thickbox', 'wp-color-picker'), '', true);
-		wp_enqueue_style('rypecore-admin-css',  get_template_directory_uri() . '/admin/admin.css', array(), '3.0', 'all');
+		wp_enqueue_script('ns-core-admin-js', get_template_directory_uri() . '/admin/admin.js', array('jquery','media-upload','thickbox', 'wp-color-picker'), '', true);
+		wp_enqueue_style('ns-core-admin-css',  get_template_directory_uri() . '/admin/admin.css', array(), '3.0', 'all');
     	wp_enqueue_style('font-awesome',  get_template_directory_uri() . '/css/font-awesome/css/font-awesome.min.css', array(), '', 'all');
         wp_enqueue_script( 'chosen', get_template_directory_uri() . '/assets/chosen-1.6.2/chosen.jquery.min.js', array( 'jquery' ), '', true );
         wp_enqueue_style('chosen',  get_template_directory_uri() . '/assets/chosen-1.6.2/chosen.min.css', array(), '', 'all');
@@ -83,35 +83,35 @@ function rypecore_admin_scripts() {
 
         /* localize scripts */
         $translation_array = array( 
-            'remove_text' => __( 'Remove', 'rypecore' ),
-            'save_text' => __( 'Save', 'rypecore' ),
-            'name_text' => __( 'Name', 'rypecore' ),
-            'image_url' => __( 'Image URL', 'rypecore' ),
-            'on' => __( 'On', 'rypecore' ),
-            'off' => __( 'Off', 'rypecore' ),
+            'remove_text' => __( 'Remove', 'ns-core' ),
+            'save_text' => __( 'Save', 'ns-core' ),
+            'name_text' => __( 'Name', 'ns-core' ),
+            'image_url' => __( 'Image URL', 'ns-core' ),
+            'on' => __( 'On', 'ns-core' ),
+            'off' => __( 'Off', 'ns-core' ),
         );
-        wp_localize_script( 'rypecore-admin-js', 'rypecore_local_script', $translation_array );
+        wp_localize_script( 'ns-core-admin-js', 'ns_core_local_script', $translation_array );
     }
 }
-add_action('admin_enqueue_scripts', 'rypecore_admin_scripts');
+add_action('admin_enqueue_scripts', 'ns_core_admin_scripts');
 
 /*-----------------------------------------------------------------------------------*/
 /*	Include Theme Stylesheets
 /*-----------------------------------------------------------------------------------*/
-function rypecore_load_stylesheets() {
+function ns_core_load_stylesheets() {
 	if (!is_admin()) {
 
-        $icon_set = esc_attr(get_option('rypecore_icon_set', 'fa'));
+        $icon_set = esc_attr(get_option('ns_core_icon_set', 'fa'));
 
         //generate google font url
-        function rypecore_fonts_url() {
-            $heading_font = esc_attr(get_option('rypecore_heading_font', 'Varela Round'));
-            $body_font = esc_attr(get_option('rypecore_body_font', 'Varela Round'));
+        function ns_core_fonts_url() {
+            $heading_font = esc_attr(get_option('ns_core_heading_font', 'Varela Round'));
+            $body_font = esc_attr(get_option('ns_core_body_font', 'Varela Round'));
             $fonts = array();
             $fonts_url = '';
 
-            if ( 'off' !== _x( 'on', $heading_font.' font: on or off', 'rypecore' ) ) { $fonts[] = $heading_font.':100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i'; }
-            if ( 'off' !== _x( 'on', $body_font.' font: on or off', 'rypecore' ) ) { $fonts[] = $body_font.':100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i'; }
+            if ( 'off' !== _x( 'on', $heading_font.' font: on or off', 'ns-core' ) ) { $fonts[] = $heading_font.':100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i'; }
+            if ( 'off' !== _x( 'on', $body_font.' font: on or off', 'ns-core' ) ) { $fonts[] = $body_font.':100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i'; }
 
             if($fonts) {
                 $fonts_url = add_query_arg( array(
@@ -129,22 +129,22 @@ function rypecore_load_stylesheets() {
 		wp_enqueue_style('linear-icons',  get_template_directory_uri() . '/assets/linear-icons/style.css', array(), '', 'all');
         wp_enqueue_style('dripicons',  get_template_directory_uri() . '/assets/dripicons/webfont.css', array(), '', 'all');
         wp_enqueue_style('fancybox',  get_template_directory_uri() . '/assets/fancybox/dist/jquery.fancybox.min.css', array(), '', 'all');
-		wp_enqueue_style('rypecore-google-fonts',  rypecore_fonts_url(), array(), '', 'all');
+		wp_enqueue_style('ns-core-google-fonts',  ns_core_fonts_url(), array(), '', 'all');
         wp_enqueue_style( 'style', get_stylesheet_uri() );
-        wp_enqueue_style('rypecore-responsive',  get_template_directory_uri() . '/css/responsive.css', array(), '', 'all');
+        wp_enqueue_style('ns-core-responsive',  get_template_directory_uri() . '/css/responsive.css', array(), '', 'all');
 
         //dynamic styles
-        wp_enqueue_style('rypecore-dynamic-styles', get_template_directory_uri() . '/css/dynamic-styles.css');
+        wp_enqueue_style('ns-core-dynamic-styles', get_template_directory_uri() . '/css/dynamic-styles.css');
         get_template_part('css/dynamic_styles');
 
 	}
 }
-add_action('wp_enqueue_scripts', 'rypecore_load_stylesheets');
+add_action('wp_enqueue_scripts', 'ns_core_load_stylesheets');
 
 /*-----------------------------------------------------------------------------------*/
 /*	Include Theme Scripts
 /*-----------------------------------------------------------------------------------*/
-function rypecore_load_scripts() {
+function ns_core_load_scripts() {
 	if (!is_admin()) {
 
 		/* Enqueue Scripts */
@@ -157,7 +157,7 @@ function rypecore_load_scripts() {
         wp_enqueue_script('jquery-ui-core');
         wp_enqueue_script('jquery-ui-accordion');
         wp_enqueue_script('jquery-ui-tabs');
-        wp_enqueue_script( 'rypecore-global', get_template_directory_uri() . '/js/global.js', array( 'jquery' ), '', true );
+        wp_enqueue_script( 'ns-core-global', get_template_directory_uri() . '/js/global.js', array( 'jquery' ), '', true );
 
         if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 
@@ -166,76 +166,76 @@ function rypecore_load_scripts() {
 
         /* localize scripts */
         $translation_array = array(
-            'login_error' => __( 'Username and password are required fields.', 'rypecore' ),
-            'contact_form_error' => __( 'You forgot to enter your', 'rypecore' ),
-            'contact_form_error_email' => __( 'Sorry! You entered an invalid', 'rypecore' ),
-            'upload_img' => __( 'Upload Image', 'rypecore' ),
-            'share_email_error' => __( 'Please enter an email address!', 'rypecore' ),
+            'login_error' => __( 'Username and password are required fields.', 'ns-core' ),
+            'contact_form_error' => __( 'You forgot to enter your', 'ns-core' ),
+            'contact_form_error_email' => __( 'Sorry! You entered an invalid', 'ns-core' ),
+            'upload_img' => __( 'Upload Image', 'ns-core' ),
+            'share_email_error' => __( 'Please enter an email address!', 'ns-core' ),
         );
-        wp_localize_script( 'rypecore-global', 'rypecore_local_script', $translation_array );
+        wp_localize_script( 'ns-core-global', 'ns_core_local_script', $translation_array );
 	}
 } 
-add_action( 'wp_enqueue_scripts', 'rypecore_load_scripts' );
+add_action( 'wp_enqueue_scripts', 'ns_core_load_scripts' );
 
 /*-----------------------------------------------------------------------------------*/
 /*  Header functions
 /*-----------------------------------------------------------------------------------*/
 /* get all header variables */
-function rypecore_load_header_settings() {
+function ns_core_load_header_settings() {
     $header_vars = array();
-    $header_vars['icon_set'] = esc_attr(get_option('rypecore_icon_set', 'fa'));
-    if(isset($_GET['rtl'])) { $header_vars['rtl'] = $_GET['rtl']; } else { $header_vars['rtl'] = esc_attr(get_option('rypecore_rtl')); }  
-    $header_vars['preloader'] = esc_attr(get_option('rypecore_preloader', 'true'));
+    $header_vars['icon_set'] = esc_attr(get_option('ns_core_icon_set', 'fa'));
+    if(isset($_GET['rtl'])) { $header_vars['rtl'] = $_GET['rtl']; } else { $header_vars['rtl'] = esc_attr(get_option('ns_core_rtl')); }  
+    $header_vars['preloader'] = esc_attr(get_option('ns_core_preloader', 'true'));
     $header_vars['preloader_img_default'] = esc_url(get_template_directory_uri().'/images/loader.gif');
-    $header_vars['preloader_img'] = esc_attr(get_option('rypecore_preloader_img', $header_vars['preloader_img_default']));
-    $header_vars['display_topbar'] = esc_attr(get_option('rypecore_display_topbar', 'true'));
-    $header_vars['topbar_first_field'] = esc_attr(get_option('rypecore_topbar_first_field', 'email'));
-    $header_vars['topbar_second_field'] = esc_attr(get_option('rypecore_topbar_second_field', 'phone'));
-    $header_vars['topbar_third_field'] = esc_attr(get_option('rypecore_topbar_third_field', 'social'));
-    $header_vars['topbar_fourth_field'] = esc_attr(get_option('rypecore_topbar_fourth_field', 'member'));
-    $header_vars['sticky_header'] = esc_attr(get_option('rypecore_sticky_header', 'true'));
-    $header_vars['header_container'] = esc_attr(get_option('rypecore_header_container', 'true'));
-    $header_vars['phone'] = esc_attr(get_option('rypecore_phone'));
-    $header_vars['email'] = esc_attr(get_option('rypecore_email'));
-    $header_vars['fb']  = esc_attr(get_option('rypecore_fb'));
-    $header_vars['twitter'] = esc_attr(get_option('rypecore_twitter'));
-    $header_vars['google'] = esc_attr(get_option('rypecore_google'));
-    $header_vars['linkedin'] = esc_attr(get_option('rypecore_linkedin'));
-    $header_vars['youtube'] = esc_attr(get_option('rypecore_youtube'));
-    $header_vars['vimeo'] = esc_attr(get_option('rypecore_vimeo'));
-    $header_vars['instagram'] = esc_attr(get_option('rypecore_instagram'));
-    $header_vars['flickr'] = esc_attr(get_option('rypecore_flickr'));
-    $header_vars['dribbble'] = esc_attr(get_option('rypecore_dribbble'));
-    $header_vars['header_bg'] = esc_attr(get_option('rypecore_header_bg'));
-    $header_vars['header_bg_display'] = esc_attr(get_option('rypecore_header_bg_display'));
-    $header_vars['header_style'] = esc_attr(get_option('rypecore_header_style', 'default'));
+    $header_vars['preloader_img'] = esc_attr(get_option('ns_core_preloader_img', $header_vars['preloader_img_default']));
+    $header_vars['display_topbar'] = esc_attr(get_option('ns_core_display_topbar', 'true'));
+    $header_vars['topbar_first_field'] = esc_attr(get_option('ns_core_topbar_first_field', 'email'));
+    $header_vars['topbar_second_field'] = esc_attr(get_option('ns_core_topbar_second_field', 'phone'));
+    $header_vars['topbar_third_field'] = esc_attr(get_option('ns_core_topbar_third_field', 'social'));
+    $header_vars['topbar_fourth_field'] = esc_attr(get_option('ns_core_topbar_fourth_field', 'member'));
+    $header_vars['sticky_header'] = esc_attr(get_option('ns_core_sticky_header', 'true'));
+    $header_vars['header_container'] = esc_attr(get_option('ns_core_header_container', 'true'));
+    $header_vars['phone'] = esc_attr(get_option('ns_core_phone'));
+    $header_vars['email'] = esc_attr(get_option('ns_core_email'));
+    $header_vars['fb']  = esc_attr(get_option('ns_core_fb'));
+    $header_vars['twitter'] = esc_attr(get_option('ns_core_twitter'));
+    $header_vars['google'] = esc_attr(get_option('ns_core_google'));
+    $header_vars['linkedin'] = esc_attr(get_option('ns_core_linkedin'));
+    $header_vars['youtube'] = esc_attr(get_option('ns_core_youtube'));
+    $header_vars['vimeo'] = esc_attr(get_option('ns_core_vimeo'));
+    $header_vars['instagram'] = esc_attr(get_option('ns_core_instagram'));
+    $header_vars['flickr'] = esc_attr(get_option('ns_core_flickr'));
+    $header_vars['dribbble'] = esc_attr(get_option('ns_core_dribbble'));
+    $header_vars['header_bg'] = esc_attr(get_option('ns_core_header_bg'));
+    $header_vars['header_bg_display'] = esc_attr(get_option('ns_core_header_bg_display'));
+    $header_vars['header_style'] = esc_attr(get_option('ns_core_header_style', 'transparent'));
     $default_logo = esc_url( get_template_directory_uri() ).'/images/logo-dark.png'; 
     $default_logo_transparent = esc_url( get_template_directory_uri() ).'/images/logo.png'; 
-    $header_vars['logo'] = esc_attr(get_option('rypecore_logo', $default_logo));
-    $header_vars['logo_transparent'] = esc_attr(get_option('rypecore_logo_transparent', $default_logo_transparent));
-    $header_vars['favicon'] = esc_attr(get_option('rypecore_favicon'));
-    $header_vars['above_phone_text'] = esc_attr(get_option('rypecore_above_phone_text', esc_html__('Call us anytime', 'rypecore') ));
-    $header_vars['above_email_text'] = esc_attr(get_option('rypecore_above_email_text', esc_html__('Drop us a line', 'rypecore') ));
-    $header_vars['display_header_search'] = esc_attr(get_option('rypecore_display_header_search', 'true'));
-    $header_vars['header_menu_button_page'] = esc_attr(get_option('rypecore_header_menu_button_page'));
-    $header_vars['header_menu_button_text'] = esc_attr(get_option('rypecore_header_menu_button_text'));
-    $header_vars['members_display_avatar'] = esc_attr(get_option('rypecore_members_display_avatar', 'true'));
-    $header_vars['members_display_name'] = esc_attr(get_option('rypecore_members_display_name', 'username'));
-    $header_vars['members_login_page'] = esc_attr(get_option('rypecore_members_login_page'));
-    $header_vars['members_register_page'] = esc_attr(get_option('rypecore_members_register_page'));
-    $header_vars['members_dashboard_page'] = esc_attr(get_option('rypecore_members_dashboard_page'));
-    $header_vars['members_edit_profile_page'] = esc_attr(get_option('rypecore_members_edit_profile_page'));
-    $header_vars['members_favorites_page'] = esc_attr(get_option('rypecore_members_favorites_page'));
+    $header_vars['logo'] = esc_attr(get_option('ns_core_logo', $default_logo));
+    $header_vars['logo_transparent'] = esc_attr(get_option('ns_core_logo_transparent', $default_logo_transparent));
+    $header_vars['favicon'] = esc_attr(get_option('ns_core_favicon'));
+    $header_vars['above_phone_text'] = esc_attr(get_option('ns_core_above_phone_text', esc_html__('Call us anytime', 'ns-core') ));
+    $header_vars['above_email_text'] = esc_attr(get_option('ns_core_above_email_text', esc_html__('Drop us a line', 'ns-core') ));
+    $header_vars['display_header_search'] = esc_attr(get_option('ns_core_display_header_search', 'true'));
+    $header_vars['header_menu_button_page'] = esc_attr(get_option('ns_core_header_menu_button_page'));
+    $header_vars['header_menu_button_text'] = esc_attr(get_option('ns_core_header_menu_button_text'));
+    $header_vars['members_display_avatar'] = esc_attr(get_option('ns_core_members_display_avatar', 'true'));
+    $header_vars['members_display_name'] = esc_attr(get_option('ns_core_members_display_name', 'username'));
+    $header_vars['members_login_page'] = esc_attr(get_option('ns_core_members_login_page'));
+    $header_vars['members_register_page'] = esc_attr(get_option('ns_core_members_register_page'));
+    $header_vars['members_dashboard_page'] = esc_attr(get_option('ns_core_members_dashboard_page'));
+    $header_vars['members_edit_profile_page'] = esc_attr(get_option('ns_core_members_edit_profile_page'));
+    $header_vars['members_favorites_page'] = esc_attr(get_option('ns_core_members_favorites_page'));
 
-    //custom filters (for rype add-ons)
-    $header_vars = apply_filters( 'rype_basics_custom_header_vars', $header_vars);
+    //custom filters (for NS Basics)
+    $header_vars = apply_filters( 'ns_basics_custom_header_vars', $header_vars);
 
     return $header_vars;
 }
 
 /* get header logo */
-function rypecore_get_header_logo() {
-    $header_vars = rypecore_load_header_settings();
+function ns_core_get_header_logo() {
+    $header_vars = ns_core_load_header_settings();
     ob_start(); ?>
 
     <?php if($header_vars['header_style'] == 'transparent') { ?>
@@ -257,8 +257,8 @@ function rypecore_get_header_logo() {
 }
 
 /* get header nav toggle */
-function rypecore_get_header_toggle() {
-    $header_vars = rypecore_load_header_settings();
+function ns_core_get_header_toggle() {
+    $header_vars = ns_core_load_header_settings();
     ob_start(); ?>
 
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -272,8 +272,8 @@ function rypecore_get_header_toggle() {
 }
 
 /* get header details */
-function rypecore_get_header_items($class = null, $search = true) {
-    $header_vars = rypecore_load_header_settings();
+function ns_core_get_header_items($class = null, $search = true) {
+    $header_vars = ns_core_load_header_settings();
     ob_start(); ?>
     
     <div class="header-details <?php echo $class; ?>">
@@ -281,7 +281,7 @@ function rypecore_get_header_items($class = null, $search = true) {
         <?php if($search == true) { ?>
             <?php if($header_vars['display_header_search'] == 'true') { ?>
             <div class="header-item header-search left">
-                <div class="header-item-icon"><?php echo rypecore_get_icon($header_vars['icon_set'], 'search', 'magnifier'); ?></div>
+                <div class="header-item-icon"><?php echo ns_core_get_icon($header_vars['icon_set'], 'search', 'magnifier'); ?></div>
                 <div class="header-search-form"><?php get_search_form(); ?></div>
             </div>
             <?php } ?>
@@ -289,7 +289,7 @@ function rypecore_get_header_items($class = null, $search = true) {
 
         <?php if(!empty($header_vars['phone'])) { ?>
         <div class="header-item header-phone left">
-            <div class="header-item-icon"><?php echo rypecore_get_icon($header_vars['icon_set'], 'phone', 'telephone'); ?></div>
+            <div class="header-item-icon"><?php echo ns_core_get_icon($header_vars['icon_set'], 'phone', 'telephone'); ?></div>
             <div class="header-item-text">
             <?php if(!empty($header_vars['above_phone_text'])) { echo '<p class="above-text">'.esc_attr($header_vars['above_phone_text']).'</p>'; } ?>
             <?php echo '<a href="tel:'.$header_vars['phone'].'"><span>'.$header_vars['phone'].'</span></a>'; ?>
@@ -299,7 +299,7 @@ function rypecore_get_header_items($class = null, $search = true) {
 
         <?php if(!empty($header_vars['email'])) { ?>
         <div class="header-item header-email left">
-            <div class="header-item-icon"><?php echo rypecore_get_icon($header_vars['icon_set'], 'envelope', '', 'mail'); ?></div>
+            <div class="header-item-icon"><?php echo ns_core_get_icon($header_vars['icon_set'], 'envelope', '', 'mail'); ?></div>
             <div class="header-item-text">
             <?php if(!empty($header_vars['above_email_text'])) { echo '<p class="above-text">'.esc_attr($header_vars['above_email_text']).'</p>'; } ?>
             <?php echo '<a href="mailto:'.$header_vars['email'].'" title="'.$header_vars['email'].'"><span>'.$header_vars['email'].'</span></a>'; ?>
@@ -319,7 +319,7 @@ function rypecore_get_header_items($class = null, $search = true) {
 /*-----------------------------------------------------------------------------------*/
 include('admin/theme_options.php');
 
-function rypecore_bgDisplay($bg_display_class) {
+function ns_core_bgDisplay($bg_display_class) {
         if($bg_display_class == 'fixed') {
             $bg_display_class = 'bg-display-fixed';
         } else if($bg_display_class == 'repeat') {
@@ -332,14 +332,14 @@ function rypecore_bgDisplay($bg_display_class) {
 
 /*  Add body class */
 add_filter( 'body_class', function( $classes ) {
-    $global_bg_display = rypecore_bgDisplay(esc_attr(get_option('rypecore_global_bg_display')));
+    $global_bg_display = ns_core_bgDisplay(esc_attr(get_option('ns_core_global_bg_display')));
     return array_merge( $classes, array($global_bg_display) );
 } );
 
 /*-----------------------------------------------------------------------------------*/
 /*  Gets Page ID
 /*-----------------------------------------------------------------------------------*/
-function rypecore_get_page_id() {
+function ns_core_get_page_id() {
     global $post;
 
     if(is_post_type_archive('job_listing') || is_singular('companies')) {
@@ -362,7 +362,7 @@ function rypecore_get_page_id() {
 /*-----------------------------------------------------------------------------------*/
 /*  Check if slug exists
 /*-----------------------------------------------------------------------------------*/
-function rypecore_the_slug_exists($post_name) {
+function ns_core_the_slug_exists($post_name) {
     global $wpdb;
     if($wpdb->get_row( $wpdb->prepare("SELECT post_name FROM wp_posts WHERE post_name = %s", $post_name), 'ARRAY_A')) {
         return true;
@@ -374,7 +374,7 @@ function rypecore_the_slug_exists($post_name) {
 /*-----------------------------------------------------------------------------------*/
 /*  Add default theme pages, posts, and widgets
 /*-----------------------------------------------------------------------------------*/
-function rypecore_add_default_pages() {
+function ns_core_add_default_pages() {
 
     //Add contact page
     $post_contact_page = array(
@@ -382,31 +382,31 @@ function rypecore_add_default_pages() {
       'page_template' => 'template_contact.php', //Sets the template for the page.
       'post_name' => 'contact', // The name (slug) for your post
       'post_status' => 'publish', //Set the status of the new post.
-      'post_title' => esc_html__('Contact', 'rypecore'), //The title of your post.
+      'post_title' => esc_html__('Contact', 'ns-core'), //The title of your post.
       'post_type' => 'page', //Sometimes you want to post a page.
       'post_content' => '',
     ); 
-    if (!rypecore_the_slug_exists('contact')) { wp_insert_post($post_contact_page); }
+    if (!ns_core_the_slug_exists('contact')) { wp_insert_post($post_contact_page); }
 
     //Update "Hello World" blog post
     $hello_world_content = '';
-    $hello_world_content .= esc_html__('Welcome to RypeCore. This is your first post. Edit or delete it, then start writing! Here are some steps to help you get started.', 'rypecore');
+    $hello_world_content .= esc_html__('Welcome to PadPress. This is your first post. Edit or delete it, then start writing! Here are some steps to help you get started.', 'ns-core');
     $hello_world_content .= '<ul>';
-    $hello_world_content .= '<li><a href="http://rypecreative.com/homely-wp/doc/#configure-permalinks" target="_blank">'.esc_html__('1. Configure Permalinks', 'rypecore').'</a></li>';
-    $hello_world_content .= '<li><a href="http://rypecreative.com/homely-wp/doc/#create-home-page" target="_blank">'.esc_html__('2. Creating the Home Page', 'rypecore').'</a></li>';
-    $hello_world_content .= '<li><a href="http://rypecreative.com/homely-wp/doc/#reading-settings" target="_blank">'.esc_html__('3. Update Reading Settings', 'rypecore').'</a></li>';
-    $hello_world_content .= '<li><a href="http://rypecreative.com/homely-wp/doc/#create-properties-listing-page" target="_blank">'.esc_html__('4. Creating Properties Listing Page', 'rypecore').'</a></li>';
+    $hello_world_content .= '<li><a href="http://nightshiftcreative.co/homely-wp/doc/#configure-permalinks" target="_blank">'.esc_html__('1. Configure Permalinks', 'ns-core').'</a></li>';
+    $hello_world_content .= '<li><a href="http://nightshiftcreative.co/homely-wp/doc/#create-home-page" target="_blank">'.esc_html__('2. Creating the Home Page', 'ns-core').'</a></li>';
+    $hello_world_content .= '<li><a href="http://nightshiftcreative.co/homely-wp/doc/#reading-settings" target="_blank">'.esc_html__('3. Update Reading Settings', 'ns-core').'</a></li>';
+    $hello_world_content .= '<li><a href="http://nightshiftcreative.co/homely-wp/doc/#create-properties-listing-page" target="_blank">'.esc_html__('4. Creating Properties Listing Page', 'ns-core').'</a></li>';
     $hello_world_content .= '</ul>';
 
     $post_hello_world = array(
       'ID' => 1,
       'post_name' => 'welcome', // The name (slug) for your post
       'post_status' => 'publish', //Set the status of the new post.
-      'post_title' => esc_html__('Welcome to RypeCore', 'rypecore'), //The title of your post.
+      'post_title' => esc_html__('Welcome to PadPress', 'ns-core'), //The title of your post.
       'post_type' => 'post', //Sometimes you want to post a page.
       'post_content' => $hello_world_content,
     );  
-    if (!rypecore_the_slug_exists('welcome')) { wp_insert_post($post_hello_world); }
+    if (!ns_core_the_slug_exists('welcome')) { wp_insert_post($post_hello_world); }
 
     //Add main menu
     $menu_name = 'Main Menu';
@@ -417,7 +417,7 @@ function rypecore_add_default_pages() {
         $menu_id = wp_create_nav_menu($menu_name);
 
         wp_update_nav_menu_item($menu_id, 0, array(
-            'menu-item-title' =>  esc_html__('Contact', 'rypecore'),
+            'menu-item-title' =>  esc_html__('Contact', 'ns-core'),
             'menu-item-object' => 'page',
             'menu-item-object-id' => get_page_by_path('contact')->ID,
             'menu-item-type' => 'post_type',
@@ -430,7 +430,7 @@ function rypecore_add_default_pages() {
         }
     }
 
-    function rypecore_auto_add_sidebar_widgets( $add_to_sidebar = array(), $ignore_sidebar_with_content = true ){
+    function ns_core_auto_add_sidebar_widgets( $add_to_sidebar = array(), $ignore_sidebar_with_content = true ){
 
         if(empty($add_to_sidebar)) { return; }
 
@@ -474,7 +474,7 @@ function rypecore_add_default_pages() {
         array(
            'id_base'=> 'archives',
            'instance' => array(
-               'title' => esc_html__('Archived Content', 'rypecore'),
+               'title' => esc_html__('Archived Content', 'ns-core'),
                'count' => 'on',
            )
         ),                      
@@ -492,16 +492,16 @@ function rypecore_add_default_pages() {
         )
     );
 
-    rypecore_auto_add_sidebar_widgets($add_to_sidebar);
+    ns_core_auto_add_sidebar_widgets($add_to_sidebar);
 
 }
- add_action( 'after_switch_theme', 'rypecore_add_default_pages' );
+ add_action( 'after_switch_theme', 'ns_core_add_default_pages' );
 
 
 /*-----------------------------------------------------------------------------------*/
 /*  Customized get_template_part that allows variable
 /*-----------------------------------------------------------------------------------*/
-function rypecore_get_template_part( $file, $template_args = array(), $cache_args = array() ) {
+function ns_core_get_template_part( $file, $template_args = array(), $cache_args = array() ) {
     global $post;
     $template_args = wp_parse_args( $template_args );
     $cache_args = wp_parse_args( $cache_args );
@@ -544,33 +544,33 @@ function rypecore_get_template_part( $file, $template_args = array(), $cache_arg
 /*-----------------------------------------------------------------------------------*/
 /*  Generate Page Banners
 /*-----------------------------------------------------------------------------------*/
-function rypecore_generate_page_banner($values) {
-    $banner_source = isset( $values['rypecore_banner_source'] ) ? esc_attr( $values['rypecore_banner_source'][0] ) : 'image_banner';
-    $banner_display = isset( $values['rypecore_banner_display'] ) ? esc_attr( $values['rypecore_banner_display'][0] ) : 'true';
-    $banner_shortcode = isset( $values['rypecore_banner_shortcode'] ) ? $values['rypecore_banner_shortcode'][0] : '';
+function ns_core_generate_page_banner($values) {
+    $banner_source = isset( $values['ns_basics_banner_source'] ) ? esc_attr( $values['ns_basics_banner_source'][0] ) : 'image_banner';
+    $banner_display = isset( $values['ns_basics_banner_display'] ) ? esc_attr( $values['ns_basics_banner_display'][0] ) : 'true';
+    $banner_shortcode = isset( $values['ns_basics_banner_shortcode'] ) ? $values['ns_basics_banner_shortcode'][0] : '';
     
     if($banner_display == 'true') {
-        do_action( 'rype_basics_before_page_banner', $values);
+        do_action( 'ns_basics_before_page_banner', $values);
         if($banner_source == 'slides' ) {
-            rypecore_get_template_part('template_parts/banner_slider', ['post_id' => $page_id]); 
+            ns_core_get_template_part('template_parts/banner_slider', ['post_id' => $page_id]); 
         } else if($banner_source == 'shortcode') {
             if(!empty($banner_shortcode)) { echo do_shortcode($banner_shortcode); } else { get_template_part('template_parts/subheader'); }
         } else if($banner_source == 'image_banner') {
             get_template_part('template_parts/subheader'); 
         } else {
-            do_action( 'rype_basics_custom_banner_source', $banner_source);
+            do_action( 'ns_basics_custom_banner_source', $banner_source);
         }
-        do_action( 'rype_basics_after_page_banner', $values);
+        do_action( 'ns_basics_after_page_banner', $values);
     }
 }
 
 /*-----------------------------------------------------------------------------------*/
 /*  Get Page Column Classes
 /*-----------------------------------------------------------------------------------*/
-function rypecore_get_page_col_classes($page_layout = 'full', $sidebar_size = null) {
+function ns_core_get_page_col_classes($page_layout = 'full', $sidebar_size = null) {
     
     if(empty($sidebar_size)) {
-        $sidebar_size = esc_attr(get_option('rypecore_page_sidebar_size', 'small')); 
+        $sidebar_size = esc_attr(get_option('ns_core_page_sidebar_size', 'small')); 
     }
     
     $col_class = array();
@@ -605,8 +605,8 @@ include('admin/breadcrumbs.php');
 /*-----------------------------------------------------------------------------------*/
 /*  Generate Icon
 /*-----------------------------------------------------------------------------------*/
-if( !function_exists('rypecore_get_icon') ){
-    function rypecore_get_icon($type, $fa_name, $line_name = null, $dripicon_name = null, $class = null) {
+if( !function_exists('ns_core_get_icon') ){
+    function ns_core_get_icon($type, $fa_name, $line_name = null, $dripicon_name = null, $class = null) {
         if($type == 'line' && $line_name != 'n/a') {
             if(empty($line_name)) { $line_name = $fa_name; }
             return '<i class="fa icon-'.$line_name.' icon icon-line '.$class.'"></i>';
@@ -622,11 +622,11 @@ if( !function_exists('rypecore_get_icon') ){
 /*-----------------------------------------------------------------------------------*/
 /*	Register Menus
 /*-----------------------------------------------------------------------------------*/
-add_action( 'init', 'rypecore_register_menus' );
-	function rypecore_register_menus() {
+add_action( 'init', 'ns_core_register_menus' );
+	function ns_core_register_menus() {
 	    register_nav_menus(
 	        array(
-	            'menu-1' => esc_html__( 'Primary Menu', 'rypecore' ),
+	            'menu-1' => esc_html__( 'Primary Menu', 'ns-core' ),
 	        )
 	    );
 	}
@@ -634,11 +634,11 @@ add_action( 'init', 'rypecore_register_menus' );
 /*-----------------------------------------------------------------------------------*/
 /*	Excerpt modifications
 /*-----------------------------------------------------------------------------------*/
-function rypecore_excerpt($limit) {
+function ns_core_excerpt($limit) {
     return wp_trim_words(get_the_excerpt(), $limit);
 }
 
-function rypecore_trim_excerpt($text) {
+function ns_core_trim_excerpt($text) {
   $raw_excerpt = $text;
   if ( '' == $text ) {
     $text = get_the_content('');
@@ -661,14 +661,14 @@ function rypecore_trim_excerpt($text) {
   return apply_filters('new_wp_trim_excerpt', $text, $raw_excerpt);
   }
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-add_filter('get_the_excerpt', 'rypecore_trim_excerpt');
+add_filter('get_the_excerpt', 'ns_core_trim_excerpt');
 
 /*-----------------------------------------------------------------------------------*/
 /*	Comment List
 /*-----------------------------------------------------------------------------------*/
-function rypecore_comment_list($comment, $args, $depth) {
+function ns_core_comment_list($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;
-    $icon_set = get_option('rypecore_icon_set', 'fa');
+    $icon_set = get_option('ns_core_icon_set', 'fa');
 	?>
 
 	<li <?php comment_class(); ?>>
@@ -682,15 +682,15 @@ function rypecore_comment_list($comment, $args, $depth) {
 					<h4><?php comment_author_link(); ?></h4>
 					<?php comment_text(); ?>
 					<div class="comment-details">
-						<a href="#"><?php echo rypecore_get_icon($icon_set, 'clock-o', 'clock3', 'clock'); ?><?php comment_date(); ?> at <?php comment_time(); ?></a>
-						<?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth'], 'login_text' => esc_html__('Login to Reply', 'rypecore'), 'reply_text' => rypecore_get_icon($icon_set, 'reply').esc_html__('Reply', 'rypecore')))); ?>
-						<?php edit_comment_link(rypecore_get_icon($icon_set, 'pencil').esc_html__('Edit', 'rypecore')); ?>
+						<a href="#"><?php echo ns_core_get_icon($icon_set, 'clock-o', 'clock3', 'clock'); ?><?php comment_date(); ?> at <?php comment_time(); ?></a>
+						<?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth'], 'login_text' => esc_html__('Login to Reply', 'ns-core'), 'reply_text' => ns_core_get_icon($icon_set, 'reply').esc_html__('Reply', 'ns-core')))); ?>
+						<?php edit_comment_link(ns_core_get_icon($icon_set, 'pencil').esc_html__('Edit', 'ns-core')); ?>
 						<div class="clear"></div>
 					</div>
 				</div>
 
 				<?php if($comment->comment_approved == '0') : ?>
-					<em><?php echo esc_html_e('Your comment is awaiting moderation.', 'rypecore'); ?></em>
+					<em><?php echo esc_html_e('Your comment is awaiting moderation.', 'ns-core'); ?></em>
 				<?php endif; ?>
 			</div>
 		</div><!-- end row -->
@@ -700,11 +700,11 @@ function rypecore_comment_list($comment, $args, $depth) {
 /*-----------------------------------------------------------------------------------*/
 /*	Register Widget Areas
 /*-----------------------------------------------------------------------------------*/
-function rypecore_widgets_init() {
+function ns_core_widgets_init() {
 
 	/** MAIN SIDEBAR **/
 	register_sidebar( array(
-		'name' => esc_html__( 'Page Sidebar', 'rypecore' ),
+		'name' => esc_html__( 'Page Sidebar', 'ns-core' ),
 		'id' => 'page_sidebar',
 		'before_widget' => '<div class="widget widget-sidebar %2$s">',
 		'after_widget' => '</div>',
@@ -714,7 +714,7 @@ function rypecore_widgets_init() {
 
 	/** BLOG SIDEBAR **/
 	register_sidebar( array(
-		'name' => esc_html__( 'Blog Sidebar', 'rypecore' ),
+		'name' => esc_html__( 'Blog Sidebar', 'ns-core' ),
 		'id' => 'blog_sidebar',
 		'before_widget' => '<div class="widget widget-sidebar %2$s">',
 		'after_widget' => '</div>',
@@ -723,7 +723,7 @@ function rypecore_widgets_init() {
 	) );
 	
 	/** FOOTER **/
-	$num_footer_cols = get_option('rypecore_num_footer_cols', '4');
+	$num_footer_cols = get_option('ns_core_num_footer_cols', '4');
 	if($num_footer_cols == '1') {
 		$footer_widget_class = '<div class="col-lg-12 col-md-12 col-sm-12 widget widget-footer %2$s">';
 	} else if ($num_footer_cols == '2') {
@@ -739,7 +739,7 @@ function rypecore_widgets_init() {
 	}
 
 	register_sidebar( array(
-		'name' => esc_html__( 'Footer', 'rypecore' ),
+		'name' => esc_html__( 'Footer', 'ns-core' ),
 		'id' => 'footer-widgets',
 		'before_widget' => $footer_widget_class,
 		'after_widget' => '</div>',
@@ -747,6 +747,6 @@ function rypecore_widgets_init() {
 		'after_title' => '</span></h4><div class="widget-divider"><div class="bar"></div></div>',
 	) );
 }
-add_action( 'widgets_init', 'rypecore_widgets_init' );
+add_action( 'widgets_init', 'ns_core_widgets_init' );
 
 ?>

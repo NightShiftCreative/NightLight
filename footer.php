@@ -1,18 +1,18 @@
 <?php
-	$hide_footer_widget_area = esc_attr(get_option('rypecore_hide_footer_widget_area'));
-    $footer_bg = esc_attr(get_option('rypecore_footer_bg'));
-    $footer_bg_display = esc_attr(get_option('rypecore_footer_bg_display'));
-	$display_bottombar = esc_attr(get_option('rypecore_display_bottombar', 'true'));
-    $sitelink = 'http://rypecreative.com/';
-    $bottom_bar_text_default = get_bloginfo('title').' | Theme by <a href="'.$sitelink.'" target="_blank">Rype Creative</a> | &copy; '. date('Y');
-	$bottom_bar_text = get_option('rypecore_bottom_bar_text', $bottom_bar_text_default);
+	$hide_footer_widget_area = esc_attr(get_option('ns_core_hide_footer_widget_area'));
+    $footer_bg = esc_attr(get_option('ns_core_footer_bg'));
+    $footer_bg_display = esc_attr(get_option('ns_core_footer_bg_display'));
+	$display_bottombar = esc_attr(get_option('ns_core_display_bottombar', 'true'));
+    $sitelink = 'http://nightshiftcreative.co/';
+    $bottom_bar_text_default = get_bloginfo('title').' | Theme by <a href="'.$sitelink.'" target="_blank">NightShift Creative</a> | &copy; '. date('Y');
+	$bottom_bar_text = get_option('ns_core_bottom_bar_text', $bottom_bar_text_default);
 ?>
 
 <?php if($hide_footer_widget_area != "true") { ?>
-<footer id="footer" <?php if(!empty($footer_bg)) { echo 'class="'.rypecore_bgDisplay($footer_bg_display).'"'; } ?>>
+<footer id="footer" <?php if(!empty($footer_bg)) { echo 'class="'.ns_core_bgDisplay($footer_bg_display).'"'; } ?>>
     <div class="container">
         <div class="row">
-            <?php if ( dynamic_sidebar(esc_html__( 'Footer', 'rypecore' )) && is_active_sidebar(esc_html__( 'Footer', 'rypecore' )) ) : else : endif; ?>
+            <?php if ( dynamic_sidebar(esc_html__( 'Footer', 'ns-core' )) && is_active_sidebar(esc_html__( 'Footer', 'ns-core' )) ) : else : endif; ?>
         </div><!-- end row -->
     </div><!-- end footer container -->
 </footer>

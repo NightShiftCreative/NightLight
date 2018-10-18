@@ -1,13 +1,13 @@
 /*
-Theme Name: RypeCore
-Theme URI: http://rypecreative.com/
-Author: Rype Creative
-Author URI: http://rypecreative.com/about
-Description: A modern, responsive, theme framework.
+Theme Name: NightLight
+Theme URI: http://nightshiftcreative.co/
+Author: NightShift Creative
+Author URI: http://nightshiftcreative.co/about-us/
+Description: A boilerplate WordPress theme, fully compatible with all NightShift plugins
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: rypecore
+Text Domain: ns-core
 Tags: four-columns, left-sidebar, right-sidebar, custom-colors, custom-logo, footer-widgets
 */
 
@@ -93,7 +93,7 @@ body {
 .right, .alignright { float:right; }
 .center, .aligncenter { text-align:center; margin-left: auto; margin-right: auto; }
 .clear { clear:both; }
-.show-none { display:none; }
+.show-none, .hide { display:none; }
 .show { display:block; }
 .divider { width:100%; height:1px; background:rgba(0, 0, 0, 0.1); margin-bottom:20px; margin-top:20px; }
 .divider-fade {
@@ -584,14 +584,14 @@ textarea.border,
 .video-cover-no-img { min-height:300px; }
 
 /** TOOLTIPS **/
-.rype-tooltip { display:inline-block; position:relative; }
-.rype-tooltip-toggle { cursor:pointer; }
+.ns-tooltip { display:inline-block; position:relative; }
+.ns-tooltip-toggle { cursor:pointer; }
 
-.rype-tooltip:hover .rype-tooltip-content { opacity:1; height:auto;}
-.rype-tooltip:hover .rype-tooltip-content-inner { margin-top:10px; }
-.rype-tooltip:hover .rype-tooltip-content-inner:before { top:-4px; }
+.ns-tooltip:hover .ns-tooltip-content { opacity:1; height:auto;}
+.ns-tooltip:hover .ns-tooltip-content-inner { margin-top:10px; }
+.ns-tooltip:hover .ns-tooltip-content-inner:before { top:-4px; }
 
-.rype-tooltip .rype-tooltip-content { 
+.ns-tooltip .ns-tooltip-content { 
 	opacity:0;
 	height:0;
 	overflow:hidden;
@@ -604,7 +604,7 @@ textarea.border,
     transform:translateX(-50%);
     transition:all 0.4s;
 }
-.rype-tooltip .rype-tooltip-content-inner {
+.ns-tooltip .ns-tooltip-content-inner {
 	background:white;
 	border:1px solid rgba(0, 0, 0, 0.14);
 	border-top:2px solid #d15d33;
@@ -620,7 +620,7 @@ textarea.border,
     line-height:normal;
     transition:all 0.4s;
 }
-.rype-tooltip .rype-tooltip-content-inner:before {
+.ns-tooltip .ns-tooltip-content-inner:before {
     content: ' ';
     height: 0;
     position: absolute;
@@ -641,6 +641,11 @@ textarea.border,
 .sl-wrapper-button .sl-button-text { display:inline-block; }
 .sl-wrapper-button .button.outline { float:none !important; width:100% !important; }
 
+/** DATEPICKER **/
+.ui-datepicker { background:white; padding:20px; box-shadow:0px 0px 15px rgba(0, 0, 0, 0.1); }
+.ui-datepicker .ui-datepicker-calendar { margin-top:10px; margin-bottom:0; }
+.ui-datepicker .ui-datepicker-next { float:right; }
+.ui-datepicker .ui-datepicker-next, .ui-datepicker .ui-datepicker-prev { margin-bottom:13px; cursor:pointer; display:inline-block; font-size:12px; }
 
 /*====================================================================================*/
  /* 03 HEADER
@@ -818,7 +823,7 @@ header.navbar-fixed { position:fixed; top:0; }
 }
 .header-transparent .navbar-toggle .icon-bar { background:white; }
 
-/** HEADER DEFAULT **/
+/** HEADER MENU BAR **/
 .header-default.has-menu { padding-bottom:30px; }
 .header-default .navbar-header { float:none; width:100%; max-width:100%; display:block; }
 
@@ -1059,9 +1064,9 @@ header.header-default.navbar-fixed { position:relative; }
 .blog-post-details > li { margin-right:13px; font-size:13px; color:#9eaab2; list-style:none !important; display:inline; }
 .blog-post-details > li:first-child { margin-left:0 !important; }
 
-.post-share .rype-tooltip-content ul { margin:0 !important; position:relative; }
-.post-share .rype-tooltip-content ul li { display:inline-block; width:auto; margin:0; position:static !important;}
-.post-share .rype-tooltip-content ul li a { 
+.post-share .ns-tooltip-content ul { margin:0 !important; position:relative; }
+.post-share .ns-tooltip-content ul li { display:inline-block; width:auto; margin:0; position:static !important;}
+.post-share .ns-tooltip-content ul li a { 
     padding:0px 4px !important;
     display:block; 
     border-right:1px solid rgba(255, 255, 255, 0.2);

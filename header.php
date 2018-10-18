@@ -1,5 +1,5 @@
 <?php 
-    $header_vars = rypecore_load_header_settings();
+    $header_vars = ns_core_load_header_settings();
 
     //GET CURRENT USER INFO
     $current_user = wp_get_current_user();
@@ -34,7 +34,7 @@ if($header_style == 'default') {
 }
 if(has_nav_menu('menu-1') && !empty($main_menu_items)) { $header_class = $header_class.' has-menu'; }
 if($header_vars['sticky_header'] == 'true') { $header_class = $header_class.' navbar-fixed'; }
-if(!empty($header_vars['header_bg'])) { $header_class = $header_class.' '.rypecore_bgDisplay($header_vars['header_bg_display']);  }
+if(!empty($header_vars['header_bg'])) { $header_class = $header_class.' '.ns_core_bgDisplay($header_vars['header_bg_display']);  }
 ?>
 
 <!-- wp head -->
@@ -63,23 +63,23 @@ if(!empty($header_vars['header_bg'])) { $header_class = $header_class.' '.rypeco
 
         <div class="navbar-header">
             <!-- DETAILS -->
-            <?php echo rypecore_get_header_items(); ?>
+            <?php echo ns_core_get_header_items(); ?>
 
             <!-- LOGO -->
-            <?php echo rypecore_get_header_logo(); ?>
+            <?php echo ns_core_get_header_logo(); ?>
 
             <!-- NAVBAR TOGGLE -->
-            <?php echo rypecore_get_header_toggle(); ?>
+            <?php echo ns_core_get_header_toggle(); ?>
         </div>
 
     <!-- HEADER CLASSIC STYLE -->
     <?php } else { ?>
         
         <!-- LOGO -->
-        <div class="navbar-header"><?php echo rypecore_get_header_logo(); ?></div>
+        <div class="navbar-header"><?php echo ns_core_get_header_logo(); ?></div>
 
         <!-- NAVBAR TOGGLE -->
-        <?php echo rypecore_get_header_toggle(); ?>
+        <?php echo ns_core_get_header_toggle(); ?>
     <?php } ?>
     
     <!-- MAIN MENU -->
@@ -104,7 +104,7 @@ if(!empty($header_vars['header_bg'])) { $header_class = $header_class.' '.rypeco
                 <div class="container-fixed <?php if($header_vars['header_container'] != 'true') { echo 'container-full'; } ?>">
                     <?php if(!empty($header_vars['header_menu_button_page']) && !empty($header_vars['header_menu_button_text'])) { ?>
                     <div class="member-actions right">
-                        <a href="<?php echo esc_url($header_vars['header_menu_button_page']); ?>" class="button small alt button-icon"><i class="fa fa-plus"></i><?php echo esc_attr($header_vars['header_menu_button_text']); ?></a>
+                        <a href="<?php echo esc_url($header_vars['header_menu_button_page']); ?>" class="button small light button-icon"><i class="fa fa-plus icon"></i><?php echo esc_attr($header_vars['header_menu_button_text']); ?></a>
                     </div>
                     <?php } ?>
                     <?php echo wp_kses_post($main_menu); ?>
