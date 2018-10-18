@@ -124,7 +124,7 @@ function ns_core_register_theme_options() {
 function ns_core_theme_options_page() {
 ?>
 
-<div class="wrap rc-theme-options">
+<div class="wrap ns-theme-options">
 <h2>Theme Options</h2>
 <br/>
 
