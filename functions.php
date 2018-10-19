@@ -682,9 +682,9 @@ function ns_core_comment_list($comment, $args, $depth) {
 					<h4><?php comment_author_link(); ?></h4>
 					<?php comment_text(); ?>
 					<div class="comment-details">
-						<a href="#"><?php echo ns_core_get_icon($icon_set, 'clock-o', 'clock3', 'clock'); ?><?php comment_date(); ?> at <?php comment_time(); ?></a>
+						<a href="#"><?php echo ns_core_get_icon($icon_set, 'clock', 'clock3', 'clock'); ?><?php comment_date(); ?> at <?php comment_time(); ?></a>
 						<?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth'], 'login_text' => esc_html__('Login to Reply', 'ns-core'), 'reply_text' => ns_core_get_icon($icon_set, 'reply').esc_html__('Reply', 'ns-core')))); ?>
-						<?php edit_comment_link(ns_core_get_icon($icon_set, 'pencil').esc_html__('Edit', 'ns-core')); ?>
+						<?php edit_comment_link(ns_core_get_icon($icon_set, 'pencil-alt').esc_html__('Edit', 'ns-core')); ?>
 						<div class="clear"></div>
 					</div>
 				</div>
