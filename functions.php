@@ -613,7 +613,7 @@ if( !function_exists('ns_core_get_icon') ){
 /*-----------------------------------------------------------------------------------*/
 /*  Get Social Icons
 /*-----------------------------------------------------------------------------------*/
-function ns_core_get_social_icons() {
+function ns_core_get_social_icons($class = null) {
     $output = '';
     $fb = esc_attr(get_option('ns_core_fb'));
     $twitter = esc_attr(get_option('ns_core_twitter'));
@@ -625,7 +625,7 @@ function ns_core_get_social_icons() {
     $flickr = esc_attr(get_option('ns_core_flickr'));
     $dribbble = esc_attr(get_option('ns_core_dribbble'));
     if(!empty($fb) || !empty($twitter) || !empty($google) || !empty($linkedin) || !empty($youtube) || !empty($vimeo) || !empty($instagram) || !empty($flickr) || !empty($dribbble)) { 
-        $output .= '<ul class="social-icons">';
+        $output .= '<ul class="social-icons '.$class.'">';
             if(!empty($fb)) { $output .= '<li><a href="'.esc_url($fb).'" target="_blank"><i class="fab fa-facebook-f icon"></i></a></li>'; }
             if(!empty($twitter)) { $output .= '<li><a href="'.esc_url($twitter).'" target="_blank"><i class="fab fa-twitter icon"></i></a></li>'; }
             if(!empty($google)) { $output .= '<li><a href="'.esc_url($google).'" target="_blank"><i class="fab fa-google-plus-g icon"></i></a></li>'; }
