@@ -486,7 +486,8 @@ textarea.border,
 
 .ui-accordion .ui-accordion-header:before {
     content: "\f105";
-    font-family: FontAwesome;
+    font-family: 'Font Awesome\ 5 Free', 'FontAwesome';
+    font-weight: 900;
     margin-right:10px;
     font-size:20px;
 }
@@ -750,11 +751,13 @@ header.navbar-fixed { position:fixed; top:0; }
 .nav.navbar-nav li.current-menu-item > a { box-shadow:inset 0px -2px #04d2c8; }
 .nav.navbar-nav li.menu-item-has-children:after {
 	content: "\f107";
-    font-family: FontAwesome;
+    font-family: 'Font Awesome\ 5 Free', 'FontAwesome';
+    font-weight: 900;
+    font-size:13px;
     color:#838893;
-	margin-top:32px;
+	margin-top:34px;
 	top:0;
-	right: 5px;
+	right: 12px;
 	position: absolute;
 }
 .nav.navbar-nav li:hover.menu-item-has-children:after { color:#04d2c8 !important; }
@@ -867,9 +870,11 @@ header.navbar-fixed { position:fixed; top:0; }
 .header-default .nav.navbar-nav li a:hover { color:#04d2c8; }
 .header-default .nav.navbar-nav li.menu-item-has-children:after {
 	content: "\f107";
-    font-family: FontAwesome;
+    font-family: 'Font Awesome\ 5 Free', 'FontAwesome';
+    font-weight: 900;
     color:rgba(255, 255, 255, 0.4);
-	margin-top:19px;
+	margin-top:20px;
+	margin-right:-4px;
 }
 
 .header-default .member-actions { padding:0; }
@@ -1147,7 +1152,8 @@ header.header-default.navbar-fixed { position:relative; }
 .widget ul li { position:relative; list-style:none; font-weight:500; }
 .widget ul li:before {
 	content: "\f105";
-    font-family: FontAwesome;
+    font-family: 'Font Awesome\ 5 Free', 'FontAwesome';
+    font-weight: 900;
     color:rgba(0, 0, 0, 0.5);
 	top:0;
 	left: -20px;

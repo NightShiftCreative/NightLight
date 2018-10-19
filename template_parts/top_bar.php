@@ -72,11 +72,11 @@ $social_icons = ns_core_get_social_icons('top-bar-item left');
                                 <i class="fa icon fa-caret-down"></i>
                             </div>
                             <ul class="member-sub-menu">
-                                <?php if(!empty($header_vars['members_dashboard_page'])) { ?><li><a href="<?php echo $header_vars['members_dashboard_page']; ?>"><?php echo ns_core_get_icon($header_vars['icon_set'], 'dashboard', 'layers', 'meter'); ?><?php esc_html_e( 'Dashboard', 'ns-core' ); ?></a></li><?php } ?>
+                                <?php if(!empty($header_vars['members_dashboard_page'])) { ?><li><a href="<?php echo $header_vars['members_dashboard_page']; ?>"><?php echo ns_core_get_icon($header_vars['icon_set'], 'tachometer-alt', 'layers', 'meter'); ?><?php esc_html_e( 'Dashboard', 'ns-core' ); ?></a></li><?php } ?>
                                 <?php if(!empty($header_vars['members_edit_profile_page'])) { ?><li><a href="<?php echo $header_vars['members_edit_profile_page']; ?>"><?php echo ns_core_get_icon($header_vars['icon_set'], 'cog', 'cog', 'gear'); ?><?php esc_html_e( 'Edit Profile', 'ns-core' ); ?></a></li><?php } ?>
                                 <?php if(!empty($header_vars['members_favorites_page'])) { ?><li><a href="<?php echo $header_vars['members_favorites_page']; ?>"><?php echo ns_core_get_icon($header_vars['icon_set'], 'heart'); ?><?php esc_html_e( 'Favorites', 'ns-core' ); ?></a></li><?php } ?>
                                 <?php do_action('ns_basics_after_top_bar_member_menu'); ?>
-                                <li><a href="<?php echo wp_logout_url(get_permalink()); ?>"><?php echo ns_core_get_icon($header_vars['icon_set'], 'sign-out', 'enter-left', 'enter'); ?><?php esc_html_e( 'Logout', 'ns-core' ); ?></a></li>
+                                <li><a href="<?php echo wp_logout_url(get_permalink()); ?>"><?php echo ns_core_get_icon($header_vars['icon_set'], 'sign-out-alt', 'enter-left', 'enter'); ?><?php esc_html_e( 'Logout', 'ns-core' ); ?></a></li>
                             </ul>
                         </div>
                     <?php } ?>
