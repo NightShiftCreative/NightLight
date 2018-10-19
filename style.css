@@ -1414,7 +1414,7 @@ header.header-default.navbar-fixed { position:relative; }
 .contact-item:last-child { margin-right:0; }
 
 .contact-item h4 { color:white; font-size:20px; font-weight:600; }
-.contact-item .fa {
+.contact-item > .icon {
 	font-size:30px;
 	width:58px;
 	height:58px;
@@ -1425,7 +1425,7 @@ header.header-default.navbar-fixed { position:relative; }
 	margin-bottom:20px;
 }
 .contact-item .social-icons li { padding:0; }
-.contact-item .social-icons .fa { border:none; color:white; font-size:17px; width:35px; height:35px; padding-top:10px; margin-bottom:0px; }
+.contact-item .social-icons .icon { border:none; color:white; font-size:17px; width:35px; height:35px; padding-top:10px; margin-bottom:0px; }
 .contact-item p { margin-bottom:0px; overflow:hidden; text-overflow:ellipsis; }
 
 .contact-form-before { margin-bottom:30px; }
