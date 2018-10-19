@@ -197,15 +197,6 @@ function ns_core_load_header_settings() {
     $header_vars['header_container'] = esc_attr(get_option('ns_core_header_container', 'true'));
     $header_vars['phone'] = esc_attr(get_option('ns_core_phone'));
     $header_vars['email'] = esc_attr(get_option('ns_core_email'));
-    $header_vars['fb']  = esc_attr(get_option('ns_core_fb'));
-    $header_vars['twitter'] = esc_attr(get_option('ns_core_twitter'));
-    $header_vars['google'] = esc_attr(get_option('ns_core_google'));
-    $header_vars['linkedin'] = esc_attr(get_option('ns_core_linkedin'));
-    $header_vars['youtube'] = esc_attr(get_option('ns_core_youtube'));
-    $header_vars['vimeo'] = esc_attr(get_option('ns_core_vimeo'));
-    $header_vars['instagram'] = esc_attr(get_option('ns_core_instagram'));
-    $header_vars['flickr'] = esc_attr(get_option('ns_core_flickr'));
-    $header_vars['dribbble'] = esc_attr(get_option('ns_core_dribbble'));
     $header_vars['header_bg'] = esc_attr(get_option('ns_core_header_bg'));
     $header_vars['header_bg_display'] = esc_attr(get_option('ns_core_header_bg_display'));
     $header_vars['header_style'] = esc_attr(get_option('ns_core_header_style', 'transparent'));

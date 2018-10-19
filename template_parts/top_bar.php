@@ -5,6 +5,7 @@ $header_vars = ns_core_load_header_settings();
 $current_user = wp_get_current_user();
 $avatar_id = get_user_meta( $current_user->ID, 'avatar', true ); 
 $avatar_img = wp_get_attachment_image($avatar_id, array('16', '16'), "", array( "class" => "avatar"));
+$social_icons = ns_core_get_social_icons('top-bar-item left');
 ?>  
 
 <?php if($header_vars['display_topbar'] == 'true') { ?>
@@ -32,21 +33,11 @@ $avatar_img = wp_get_attachment_image($avatar_id, array('16', '16'), "", array( 
                     
                     <?php if(!empty($header_vars['phone'])) { echo '<a class="top-bar-item left" href="tel:'.$header_vars['phone'].'">'.ns_core_get_icon($header_vars['icon_set'], 'phone', 'telephone').$header_vars['phone'].'</a>'; } ?>
                 
-                <?php } else if($topbar_field == 'social') { ?>
+                <?php } else if($topbar_field == 'social') { 
                     
-                    <ul class="top-bar-item left social-icons">
-                        <?php if(!empty($header_vars['fb'])) { ?><li><a href="<?php echo esc_url($header_vars['fb']); ?>" target="_blank"><i class="fa fa-facebook"></i></a></li><?php } ?>
-                        <?php if(!empty($header_vars['twitter'])) { ?><li><a href="<?php echo esc_url($header_vars['twitter']); ?>" target="_blank"><i class="fa fa-twitter"></i></a></li><?php } ?>
-                        <?php if(!empty($header_vars['google'])) { ?><li><a href="<?php echo esc_url($header_vars['google']); ?>" target="_blank"><i class="fa fa-google-plus"></i></a></li><?php } ?>
-                        <?php if(!empty($header_vars['linkedin'])) { ?><li><a href="<?php echo esc_url($header_vars['linkedin']); ?>" target="_blank"><i class="fa fa-linkedin"></i></a></li><?php } ?>
-                        <?php if(!empty($header_vars['youtube'])) { ?><li><a href="<?php echo esc_url($header_vars['youtube']); ?>" target="_blank"><i class="fa fa-youtube"></i></a></li><?php } ?>
-                        <?php if(!empty($header_vars['vimeo'])) { ?><li><a href="<?php echo esc_url($header_vars['vimeo']); ?>" target="_blank"><i class="fa fa-vimeo"></i></a></li><?php } ?>
-                        <?php if(!empty($header_vars['instagram'])) { ?><li><a href="<?php echo esc_url($header_vars['instagram']); ?>" target="_blank"><i class="fa fa-instagram"></i></a></li><?php } ?>
-                        <?php if(!empty($header_vars['flickr'])) { ?><li><a href="<?php echo esc_url($header_vars['flickr']); ?>" target="_blank"><i class="fa fa-flickr"></i></a></li><?php } ?>
-                        <?php if(!empty($header_vars['dribbble'])) { ?><li><a href="<?php echo esc_url($header_vars['dribbble']); ?>" target="_blank"><i class="fa fa-dribbble"></i></a></li><?php } ?>
-                    </ul>
+                    if(!empty($social_icons)) { echo $social_icons; }
                 
-                <?php } else if($topbar_field == 'member') { ?>
+                } else if($topbar_field == 'member') { ?>
 
                     <!-- start member actions -->
                     <?php if(!is_user_logged_in()) { ?>
