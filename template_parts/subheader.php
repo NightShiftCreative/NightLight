@@ -86,7 +86,8 @@
     			?>
 
                 <!-- BANNER SUB-TEXT -->
-                <?php if(!empty($banner_text) || !empty($template_args['banner_text']) || !empty(term_description())) { ?>
+                <?php $term_description = term_description(); ?>
+                <?php if(!empty($banner_text) || !empty($template_args['banner_text']) || !empty($term_description)) { ?>
                     <span class="subheader-text">
                         <?php 
                         if(!empty($banner_text)) {
