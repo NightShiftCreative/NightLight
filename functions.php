@@ -393,7 +393,7 @@ function ns_core_add_default_pages() {
       'ID' => 1,
       'post_name' => 'welcome', // The name (slug) for your post
       'post_status' => 'publish', //Set the status of the new post.
-      'post_title' => esc_html__('Welcome to PadPress', 'ns-core'), //The title of your post.
+      'post_title' => esc_html__('Welcome to NightLight', 'ns-core'), //The title of your post.
       'post_type' => 'post', //Sometimes you want to post a page.
       'post_content' => $hello_world_content,
     );  
