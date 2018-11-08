@@ -400,6 +400,9 @@ input[type=checkbox].toggle-switch-checkbox { display: none; }
 
 .ns-theme-options .reset-fonts { display:block; margin-top:10px; }
 
+.ns-theme-options .top-bar-custom { margin-top:10px; }
+.ns-theme-options .top-bar-custom label { display:block; font-weight:600; }
+
 /**********************************************/
 /** RESPONSIVE **/
 /**********************************************/

@@ -50,6 +50,7 @@ function ns_core_register_theme_options() {
     //register header settings
     register_setting( 'ns-core-settings-group', 'ns_core_display_topbar' );
     register_setting( 'ns-core-settings-group', 'ns_core_topbar_first_field' );
+    register_setting( 'ns-core-settings-group', 'ns_core_topbar_first_field_custom' );
     register_setting( 'ns-core-settings-group', 'ns_core_topbar_second_field' );
     register_setting( 'ns-core-settings-group', 'ns_core_topbar_third_field' );
     register_setting( 'ns-core-settings-group', 'ns_core_topbar_fourth_field' );
@@ -545,13 +546,19 @@ function ns_core_theme_options_page() {
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Top Bar First Field', 'ns-core'); ?></label></td>
                                         <td class="admin-module-field">
-                                            <select name="ns_core_topbar_first_field">
-                                                <option value="email" <?php if(esc_attr(get_option('ns_core_topbar_first_field', 'email')) == 'email') { echo 'selected'; } ?>>Email</option>
-                                                <option value="phone" <?php if(esc_attr(get_option('ns_core_topbar_first_field', 'email')) == 'phone') { echo 'selected'; } ?>>Phone</option>
-                                                <option value="social" <?php if(esc_attr(get_option('ns_core_topbar_first_field', 'email')) == 'social') { echo 'selected'; } ?>>Social Links</option>
-                                                <option value="member" <?php if(esc_attr(get_option('ns_core_topbar_first_field', 'email')) == 'member') { echo 'selected'; } ?>>Member Actions</option>
-                                                <option value="" <?php if(esc_attr(get_option('ns_core_topbar_first_field', 'email')) == '') { echo 'selected'; } ?>>None</option>
+                                            <?php $topbar_first_field = get_option('ns_core_topbar_first_field', 'email'); ?>
+                                            <select name="ns_core_topbar_first_field" class="top-bar-field-select">
+                                                <option value="email" <?php if(esc_attr($topbar_first_field) == 'email') { echo 'selected'; } ?>>Email</option>
+                                                <option value="phone" <?php if(esc_attr($topbar_first_field) == 'phone') { echo 'selected'; } ?>>Phone</option>
+                                                <option value="social" <?php if(esc_attr($topbar_first_field) == 'social') { echo 'selected'; } ?>>Social Links</option>
+                                                <option value="member" <?php if(esc_attr($topbar_first_field) == 'member') { echo 'selected'; } ?>>Member Actions</option>
+                                                <option value="custom" <?php if(esc_attr($topbar_first_field) == 'custom') { echo 'selected'; } ?>>Custom</option>
+                                                <option value="" <?php if(esc_attr($topbar_first_field) == '') { echo 'selected'; } ?>>None</option>
                                             </select>
+                                            <div class="top-bar-custom <?php if($topbar_first_field != 'custom') { echo 'hide-soft'; } ?>">
+                                                <label><?php echo esc_html_e('Custom Content', 'ns-core'); ?></label>
+                                                <textarea class="" name="ns_core_topbar_first_field_custom"><?php echo get_option('ns_core_topbar_first_field_custom'); ?></textarea>
+                                            </div>
                                         </td>
                                     </tr>
                                 </table>

@@ -161,4 +161,17 @@ jQuery(document).ready(function($) {
        $('.admin-module-contact-form-default').show();
     });
 
+    /********************************************/
+    /* TOPBAR FIELD - TOGGLE CUSTOM CONTENT */
+    /********************************************/
+    $('.top-bar-field-select').on('change', function() {
+		if(this.value == 'custom') {
+			$(this).closest('.admin-module').find('.top-bar-custom').addClass('show');
+			$(this).closest('.admin-module').find('.top-bar-custom').removeClass('hide-soft');
+		} else {
+			$(this).closest('.admin-module').find('.top-bar-custom').removeClass('show');
+			$(this).closest('.admin-module').find('.top-bar-custom').addClass('hide-soft');
+		}
+	});
+
 });
