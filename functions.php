@@ -190,9 +190,13 @@ function ns_core_load_header_settings() {
     $header_vars['preloader_img'] = esc_attr(get_option('ns_core_preloader_img', $header_vars['preloader_img_default']));
     $header_vars['display_topbar'] = esc_attr(get_option('ns_core_display_topbar', 'true'));
     $header_vars['topbar_first_field'] = esc_attr(get_option('ns_core_topbar_first_field', 'email'));
+    $header_vars['topbar_first_field_custom'] = esc_attr(get_option('ns_core_topbar_first_field_custom'));
     $header_vars['topbar_second_field'] = esc_attr(get_option('ns_core_topbar_second_field', 'phone'));
+    $header_vars['topbar_second_field_custom'] = esc_attr(get_option('ns_core_topbar_second_field_custom'));
     $header_vars['topbar_third_field'] = esc_attr(get_option('ns_core_topbar_third_field', 'social'));
+    $header_vars['topbar_third_field_custom'] = esc_attr(get_option('ns_core_topbar_third_field_custom'));
     $header_vars['topbar_fourth_field'] = esc_attr(get_option('ns_core_topbar_fourth_field', 'member'));
+    $header_vars['topbar_fourth_field_custom'] = esc_attr(get_option('ns_core_topbar_fourth_field_custom'));
     $header_vars['sticky_header'] = esc_attr(get_option('ns_core_sticky_header', 'true'));
     $header_vars['header_container'] = esc_attr(get_option('ns_core_header_container', 'true'));
     $header_vars['phone'] = esc_attr(get_option('ns_core_phone'));
