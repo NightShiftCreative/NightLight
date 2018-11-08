@@ -14,11 +14,6 @@ $social_icons = ns_core_get_social_icons('top-bar-item left');
 
         <?php
             $topbar_fields = array();
-            /*array_push($topbar_fields, $header_vars['topbar_first_field']);
-            array_push($topbar_fields, $header_vars['topbar_second_field']);
-            array_push($topbar_fields, $header_vars['topbar_third_field']);
-            array_push($topbar_fields, $header_vars['topbar_fourth_field']);*/
-
             array_push($topbar_fields, array('field' => $header_vars['topbar_first_field'], 'custom' => $header_vars['topbar_first_field_custom']));
             array_push($topbar_fields, array('field' => $header_vars['topbar_second_field'], 'custom' => $header_vars['topbar_second_field_custom']));
             array_push($topbar_fields, array('field' => $header_vars['topbar_third_field'], 'custom' => $header_vars['topbar_third_field_custom']));
