@@ -102,12 +102,20 @@ if(!empty($header_vars['header_bg'])) { $header_class = $header_class.' '.ns_cor
         <div class="navbar-collapse collapse">
             <div class="main-menu-wrap">
                 <div class="container-fixed <?php if($header_vars['header_container'] != 'true') { echo 'container-full'; } ?>">
+                    
+                    <!-- HOOK FOR PLUGINS -->
+                    <?php do_action('ns_core_before_main_menu'); ?>
+
                     <?php if(!empty($header_vars['header_menu_button_page']) && !empty($header_vars['header_menu_button_text'])) { ?>
                     <div class="member-actions right">
                         <a href="<?php echo esc_url($header_vars['header_menu_button_page']); ?>" class="button small light button-icon"><i class="fa fa-plus icon"></i><?php echo esc_attr($header_vars['header_menu_button_text']); ?></a>
                     </div>
                     <?php } ?>
                     <?php echo wp_kses_post($main_menu); ?>
+
+                    <!-- HOOK FOR PLUGINS -->
+                    <?php do_action('ns_core_after_main_menu'); ?>
+
                 </div>
             </div>
         </div>
