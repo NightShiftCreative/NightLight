@@ -74,14 +74,14 @@ if(!empty($header_vars['header_bg'])) { $header_class = $header_class.' '.ns_cor
 
     <!-- HEADER CLASSIC STYLE -->
     <?php } else { ?>
-        
+
         <!-- LOGO -->
         <div class="navbar-header"><?php echo ns_core_get_header_logo(); ?></div>
 
         <!-- NAVBAR TOGGLE -->
         <?php echo ns_core_get_header_toggle(); ?>
     <?php } ?>
-    
+
     <!-- MAIN MENU -->
     <?php
     if ( has_nav_menu( 'menu-1' )) {

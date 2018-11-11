@@ -675,28 +675,6 @@ header.navbar-fixed { position:fixed; top:0; }
 .top-bar-right .top-bar-item:last-child { border-left:1px solid rgba(255, 255, 255, 0.15); }
 
 .top-bar-member-actions .login-link { margin-right:8px; }
-.top-bar-member-actions .avatar { border-radius:100%; margin-right:4px; }
-.top-bar-member-actions .member-sub-menu { 
-	display:none; 
-	position:absolute; 
-	width:180px; 
-	background:white; 
-    border-radius:0px 0px 4px 4px;
-    box-shadow:0px 5px 8px rgba(0, 0, 0, 0.12);
-	top:37px; 
-	z-index:100000; 
-	right:0;
-    text-align:left;
-}
-.top-bar-member-actions .member-sub-menu li a { 
-    padding:10px 13px; 
-    display:block;
-    border-bottom:1px solid rgba(0, 0, 0, 0.07); 
-    color:#5d6069;
-}
-.top-bar-member-actions .member-sub-menu li:last-child  a { border:none; }
-.top-bar-member-actions .member-sub-menu li a:hover { background:rgba(255, 255, 255, 0.06); color:#59aee9; }
-.top-bar-member-actions:hover .member-sub-menu { display:block; }
 .top-bar-member-actions:hover { background:rgba(255, 255, 255, 0.1); }
 
 .top-bar-left .top-bar-item .member-sub-menu { left:0; }
@@ -804,6 +782,29 @@ header.navbar-fixed { position:fixed; top:0; }
     padding:25px 0px 24px 30px;
     margin-left:10px; 
 }
+
+.header-member-actions .avatar { border-radius:100%; margin-right:4px; }
+.header-member-actions .member-sub-menu { 
+	display:none; 
+	position:absolute; 
+	width:180px; 
+	background:white; 
+    border-radius:0px 0px 4px 4px;
+    box-shadow:0px 5px 8px rgba(0, 0, 0, 0.12);
+	top:37px; 
+	z-index:100000; 
+	right:0;
+    text-align:left;
+}
+.header-member-actions .member-sub-menu li a { 
+    padding:10px 13px; 
+    display:block;
+    border-bottom:1px solid rgba(0, 0, 0, 0.07); 
+    color:#5d6069;
+}
+.header-member-actions .member-sub-menu li:last-child  a { border:none; }
+.header-member-actions .member-sub-menu li a:hover { background:rgba(255, 255, 255, 0.06); color:#59aee9; }
+.header-member-actions:hover .member-sub-menu { display:block; }
 
 /** HEADER TRANSPARENT **/
 .header-transparent {
