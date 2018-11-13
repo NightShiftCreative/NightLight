@@ -413,6 +413,7 @@ textarea.border,
 
 /** SLICK SLIDER **/
 .slider-wrap { position:relative; }
+.slick-list, .slick-slide { outline: none !important; }
 
 .slider { opacity:0; overflow:hidden; }
 .slider.slick-initialized { opacity:1; transition:all 0.4s; }
