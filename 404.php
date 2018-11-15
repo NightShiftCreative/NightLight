@@ -2,7 +2,7 @@
 
 <?php get_template_part('template_parts/subheader'); ?>
 
-<section class="module page-not-found">
+<section class="module module-main page-not-found">
     <div class="container">
 
         <div class="row">

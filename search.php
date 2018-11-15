@@ -3,7 +3,7 @@
 
 <?php get_template_part('template_parts/subheader'); ?>
 
-<section class="module">
+<section class="module module-main">
     <div class="container">
 
         <h5><?php echo '<strong>'.$wp_query->post_count.'</strong> '. esc_html__('search results found', 'ns-core'); ?></h5><br/>

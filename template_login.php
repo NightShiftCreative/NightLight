@@ -18,7 +18,7 @@
 
 <?php echo ns_core_generate_page_banner($values); ?>
 
-<section <?php if($page_layout_container == 'true') { echo 'class="module"'; } ?>>
+<section <?php if($page_layout_container == 'true') { echo 'class="module module-main"'; } else { echo 'class="module-main"'; } ?>>
     <div class="<?php if($page_layout_container != 'true') { echo 'container-fluid'; } else { echo 'container'; } ?>">
 
         <div class="row">

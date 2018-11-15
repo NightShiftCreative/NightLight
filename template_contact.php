@@ -24,7 +24,7 @@
 
 <?php if($contact_details_display == 'true') { get_template_part('template_parts/contact_details'); } ?>
 
-<section <?php if($page_layout_container == 'true') { echo 'class="module"'; } ?>>
+<section <?php if($page_layout_container == 'true') { echo 'class="module module-main"'; } else { echo 'class="module-main"'; } ?>>
     <div class="<?php if($page_layout_container != 'true') { echo 'container-fluid'; } else { echo 'container'; } ?>">
 
         <div class="row">
