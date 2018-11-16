@@ -62,7 +62,7 @@
 							<div class="container">
 								<div class="slide-content">
             						<h1><?php the_title(); ?></h1>
-                                    <p class="slide-text"><?php echo get_the_content(); ?></p>
+									<p class="slide-text"><?php echo get_the_content(); ?></p>
             						<?php if(!empty($slide_button_text)) { echo '<a href="'.$slide_button_link.'" class="button alt button-icon"><i class="fa fa-angle-right"></i>'.$slide_button_text.'</a>'; } ?>
             					</div>
 							</div>
