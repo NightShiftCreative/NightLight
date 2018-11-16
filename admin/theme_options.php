@@ -181,7 +181,7 @@ function ns_core_theme_options_page() {
                 <td class="theme-options-nav-container" valign="top">
                     <ul class="ui-tabs-nav">
                         <li><a href="#general" title="<?php echo esc_html_e('General', 'ns-core'); ?>"><i class="fa fa-globe"></i> <span class="ui-tab-text"><?php echo esc_html_e('General', 'ns-core'); ?></span></a></li>
-                        <li><a href="#contact" title="<?php echo esc_html_e('Contact & Social', 'ns-core'); ?>" onclick="refreshMap()"><i class="fa fa-comment"></i> <span class="ui-tab-text"><?php echo esc_html_e('Contact & Social', 'ns-core'); ?></span></a></li>
+                        <li><a href="#contact" title="<?php echo esc_html_e('Contact & Social', 'ns-core'); ?>"><i class="fa fa-comment"></i> <span class="ui-tab-text"><?php echo esc_html_e('Contact & Social', 'ns-core'); ?></span></a></li>
                         <li><a href="#header" title="<?php echo esc_html_e('Header', 'ns-core'); ?>"><div class="header-icon"><div class="header-icon-head"></div><div class="header-icon-content"></div></div> <span class="ui-tab-text"><?php echo esc_html_e('Header', 'ns-core'); ?></span><div class="clear"></div></a></li>
                         <li><a href="#page-banner" title="<?php echo esc_html_e('Page Banners & Sidebars', 'ns-core'); ?>"><div class="header-icon page-banner-icon"><div class="header-icon-head"></div><div class="header-icon-banner"></div><div class="header-icon-content"></div></div> <span class="ui-tab-text"><?php echo esc_html_e('Page Banners & Sidebars', 'ns-core'); ?></span><div class="clear"></div></a></li>
                         <li><a href="#members" title="<?php echo esc_html_e('Members', 'ns-core'); ?>"><i class="fa fa-key"></i> <span class="ui-tab-text"><?php echo esc_html_e('Members', 'ns-core'); ?></span></a></li>
@@ -430,29 +430,7 @@ function ns_core_theme_options_page() {
                             </table>
                         </div><!-- end social media profiles -->
 
-                        <br/><h3><?php echo esc_html_e('Company Location', 'ns-core'); ?></h3>
-                        <?php
-                            $latitude = esc_attr( get_option('ns_core_company_latitude') );
-                            $longitude = esc_attr( get_option('ns_core_company_longitude') );
-                        ?>
-                        <div class="admin-module admin-module-company-location">
-                            <table class="admin-module">
-                                <tr>
-                                    <td class="admin-module-label"><label for="property_latitude"><?php echo esc_html_e('Latitude:', 'ns-core'); ?></label></td>
-                                    <td class="admin-module-field"><input type="text" name="ns_core_company_latitude" id="property_latitude" value="<?php echo esc_attr($latitude); ?>" /></td>
-                                </tr>
-                            </table>
-                            <table class="admin-module">
-                                <tr>
-                                    <td class="admin-module-label"><label for="property_longitude"><?php echo esc_html_e('Longitude:', 'ns-core'); ?></label></td>
-                                    <td class="admin-module-field"><input type="text" name="ns_core_company_longitude" id="property_longitude" value="<?php echo esc_attr($longitude); ?>" /></td>
-                                </tr>
-                            </table>
-                            <?php include(get_parent_theme_file_path('/admin/admin_map.php')); ?>
-                        </div><br/><br/>
-
-                        <h3><?php echo esc_html_e('Contact Page', 'ns-core'); ?></h3>
-
+                        <br/><h3><?php echo esc_html_e('Contact Page', 'ns-core'); ?></h3>
                         <table class="admin-module">
                             <tr>
                                 <td class="admin-module-label"><label for="contact_details_display"><?php echo esc_html_e('Display Contact Details Section', 'ns-core'); ?></label></td>
