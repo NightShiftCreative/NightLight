@@ -504,7 +504,7 @@ function ns_core_theme_options_page() {
                                     <label for="contact_form_source_contact_7"><?php echo esc_html_e('Contact Form 7 Plugin', 'ns-core'); ?></label>
                                 
                                     <div class="admin-module no-border admin-module-contact-form-default hide-soft <?php if($contact_form_source == 'default') { echo 'show'; } ?>">
-                                        <?php if(!function_exists('ns_basics_main_contact_form')) { 
+                                        <?php if(!function_exists('ns_basics_template_loader')) { 
                                             echo '<i>You need to install and/or activate the required bundled plugin: <b>NightShift Basics</b></i>'; 
                                         } ?>
                                     </div>
