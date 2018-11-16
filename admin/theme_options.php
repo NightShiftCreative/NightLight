@@ -36,8 +36,6 @@ function ns_core_register_theme_options() {
     register_setting( 'ns-core-settings-group', 'ns_core_instagram' );
     register_setting( 'ns-core-settings-group', 'ns_core_flickr' );
     register_setting( 'ns-core-settings-group', 'ns_core_dribbble' );
-    register_setting( 'ns-core-settings-group', 'ns_core_company_latitude' );
-    register_setting( 'ns-core-settings-group', 'ns_core_company_longitude' );
     register_setting( 'ns-core-settings-group', 'ns_core_address' );
     register_setting( 'ns-core-settings-group', 'ns_core_contact_details_display' );
     register_setting( 'ns-core-settings-group', 'ns_core_contact_form_title' );
