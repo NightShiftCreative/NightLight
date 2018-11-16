@@ -27,6 +27,7 @@ function ns_core_register_theme_options() {
     //register contact & social
     register_setting( 'ns-core-settings-group', 'ns_core_phone' );
     register_setting( 'ns-core-settings-group', 'ns_core_email' );
+    register_setting( 'ns-core-settings-group', 'ns_core_address' );
     register_setting( 'ns-core-settings-group', 'ns_core_fb' );
     register_setting( 'ns-core-settings-group', 'ns_core_twitter' );
     register_setting( 'ns-core-settings-group', 'ns_core_google' );
@@ -36,7 +37,6 @@ function ns_core_register_theme_options() {
     register_setting( 'ns-core-settings-group', 'ns_core_instagram' );
     register_setting( 'ns-core-settings-group', 'ns_core_flickr' );
     register_setting( 'ns-core-settings-group', 'ns_core_dribbble' );
-    register_setting( 'ns-core-settings-group', 'ns_core_address' );
     register_setting( 'ns-core-settings-group', 'ns_core_contact_details_display' );
     register_setting( 'ns-core-settings-group', 'ns_core_contact_form_title' );
     register_setting( 'ns-core-settings-group', 'ns_core_contact_form_before' );
@@ -358,6 +358,13 @@ function ns_core_theme_options_page() {
                             <tr>
                                 <td class="admin-module-label"><label><?php echo esc_html_e('Email', 'ns-core'); ?></label></td>
                                 <td class="admin-module-field"><input type="text" id="email" name="ns_core_email" value="<?php echo esc_attr( get_option('ns_core_email') ); ?>" /></td>
+                            </tr>
+                        </table>
+
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label"><label><?php echo esc_html_e('Address', 'ns-core'); ?></label></td>
+                                <td class="admin-module-field"><input type="text" name="ns_core_address" value="<?php echo esc_attr( get_option('ns_core_address') ); ?>" /></td>
                             </tr>
                         </table>
 
