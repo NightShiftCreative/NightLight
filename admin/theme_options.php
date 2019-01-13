@@ -76,6 +76,9 @@ function ns_core_register_theme_options() {
     register_setting( 'ns-core-settings-group', 'ns_core_page_banner_title_align' );
     register_setting( 'ns-core-settings-group', 'ns_core_page_banner_padding_top' );
     register_setting( 'ns-core-settings-group', 'ns_core_page_banner_padding_bottom' );
+    register_setting( 'ns-core-settings-group', 'ns_core_page_banner_overlay_display' );
+    register_setting( 'ns-core-settings-group', 'ns_core_page_banner_overlay_opacity' );
+    register_setting( 'ns-core-settings-group', 'ns_core_page_banner_overlay_color' );
     register_setting( 'ns-core-settings-group', 'ns_core_page_banner_display_breadcrumb' );
     register_setting( 'ns-core-settings-group', 'ns_core_page_banner_display_search' );
     register_setting( 'ns-core-settings-group', 'ns_core_page_banner_slider_transition' ); 
@@ -865,6 +868,40 @@ function ns_core_theme_options_page() {
                                 </td>
                             </tr>
                         </table>
+
+                        <table class="admin-module banner-overlay-settings-toggle">
+                            <tr>
+                                <td class="admin-module-label"><label><?php echo esc_html_e('Display Banner Overlay', 'ns-core'); ?></label></td>
+                                <td class="admin-module-field">
+                                    <div class="toggle-switch" title="<?php if(get_option('ns_core_page_banner_overlay_display') == 'true') { esc_html_e('Active', 'ns-core'); } else { esc_html_e('Disabled', 'ns-core'); } ?>">
+                                        <input type="checkbox" name="ns_core_page_banner_overlay_display" value="true" class="toggle-switch-checkbox" id="page_banner_overlay_display" <?php checked('true', get_option('ns_core_page_banner_overlay_display'), true) ?>>
+                                        <label class="toggle-switch-label" for="page_banner_overlay_display"><?php if(get_option('ns_core_page_banner_overlay_display') == 'true') { echo '<span class="on">'.esc_html__('On', 'ns-core').'</span>'; } else { echo '<span>'.esc_html__('Off', 'ns-core').'</span>'; } ?></label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="admin-module no-padding banner-overlay-settings <?php if(get_option('ns_core_page_banner_overlay_display')) { echo 'show'; } else { echo 'hide-soft'; } ?>">
+                            <table class="admin-module">
+                                <tr>
+                                    <td class="admin-module-label">
+                                        <label><?php echo esc_html_e('Banner Overlay Opacity', 'ns-core'); ?></label>
+                                        <span class="admin-module-note"><?php echo esc_html_e('Choose an opacity ranging from 0 to 1 (0 is fully transparent).', 'ns-core'); ?></span>
+                                    </td>
+                                    <td class="admin-module-field">
+                                        <input type="number" step="0.01" min="0.00" max="1.00" id="page_banner_overlay_opacity" name="ns_core_page_banner_overlay_opacity" value="<?php echo esc_attr( get_option('ns_core_page_banner_overlay_opacity', '0.25') ); ?>" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="admin-module">
+                                <tr>
+                                    <td class="admin-module-label"><label><?php echo esc_html_e('Banner Overlay Color', 'ns-core'); ?></label></td>
+                                    <td class="admin-module-field">
+                                        <input type="text" id="page_banner_overlay_color" name="ns_core_page_banner_overlay_color" class="color-field" data-default-color="#000000" value="<?php echo esc_attr( get_option('ns_core_page_banner_overlay_color', '#000000') ); ?>" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
 
                         <table class="admin-module">
                             <tr>

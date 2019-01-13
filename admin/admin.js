@@ -174,4 +174,15 @@ jQuery(document).ready(function($) {
 		}
 	});
 
+	/********************************************/
+    /* BANNER OVERLAY SETTINGS TOGGLE */
+    /********************************************/
+    $('.banner-overlay-settings-toggle .toggle-switch-checkbox').on('change', function() {
+    	if ($(this).prop('checked')) {
+		    $('.banner-overlay-settings').slideDown('fast');
+		} else {
+			$('.banner-overlay-settings').slideUp('fast');
+		}
+    });
+
 });
