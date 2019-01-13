@@ -137,14 +137,17 @@ jQuery(document).ready(function($) {
     /* TOGGLE SWITCH */
     /********************************************/
     $('.toggle-switch-label').on('click', function() {
+        var settingsClass = $(this).data('settings');
         if($(this).parent().find('.toggle-switch-checkbox').is(':checked')) {
             $(this).parent().attr('title', 'Disabled');
             $(this).find('span').text(ns_core_local_script.off);
             $(this).find('span').removeClass('on');
+            if(settingsClass) { $('.'+settingsClass).slideUp(); }
         } else {
             $(this).parent().attr('title', 'Active');
             $(this).find('span').text(ns_core_local_script.on);
             $(this).find('span').addClass('on');
+            if(settingsClass) { $('.'+settingsClass).slideDown(); }
         }
     }); 
 
@@ -173,16 +176,5 @@ jQuery(document).ready(function($) {
 			$(this).closest('.admin-module').find('.top-bar-custom').addClass('hide-soft');
 		}
 	});
-
-	/********************************************/
-    /* BANNER OVERLAY SETTINGS TOGGLE */
-    /********************************************/
-    $('.banner-overlay-settings-toggle .toggle-switch-checkbox').on('change', function() {
-    	if ($(this).prop('checked')) {
-		    $('.banner-overlay-settings').slideDown('fast');
-		} else {
-			$('.banner-overlay-settings').slideUp('fast');
-		}
-    });
 
 });

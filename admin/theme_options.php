@@ -869,13 +869,13 @@ function ns_core_theme_options_page() {
                             </tr>
                         </table>
 
-                        <table class="admin-module banner-overlay-settings-toggle">
+                        <table class="admin-module">
                             <tr>
                                 <td class="admin-module-label"><label><?php echo esc_html_e('Display Banner Overlay', 'ns-core'); ?></label></td>
                                 <td class="admin-module-field">
                                     <div class="toggle-switch" title="<?php if(get_option('ns_core_page_banner_overlay_display') == 'true') { esc_html_e('Active', 'ns-core'); } else { esc_html_e('Disabled', 'ns-core'); } ?>">
                                         <input type="checkbox" name="ns_core_page_banner_overlay_display" value="true" class="toggle-switch-checkbox" id="page_banner_overlay_display" <?php checked('true', get_option('ns_core_page_banner_overlay_display'), true) ?>>
-                                        <label class="toggle-switch-label" for="page_banner_overlay_display"><?php if(get_option('ns_core_page_banner_overlay_display') == 'true') { echo '<span class="on">'.esc_html__('On', 'ns-core').'</span>'; } else { echo '<span>'.esc_html__('Off', 'ns-core').'</span>'; } ?></label>
+                                        <label class="toggle-switch-label" data-settings="banner-overlay-settings" for="page_banner_overlay_display"><?php if(get_option('ns_core_page_banner_overlay_display') == 'true') { echo '<span class="on">'.esc_html__('On', 'ns-core').'</span>'; } else { echo '<span>'.esc_html__('Off', 'ns-core').'</span>'; } ?></label>
                                     </div>
                                 </td>
                             </tr>
