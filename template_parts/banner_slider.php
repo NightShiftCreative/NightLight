@@ -62,7 +62,7 @@
 							<div class="container">
 								<div class="slide-content">
             						<h1><?php the_title(); ?></h1>
-									<p class="slide-text"><?php echo get_the_content(); ?></p>
+									<div class="slide-text"><?php the_content(); ?></div>
             						<?php if(!empty($slide_button_text)) { echo '<a href="'.$slide_button_link.'" class="button alt button-icon"><i class="fa fa-angle-right"></i>'.$slide_button_text.'</a>'; } ?>
             					</div>
 							</div>
@@ -77,10 +77,12 @@
 							<div class="container">
                                 <div class="slide-content">
     								<h1><?php the_title(); ?></h1>
-                                    <p class="slide-text"><?php echo get_the_content(); ?></p>
-                                    <div class="slider-simple-buttons">
-    									<?php if(!empty($slide_button_text)) { echo '<a href="'.$slide_button_link.'" class="button alt">'.$slide_button_text.'</a>'; } ?>
-    								</div>
+                                    <div class="slide-text"><?php the_content(); ?></div>
+                                    <?php if(!empty($slide_button_text)) { ?>
+	                                    <div class="slider-simple-buttons">
+	    									<?php echo '<a href="'.$slide_button_link.'" class="button alt">'.$slide_button_text.'</a>'; ?>
+	    								</div>
+	    							<?php } ?>
                                 </div>
 							</div>
 						</div>
