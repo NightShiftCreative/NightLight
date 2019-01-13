@@ -3,59 +3,50 @@
 	$page_banner_bg = esc_attr(get_option('ns_core_page_banner_bg'));
 	$page_banner_bg_display = esc_attr(get_option('ns_core_page_banner_bg_display'));
 	$page_banner_title_align = esc_attr(get_option('ns_core_page_banner_title_align'));
-	$page_banner_display_breadcrumb = esc_attr(get_option('ns_core_page_banner_display_breadcrumb'));
-	$page_banner_display_search = esc_attr(get_option('ns_core_page_banner_display_search'));
+    $page_banner_overlay = esc_attr(get_option('ns_core_page_banner_overlay_display'));
+    $page_banner_overlay_opacity = esc_attr(get_option('ns_core_page_banner_overlay_opacity', '0.25'));
+    $page_banner_overlay_color = esc_attr(get_option('ns_core_page_banner_overlay_color', '#000000'));
+    $page_banner_display_breadcrumb = esc_attr(get_option('ns_core_page_banner_display_breadcrumb'));
+    $page_banner_display_search = esc_attr(get_option('ns_core_page_banner_display_search'));
 
     //Individual page banner settings (these overwrite global settings)
     if(!empty($template_args['post_id'])) {
         $values = get_post_custom( $template_args['post_id'] );
     } else {
-        if(is_home()) {
-            $queried_object = get_queried_object();
-            if(!empty($queried_object)) {
-                $values = get_post_custom( $queried_object->ID );
-            } else {
-                $values = get_post_custom( $post->ID );
-            }
-        } else if(is_singular('post')) {
-            $page_for_posts = get_option( 'page_for_posts' );
-            $values = get_post_custom( $page_for_posts );
-        } else if(is_404() || is_search() || is_tax()) {
-            $values = '';
-        } else {
-            $values = get_post_custom( $post->ID );
-        }
+        $page_id = ns_core_get_page_id();
+        $values = get_post_custom( $page_id );
     }
 
     $banner_title = isset( $values['ns_basics_banner_title'] ) ? $values['ns_basics_banner_title'][0] : '';
     $banner_text = isset( $values['ns_basics_banner_text'] ) ? $values['ns_basics_banner_text'][0] : '';
-    $banner_bg_img = isset( $values['ns_basics_banner_bg_img'] ) ? esc_attr( $values['ns_basics_banner_bg_img'][0] ) : '';
-    $banner_bg_display = isset( $values['ns_basics_banner_bg_display'] ) ? esc_attr( $values['ns_basics_banner_bg_display'][0] ) : '';
-    $banner_overlay = isset( $values['ns_basics_banner_overlay'] ) ? esc_attr( $values['ns_basics_banner_overlay'][0] ) : '';
-    $banner_overlay_opacity = isset( $values['ns_basics_banner_overlay_opacity'] ) ? esc_attr( $values['ns_basics_banner_overlay_opacity'][0] ) : '0.25';
-    $banner_overlay_color = isset( $values['ns_basics_banner_overlay_color'] ) ? esc_attr( $values['ns_basics_banner_overlay_color'][0] ) : '#000000';
-    $banner_overlay_rgb = ns_core_hex2rgb($banner_overlay_color);
-    $banner_text_align = isset( $values['ns_basics_banner_text_align'] ) ? esc_attr( $values['ns_basics_banner_text_align'][0] ) : '';
-    if(!empty($banner_text_align) && $banner_text_align != $page_banner_title_align) { $page_banner_title_align = $banner_text_align; }
-    $banner_padding_top = isset( $values['ns_basics_banner_padding_top'] ) ? esc_attr( $values['ns_basics_banner_padding_top'][0] ) : '';
-    $banner_padding_bottom = isset( $values['ns_basics_banner_padding_bottom'] ) ? esc_attr( $values['ns_basics_banner_padding_bottom'][0] ) : '';
+    $banner_custom_settings = isset( $values['ns_basics_banner_custom_settings'] ) ? esc_attr( $values['ns_basics_banner_custom_settings'][0] ) : '';
+
+    if($banner_custom_settings == 'true') { 
+        $page_banner_bg = isset( $values['ns_basics_banner_bg_img'] ) ? esc_attr( $values['ns_basics_banner_bg_img'][0] ) : '';
+        $page_banner_bg_display = isset( $values['ns_basics_banner_bg_display'] ) ? esc_attr( $values['ns_basics_banner_bg_display'][0] ) : '';
+        $page_banner_title_align = isset( $values['ns_basics_banner_text_align'] ) ? esc_attr( $values['ns_basics_banner_text_align'][0] ) : '';
+        $banner_padding_top = isset( $values['ns_basics_banner_padding_top'] ) ? esc_attr( $values['ns_basics_banner_padding_top'][0] ) : '';
+        $banner_padding_bottom = isset( $values['ns_basics_banner_padding_bottom'] ) ? esc_attr( $values['ns_basics_banner_padding_bottom'][0] ) : '';
+        $page_banner_overlay = isset( $values['ns_basics_banner_overlay'] ) ? esc_attr( $values['ns_basics_banner_overlay'][0] ) : '';
+        $page_banner_overlay_opacity = isset( $values['ns_basics_banner_overlay_opacity'] ) ? esc_attr( $values['ns_basics_banner_overlay_opacity'][0] ) : '0.25';
+        $page_banner_overlay_color = isset( $values['ns_basics_banner_overlay_color'] ) ? esc_attr( $values['ns_basics_banner_overlay_color'][0] ) : '#000000';
+        $page_banner_display_breadcrumb = isset( $values['ns_basics_banner_breadcrumbs'] ) ? esc_attr( $values['ns_basics_banner_breadcrumbs'][0] ) : '';
+        $page_banner_display_search = isset( $values['ns_basics_banner_search'] ) ? esc_attr( $values['ns_basics_banner_search'][0] ) : '';
+    }
 ?>
 
-<section class="module subheader <?php if($page_banner_title_align == 'right') { echo 'align-right'; } else if($page_banner_title_align == 'center') { echo 'align-center'; } else { echo 'align-left'; } ?> <?php if($page_banner_display_search == 'true') { echo 'has-search-form'; } ?> <?php if(!empty($banner_bg_img)) { echo ns_core_bgDisplay($banner_bg_display); } else if(!empty($page_banner_bg)) { echo ns_core_bgDisplay($page_banner_bg_display); } ?>" 
+<section class="module subheader <?php if($page_banner_title_align == 'right') { echo 'align-right'; } else if($page_banner_title_align == 'center') { echo 'align-center'; } else { echo 'align-left'; } ?> <?php if($page_banner_display_search == 'true') { echo 'has-search-form'; } ?> <?php if(!empty($page_banner_bg)) { echo ns_core_bgDisplay($page_banner_bg_display); } ?>" 
 	<?php 
         $custom_style = '';
-		if(!empty($banner_bg_img)) { 
-			$custom_style .= 'background-image:url('.$banner_bg_img.');'; 
-		} else if (!empty($page_banner_bg)) {
-			$custom_style .= 'background-image:url('.$page_banner_bg.');';
-		}
+        if(!empty($page_banner_bg)) { $custom_style .= 'background-image:url('.$page_banner_bg.');'; }
         if(!empty($banner_padding_top)) {$custom_style .= 'padding-top:'.$banner_padding_top.'px;'; }
         if(!empty($banner_padding_bottom)) {$custom_style .= 'padding-bottom:'.$banner_padding_bottom.'px;'; }
         if(!empty($custom_style)) { echo 'style="'.$custom_style.'"'; }
 	?>>
 
-    <?php if($banner_overlay == 'true') { ?>
-        <div class="img-overlay black" style="<?php if(!empty($banner_overlay_rgb)) { echo 'background:rgba('.$banner_overlay_rgb[0].', '.$banner_overlay_rgb[1].', '.$banner_overlay_rgb[2].', '.$banner_overlay_opacity.');'; } ?>"></div>
+    <?php if($page_banner_overlay == 'true') { 
+        $page_banner_overlay_rgb = ns_core_hex2rgb($page_banner_overlay_color); ?>
+        <div class="img-overlay black" style="<?php if(!empty($page_banner_overlay_rgb)) { echo 'background:rgba('.$page_banner_overlay_rgb[0].', '.$page_banner_overlay_rgb[1].', '.$page_banner_overlay_rgb[2].', '.$page_banner_overlay_opacity.');'; } ?>"></div>
     <?php } ?>
 
 	<div class="container">
