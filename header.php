@@ -59,29 +59,20 @@ if($header_vars['header_container'] != 'true') { $header_class = $header_class.'
 
 <div class="container <?php if($header_vars['header_container'] != 'true') { echo 'container-full'; } ?>">
 
-    <!-- HEADER DEFAULT STYLE -->
-    <?php if($header_style == 'default') { ?>
+    <style>
+    header > .container {
+        display:flex;
+        align-items:center;
+    }
 
-        <div class="navbar-header">
-            <!-- DETAILS -->
-            <?php echo ns_core_get_header_items(); ?>
+    .header-menu-after {  margin-left:auto; margin-right:0; }
+    header.has-menu .header-menu-after { margin-left:0; }
+    </style>
 
-            <!-- LOGO -->
-            <?php echo ns_core_get_header_logo(); ?>
-
-            <!-- NAVBAR TOGGLE -->
-            <?php echo ns_core_get_header_toggle(); ?>
-        </div>
-
-    <!-- HEADER CLASSIC STYLE -->
-    <?php } else { ?>
-
-        <!-- LOGO -->
-        <div class="navbar-header"><?php echo ns_core_get_header_logo(); ?></div>
-
-        <!-- NAVBAR TOGGLE -->
-        <?php echo ns_core_get_header_toggle(); ?>
-    <?php } ?>
+    <!-- LOGO -->
+    <div class="header-logo">
+        <?php echo ns_core_get_header_logo(); ?>
+    </div>
 
     <!-- MAIN MENU -->
     <?php
@@ -89,39 +80,26 @@ if($header_vars['header_container'] != 'true') { $header_class = $header_class.'
         $main_menu = wp_nav_menu( array(
             'theme_location' => 'menu-1',
             'container'      => false,
-            'menu_class'     => 'nav navbar-nav right',
+            'menu_class'     => 'main-menu',
             'depth'          => 3,
             'echo' => FALSE,
             'fallback_cb' => '__return_false'
         ));
-    } else {
-        $main_menu = '';
-    }
-    ?>
+    } else { $main_menu = ''; }
 
-    <?php if (!empty($main_menu)) { ?>
-        <div class="navbar-collapse collapse">
-            <div class="main-menu-wrap">
-                <div class="container-fixed <?php if($header_vars['header_container'] != 'true') { echo 'container-full'; } ?>">
-                    
-                    <!-- HOOK FOR PLUGINS -->
-                    <?php do_action('ns_core_before_main_menu'); ?>
-
-                    <?php if(!empty($header_vars['header_menu_button_page']) && !empty($header_vars['header_menu_button_text'])) { ?>
-                    <div class="member-actions right">
-                        <a href="<?php echo esc_url($header_vars['header_menu_button_page']); ?>" class="button small light button-icon"><i class="fa fa-plus icon"></i><?php echo esc_attr($header_vars['header_menu_button_text']); ?></a>
-                    </div>
-                    <?php } ?>
-                    <?php echo wp_kses_post($main_menu); ?>
-
-                    <!-- HOOK FOR PLUGINS -->
-                    <?php do_action('ns_core_after_main_menu'); ?>
-
-                </div>
-            </div>
+    if (!empty($main_menu)) { ?>
+        <div class="header-menu">
+            <?php echo ns_core_get_header_toggle(); ?>
+            <?php echo wp_kses_post($main_menu); ?>
         </div>
     <?php } ?>
-    <!-- END MAIN MENU -->
+
+    <!-- AFTER MAIN MENU -->
+    <div class="header-menu-after">
+        <?php if(!empty($header_vars['header_menu_button_page']) && !empty($header_vars['header_menu_button_text'])) { ?>
+            <a href="<?php echo esc_url($header_vars['header_menu_button_page']); ?>" class="button small light button-icon"><i class="fa fa-plus icon"></i><?php echo esc_attr($header_vars['header_menu_button_text']); ?></a>
+        <?php } ?>
+    </div>
 
 </div><!-- end header container -->
 </header><!-- End Header -->

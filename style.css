@@ -692,109 +692,98 @@ header.full-width .top-bar-left .top-bar-item:first-child { padding-left:15px; }
 .top-bar-left .top-bar-item .member-sub-menu { left:0; }
 
 /* LOGO */
-.navbar-header { 
-	display:inline-block; 
-	max-width:30%; 
-	min-width:200px;
-	position:relative;
-	z-index:1001; 
-}
-.navbar-brand {
-	display:inline-block;
-	height:auto;
-	font-weight:700;
+.header-logo {
+    float:left;
+    display:inline-block;
+    max-width:30%;
+    min-width:200px;
+    z-index:1001;
+    padding:15px 0px;
     font-size:24px;
-	min-height:86px;
-	padding-left:0px;
-	padding:34px 0px;
 }
-.navbar-brand.has-logo { padding:20px 0px; }
+.header-logo .header-logo-anchor { display:block; }
+.header-logo img { max-width:100%; }
 header.full-width .navbar-brand.has-logo { padding:20px 15px; }
-.navbar-brand img { max-width:100%; }
+
 
 /* MENU TOGGLE */
-.navbar-toggle { 
+.main-menu-toggle { 
+	display:none;
 	background:#e8ebf3; 
-	position:absolute;
-	right:20px;
-	top:50%;
+	border-radius:4px;
 	width:46px;
-	height:46px;
-	margin:0; 
-	margin-top:-23px;
+	height:43px;
+	line-height:43px;
 	z-index:1001;
+	text-align:center;
+	font-size:18px;
+	cursor:pointer;
 }
-.navbar-toggle .icon-bar { width:100%; background:#838893; }
 
 /* MAIN MENU */
- .navbar-collapse.collapse { position:relative; z-index:1000; }
+.header-menu { margin-right:15px; margin-left:auto; }
+.header-menu.align-left { margin-right:auto; margin-left:15px; }
+.header-menu.align-center { margin-right:auto; margin-left:auto; }
 
- .main-menu-wrap {
- 	position:absolute;
-	top:50%;
-	right:0px;
-	height:86px;
-	margin-top:-43px;
-    max-width:100%;
- }
-
-.nav.navbar-nav { white-space:nowrap; }
-.nav.navbar-nav li { position:relative; display:inline-block; float:none; }
-.nav.navbar-nav > li > a { 
+.header-menu .main-menu { margin:0; }
+.header-menu .main-menu li { position:relative; display:inline-block; }
+.header-menu .main-menu > li > a { 
 	color:#838893; 
-	padding:0px 20px;
-	line-height:86px;
+	padding:14px 14px;
 }
-.nav.navbar-nav > li > a:hover, .nav.navbar-nav li a:focus { background:transparent; color:#04d2c8; }
-.nav.navbar-nav li.current-menu-item > a { box-shadow:inset 0px -2px #04d2c8; }
-.nav.navbar-nav li.menu-item-has-children:after {
+.header-menu .main-menu > li > a:hover { color:#04d2c8; }
+.header-menu .main-menu li.current-menu-item > a { box-shadow:inset 0px -2px #04d2c8; }
+.header-menu .main-menu li.menu-item-has-children:after {
 	content: "\f107";
     font-family: 'Font Awesome\ 5 Free', 'FontAwesome';
     font-weight: 900;
     font-size:13px;
     color:#838893;
-	margin-top:34px;
+	margin-top:2px;
 	top:0;
-	right: 12px;
+	right: 4px;
 	position: absolute;
 }
-.nav.navbar-nav li:hover.menu-item-has-children:after { color:#04d2c8 !important; }
+.header-menu .main-menu li:hover.menu-item-has-children:after { color:#04d2c8 !important; }
 
 /* SUB MENU */
-.nav.navbar-nav li:hover .sub-menu { display:block; margin-top:0; }
+.header-menu .main-menu li:hover .sub-menu { display:block; }
 .sub-menu {
 	display:none;
 	position:absolute;
 	background:#2a2e3b;
 	width:200px;
 	font-size:14px;
+	border-radius:4px;
 	-webkit-transition:all 0.4s; 
 	transition:all 0.4s; 
+	margin-top:10px;
+	margin-left:10px;
 }
-.nav.navbar-nav li .sub-menu li { display:block; }
-.nav.navbar-nav li .sub-menu li a { 
+.header-menu .main-menu li .sub-menu li { display:block; }
+.header-menu .main-menu li .sub-menu li a { 
 	display:block; 
 	padding:10px;
 	color:rgba(255, 255, 255, 0.5);
 	font-weight:300;
 }
-.nav.navbar-nav li .sub-menu li a:hover { color:white !important; }
-.nav.navbar-nav li .sub-menu li.menu-item-has-children:after {
+.header-menu .main-menu li .sub-menu li a:hover { color:white !important; }
+.header-menu .main-menu li .sub-menu li.menu-item-has-children:after {
 	content: "\f105";
 	color:rgba(255, 255, 255, 0.2);
 	right:10px;
 	margin-top:10px;
 }
 
-.nav.navbar-nav li .sub-menu .current-menu-item a { box-shadow:none; }
+.header-menu .main-menu li .sub-menu .current-menu-item a { box-shadow:none; }
 
-.nav.navbar-nav li .sub-menu li .sub-menu { 
+.header-menu .main-menu li .sub-menu li .sub-menu { 
 	display:none;
 	margin-left:200px;
 	margin-top:-40px;
 	background:#21252f;
 }
-.nav.navbar-nav li .sub-menu li:hover .sub-menu { display:block; }
+.header-menu .main-menu li .sub-menu li:hover .sub-menu { display:block; }
 
 /* MEMBER ACTIONS */
 .member-actions { 

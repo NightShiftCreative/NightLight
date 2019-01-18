@@ -235,15 +235,15 @@ function ns_core_get_header_logo() {
 
     <?php if($header_vars['header_style'] == 'transparent') { ?>
         <?php if(!empty($header_vars['logo_transparent'])) { ?>
-            <a class="navbar-brand has-logo" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_attr($header_vars['logo_transparent']); ?>" alt="<?php bloginfo('title') ?>" /></a>
+            <a class="header-logo-anchor has-logo" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_attr($header_vars['logo_transparent']); ?>" alt="<?php bloginfo('title') ?>" /></a>
         <?php } else { ?>
-            <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('title') ?></a>
+            <a class="header-logo-anchor" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('title') ?></a>
         <?php } ?> 
     <?php } else { ?>
         <?php if(!empty($header_vars['logo'])) { ?>
-            <a class="navbar-brand has-logo" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_attr($header_vars['logo']); ?>" alt="<?php bloginfo('title') ?>" /></a>
+            <a class="header-logo-anchor has-logo" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_attr($header_vars['logo']); ?>" alt="<?php bloginfo('title') ?>" /></a>
         <?php } else { ?>
-            <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('title') ?></a>
+            <a class="header-logo-anchor" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('title') ?></a>
         <?php } ?>  
     <?php } ?> 
 
@@ -256,11 +256,9 @@ function ns_core_get_header_toggle() {
     $header_vars = ns_core_load_header_settings();
     ob_start(); ?>
 
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button> 
+    <div class="main-menu-toggle">
+        <i class="fa fa-bars"></i>
+    </div> 
 
     <?php $output = ob_get_clean();
     return $output;
