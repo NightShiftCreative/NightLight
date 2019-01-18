@@ -209,16 +209,14 @@ a:hover { color:#04b0a8; text-decoration:none; }
 
 .icon { 
 	margin-right:4px; 
-	margin-left:0; 
 	vertical-align:middle; 
 }
-.wpb-js-composer i.icon {  
-	margin-left:0 !important; 
-	vertical-align:middle !important; 
-	width:auto !important;
-	height:auto !important;
+.js_active i.icon {  
+	margin-left:0; 
+	vertical-align:middle; 
+	width:auto;
+	height:auto;
 }
-
 
 /* BUTTONS */
 .button, input[type="submit"] {
