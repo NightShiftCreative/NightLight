@@ -703,7 +703,7 @@ header.full-width .top-bar-left .top-bar-item:first-child { padding-left:15px; }
 	height:auto;
 	font-weight:700;
     font-size:24px;
-	min-height:80px;
+	min-height:86px;
 	padding-left:0px;
 	padding:34px 0px;
 }
@@ -726,8 +726,10 @@ header.full-width .navbar-brand.has-logo { padding:20px 15px; }
 
  .main-menu-wrap {
  	position:absolute;
-	bottom:0;
+	top:50%;
 	right:0px;
+	height:86px;
+	margin-top:-43px;
     max-width:100%;
  }
 
@@ -735,7 +737,8 @@ header.full-width .navbar-brand.has-logo { padding:20px 15px; }
 .nav.navbar-nav li { position:relative; display:inline-block; float:none; }
 .nav.navbar-nav li a { 
 	color:#838893; 
-	padding:33px 20px;
+	padding:0px 20px;
+	line-height:86px;
 }
 .nav.navbar-nav li a:hover, .nav.navbar-nav li a:focus { background:transparent; color:#04d2c8; }
 .nav.navbar-nav li.current-menu-item > a { box-shadow:inset 0px -2px #04d2c8; }
@@ -791,9 +794,11 @@ header.full-width .navbar-brand.has-logo { padding:20px 15px; }
 /* MEMBER ACTIONS */
 .member-actions { 
     border-left:1px solid rgba(0, 0, 0, 0.1);
-    padding:25px 0px 24px 30px;
+    padding:0px 0px 0px 30px;
+    line-height:86px;
     margin-left:10px; 
 }
+.member-actions .button { line-height:1.4; }
 
 .header-member-actions .avatar { border-radius:100%; margin-right:4px; }
 .header-member-actions .member-sub-menu { 
@@ -876,10 +881,11 @@ header.full-width .navbar-brand.has-logo { padding:20px 15px; }
 .header-default .header-item .above-text { margin-bottom:0; }
 .header-default .header-item span { font-family:'Open Sans'; font-weight:700; font-size:18px; color:#464646; }
 
+.header-default .navbar-brand { max-width:30%; }
 .header-default .navbar-brand.has-logo { padding:20px 15px; padding-left:0px; }
-.header-default .main-menu-wrap { height:60px; top:0px; width:100%; background:#323746; }
+.header-default .main-menu-wrap { height:59px; margin-top:0; top:0px; width:100%; background:#323746; }
 .header-default .nav.navbar-nav { float:left; }
-.header-default .nav.navbar-nav li a { background:transparent; letter-spacing:0.4px; color:white; font-size:14px; padding:20px 20px; }
+.header-default .nav.navbar-nav li a { background:transparent; letter-spacing:0.4px; line-height:60px; color:white; font-size:14px; padding:0px 20px; }
 .header-default .nav.navbar-nav li a:hover { color:#04d2c8; }
 .header-default .nav.navbar-nav li.menu-item-has-children:after {
 	content: "\f107";
@@ -890,7 +896,7 @@ header.full-width .navbar-brand.has-logo { padding:20px 15px; }
 	margin-right:-4px;
 }
 
-.header-default .member-actions { padding:0; }
+.header-default .member-actions { padding:0; line-height:normal; }
 .header-default .member-actions .button { padding:20px 20px 20px 40px; letter-spacing:0.4px; font-size:14px; border-radius:0; }
 .header-default .member-actions .button-icon .fa {
 	height:auto;
