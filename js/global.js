@@ -12,13 +12,13 @@ jQuery(document).ready(function($) {
 	/***************************************************************************/
 	//MAIN MENU SUB MENU TOGGLE
 	/***************************************************************************/
-	$('.nav.navbar-nav > li.menu-item-has-children > a').on('click', function(event) {
+	$('.header-menu .main-menu > li.menu-item-has-children > a').on('click', function(event) {
 		event.preventDefault();
 		$(this).parent().find('.sub-menu').toggle();
 		$(this).parent().find('.sub-menu li .sub-menu').hide();
 	});
 
-	$('.nav.navbar-nav li .sub-menu li.menu-item-has-children > a ').on('click', function(event){
+	$('.header-menu .main-menu li .sub-menu li.menu-item-has-children > a ').on('click', function(event){
 		event.preventDefault();
 		$(this).parent().find('.sub-menu').toggle();
 	});
@@ -37,7 +37,7 @@ jQuery(document).ready(function($) {
         transparentHeader.addClass('fixed');
         transparentHeader.addClass('header-classic');
         transparentHeader.removeClass('header-transparent');
-        transparentHeader.find('.navbar-brand.has-logo img').attr('src', logo);
+        transparentHeader.find('.header-logo-anchor.has-logo img').attr('src', logo);
 	}
 
 	$(window).bind('scroll', function () {
@@ -47,14 +47,14 @@ jQuery(document).ready(function($) {
             transparentHeader.addClass('fixed');
             transparentHeader.addClass('header-classic');
             transparentHeader.removeClass('header-transparent');
-            transparentHeader.find('.navbar-brand.has-logo img').attr('src', logo);
+            transparentHeader.find('.header-logo-anchor.has-logo img').attr('src', logo);
 		} else {
 		    navToggle.removeClass('fixed');
 		    mainMenuWrap.removeClass('fixed');
             transparentHeader.removeClass('fixed');
             transparentHeader.removeClass('header-classic');
             transparentHeader.addClass('header-transparent');
-            transparentHeader.find('.navbar-brand.has-logo img').attr('src', logo_transparent);
+            transparentHeader.find('.header-logo-anchor.has-logo img').attr('src', logo_transparent);
 		}
 	});
 

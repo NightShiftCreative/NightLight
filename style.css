@@ -824,19 +824,9 @@ header.full-width .navbar-brand.has-logo { padding:20px 15px; }
     transition:all 0.4s;
     position:absolute;
 }
-.header-transparent .nav.navbar-nav li a { color:white; }
-.header-transparent .nav.navbar-nav li a:hover { color:#04d2c8; }
-.header-transparent .nav.navbar-nav li.menu-item-has-children:after { color:white; }
-
-.header-transparent .main-menu-wrap .member-actions {
-    border-left:1px solid rgba(255, 255, 255, 0.15);
-}
-
-.header-transparent .navbar-toggle { 
-    background:transparent;
-    border:none;
-}
-.header-transparent .navbar-toggle .icon-bar { background:white; }
+.header-transparent .header-menu .main-menu li a { color:white; }
+.header-transparent .header-menu .main-menu li a:hover { color:#04d2c8; }
+.header-transparent .header-menu .main-menu li.menu-item-has-children:after { color:white; }
 
 /** HEADER MENU BAR **/
 .header-default.has-menu { padding-bottom:30px; }
