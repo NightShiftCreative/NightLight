@@ -59,16 +59,6 @@ if($header_vars['header_container'] != 'true') { $header_class = $header_class.'
 
 <div class="container <?php if($header_vars['header_container'] != 'true') { echo 'container-full'; } ?>">
 
-    <style>
-    header > .container {
-        display:flex;
-        align-items:center;
-    }
-
-    .header-menu-after {  margin-left:auto; margin-right:0; }
-    header.has-menu .header-menu-after { margin-left:0; }
-    </style>
-
     <!-- LOGO -->
     <div class="header-logo">
         <?php echo ns_core_get_header_logo(); ?>
