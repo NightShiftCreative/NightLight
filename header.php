@@ -79,6 +79,7 @@ if($header_vars['header_container'] != 'true') { $header_class = $header_class.'
 
     if (!empty($main_menu)) { ?>
         <div class="header-menu">
+            <?php do_action('ns_core_before_main_menu'); ?>
             <?php echo ns_core_get_header_toggle(); ?>
             <?php echo wp_kses_post($main_menu); ?>
         </div>
@@ -89,6 +90,7 @@ if($header_vars['header_container'] != 'true') { $header_class = $header_class.'
         <?php if(!empty($header_vars['header_menu_button_page']) && !empty($header_vars['header_menu_button_text'])) { ?>
             <a href="<?php echo esc_url($header_vars['header_menu_button_page']); ?>" class="button small light button-icon"><i class="fa fa-plus icon"></i><?php echo esc_attr($header_vars['header_menu_button_text']); ?></a>
         <?php } ?>
+        <?php do_action('ns_core_after_main_menu'); ?>
     </div>
 
 </div><!-- end header container -->
