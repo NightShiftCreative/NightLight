@@ -837,10 +837,11 @@ header.full-width .header-logo { padding:15px 15px; }
 .header-default.has-menu { padding-bottom:30px; }
 .header-default .header-menu {
 	width:100%;
-	background:#2f353d;
+	height:55px;
 	position:absolute;
 	bottom:-58px;
 	margin:0;
+	left:0;
 }
 .header-default .header-menu .main-menu li a { padding:17px 0px; }
 .header-default .header-menu .main-menu li.menu-item-has-children:after { margin-top:18px; }
@@ -853,6 +854,8 @@ header.full-width .header-logo { padding:15px 15px; }
 	font-size:15px;
 	padding:0px 25px 0px 25px;
 }
+
+.header-default .header-menu .main-menu-toggle { height:55px; width:55px; line-height:55px; color:white;}
 
 .header-default .header-item { padding:0px 15px; line-height:1.2; font-size:13px; }
 .header-default .header-item:nth-last-child(2) { padding-right:0px; border-left:1px solid rgba(0, 0, 0, 0.1); }
@@ -885,9 +888,9 @@ header.has-menu .header-menu-after { margin-left:0; }
 
 /** FIXED **/
 header.navbar-fixed { position:fixed; top:0; }
-header.header-default.navbar-fixed { position:relative; }
-header.header-default .header-menu.fixed { position:fixed; top:32px; left:0; height:55px; }
-header.header-default .header-menu .container-fixed { max-width:1140px; margin:0 auto; }
+.header-default.navbar-fixed { position:relative; }
+.header-default .header-menu.fixed { position:fixed; top:32px; background:#2f353d; }
+.header-default .header-menu .container-fixed { max-width:1140px; height:55px; margin:0 auto; background:#2f353d; }
 
 .admin-bar header.header-classic.navbar-fixed, 
 .admin-bar header.header-transparent.navbar-fixed { top:32px; }

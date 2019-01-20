@@ -110,11 +110,11 @@
     background:white;
     box-shadow:0px 0px 10px 0px rgba(0, 0, 0, 0.3);
     padding:10px;
-    top:40px;
+    top:65px;
   }
-  .header-default .header-item-icon { float:none; text-align:center; width:100%; }
-  .header-default .header-search .header-item-icon > .fa { display:block; }
-  .header-default .header-search { border-right:1px solid rgba(0, 0, 0, 0.1); }
+  .header-default .header-item .header-item-icon { float:none; text-align:center; width:100%; }
+  .header-default .header-item .header-item-icon > .fa { display:inline-block !important; margin:0; }
+  .header-default .header-search { border-right:1px solid rgba(0, 0, 0, 0.1); width:auto; }
   .header-default .header-item:hover .header-item-text, .header-default .header-item:hover .header-search-form { display:block; }
 
   /* SUBHEADER */
