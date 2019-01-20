@@ -5,6 +5,7 @@
   /* HEADER */
   .main-menu-toggle { display: inline-block; }
 
+  .header-menu { margin-right:15px !important; margin-left:auto !important; }
   .header-menu .main-menu { 
     display:none;
     width:350px; 

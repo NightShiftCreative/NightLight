@@ -73,7 +73,7 @@ if($header_vars['header_container'] != 'true') { $header_class = $header_class.'
     <!-- MAIN MENU -->
     <?php $main_menu = ns_core_get_header_menu();
     if (!empty($main_menu)) { ?>
-        <div class="header-menu">
+        <div class="header-menu <?php if($header_vars['header_menu_align'] == 'left') { echo 'align-left'; } else if($header_vars['header_menu_align'] == 'center') { echo 'align-center'; } ?>">
             <?php echo ns_core_get_header_toggle(); ?>
             <?php echo wp_kses_post($main_menu); ?>
         </div>

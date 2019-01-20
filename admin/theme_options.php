@@ -65,6 +65,7 @@ function ns_core_register_theme_options() {
     register_setting( 'ns-core-settings-group', 'ns_core_above_phone_text' );
     register_setting( 'ns-core-settings-group', 'ns_core_above_email_text' );
     register_setting( 'ns-core-settings-group', 'ns_core_display_header_search' );
+    register_setting( 'ns-core-settings-group', 'ns_core_header_menu_align' );
     register_setting( 'ns-core-settings-group', 'ns_core_header_menu_button_page' );
     register_setting( 'ns-core-settings-group', 'ns_core_header_menu_button_text' );
     register_setting( 'ns-core-settings-group', 'ns_core_header_bg' );
@@ -751,6 +752,20 @@ function ns_core_theme_options_page() {
                                         <input type="checkbox" name="ns_core_display_header_search" value="true" class="toggle-switch-checkbox" id="display_header_search" <?php checked('true', get_option('ns_core_display_header_search', 'true'), true) ?>>
                                         <label class="toggle-switch-label" for="display_header_search"><?php if(get_option('ns_core_display_header_search', 'true') == 'true') { echo '<span class="on">'.esc_html__('On', 'ns-core').'</span>'; } else { echo '<span>'.esc_html__('Off', 'ns-core').'</span>'; } ?></label>
                                     </div>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label"><label><?php echo esc_html_e('Menu Alignment', 'ns-core'); ?></label></td>
+                                <td class="admin-module-field">
+                                    <?php $header_menu_align = get_option('ns_core_header_menu_align', 'right'); ?>
+                                    <select name="ns_core_header_menu_align">
+                                        <option value="right" <?php if(esc_attr($header_menu_align) == 'right') { echo 'selected'; } ?>>Right</option>
+                                        <option value="left" <?php if(esc_attr($header_menu_align) == 'left') { echo 'selected'; } ?>>Left</option>
+                                        <option value="center" <?php if(esc_attr($header_menu_align) == 'center') { echo 'selected'; } ?>>Center</option>
+                                    </select>
                                 </td>
                             </tr>
                         </table>
