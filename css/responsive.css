@@ -60,7 +60,8 @@
 }
 
 @media screen and (max-width: 782px) {
-    .admin-bar header.main-header.navbar-fixed,
+    .admin-bar header.header-classic.navbar-fixed,
+    .admin-bar header.header-transparent.navbar-fixed,
     .admin-bar .header-menu .main-menu { top:46px; }
 }
 

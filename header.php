@@ -64,22 +64,16 @@ if($header_vars['header_container'] != 'true') { $header_class = $header_class.'
         <?php echo ns_core_get_header_logo(); ?>
     </div>
 
-    <!-- MAIN MENU -->
-    <?php
-    if ( has_nav_menu( 'menu-1' )) {
-        $main_menu = wp_nav_menu( array(
-            'theme_location' => 'menu-1',
-            'container'      => false,
-            'menu_class'     => 'main-menu',
-            'depth'          => 3,
-            'echo' => FALSE,
-            'fallback_cb' => '__return_false'
-        ));
-    } else { $main_menu = ''; }
+    <!-- BEFORE MAIN MENU -->
+    <div class="header-menu-before">
+        <?php if($header_style == 'default') { echo ns_core_get_header_items(); } ?>
+        <?php do_action('ns_core_before_main_menu'); ?>
+    </div>
 
+    <!-- MAIN MENU -->
+    <?php $main_menu = ns_core_get_header_menu();
     if (!empty($main_menu)) { ?>
         <div class="header-menu">
-            <?php do_action('ns_core_before_main_menu'); ?>
             <?php echo ns_core_get_header_toggle(); ?>
             <?php echo wp_kses_post($main_menu); ?>
         </div>

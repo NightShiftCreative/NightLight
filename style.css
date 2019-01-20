@@ -826,8 +826,6 @@ header.full-width .header-logo { padding:15px 15px; }
 .header-transparent .main-menu-toggle { color:white; }
 
 /** HEADER MENU BAR **/
-header.header-default > .container { display:block; }
-
 .header-default.has-menu { padding-bottom:30px; }
 .header-default .header-menu {
 	width:100%;
@@ -837,7 +835,7 @@ header.header-default > .container { display:block; }
 }
 .header-default .header-menu .main-menu li a { padding:17px 0px; }
 .header-default .header-menu .main-menu li.menu-item-has-children:after { margin-top:18px; }
-.header-default .header-menu-after { float:right; margin-top:20px; }
+header.header-default.has-menu .header-menu-after { margin-left:auto; }
 
 
 /* AFTER MAIN MENU */

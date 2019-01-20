@@ -251,15 +251,29 @@ function ns_core_get_header_logo() {
     return $output;
 }
 
+/* get header main menu */
+function ns_core_get_header_menu() {
+    $header_vars = ns_core_load_header_settings();
+    if ( has_nav_menu( 'menu-1' )) {
+        $main_menu = wp_nav_menu( array(
+            'theme_location' => 'menu-1',
+            'container'      => false,
+            'menu_class'     => 'main-menu',
+            'depth'          => 3,
+            'echo' => FALSE,
+            'fallback_cb' => '__return_false'
+        ));
+    } else { $main_menu = ''; } 
+    return $main_menu;
+}
+
 /* get header nav toggle */
 function ns_core_get_header_toggle() {
     $header_vars = ns_core_load_header_settings();
     ob_start(); ?>
 
+    <div class="main-menu-toggle"><i class="fa fa-bars"></i></div> 
     <div class="mobile-overlay img-overlay black"></div>
-    <div class="main-menu-toggle">
-        <i class="fa fa-bars"></i>
-    </div> 
 
     <?php $output = ob_get_clean();
     return $output;
