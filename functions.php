@@ -256,6 +256,7 @@ function ns_core_get_header_toggle() {
     $header_vars = ns_core_load_header_settings();
     ob_start(); ?>
 
+    <div class="mobile-overlay img-overlay black"></div>
     <div class="main-menu-toggle">
         <i class="fa fa-bars"></i>
     </div> 

@@ -9,6 +9,21 @@ jQuery(document).ready(function($) {
         $('.loader').fadeOut('fast');
     });
 
+     /***************************************************************************/
+    //MAIN MENU TOGGLE
+    /***************************************************************************/
+    $('.main-menu-toggle').on('click', function(event) {
+        event.preventDefault();
+        $('body').find('.mobile-overlay').toggle();
+        $(this).closest('header').find('.main-menu').animate({width:'toggle'},350);
+    });
+
+    $('.mobile-overlay').on('click', function(event) {
+        event.preventDefault();
+        $(this).hide();
+        $('header').find('.main-menu').animate({width:'toggle'},350);
+    });
+
 	/***************************************************************************/
 	//MAIN MENU SUB MENU TOGGLE
 	/***************************************************************************/

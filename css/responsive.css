@@ -1,53 +1,50 @@
+.mobile-overlay { display:none; position:fixed; background:rgba(0, 0, 0, 0.5) !important; z-index:2000; }
+
 @media screen and (max-width: 990px) {
 
   /* HEADER */
   .main-menu-toggle { display: inline-block; }
 
   .header-menu .main-menu { 
-    width:100%; 
+    display:none;
+    width:350px; 
+    height:100%;
+    overflow-y:auto;
+    z-index:2001;
     background:white;
     float:none; 
-    position:absolute; 
+    position:fixed; 
     left:0; 
+    top:0;
     white-space:normal; 
-    box-shadow:0px 10px 20px rgba(0, 0, 0, 0.1);
-    overflow:auto;
-    max-height:300px;
-
+    box-shadow:0px 0px 20px rgba(0, 0, 0, 0.1);
   }
+  .admin-bar .header-menu .main-menu { top:32px; }
+  .header-menu .main-menu:before {
+    content: "\f00d";
+    font-family: 'Font Awesome\ 5 Free', 'FontAwesome';
+    font-weight: 900;
+    font-size:23px;
+    display:block;
+    width:100%;
+    height:50px;
+    color:#adb8c1;
+    padding:8px 20px 0px 0px;
+    border-bottom:1px solid rgba(0, 0, 0, 0.1);
+    text-align:right;
+    cursor:pointer;
+  }
+
   .header-menu .main-menu li { width:100%; }
-  .header-menu .main-menu li a { padding:20px 20px; border-bottom:1px solid rgba(0, 0, 0, 0.1); }
+  .header-menu .main-menu li a,
+  .header-transparent .header-menu .main-menu li a { color:#838893; padding:20px 20px; margin:0; border-bottom:1px solid rgba(0, 0, 0, 0.1); }
   .header-menu .main-menu li:last-child a { border-bottom:none; }
   .header-menu .main-menu li.current-menu-item > a { box-shadow:none; }
-  .header-menu .main-menu li.menu-item-has-children:after { margin-top:20px; }
+  .header-menu .main-menu li.menu-item-has-children:after { margin-top:22px; right:25px; }
   .header-menu .main-menu li .sub-menu li.menu-item-has-children:after { content: "\f107"; }
 
-  .sub-menu { width:100%; }
-  .header-menu .main-menu li:hover .sub-menu { position:relative; }
-  .header-menu .main-menu li .sub-menu li .sub-menu { 
-    position:absolute;
-    margin-left:0;
-    margin-top:0;
-  }
-  .header-menu .main-menu li .sub-menu li:hover .sub-menu { position:relative; }
-
-  /** HEADER DEFAULT **/
-  .header-default.has-menu { padding-bottom:0px; }
-  .header-default .navbar-collapse.collapse { background:#323746; }
-  .header-default .header-details { position:relative; border-bottom:1px solid rgba(0, 0, 0, 0.1); }
-  .header-default .header-item { width:33.33% !important; float:left; font-size:12px; margin:5px 0px; padding:5px 15px 5px 15px; }
-  .header-default .header-item span { font-size:13px; }
-  .header-default .header-item .header-item-icon > .fa { font-size:25px; }
-  .header-default .header-item .header-item-text { max-width:80%; overflow:hidden; text-overflow:ellipsis; }
-  .header-default .main-menu-wrap.fixed { background:#323746; height:100%; overflow-y:auto; padding:15px; margin-top:45px; }
-  .header-default .nav.navbar-nav li a { padding:20px 20px; }
-  .header-default .member-actions { margin:0; }
-  .header-default .member-actions .button-icon { width:100%; text-align:center; padding:20px; }
-  .header-default .member-actions .button-icon .fa { display:none; }
-
-  /** HEADER TRANSPARENT **/
-  .header-transparent .navbar-collapse.collapse { background:#323746; }
-  .header-transparent .main-menu-wrap .member-actions { border:none; }
+  .sub-menu { width:100%; margin:0; border-radius:0; position:relative;  }
+  .header-menu .main-menu li .sub-menu li a { padding-left:20px; }
 
   /** SUBHEADER **/
   .subheader.subheader-slider .slider-advanced .slide-price { margin-left:7%; }
@@ -63,17 +60,11 @@
 }
 
 @media screen and (max-width: 782px) {
-    .admin-bar header.header-classic.navbar-fixed { top:46px; }
-    .admin-bar .header-default .navbar-toggle.fixed { top:46px; }
+    .admin-bar header.main-header.navbar-fixed,
+    .admin-bar .header-menu .main-menu { top:46px; }
 }
 
 @media only screen and (max-width: 767px) {
-  /** HEADER **/
-  .navbar-header { margin-left:0px !important; }
-  .nav.navbar-nav li.menu-item-has-children:after { color:rgba(255, 255, 255, 0.2); }
-
-  /** HEADER DEFAULT **/
-  .header-default .member-actions .button-icon { margin-top:15px; }
   
   /** SUBHEADER **/
   .subheader.simple-search { padding:70px 0px 100px 0px; }
@@ -90,6 +81,8 @@
 
 @media only screen and (max-width: 589px) {
   /** HEADER **/
+  .header-logo { min-width:150px; }
+
   .top-bar-left, .top-bar-right { 
     float:none;
     width:100%;
