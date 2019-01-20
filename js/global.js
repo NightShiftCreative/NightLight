@@ -42,7 +42,7 @@ jQuery(document).ready(function($) {
 	//FIXED HEADER
 	/***************************************************************************/
 	var navToggle = $('.header-default.navbar-fixed .navbar-toggle');
-	var mainMenuWrap = $('.header-default.navbar-fixed .main-menu-wrap');
+	var mainMenuWrap = $('.header-default.navbar-fixed .header-menu');
     var transparentHeader = $('.header-transparent.navbar-fixed');
     var stickPoint = $('.navbar-fixed').outerHeight();
 	
