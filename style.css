@@ -889,11 +889,13 @@ header.has-menu .header-menu-after { margin-left:0; }
 /** FIXED **/
 header.navbar-fixed { position:fixed; top:0; }
 .header-default.navbar-fixed { position:relative; }
-.header-default .header-menu.fixed { position:fixed; top:32px; background:#2f353d; }
+.header-default .header-menu.fixed { position:fixed; top:0px; background:#2f353d; }
 .header-default .header-menu .container-fixed { max-width:1140px; height:55px; margin:0 auto; background:#2f353d; }
 
 .admin-bar header.header-classic.navbar-fixed, 
-.admin-bar header.header-transparent.navbar-fixed { top:32px; }
+.admin-bar header.header-transparent.navbar-fixed,
+.admin-bar .header-menu .main-menu, 
+.admin-bar .header-menu.fixed { top:32px; }
 
 /*====================================================================================*/
  /* 04 SUBHEADER

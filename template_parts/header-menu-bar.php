@@ -1,11 +1,11 @@
 <!-- LOGO -->
-    <div class="header-logo">
-        <?php echo ns_core_get_header_logo(); ?>
-    </div>
+<div class="header-logo">
+    <?php echo ns_core_get_header_logo(); ?>
+</div>
 
 <!-- BEFORE MAIN MENU -->
 <div class="header-menu-before">
-    <?php if($header_style == 'default') { echo ns_core_get_header_items(); } ?>
+    <?php echo ns_core_get_header_items(); ?>
     <?php do_action('ns_core_before_main_menu'); ?>
 </div>
 
