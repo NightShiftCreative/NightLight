@@ -270,12 +270,9 @@
         $rtl_css .= ".top-bar-member-actions .member-sub-menu { text-align:right; }";
         $rtl_css .= "header .right { float:right; }";
         $rtl_css .= "header .left { float:left; }";
-        $rtl_css .= ".header-default .header-details { left:0; right:auto; }";
         $rtl_css .= ".header-default .header-item:first-child { padding-left:0px; }";
-        $rtl_css .= ".member-actions.right { float:left; margin-left:0; }";
-        $rtl_css .= ".header-default .member-actions .button-icon .fa { left:auto; right:0; margin-left:auto; margin-right:-14px; }";
-        $rtl_css .= ".header-default .member-actions .button { padding:20px 40px 20px 20px; }";
-        $rtl_css .= ".header-default .nav.navbar-nav { float:right; }";
+        $rtl_css .= ".header-default .header-menu .button { float:left; }";
+        $rtl_css .= ".header-default .header-menu-before { margin-right:auto; margin-left:0; }";
         $rtl_css .= ".header-menu .main-menu li .sub-menu li .sub-menu { margin-right:200px; border-radius:4px 0px 4px 4px; }";
         $rtl_css .= ".header-menu .main-menu > li.menu-item-has-children > a { padding-left:10px !important; padding-right:0px !important; }";
         $rtl_css .= ".header-menu .main-menu li.menu-item-has-children::after { right:auto; left:11px; }";
