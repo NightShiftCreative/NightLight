@@ -50,7 +50,7 @@
   }
   .header-default .header-item span { font-size:15px; }
 
-  .sub-menu { width:100%; margin:0; border-radius:0; position:relative;  }
+  .sub-menu { width:100%; margin:0 !important; border-radius:0 !important; position:relative;  }
   .header-menu .main-menu li .sub-menu li a { padding-left:20px; }
 
   /** SUBHEADER **/
