@@ -727,6 +727,8 @@ header.full-width .header-logo { padding:15px 15px; }
 	font-size:18px;
 	cursor:pointer;
 }
+.main-menu-close { display:none; }
+.main-menu.open .main-menu-close { display:block; }
 
 /* MAIN MENU */
 .header-menu { margin-right:15px; margin-left:auto; }

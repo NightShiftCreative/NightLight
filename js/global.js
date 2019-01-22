@@ -15,12 +15,14 @@ jQuery(document).ready(function($) {
     $('.main-menu-toggle').on('click', function(event) {
         event.preventDefault();
         $('body').find('.mobile-overlay').toggle();
-        $(this).closest('header').find('.main-menu').animate({width:'toggle'},350);
+        var menu = $(this).closest('header').find('.main-menu');
+        menu.animate({width:'toggle'},350);
+        menu.toggleClass('open');
     });
 
-    $('.mobile-overlay').on('click', function(event) {
+    $('.mobile-overlay, .main-menu-close').on('click', function(event) {
         event.preventDefault();
-        $(this).hide();
+        $('.mobile-overlay').hide();
         $('header').find('.main-menu').animate({width:'toggle'},350);
     });
 

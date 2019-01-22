@@ -268,6 +268,13 @@ function ns_core_get_header_menu() {
     return $main_menu;
 }
 
+/* add menu close button */
+add_filter( 'wp_nav_menu_items', 'ns_core_add_menu_close', 10, 2 );
+function ns_core_add_menu_close( $items, $args ) {
+    $items = '<div class="main-menu-close"><i class="fa fa-times"></i></div>' . $items;
+    return $items;
+}
+
 /* get header nav toggle */
 function ns_core_get_header_toggle() {
     $header_vars = ns_core_load_header_settings();
