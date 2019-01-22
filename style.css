@@ -1074,6 +1074,9 @@ header.navbar-fixed { position:fixed; top:0; }
     text-align:center; 
 }
 
+.blog-post-details .sl-wrapper > .button.sl-button { border:none; padding:0; color:#9eaab2; }
+.blog-post-details .sl-wrapper > .button.sl-button:hover { background:transparent; color:#9eaab2; }
+
 .blog-post-content { padding:5%; }
 .blog-post-content h3 a { font-weight:300; color:#3a464e; }
 .blog-post-content h3 a:hover { color:#59aee9; }
