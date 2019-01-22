@@ -1061,7 +1061,7 @@ header.navbar-fixed { position:fixed; top:0; }
 .blog-post-img img { max-width:100%; height:auto; }
 
 .blog-post-details { margin-bottom:20px; padding:10px 0px 15px 0px; border-bottom:1px solid rgba(0, 0, 0, 0.1); position:relative;  }
-.blog-post-details > li { margin-right:13px; font-size:13px; color:#9eaab2; list-style:none !important; display:inline; }
+.blog-post-details > li { margin-right:13px; font-size:13px; color:#9eaab2; list-style:none !important; display:inline-block; }
 .blog-post-details > li:first-child { margin-left:0 !important; }
 
 .post-share .ns-tooltip-content ul { margin:0 !important; position:relative; }
