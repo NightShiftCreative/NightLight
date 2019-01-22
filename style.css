@@ -1488,13 +1488,13 @@ header.navbar-fixed { position:fixed; top:0; }
 }
 .user-dashboard-widget:nth-child(4) { margin-right:0; }
 
-.user-dashboard-widget.stat { border-top:2px solid #d15d33; border-radius:0px 0px 5px 5px; text-align:center;  }
+.user-dashboard-widget.stat { border-radius:0px 0px 5px 5px; text-align:center;  }
 .user-dashboard-widget.stat > span { font-size:35px; font-weight:600; display:block; }
 
 .user-dashboard-widget-full { width:100%; }
 
 .user-dashboard-table { margin:0; margin-bottom:20px; background:white; }
-.user-dashboard-table-header { background:#343434; color:white; }
+.user-dashboard-table-header { background:rgba(0, 0, 0, 0.07); }
 .user-dashboard-table td { padding:15px; border-bottom:1px solid rgba(0, 0, 0, 0.07); }
 .user-dashboard-table-img { width:20%; }
 .user-dashboard-table-img img { max-width:100%; height:auto; }
