@@ -144,6 +144,11 @@
 
   /** TESITMONIALS **/
   .testimonials h3 { font-size:20px; }
+
+  /** CTA **/
+  .cta { text-align:center; }
+  .cta .row { display:block; }
+  .cta .button { float:none; margin-top:20px; }
    
    /** CONTACT **/
    .contact-item { width:48%; margin-bottom:20px; }
