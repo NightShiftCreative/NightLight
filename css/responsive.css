@@ -133,6 +133,10 @@
   .subheader.subheader-slider .slider-advanced .slide table { font-size:9px; }
   .subheader.subheader-slider .slider-advanced .slide .button.small { float:none; margin-top:10px; margin-bottom:10px; }
 
+  /** BLOG **/
+  .blog-post-details { padding-top:0; }
+  .blog-post-details > li { display:block; margin-left:0 !important; padding:4px 0px; }
+
   /** TESITMONIALS **/
   .testimonials h3 { font-size:20px; }
    
