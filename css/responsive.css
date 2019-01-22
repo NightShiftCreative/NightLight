@@ -127,6 +127,11 @@
   .top-bar-right .top-bar-item:last-child { border:none; }
 
   /* SUBHEADER */
+  .subheader.subheader-slider .slide.slide-left .slide-content,
+  .subheader.subheader-slider .slide.slide-right .slide-content { width:75%; }
+  .subheader.subheader-slider h1 { font-size:35px; }
+  .subheader.subheader-slider p { font-size:21px; }
+
   .subheader.subheader-slider .slider-simple-buttons .button { width:70%; }
   .subheader.subheader-slider .slider-simple-buttons .button:last-child { margin-left:0px; margin-top:15px; }
 
