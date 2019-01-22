@@ -18,14 +18,11 @@ Tags: four-columns, left-sidebar, right-sidebar, custom-colors, custom-logo, foo
 /* 02 GLOBAL SETTINGS
 /* 03 HEADER 
 /* 04 SUBHEADER
-/* 05 FILTER
-/* 06 PROPERTIES
-/* 07 AGENTS
-/* 08 BLOG
-/* 09 WIDGETS
-/* 10 MEMBERS
-/* 11 MISC MODULES
-/* 12 FOOTER
+/* 05 BLOG
+/* 06 WIDGETS
+/* 07 MISC MODULES
+/* 08 MEMBERS
+/* 09 FOOTER
 
 /*====================================================================================*/
  /* 01 RESET
@@ -1036,7 +1033,7 @@ header.navbar-fixed { position:fixed; top:0; }
 
 
 /*====================================================================================*/
- /* 08 BLOG
+ /* 05 BLOG
 /*====================================================================================*/
 .blog-post { background:white; margin-bottom:40px;}
 
@@ -1139,7 +1136,7 @@ header.navbar-fixed { position:fixed; top:0; }
 .form-allowed-tags:hover code { opacity:1; }
 
 /*====================================================================================*/
- /* 09 WIDGETS
+ /* 06 WIDGETS
 /*====================================================================================*/
 .widget h4 {
 	margin-bottom:20px;
@@ -1256,7 +1253,7 @@ header.navbar-fixed { position:fixed; top:0; }
 
 
 /*====================================================================================*/
- /* 11 MISC MODULES
+ /* 07 MISC MODULES
 /*====================================================================================*/
 .about-video-thumb { max-width:100%; height:auto; }
 
@@ -1464,7 +1461,7 @@ header.navbar-fixed { position:fixed; top:0; }
 .search-result-item:hover h4 { color:#59aee9; }
 
 /*====================================================================================*/
- /* 11 MEMBERS
+ /* 08 MEMBERS
 /*====================================================================================*/
 /** LOGIN **/
 .login-form {
@@ -1509,7 +1506,7 @@ header.navbar-fixed { position:fixed; top:0; }
 
 
 /*====================================================================================*/
- /* 12 FOOTER
+ /* 09 FOOTER
 /*====================================================================================*/
 footer { 
 	background:#323746; 
