@@ -1501,6 +1501,16 @@ header.navbar-fixed { position:fixed; top:0; }
 .user-dashboard-table-actions { width:15%; }
 .user-dashboard-table-actions a { display:block; }
 
+/** EDIT PROFILE **/
+.user-profile-form .avatar-upload { 
+	background:white; 
+	border:1px solid rgba(0, 0, 0, 0.1); 
+	padding:25px; 
+	margin-bottom:20px; 
+	min-height:290px;
+}
+.user-profile-form .avatar-img { margin-bottom:20px; }
+
 /** FAVORITES **/
 .favorites-listing-type { text-transform: capitalize; }
 
