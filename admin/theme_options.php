@@ -1230,14 +1230,14 @@ function ns_core_theme_options_page() {
                                 <table class="admin-module">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Main Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_global_main" id="style_global_main" class="color-field" data-default-color="#59aee9" value="<?php echo esc_attr( get_option('ns_core_style_global_main', '#59aee9') ); ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_global_main" id="style_global_main" class="color-field" data-default-color="#04d2c8" value="<?php echo esc_attr( get_option('ns_core_style_global_main', '#04d2c8') ); ?>" /></td>
                                     </tr>
                                 </table>
 
                                 <table class="admin-module no-border">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Complementary Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_global_comp" id="style_global_comp" class="color-field" data-default-color="#4fba6f" value="<?php echo esc_attr( get_option('ns_core_style_global_comp', '#4fba6f') ); ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_global_comp" id="style_global_comp" class="color-field" data-default-color="#ff9900" value="<?php echo esc_attr( get_option('ns_core_style_global_comp', '#ff9900') ); ?>" /></td>
                                     </tr>
                                 </table>
                             </div>

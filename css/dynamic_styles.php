@@ -67,14 +67,14 @@
     /* THEME OPTION COLOR STYLES */
     /************************************************************************/
     $style_global_bg = get_option('ns_core_style_global_bg', '#f5f8fa');
-    $style_global_main = get_option('ns_core_style_global_main', '#59aee9');
+    $style_global_main = get_option('ns_core_style_global_main', '#04d2c8');
     $style_global_main_bright = ns_core_adjust_brightness($style_global_main, 25);
     $style_global_main_dark = ns_core_adjust_brightness($style_global_main, -25);
     $style_global_main_rgb = ns_core_hex2rgb($style_global_main);
     $style_global_main_rgb0 = $style_global_main_rgb[0];
     $style_global_main_rgb1 = $style_global_main_rgb[1];
     $style_global_main_rgb2 = $style_global_main_rgb[2];
-    $style_global_comp = get_option('ns_core_style_global_comp', '#4fba6f');
+    $style_global_comp = get_option('ns_core_style_global_comp', '#ff9900');
     $style_global_comp_bright = ns_core_adjust_brightness($style_global_comp, 25);
     $style_top_bar_bg = get_option('ns_core_style_top_bar_bg', '#48a0dc');
     $style_top_bar_submenu = ns_core_adjust_brightness($style_top_bar_bg, -50);
@@ -101,7 +101,7 @@
     if(!empty($style_global_bg) && $style_global_bg != '#f5f8fa') { $dynamic_css .= "body { background: {$style_global_bg}; }"; }
 
     //GLOBAL MAIN COLOR
-    if(!empty($style_global_main) && $style_global_main != '#59aee9') {
+    if(!empty($style_global_main) && $style_global_main != '#04d2c8') {
         $dynamic_css .= ".content blockquote, .social-icons.circle li a { border-color: {$style_global_main}; }";
         $dynamic_css .= ".subheader.simple-search .ui-tabs-nav li.ui-state-active:after { border-color: {$style_global_main} transparent; }";
         $dynamic_css .= "
@@ -145,7 +145,7 @@
     }
 
     //GLOBAL COMP COLOR
-    if(!empty($style_global_comp) && $style_global_comp != '#4fba6f') {
+    if(!empty($style_global_comp) && $style_global_comp != '#ff9900') {
         $dynamic_css .= ".button.alt, .header-default .member-actions .button-icon .fa, .multi-page-form-progress-item.active { background-color: {$style_global_comp}; }";
         $dynamic_css .= ".button.alt:hover { background-color: {$style_global_comp_bright}; }";
     }
