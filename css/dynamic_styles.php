@@ -66,7 +66,7 @@
     /************************************************************************/
     /* THEME OPTION COLOR STYLES */
     /************************************************************************/
-    $style_global_bg = get_option('ns_core_style_global_bg', '#ecf2f6');
+    $style_global_bg = get_option('ns_core_style_global_bg', '#f5f8fa');
     $style_global_main = get_option('ns_core_style_global_main', '#59aee9');
     $style_global_main_bright = ns_core_adjust_brightness($style_global_main, 25);
     $style_global_main_dark = ns_core_adjust_brightness($style_global_main, -25);
@@ -98,7 +98,7 @@
     $dynamic_css = '';
     
     //GLOBAL BACKGROUND COLOR
-    if(!empty($style_global_bg) && $style_global_bg != '#ecf2f6') { $dynamic_css .= "body { background: {$style_global_bg}; }"; }
+    if(!empty($style_global_bg) && $style_global_bg != '#f5f8fa') { $dynamic_css .= "body { background: {$style_global_bg}; }"; }
 
     //GLOBAL MAIN COLOR
     if(!empty($style_global_main) && $style_global_main != '#59aee9') {

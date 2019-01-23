@@ -1223,7 +1223,7 @@ function ns_core_theme_options_page() {
                                 <table class="admin-module">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Background Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_global_bg" id="style_global_bg" class="color-field" data-default-color="#ecf2f6" value="<?php echo esc_attr( get_option('ns_core_style_global_bg', '#ecf2f6') ); ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_global_bg" id="style_global_bg" class="color-field" data-default-color="#f5f8fa" value="<?php echo esc_attr( get_option('ns_core_style_global_bg', '#f5f8fa') ); ?>" /></td>
                                     </tr>
                                 </table>
 
