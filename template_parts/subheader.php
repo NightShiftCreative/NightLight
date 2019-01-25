@@ -53,6 +53,8 @@
 
         <div class="subheader-title-wrap">
 
+            <?php do_action( 'ns_core_before_subheader_title', $values); ?>
+
             <!-- BANNER TITLE -->
     		<h1>
     			<?php
@@ -92,8 +94,7 @@
                 <?php } ?>      
     		</h1>
 
-            <!-- NS BASICS HOOK -->
-            <?php do_action( 'ns_basics_after_subheader_title', $values); ?>
+            <?php do_action( 'ns_core_after_subheader_title', $values); ?>
         </div>
 
         <!-- SEARCH FILTER -->
