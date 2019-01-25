@@ -844,6 +844,7 @@ header.full-width .header-logo { padding:15px 15px; }
 	left:0;
 }
 .header-default .header-menu .main-menu li a { padding:17px 0px; color:white; }
+.header-default .header-menu .main-menu li a:hover { color:#04d2c8; }
 .header-default .header-menu .main-menu li.menu-item-has-children:after { margin-top:18px; }
 
 .header-default .header-menu .button { 

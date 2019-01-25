@@ -34,7 +34,8 @@
 
   .header-menu .main-menu li { width:100%; }
   .header-menu .main-menu > li > a,
-  .header-transparent .header-menu .main-menu > li > a { color:#838893; padding:20px 20px !important; margin:0; border-bottom:1px solid rgba(0, 0, 0, 0.1); }
+  .header-transparent .header-menu .main-menu > li > a,
+  .header-default .header-menu .main-menu > li > a { color:#838893; padding:20px 20px !important; margin:0; border-bottom:1px solid rgba(0, 0, 0, 0.1); }
   .header-menu .main-menu li:last-child a { border-bottom:none; }
   .header-menu .main-menu li.current-menu-item > a { box-shadow:none; }
   .header-menu .main-menu li.menu-item-has-children:after { margin-top:22px; right:25px; }

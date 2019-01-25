@@ -99,7 +99,9 @@
     $dynamic_css = '';
     
     //GLOBAL BACKGROUND COLOR
-    if(!empty($style_global_bg) && $style_global_bg != '#f5f8fa') { $dynamic_css .= "body { background: {$style_global_bg}; }"; }
+    if(!empty($style_global_bg) && $style_global_bg != '#f5f8fa') { 
+        $dynamic_css .= "body { background: {$style_global_bg}; }"; 
+    }
 
     //GLOBAL MAIN COLOR
     if(!empty($style_global_main) && $style_global_main != '#04d2c8') {
@@ -167,8 +169,8 @@
         $dynamic_css .= "header { background: {$style_header_bg}; }";
     }
     if(!empty($style_header_text) && $style_header_text != '#838893') {
-        $dynamic_css .= ".header-menu .main-menu > li > a, .header-logo a, .header-menu .main-menu > li.menu-item-has-children:after, .header-default .header-item .header-item-text, .header-default .header-item span { color: {$style_header_text}; }";
-        $dynamic_css .= ".header-menu .main-menu > li > a:hover, .header-logo a:hover, .header-menu .main-menu li:hover.menu-item-has-children:after { color: {$style_header_text_bright} !important; }";
+        $dynamic_css .= ".ns-custom-styles .header-menu .main-menu > li > a, .header-logo a, .header-menu .main-menu > li.menu-item-has-children:after, .header-default .header-item .header-item-text, .header-default .header-item span { color: {$style_header_text}; }";
+        $dynamic_css .= ".ns-custom-styles .header-menu .main-menu > li > a:hover, .header-logo a:hover, .header-menu .main-menu li:hover.menu-item-has-children:after { color: {$style_header_text_bright} !important; }";
     }
     if(!empty($style_header_icon) && $style_header_icon != '#04d2c8') {
         $dynamic_css .= ".header-default .header-item .header-item-icon > .fa { color: {$style_header_icon}; }";
@@ -208,6 +210,15 @@
     if(!empty($style_bottom_bar_text) && $style_bottom_bar_text != '#8e95ac') {
         $dynamic_css .= ".bottom-bar { color:{$style_bottom_bar_text}; }";
         $dynamic_css .= ".bottom-bar a { color: {$style_bottom_bar_text}; }";
+    }
+
+    //ADD BODY CLASS TO OVERWRITE THEME STYLES
+    if(!empty($dynamic_css)) {
+        add_filter( 'body_class','ns_core_custom_style_body_class' );
+        function ns_core_custom_style_body_class( $classes ) {
+            $classes[] = 'ns-custom-styles';
+            return $classes;   
+        }
     }
 
     wp_add_inline_style( 'ns-core-dynamic-styles', $dynamic_css );
