@@ -10,11 +10,17 @@
 
 <?php if($hide_footer_widget_area != "true") { ?>
 <footer id="footer" <?php if(!empty($footer_bg)) { echo 'class="'.ns_core_bgDisplay($footer_bg_display).'"'; } ?>>
+    
+    <?php do_action('ns_core_before_footer'); ?>
+
     <div class="container">
         <div class="row">
             <?php if ( dynamic_sidebar(esc_html__( 'Footer', 'ns-core' )) && is_active_sidebar(esc_html__( 'Footer', 'ns-core' )) ) : else : endif; ?>
         </div><!-- end row -->
     </div><!-- end footer container -->
+
+    <?php do_action('ns_core_after_footer'); ?>
+
 </footer>
 <?php } ?>
 

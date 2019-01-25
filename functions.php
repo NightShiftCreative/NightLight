@@ -18,7 +18,7 @@ add_theme_support( 'post-thumbnails' ); //Add post thumbnail support
 add_image_size( 'listing-thumbnail', 200, 200, array( 'center', 'center' ) );
 add_image_size( 'listing-thumbnail-small', 150, 100, false );
 add_theme_support( 'ns-basics' ); //NS Basics support
-do_action('ns_basics_theme_support');
+do_action('ns_core_theme_support');
 
 /*-----------------------------------------------------------------------------------*/
 /*  Require plugins (using TGM activation)
