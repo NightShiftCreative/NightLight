@@ -1250,7 +1250,7 @@ function ns_core_theme_options_page() {
                                 <table class="admin-module">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Top Bar Background Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_top_bar_bg" id="style_top_bar_bg" class="color-field" data-default-color="#48a0dc" value="<?php echo esc_attr( get_option('ns_core_style_top_bar_bg', '#48a0dc') ); ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_top_bar_bg" id="style_top_bar_bg" class="color-field" data-default-color="#04d2c8" value="<?php echo esc_attr( get_option('ns_core_style_top_bar_bg', '#04d2c8') ); ?>" /></td>
                                     </tr>
                                 </table>
 
@@ -1284,14 +1284,14 @@ function ns_core_theme_options_page() {
                                 <table class="admin-module">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Header Text Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_header_text" id="style_header_text" class="color-field" data-default-color="#464646" value="<?php echo esc_attr( get_option('ns_core_style_header_text', '#464646') ); ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_header_text" id="style_header_text" class="color-field" data-default-color="#838893" value="<?php echo esc_attr( get_option('ns_core_style_header_text', '#838893') ); ?>" /></td>
                                     </tr>
                                 </table>
 
                                 <table class="admin-module">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Header Icon Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_header_icon" id="style_header_icon" class="color-field" data-default-color="#59aee9" value="<?php echo esc_attr( get_option('ns_core_style_header_icon', '#59aee9') ); ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_header_icon" id="style_header_icon" class="color-field" data-default-color="#04d2c8" value="<?php echo esc_attr( get_option('ns_core_style_header_icon', '#04d2c8') ); ?>" /></td>
                                     </tr>
                                 </table>
 
@@ -1299,7 +1299,7 @@ function ns_core_theme_options_page() {
                                     <tr>
                                         <td class="admin-module-label">
                                             <label><?php echo esc_html_e('Header Menu Background Color', 'ns-core'); ?></label>
-                                            <span class="admin-module-note"><?php echo esc_html_e('*Only for Default Header style', 'ns-core'); ?></span>
+                                            <span class="admin-module-note"><?php echo esc_html_e('*Only for menu bar header style', 'ns-core'); ?></span>
                                         </td>
                                         <td class="admin-module-field"><input type="text" name="ns_core_style_header_menu" id="style_header_menu" class="color-field" data-default-color="#323746" value="<?php echo esc_attr( get_option('ns_core_style_header_menu', '#323746') ); ?>" /></td>
                                     </tr>

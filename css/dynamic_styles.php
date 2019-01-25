@@ -76,12 +76,13 @@
     $style_global_main_rgb2 = $style_global_main_rgb[2];
     $style_global_comp = get_option('ns_core_style_global_comp', '#ff9900');
     $style_global_comp_bright = ns_core_adjust_brightness($style_global_comp, 25);
-    $style_top_bar_bg = get_option('ns_core_style_top_bar_bg', '#48a0dc');
+    $style_top_bar_bg = get_option('ns_core_style_top_bar_bg', '#04d2c8');
     $style_top_bar_submenu = ns_core_adjust_brightness($style_top_bar_bg, -50);
     $style_top_bar_text = get_option('ns_core_style_top_bar_text', '#ffffff');
     $style_top_bar_social = get_option('ns_core_style_top_bar_social', '#ffffff');
     $style_header_bg = get_option('ns_core_style_header_bg', '#ffffff');
     $style_header_text = get_option('ns_core_style_header_text', '#464646');
+    $style_header_text_bright = ns_core_adjust_brightness($style_header_text, 25);
     $style_header_icon = get_option('ns_core_style_header_icon', '#59aee9');
     $style_header_menu = get_option('ns_core_style_header_menu', '#323746');
     $style_header_submenu = ns_core_adjust_brightness($style_header_menu, -50);
@@ -151,7 +152,7 @@
     }
 
     //TOPBAR
-    if(!empty($style_top_bar_bg) && $style_top_bar_bg != '#48a0dc') {
+    if(!empty($style_top_bar_bg) && $style_top_bar_bg != '#04d2c8') {
         $dynamic_css .= ".top-bar { background: {$style_top_bar_bg}; }";
     }
     if(!empty($style_top_bar_text) && $style_top_bar_text != '#ffffff') { 
@@ -165,10 +166,11 @@
     if(!empty($style_header_bg) && $style_header_bg != '#ffffff') {
         $dynamic_css .= "header { background: {$style_header_bg}; }";
     }
-    if(!empty($style_header_text) && $style_header_text != '#464646') {
-        $dynamic_css .= ".nav.navbar-nav li a, .navbar, header .navbar-brand, .nav.navbar-nav li.menu-item-has-children:after, .header-default .header-item .header-item-text, .header-default .header-item span { color: {$style_header_text}; }";
+    if(!empty($style_header_text) && $style_header_text != '#838893') {
+        $dynamic_css .= ".header-menu .main-menu > li > a, .header-logo a, .header-menu .main-menu > li.menu-item-has-children:after, .header-default .header-item .header-item-text, .header-default .header-item span { color: {$style_header_text}; }";
+        $dynamic_css .= ".header-menu .main-menu > li > a:hover, .header-logo a:hover, .header-menu .main-menu li:hover.menu-item-has-children:after { color: {$style_header_text_bright} !important; }";
     }
-    if(!empty($style_header_icon) && $style_header_icon != '#59aee9') {
+    if(!empty($style_header_icon) && $style_header_icon != '#04d2c8') {
         $dynamic_css .= ".header-default .header-item .header-item-icon > .fa { color: {$style_header_icon}; }";
     }
     if(!empty($style_header_menu) && $style_header_menu != '#323746') {
