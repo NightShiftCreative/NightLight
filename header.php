@@ -55,17 +55,22 @@ if($header_vars['header_container'] != 'true') { $header_class = $header_class.'
 
 <header class="main-header <?php echo esc_attr($header_class); ?>">
 
-<?php get_template_part('template_parts/top_bar'); ?>
+    <?php do_action('ns_core_before_header'); ?>
 
-<div class="container <?php if($header_vars['header_container'] != 'true') { echo 'container-full'; } ?>">
+    <?php get_template_part('template_parts/top_bar'); ?>
 
-    <?php 
-    if($header_style == 'default') {
-        include('template_parts/header-menu-bar.php');
-    } else {
-        include('template_parts/header-classic.php');
-    }
-    ?>
+    <div class="container <?php if($header_vars['header_container'] != 'true') { echo 'container-full'; } ?>">
 
-</div><!-- end header container -->
+        <?php 
+        if($header_style == 'default') {
+            include('template_parts/header-menu-bar.php');
+        } else {
+            include('template_parts/header-classic.php');
+        }
+        ?>
+
+    </div><!-- end header container -->
+
+    <?php do_action('ns_core_after_header'); ?>
+
 </header><!-- End Header -->
