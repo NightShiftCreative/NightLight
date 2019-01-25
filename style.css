@@ -761,7 +761,7 @@ header.full-width .header-logo { padding:15px 15px; }
 .sub-menu {
 	display:none;
 	position:absolute;
-	background:#2a2e3b;
+	background:#363a47;
 	width:200px;
 	font-size:14px;
 	border-radius:4px;
@@ -792,7 +792,7 @@ header.full-width .header-logo { padding:15px 15px; }
 	margin-left:200px;
 	margin-top:-40px;
 	border-radius:0px 4px 4px 4px;
-	background:#21252f;
+	background:#3c414f;
 }
 .header-menu .main-menu li .sub-menu li:hover .sub-menu { display:block; }
 
