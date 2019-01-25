@@ -19,7 +19,7 @@
                 <ul class="blog-post-details">
                     <li><?php echo ns_core_get_icon($icon_set, 'user'); ?><?php esc_html_e('Posted by', 'ns-core'); ?> <?php the_author_link(); ?> <?php esc_html_e('in', 'ns-core'); ?> <?php the_category(', '); ?></li>
                     <li><?php echo ns_core_get_icon($icon_set, 'comment', 'bubble-dots', 'pencil'); ?><?php comments_number(); ?></li>
-                    <?php do_action( 'ns_basics_after_post_meta'); ?>
+                    <?php do_action('ns_basics_after_post_meta'); ?>
                 </ul>
                 <?php 
                 if(is_single()) { 
