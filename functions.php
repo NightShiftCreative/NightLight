@@ -373,7 +373,7 @@ function ns_core_get_header_member_actions($class = null, $login_class = null, $
                 <?php if(!empty($header_vars['members_dashboard_page'])) { ?><li><a href="<?php echo $header_vars['members_dashboard_page']; ?>"><?php echo ns_core_get_icon($header_vars['icon_set'], 'tachometer-alt', 'layers', 'meter'); ?><?php esc_html_e( 'Dashboard', 'ns-core' ); ?></a></li><?php } ?>
                 <?php if(!empty($header_vars['members_edit_profile_page'])) { ?><li><a href="<?php echo $header_vars['members_edit_profile_page']; ?>"><?php echo ns_core_get_icon($header_vars['icon_set'], 'cog', 'cog', 'gear'); ?><?php esc_html_e( 'Edit Profile', 'ns-core' ); ?></a></li><?php } ?>
                 <?php if(!empty($header_vars['members_favorites_page'])) { ?><li><a href="<?php echo $header_vars['members_favorites_page']; ?>"><?php echo ns_core_get_icon($header_vars['icon_set'], 'heart'); ?><?php esc_html_e( 'Favorites', 'ns-core' ); ?></a></li><?php } ?>
-                <?php do_action('ns_basics_after_top_bar_member_menu'); ?>
+                <?php do_action('ns_core_after_top_bar_member_menu'); ?>
                 <li><a href="<?php echo wp_logout_url(get_permalink()); ?>"><?php echo ns_core_get_icon($header_vars['icon_set'], 'sign-out-alt', 'enter-left', 'enter'); ?><?php esc_html_e( 'Logout', 'ns-core' ); ?></a></li>
             </ul>
         </div>
@@ -618,7 +618,7 @@ function ns_core_generate_page_banner($values) {
     $banner_shortcode = isset( $values['ns_basics_banner_shortcode'] ) ? $values['ns_basics_banner_shortcode'][0] : '';
     
     if($banner_display == 'true') {
-        do_action( 'ns_basics_before_page_banner', $values);
+        do_action('ns_core_before_page_banner', $values);
         if($banner_source == 'slides' ) {
             ns_core_get_template_part('template_parts/banner_slider', ['post_id' => $page_id]); 
         } else if($banner_source == 'shortcode') {
@@ -626,9 +626,9 @@ function ns_core_generate_page_banner($values) {
         } else if($banner_source == 'image_banner') {
             get_template_part('template_parts/subheader'); 
         } else {
-            do_action( 'ns_basics_custom_banner_source', $banner_source);
+            do_action('ns_core_custom_banner_source', $banner_source);
         }
-        do_action( 'ns_basics_after_page_banner', $values);
+        do_action('ns_core_after_page_banner', $values);
     }
 }
 
