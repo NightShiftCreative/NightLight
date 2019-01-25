@@ -124,7 +124,7 @@ function ns_core_register_theme_options() {
     register_setting( 'ns-core-settings-group', 'ns_core_style_bottom_bar_text' );
 
     //register add-on settings
-    do_action( 'ns_basics_theme_option_register_settings');
+    do_action('ns_core_theme_option_register_settings');
 }
 
 function ns_core_theme_options_page() {
@@ -189,7 +189,7 @@ function ns_core_theme_options_page() {
                         <li><a href="#members" title="<?php echo esc_html_e('Members', 'ns-core'); ?>"><i class="fa fa-key"></i> <span class="ui-tab-text"><?php echo esc_html_e('Members', 'ns-core'); ?></span></a></li>
                         <li><a href="#footer" title="<?php echo esc_html_e('Footer', 'ns-core'); ?>"><div class="header-icon"><div class="header-icon-content"></div><div class="header-icon-head"></div></div> <span class="ui-tab-text"><?php echo esc_html_e('Footer', 'ns-core'); ?></span><div class="clear"></div></a></li>
                         <li><a href="#styling" title="<?php echo esc_html_e('Styling', 'ns-core'); ?>"><i class="fa fa-tint"></i> <span class="ui-tab-text"><?php echo esc_html_e('Styling', 'ns-core'); ?></span></a></li>
-                        <?php do_action( 'ns_basics_after_theme_option_menu'); ?>
+                        <?php do_action('ns_core_after_theme_option_menu'); ?>
                     </ul>
                 </td>
 
@@ -993,7 +993,7 @@ function ns_core_theme_options_page() {
                         </table>
 
                         <!-- hook in for other add-ons -->
-                        <?php do_action( 'ns_basics_after_page_banner_theme_options'); ?>
+                        <?php do_action('ns_core_after_page_banner_theme_options'); ?>
                         
                     </div><!-- end page banner -->
 
@@ -1126,7 +1126,7 @@ function ns_core_theme_options_page() {
                         </table>
 
                         <!-- hook in for NS Basics -->
-                        <?php do_action('ns_basics_after_member_theme_options'); ?>
+                        <?php do_action('ns_core_after_member_theme_options'); ?>
 
                     </div><!-- end members -->
 
@@ -1379,7 +1379,7 @@ function ns_core_theme_options_page() {
 
                     </div><!-- end styling -->
 
-                    <?php do_action( 'ns_basics_after_theme_option_content'); ?>
+                    <?php do_action('ns_core_after_theme_option_content'); ?>
 
                 </td>
             </tr>
