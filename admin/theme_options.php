@@ -346,6 +346,9 @@ function ns_core_theme_options_page() {
                                 </tr>
                             </table>
                         </div>
+
+                        <?php do_action('ns_core_after_general_theme_options'); ?>
+
                     </div><!-- end general -->
 
                     <div id="contact" class="tab-content">
@@ -511,6 +514,9 @@ function ns_core_theme_options_page() {
                                 </td>
                             </tr>
                         </table>
+
+                        <?php do_action('ns_core_after_contact_theme_options'); ?>
+
                     </div><!-- end contact and social -->
 
                     <div id="header" class="tab-content">
@@ -819,6 +825,9 @@ function ns_core_theme_options_page() {
                                 </td>
                             </tr>
                         </table>
+
+                        <?php do_action('ns_core_after_header_theme_options'); ?>
+
                     </div><!-- end header -->
 
                     <div id="page-banner" class="tab-content">
@@ -992,7 +1001,6 @@ function ns_core_theme_options_page() {
                             </tr>
                         </table>
 
-                        <!-- hook in for other add-ons -->
                         <?php do_action('ns_core_after_page_banner_theme_options'); ?>
                         
                     </div><!-- end page banner -->
@@ -1125,7 +1133,6 @@ function ns_core_theme_options_page() {
                             </tr>
                         </table>
 
-                        <!-- hook in for NS Basics -->
                         <?php do_action('ns_core_after_member_theme_options'); ?>
 
                     </div><!-- end members -->
@@ -1210,6 +1217,8 @@ function ns_core_theme_options_page() {
                                 </table>
                             </div>
                         </div>
+
+                        <?php do_action('ns_core_after_footer_theme_options'); ?>
 
                     </div><!-- end footer -->
 
@@ -1376,6 +1385,8 @@ function ns_core_theme_options_page() {
                                 </table>
                             </div>
                         </div>
+
+                        <?php do_action('ns_core_after_style_theme_options'); ?>
 
                     </div><!-- end styling -->
 
