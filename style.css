@@ -910,7 +910,6 @@ header.navbar-fixed { position:fixed; top:0; }
 	padding-bottom:100px;
 	letter-spacing:0.5px;
 	position:relative;
-    z-index:1;
 }
 
 .subheader-title-wrap { display:block; }
