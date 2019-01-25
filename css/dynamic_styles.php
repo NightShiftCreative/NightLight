@@ -140,8 +140,8 @@
             a:hover { color: {$style_global_main_bright}; }
         ";
         $dynamic_css .= ".member-nav-menu li.current-menu-item a { color: {$style_global_main}; border-color: {$style_global_main}; }";
-        $dynamic_css .= ".nav.navbar-nav li a:hover, .nav.navbar-nav li:hover.menu-item-has-children:after { color: {$style_global_main} !important; }";
-        $dynamic_css .= ".nav.navbar-nav li.current-menu-item > a { box-shadow:inset 0px -2px {$style_global_main}; }";
+        $dynamic_css .= ".header-menu .main-menu > li > a:hover, .header-menu .main-menu li:hover.menu-item-has-children:after { color: {$style_global_main} !important; }";
+        $dynamic_css .= ".header-menu .main-menu > li.current-menu-item > a { box-shadow:inset 0px -2px {$style_global_main}; }";
         $dynamic_css .= ".comment-list .arrow { border-color:transparent {$style_global_main_dark}; }";
         $dynamic_css .= ".img-overlay { background:rgba({$style_global_main_rgb0}, {$style_global_main_rgb1}, {$style_global_main_rgb2}, 0.6); }";
         $dynamic_css .= ".contact-details { background-color: {$style_global_main}; }";
@@ -149,7 +149,8 @@
 
     //GLOBAL COMP COLOR
     if(!empty($style_global_comp) && $style_global_comp != '#ff9900') {
-        $dynamic_css .= ".button.alt, .header-default .member-actions .button-icon .fa, .multi-page-form-progress-item.active { background-color: {$style_global_comp}; }";
+        $dynamic_css .= ".button.alt, .button.outline:hover, .subheader h1 strong { background-color: {$style_global_comp}; }";
+        $dynamic_css .= ".button.outline:hover { border-color: {$style_global_comp}; }";
         $dynamic_css .= ".button.alt:hover { background-color: {$style_global_comp_bright}; }";
     }
 
