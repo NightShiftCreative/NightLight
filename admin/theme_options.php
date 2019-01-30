@@ -522,9 +522,9 @@ function ns_core_theme_options_page() {
                     <div id="header" class="tab-content">
                         <h2><?php echo esc_html_e('Header', 'ns-core'); ?></h2>
 
-                        <div class="accordion ns-accordion">
-                            <h3 class="accordion-tab"><i class="fa fa-chevron-right icon"></i> <?php echo esc_html_e('Top Bar Options', 'ns-core'); ?></h3>
-                            <div>
+                        <div class="ns-accordion">
+                            <div class="ns-accordion-header"><i class="fa fa-chevron-right"></i> <?php echo esc_html_e('Top Bar Options', 'ns-core'); ?></div>
+                            <div class="ns-accordion-content">
 
                                 <table class="admin-module">
                                     <tr>
@@ -1192,9 +1192,9 @@ function ns_core_theme_options_page() {
                             </tr>
                         </table>
 
-                        <div id="accordion" class="accordion ns-accordion">
-                            <h3 class="accordion-tab"><i class="fa fa-chevron-right icon"></i> <?php echo esc_html_e('Bottom Bar', 'ns-core'); ?></h3>
-                            <div>
+                        <div class="ns-accordion">
+                            <div class="ns-accordion-header"><i class="fa fa-chevron-right icon"></i> <?php echo esc_html_e('Bottom Bar', 'ns-core'); ?></div>
+                            <div class="ns-accordion-content">
                                 <table class="admin-module">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Display Bottom Bar', 'ns-core'); ?></label></td>
@@ -1225,9 +1225,9 @@ function ns_core_theme_options_page() {
                     <div id="styling" class="tab-content">
                         <h3><?php echo esc_html_e('Styling', 'ns-core'); ?></h3>
 
-                        <div id="accordion" class="accordion ns-accordion">
-                            <h3 class="accordion-tab"><i class="fa fa-chevron-right icon"></i> <?php echo esc_html_e('Global Styles', 'ns-core'); ?></h3>
-                            <div>
+                        <div class="ns-accordion">
+                            <div class="ns-accordion-header"><i class="fa fa-chevron-right icon"></i> <?php echo esc_html_e('Global Styles', 'ns-core'); ?></div>
+                            <div class="ns-accordion-content">
 
                                 <table class="admin-module">
                                     <tr>
@@ -1252,9 +1252,9 @@ function ns_core_theme_options_page() {
                             </div>
                         </div>
 
-                        <div id="accordion" class="accordion ns-accordion">
-                            <h3 class="accordion-tab"><i class="fa fa-chevron-right icon"></i> <?php echo esc_html_e('Top Bar Styles', 'ns-core'); ?></h3>
-                            <div>
+                        <div class="ns-accordion">
+                            <div class="ns-accordion-header"><i class="fa fa-chevron-right icon"></i> <?php echo esc_html_e('Top Bar Styles', 'ns-core'); ?></div>
+                            <div class="ns-accordion-content">
 
                                 <table class="admin-module">
                                     <tr>
@@ -1279,9 +1279,9 @@ function ns_core_theme_options_page() {
                             </div>
                         </div>
 
-                        <div id="accordion" class="accordion ns-accordion">
-                            <h3 class="accordion-tab"><i class="fa fa-chevron-right icon"></i> <?php echo esc_html_e('Header Styles', 'ns-core'); ?></h3>
-                            <div>
+                        <div class="ns-accordion">
+                            <div class="ns-accordion-header"><i class="fa fa-chevron-right icon"></i> <?php echo esc_html_e('Header Styles', 'ns-core'); ?></div>
+                            <div class="ns-accordion-content">
 
                                 <table class="admin-module">
                                     <tr>
@@ -1319,9 +1319,9 @@ function ns_core_theme_options_page() {
                             </div>
                         </div>
 
-                        <div id="accordion" class="accordion ns-accordion">
-                            <h3 class="accordion-tab"><i class="fa fa-chevron-right icon"></i> <?php echo esc_html_e('Page Banner Styles', 'ns-core'); ?></h3>
-                            <div>
+                        <div class="ns-accordion">
+                            <div class="ns-accordion-header"><i class="fa fa-chevron-right icon"></i> <?php echo esc_html_e('Page Banner Styles', 'ns-core'); ?></div>
+                            <div class="ns-accordion-content">
 
                                 <table class="admin-module">
                                     <tr>
@@ -1339,9 +1339,9 @@ function ns_core_theme_options_page() {
                             </div>
                         </div>
 
-                        <div id="accordion" class="accordion ns-accordion">
-                            <h3 class="accordion-tab"><i class="fa fa-chevron-right icon"></i> <?php echo esc_html_e('Footer Styles', 'ns-core'); ?></h3>
-                            <div>
+                        <div class="ns-accordion">
+                            <div class="ns-accordion-header"><i class="fa fa-chevron-right icon"></i> <?php echo esc_html_e('Footer Styles', 'ns-core'); ?></div>
+                            <div class="ns-accordion-content">
                                 <table class="admin-module">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Footer Background Color', 'ns-core'); ?></label></td>
