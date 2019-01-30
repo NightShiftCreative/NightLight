@@ -76,7 +76,6 @@ function ns_core_admin_scripts() {
         wp_enqueue_style('thickbox');
 		wp_enqueue_script('jquery-ui-core');
 		wp_enqueue_script('jquery-ui-accordion');
-		wp_enqueue_script('jquery-ui-tabs');
 		wp_enqueue_script( 'jquery-ui-sortable' );
 		wp_enqueue_script( 'jquery-form', array( 'jquery' ) );
 		wp_enqueue_style( 'wp-color-picker' );

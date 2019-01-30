@@ -176,24 +176,24 @@ function ns_core_theme_options_page() {
         $bottom_bar_text_default = get_bloginfo('title').' | Theme by <a href="'.$sitelink.'" target="_blank">NightShift Creative</a> | &copy; '. date('Y');
     ?>
 
-    <div id="tabs" class="ui-tabs">
+    <div class="ns-tabs">
         <table class="theme-options-content" cellspacing="0" cellpadding="0">
             <tr>
 
                 <td class="theme-options-nav-container" valign="top">
-                    <ul class="ui-tabs-nav">
-                        <li><a href="#general" title="<?php echo esc_html_e('General', 'ns-core'); ?>"><i class="fa fa-globe"></i> <span class="ui-tab-text"><?php echo esc_html_e('General', 'ns-core'); ?></span></a></li>
-                        <li><a href="#contact" title="<?php echo esc_html_e('Contact & Social', 'ns-core'); ?>"><i class="fa fa-comment"></i> <span class="ui-tab-text"><?php echo esc_html_e('Contact & Social', 'ns-core'); ?></span></a></li>
-                        <li><a href="#header" title="<?php echo esc_html_e('Header', 'ns-core'); ?>"><div class="header-icon"><div class="header-icon-head"></div><div class="header-icon-content"></div></div> <span class="ui-tab-text"><?php echo esc_html_e('Header', 'ns-core'); ?></span><div class="clear"></div></a></li>
-                        <li><a href="#page-banner" title="<?php echo esc_html_e('Page Banners & Sidebars', 'ns-core'); ?>"><div class="header-icon page-banner-icon"><div class="header-icon-head"></div><div class="header-icon-banner"></div><div class="header-icon-content"></div></div> <span class="ui-tab-text"><?php echo esc_html_e('Page Banners & Sidebars', 'ns-core'); ?></span><div class="clear"></div></a></li>
-                        <li><a href="#members" title="<?php echo esc_html_e('Members', 'ns-core'); ?>"><i class="fa fa-key"></i> <span class="ui-tab-text"><?php echo esc_html_e('Members', 'ns-core'); ?></span></a></li>
-                        <li><a href="#footer" title="<?php echo esc_html_e('Footer', 'ns-core'); ?>"><div class="header-icon"><div class="header-icon-content"></div><div class="header-icon-head"></div></div> <span class="ui-tab-text"><?php echo esc_html_e('Footer', 'ns-core'); ?></span><div class="clear"></div></a></li>
-                        <li><a href="#styling" title="<?php echo esc_html_e('Styling', 'ns-core'); ?>"><i class="fa fa-tint"></i> <span class="ui-tab-text"><?php echo esc_html_e('Styling', 'ns-core'); ?></span></a></li>
+                    <ul class="ns-tabs-nav">
+                        <li><a href="#general" title="<?php echo esc_html_e('General', 'ns-core'); ?>"><i class="fa fa-globe"></i> <span class="ns-tab-text"><?php echo esc_html_e('General', 'ns-core'); ?></span></a></li>
+                        <li><a href="#contact" title="<?php echo esc_html_e('Contact & Social', 'ns-core'); ?>"><i class="fa fa-comment"></i> <span class="ns-tab-text"><?php echo esc_html_e('Contact & Social', 'ns-core'); ?></span></a></li>
+                        <li><a href="#header" title="<?php echo esc_html_e('Header', 'ns-core'); ?>"><i class="fa fa-columns"></i> <span class="ns-tab-text"><?php echo esc_html_e('Header', 'ns-core'); ?></span><div class="clear"></div></a></li>
+                        <li><a href="#page-banner" title="<?php echo esc_html_e('Page Banners & Sidebars', 'ns-core'); ?>"><i class="fa fa-copy"></i> <span class="ns-tab-text"><?php echo esc_html_e('Page Banners & Sidebars', 'ns-core'); ?></span><div class="clear"></div></a></li>
+                        <li><a href="#members" title="<?php echo esc_html_e('Members', 'ns-core'); ?>"><i class="fa fa-key"></i> <span class="ns-tab-text"><?php echo esc_html_e('Members', 'ns-core'); ?></span></a></li>
+                        <li><a href="#footer" title="<?php echo esc_html_e('Footer', 'ns-core'); ?>"><i class="fas fa-columns fa-rotate-180"></i> <span class="ns-tab-text"><?php echo esc_html_e('Footer', 'ns-core'); ?></span><div class="clear"></div></a></li>
+                        <li><a href="#styling" title="<?php echo esc_html_e('Styling', 'ns-core'); ?>"><i class="fa fa-tint"></i> <span class="ns-tab-text"><?php echo esc_html_e('Styling', 'ns-core'); ?></span></a></li>
                         <?php do_action('ns_core_after_theme_option_menu'); ?>
                     </ul>
                 </td>
 
-                <td class="theme-options-tab-container" valign="top">
+                <td class="ns-tabs-content theme-options-tab-container" valign="top">
 
                     <div class="tab-loader"><img src="<?php echo esc_url(home_url('/')); ?>wp-admin/images/spinner.gif" alt="" /> <?php esc_html_e('Loading...', 'ns-core'); ?></div>
 
