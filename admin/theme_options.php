@@ -218,7 +218,7 @@ function ns_core_theme_options_page() {
                                 <td class="admin-module-label"><label><?php echo esc_html_e('Global Background Image', 'ns-core'); ?></label></td>
                                 <td class="admin-module-field">
                                     <input type="text" id="global_bg" name="ns_core_global_bg" value="<?php echo esc_attr( get_option('ns_core_global_bg') ); ?>" />
-                                    <input id="_btn" class="upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
+                                    <input id="_btn" class="ns_upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
                                     <span class="button-secondary remove"><?php echo esc_html_e('Remove', 'ns-core'); ?></span>
                                 </td>
                             </tr>
@@ -279,7 +279,7 @@ function ns_core_theme_options_page() {
                                 <td class="admin-module-label"><label><?php echo esc_html_e('Preloader Custom Image', 'ns-core'); ?></label></td>
                                 <td class="admin-module-field">
                                     <input type="text" id="preloader_img" name="ns_core_preloader_img" value="<?php echo esc_attr( get_option('ns_core_preloader_img') ); ?>" />
-                                    <input id="_btn" class="upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
+                                    <input id="_btn" class="ns_upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
                                     <span class="button-secondary remove"><?php echo esc_html_e('Remove', 'ns-core'); ?></span>
                                 </td>
                             </tr>
@@ -688,7 +688,7 @@ function ns_core_theme_options_page() {
                                 <td class="admin-module-field">
                                     <?php $default_logo = esc_url( get_template_directory_uri() ).'/images/logo-dark.png'; ?>
                                     <input type="text" id="logo" name="ns_core_logo" value="<?php echo esc_attr( get_option('ns_core_logo', $default_logo) ); ?>" />
-                                    <input id="_btn" class="upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
+                                    <input id="_btn" class="ns_upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
                                     <span class="button-secondary remove"><?php echo esc_html_e('Remove', 'ns-core'); ?></span>
                                     <?php $logo = get_option('ns_core_logo', $default_logo); ?>
                                     <?php if(!empty($logo)) { ?><div class="option-preview logo-preview"><img src="<?php echo esc_attr( get_option('ns_core_logo', $default_logo) ); ?>" alt="" /></div><?php } ?>
@@ -705,7 +705,7 @@ function ns_core_theme_options_page() {
                                 <td class="admin-module-field">
                                     <?php $default_logo_transparent = esc_url( get_template_directory_uri() ).'/images/logo.png'; ?>
                                     <input type="text" id="logo_transparent" name="ns_core_logo_transparent" value="<?php echo esc_attr( get_option('ns_core_logo_transparent', $default_logo_transparent) ); ?>" />
-                                    <input id="_btn" class="upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
+                                    <input id="_btn" class="ns_upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
                                     <span class="button-secondary remove"><?php echo esc_html_e('Remove', 'ns-core'); ?></span>
                                     <?php $logo_transparent = get_option('ns_core_logo_transparent', $default_logo_transparent); ?>
                                     <?php if(!empty($logo_transparent)) { ?><div class="option-preview logo-preview"><img src="<?php echo esc_attr( get_option('ns_core_logo_transparent', $default_logo_transparent) ); ?>" alt="" /></div><?php } ?>
@@ -722,7 +722,7 @@ function ns_core_theme_options_page() {
                                 </td>
                                 <td class="admin-module-field">
                                     <input type="text" id="favicon" name="ns_core_favicon" value="<?php echo esc_attr( get_option('ns_core_favicon') ); ?>" />
-                                    <input id="_btn" class="upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
+                                    <input id="_btn" class="ns_upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
                                     <span class="button-secondary remove"><?php echo esc_html_e('Remove', 'ns-core'); ?></span>
                                     <?php $favicon = get_option('ns_core_favicon'); ?>
                                     <?php if(!empty($favicon)) { ?><div class="option-preview favicon-preview"><img src="<?php echo esc_attr( get_option('ns_core_favicon') ); ?>" alt="" /></div><?php } ?>
@@ -807,7 +807,7 @@ function ns_core_theme_options_page() {
                                 <td class="admin-module-label"><label><?php echo esc_html_e('Header Background Image', 'ns-core'); ?></label></td>
                                 <td class="admin-module-field">
                                     <input type="text" id="header_bg" name="ns_core_header_bg" value="<?php echo esc_attr( get_option('ns_core_header_bg') ); ?>" />
-                                    <input id="_btn" class="upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
+                                    <input id="_btn" class="ns_upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
                                     <span class="button-secondary remove"><?php echo esc_html_e('Remove', 'ns-core'); ?></span>
                                 </td>
                             </tr>
@@ -841,7 +841,7 @@ function ns_core_theme_options_page() {
                                 </td>
                                 <td class="admin-module-field">
                                     <input type="text" id="page_banner_bg" name="ns_core_page_banner_bg" value="<?php echo esc_attr( get_option('ns_core_page_banner_bg', esc_url(get_template_directory_uri()).'/images/page-banner-default.jpg' ) ); ?>" />
-                                    <input id="_btn" class="upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
+                                    <input id="_btn" class="ns_upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
                                     <span class="button-secondary remove"><?php echo esc_html_e('Remove', 'ns-core'); ?></span>
                                 </td>
                             </tr>
@@ -1173,7 +1173,7 @@ function ns_core_theme_options_page() {
                                 <td class="admin-module-label"><label><?php echo esc_html_e('Footer Background Image', 'ns-core'); ?></label></td>
                                 <td class="admin-module-field">
                                     <input type="text" id="footer_bg" name="ns_core_footer_bg" value="<?php echo esc_attr( get_option('ns_core_footer_bg') ); ?>" />
-                                    <input id="_btn" class="upload_image_button" type="button" value="<?php esc_html_e('Upload Image', 'ns-core'); ?>" />
+                                    <input id="_btn" class="ns_upload_image_button" type="button" value="<?php esc_html_e('Upload Image', 'ns-core'); ?>" />
                                     <span class="button-secondary remove"><?php esc_html_e('Remove', 'ns-core'); ?></span>
                                 </td>
                             </tr>
