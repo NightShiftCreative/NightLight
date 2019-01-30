@@ -80,17 +80,6 @@ function ns_core_admin_scripts() {
 		wp_enqueue_script( 'jquery-ui-sortable' );
 		wp_enqueue_script( 'jquery-form', array( 'jquery' ) );
 		wp_enqueue_style( 'wp-color-picker' );
-
-        /* localize scripts */
-        $translation_array = array( 
-            'remove_text' => __( 'Remove', 'ns-core' ),
-            'save_text' => __( 'Save', 'ns-core' ),
-            'name_text' => __( 'Name', 'ns-core' ),
-            'image_url' => __( 'Image URL', 'ns-core' ),
-            'on' => __( 'On', 'ns-core' ),
-            'off' => __( 'Off', 'ns-core' ),
-        );
-        wp_localize_script( 'ns-core-admin-js', 'ns_core_local_script', $translation_array );
     }
 }
 add_action('admin_enqueue_scripts', 'ns_core_admin_scripts');

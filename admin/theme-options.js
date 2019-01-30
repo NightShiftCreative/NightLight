@@ -33,25 +33,7 @@ jQuery(document).ready(function($) {
     /***************************************************************************/
     //ACTIVATE CHOSEN 
     /***************************************************************************/
-    $(".admin-module select").chosen({disable_search_threshold: 5});
-
-    /********************************************/
-    /* TOGGLE SWITCH */
-    /********************************************/
-    $('.toggle-switch-label').on('click', function() {
-        var settingsClass = $(this).data('settings');
-        if($(this).parent().find('.toggle-switch-checkbox').is(':checked')) {
-            $(this).parent().attr('title', 'Disabled');
-            $(this).find('span').text(ns_core_local_script.off);
-            $(this).find('span').removeClass('on');
-            if(settingsClass) { $('.'+settingsClass).slideUp(); }
-        } else {
-            $(this).parent().attr('title', 'Active');
-            $(this).find('span').text(ns_core_local_script.on);
-            $(this).find('span').addClass('on');
-            if(settingsClass) { $('.'+settingsClass).slideDown(); }
-        }
-    }); 
+    $(".admin-module select").chosen({disable_search_threshold: 5}); 
 
     /********************************************/
     /* CONTACT FORM ID */
