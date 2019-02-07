@@ -17,13 +17,15 @@ jQuery(document).ready(function($) {
         $('body').find('.mobile-overlay').toggle();
         var menu = $(this).closest('header').find('.main-menu');
         menu.animate({width:'toggle'},350);
-        menu.toggleClass('open');
+        menu.toggleClass('mobile open');
     });
 
     $('.mobile-overlay, .main-menu-close').on('click', function(event) {
         event.preventDefault();
         $('.mobile-overlay').hide();
-        $('header').find('.main-menu').animate({width:'toggle'},350);
+        var menu = $('header').find('.main-menu');
+        menu.animate({width:'toggle'},350);
+        menu.removeClass('mobile open');
     });
 
 	/***************************************************************************/
