@@ -343,6 +343,7 @@ function ns_core_get_header_member_actions($class = null, $login_class = null, $
                 } 
                 ?>
                 <?php 
+                    echo '<span class="display-name">';
                     if($header_vars['members_display_name'] == 'username') {
                         echo esc_attr($current_user->user_login);
                     } else if($header_vars['members_display_name'] == 'fname') {
@@ -354,6 +355,7 @@ function ns_core_get_header_member_actions($class = null, $login_class = null, $
                     } else if($header_vars['members_display_name'] == 'display_name') {
                         echo esc_attr($current_user->display_name);
                     }
+                    echo '</span>';
                 ?>
                 <i class="fa icon fa-caret-down"></i>
             </div>
