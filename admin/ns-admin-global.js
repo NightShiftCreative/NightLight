@@ -116,4 +116,20 @@ jQuery(document).ready(function($) {
         }
     });
 
+    /*****************************************************/
+    /* Check for hashtag in url and display setting tab  */
+    /*****************************************************/
+    $(function () {
+        var settingsTabs = $('.ns-settings-content-nav');
+        var settingsContent = $('.ns-settings-content');
+        var hash = $.trim( window.location.hash );
+        if(settingsTabs.length > 0 && hash != '') {
+            var splitHash = hash.split('&');
+            settingsTabs.find('.ns-tabs-nav a[href="'+splitHash[0]+'"]').trigger('click');
+            if(splitHash[1]) {
+                settingsContent.find('.ns-accordion[data-name="'+splitHash[1]+'"]').find('.ns-accordion-header').trigger('click');
+            }
+        }
+    });
+
 });
