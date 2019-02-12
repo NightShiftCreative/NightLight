@@ -1,13 +1,5 @@
-.mobile-overlay { display:none; position:fixed; background:rgba(0, 0, 0, 0.5) !important; z-index:2000; }
-
-@media screen and (max-width: 990px) {
-
-  /* HEADER */
-  .main-menu-toggle { display: inline-block; }
-
-  .header-menu { margin-right:15px !important; margin-left:auto !important; }
-  .header-menu .main-menu { 
-    display:none;
+/* MOBILE MENU */
+.header-menu .main-menu.mobile { 
     width:350px; 
     height:100%;
     overflow-y:auto;
@@ -16,11 +8,10 @@
     float:none; 
     position:fixed; 
     left:0; 
-    top:0;
     white-space:normal; 
     box-shadow:0px 0px 20px rgba(0, 0, 0, 0.1);
-  }
-  .header-menu .main-menu-close {
+}
+.header-menu .main-menu.mobile .main-menu-close {
     font-size:23px;
     display:block;
     width:100%;
@@ -30,16 +21,23 @@
     border-bottom:1px solid rgba(0, 0, 0, 0.1);
     text-align:right;
     cursor:pointer;
-  }
+}
 
-  .header-menu .main-menu li { width:100%; }
-  .header-menu .main-menu > li > a,
-  .header-transparent .header-menu .main-menu > li > a,
-  .header-default .header-menu .main-menu > li > a { color:#838893; padding:20px 20px !important; margin:0; border-bottom:1px solid rgba(0, 0, 0, 0.1); }
-  .header-menu .main-menu li:last-child a { border-bottom:none; }
-  .header-menu .main-menu li.current-menu-item > a { box-shadow:none; }
-  .header-menu .main-menu li.menu-item-has-children:after { margin-top:22px; right:25px; }
-  .header-menu .main-menu li .sub-menu li.menu-item-has-children:after { content: "\f107"; }
+.header-menu .main-menu.mobile li { width:100%; }
+.header-menu .main-menu.mobile > li > a { color:#838893; padding:20px 20px !important; margin:0; border-bottom:1px solid rgba(0, 0, 0, 0.1); }
+.header-menu .main-menu.mobile li:last-child a { border-bottom:none; }
+.header-menu .main-menu.mobile li.current-menu-item > a { box-shadow:none; }
+.header-menu .main-menu.mobile li.menu-item-has-children:after { margin-top:22px; right:25px; }
+.header-menu .main-menu.mobile li .sub-menu li.menu-item-has-children:after { content: "\f107"; }
+.mobile-overlay { display:none; position:fixed; background:rgba(0, 0, 0, 0.5) !important; z-index:2000; }
+
+
+@media screen and (max-width: 990px) {
+
+  /* HEADER */
+  .header-menu { margin-right:15px !important; margin-left:auto !important; }
+  .main-menu-toggle { display: inline-block; }
+  .header-menu .main-menu { display:none; }
 
   .header-default .header-search { width:170px; }
   .header-default .header-item { padding:0px 10px; }

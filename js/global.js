@@ -16,16 +16,19 @@ jQuery(document).ready(function($) {
         event.preventDefault();
         $('body').find('.mobile-overlay').toggle();
         var menu = $(this).closest('header').find('.main-menu');
-        menu.animate({width:'toggle'},350);
         menu.toggleClass('mobile open');
+        menu.animate({width:'toggle'}, 350);
     });
 
     $('.mobile-overlay, .main-menu-close').on('click', function(event) {
         event.preventDefault();
         $('.mobile-overlay').hide();
         var menu = $('header').find('.main-menu');
-        menu.animate({width:'toggle'},350);
-        menu.removeClass('mobile open');
+        menu.animate({
+            width:'toggle'
+        }, 350, function() {
+            menu.removeClass('mobile open');
+        });
     });
 
 	/***************************************************************************/
