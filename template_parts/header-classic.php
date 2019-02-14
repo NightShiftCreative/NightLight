@@ -1,3 +1,5 @@
+<?php $header_vars = ns_core_load_header_settings(); ?>
+
 <!-- LOGO -->
 <div class="header-logo">
     <?php echo ns_core_get_header_logo(); ?>
