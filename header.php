@@ -63,10 +63,8 @@ if($header_vars['header_container'] != 'true') { $header_class = $header_class.'
 
         <?php 
         if($header_style == 'default') {
-            //include('template_parts/header-menu-bar.php');
             get_template_part('template_parts/header-menu-bar');
         } else {
-            //include('template_parts/header-classic.php');
             get_template_part('template_parts/header-classic');
         }
         ?>
