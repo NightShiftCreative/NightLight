@@ -168,8 +168,8 @@ add_action( 'wp_enqueue_scripts', 'ns_core_load_scripts' );
 /*-----------------------------------------------------------------------------------*/
 /* Adds async/defer attributes to scripts/styles
 /*-----------------------------------------------------------------------------------*/
-add_filter( 'script_loader_tag', 'add_async_to_script', 10, 3 );
-function add_async_to_script( $tag, $handle, $src ) {
+add_filter( 'script_loader_tag', 'ns_core_add_async_to_script', 10, 3 );
+function ns_core_add_async_to_script( $tag, $handle, $src ) {
     if (!is_admin()) {
         $script_array = array('html5shiv', 'chosen', 'fancybox');
         if (in_array($handle, $script_array)) {
@@ -179,8 +179,8 @@ function add_async_to_script( $tag, $handle, $src ) {
     return $tag;
 }
 
-add_filter( 'style_loader_tag', 'add_async_to_style', 10, 3 );
-function add_async_to_style($html, $handle) {
+add_filter( 'style_loader_tag', 'ns_core_add_async_to_style', 10, 3 );
+function ns_core_add_async_to_style($html, $handle) {
     if (!is_admin()) {
         $style_array = array('ns-font-awesome', 'linear-icons', 'dripicons', 'fancybox');
         $onload = "if(media!='all')media='all'";
