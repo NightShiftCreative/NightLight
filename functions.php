@@ -171,7 +171,7 @@ add_action( 'wp_enqueue_scripts', 'ns_core_load_scripts' );
 add_filter( 'script_loader_tag', 'ns_core_add_async_to_script', 10, 3 );
 function ns_core_add_async_to_script( $tag, $handle, $src ) {
     if (!is_admin()) {
-        $script_array = array('html5shiv', 'chosen', 'fancybox');
+        $script_array = array('html5shiv', 'respond', 'fancybox');
         if (in_array($handle, $script_array)) {
             $tag = '<script async type="text/javascript" src="' . esc_url( $src ) . '"></script>';
         }
