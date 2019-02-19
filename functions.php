@@ -171,7 +171,7 @@ add_action( 'wp_enqueue_scripts', 'ns_core_load_scripts' );
 add_filter( 'script_loader_tag', 'ns_core_add_async_to_script', 10, 3 );
 function ns_core_add_async_to_script( $tag, $handle, $src ) {
     if (!is_admin()) {
-        $script_array = array('html5shiv', 'respond', 'fancybox');
+        $script_array = array('html5shiv', 'respond');
         if (in_array($handle, $script_array)) {
             $tag = '<script async type="text/javascript" src="' . esc_url( $src ) . '"></script>';
         }
@@ -182,7 +182,7 @@ function ns_core_add_async_to_script( $tag, $handle, $src ) {
 add_filter( 'style_loader_tag', 'ns_core_add_async_to_style', 10, 3 );
 function ns_core_add_async_to_style($html, $handle) {
     if (!is_admin()) {
-        $style_array = array('ns-font-awesome', 'linear-icons', 'dripicons', 'fancybox');
+        $style_array = array('chosen', 'ns-font-awesome', 'linear-icons', 'dripicons', 'fancybox');
         $onload = "if(media!='all')media='all'";
         $media = 'media="none" onload="'.$onload.'"';
         if(in_array($handle, $style_array)) {
