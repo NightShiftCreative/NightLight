@@ -30,11 +30,6 @@ jQuery(document).ready(function($) {
         $(this).closest('.admin-module-fonts').find('select').trigger("chosen:updated");
     });  
 
-    /***************************************************************************/
-    //ACTIVATE CHOSEN 
-    /***************************************************************************/
-    $(".admin-module select").chosen({disable_search_threshold: 5}); 
-
     /********************************************/
     /* CONTACT FORM ID */
     /********************************************/
