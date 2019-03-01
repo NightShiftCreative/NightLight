@@ -42,7 +42,7 @@
 </section>
 
 <?php if ( comments_open() || get_comments_number() ) { ?>
-    <section class="module no-padding-top"><div class="container"><?php comments_template(); ?></div></section>
+    <section class="module module-comments no-padding-top"><div class="container"><?php comments_template(); ?></div></section>
 <?php } ?>
 
 <?php if($cta_display == 'true') { get_template_part('template_parts/call_to_action'); } ?>
