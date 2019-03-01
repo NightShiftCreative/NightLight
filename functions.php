@@ -228,6 +228,7 @@ function ns_core_load_header_settings() {
     $header_vars['above_email_text'] = esc_attr(get_option('ns_core_above_email_text', esc_html__('Drop us a line', 'ns-core') ));
     $header_vars['display_header_search'] = esc_attr(get_option('ns_core_display_header_search', 'true'));
     $header_vars['header_menu_align'] = esc_attr(get_option('ns_core_header_menu_align', 'right'));
+    $header_vars['header_menu_parent_links'] = get_option('ns_core_header_menu_parent_links'); 
     $header_vars['header_menu_button_page'] = esc_attr(get_option('ns_core_header_menu_button_page'));
     $header_vars['header_menu_button_text'] = esc_attr(get_option('ns_core_header_menu_button_text'));
     $header_vars['members_display_avatar'] = esc_attr(get_option('ns_core_members_display_avatar', 'true'));

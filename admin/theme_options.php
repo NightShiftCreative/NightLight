@@ -66,6 +66,7 @@ function ns_core_register_theme_options() {
     register_setting( 'ns-core-settings-group', 'ns_core_above_email_text' );
     register_setting( 'ns-core-settings-group', 'ns_core_display_header_search' );
     register_setting( 'ns-core-settings-group', 'ns_core_header_menu_align' );
+    register_setting( 'ns-core-settings-group', 'ns_core_header_menu_parent_links' );
     register_setting( 'ns-core-settings-group', 'ns_core_header_menu_button_page' );
     register_setting( 'ns-core-settings-group', 'ns_core_header_menu_button_text' );
     register_setting( 'ns-core-settings-group', 'ns_core_header_bg' );
@@ -771,6 +772,22 @@ function ns_core_theme_options_page() {
                                         <option value="right" <?php if(esc_attr($header_menu_align) == 'right') { echo 'selected'; } ?>>Right</option>
                                         <option value="left" <?php if(esc_attr($header_menu_align) == 'left') { echo 'selected'; } ?>>Left</option>
                                         <option value="center" <?php if(esc_attr($header_menu_align) == 'center') { echo 'selected'; } ?>>Center</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label">
+                                    <label><?php echo esc_html_e('Menu Parent Link Behavior', 'ns-core'); ?></label>
+                                    <span class="admin-module-note"><?php echo esc_html_e('Decide how links with sub-menus should be behave when clicked', 'ns-core'); ?></span>
+                                </td>
+                                <td class="admin-module-field">
+                                    <?php $header_menu_parent_links = get_option('ns_core_header_menu_parent_links', 'toggle-submenu'); ?>
+                                    <select name="ns_core_header_menu_parent_links">
+                                        <option value="toggle-submenu" <?php if(esc_attr($header_menu_parent_links) == 'toggle-submenu') { echo 'selected'; } ?>><?php echo esc_html_e('Toggle Sub-Menu', 'ns-core'); ?></option>
+                                        <option value="open-page" <?php if(esc_attr($header_menu_parent_links) == 'open-page') { echo 'selected'; } ?>><?php echo esc_html_e('Go to Page', 'ns-core'); ?></option>
                                     </select>
                                 </td>
                             </tr>

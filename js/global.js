@@ -34,21 +34,6 @@ jQuery(document).ready(function($) {
         menu.fadeOut('fast', function() { menu.removeClass('mobile open'); });
     });
 
-
-	/***************************************************************************/
-	//MAIN MENU SUB MENU TOGGLE
-	/***************************************************************************/
-	$('.header-menu .main-menu > li.menu-item-has-children > a').on('click', function(event) {
-		event.preventDefault();
-		$(this).parent().find('.sub-menu').toggle();
-		$(this).parent().find('.sub-menu li .sub-menu').hide();
-	});
-
-	$('.header-menu .main-menu li .sub-menu li.menu-item-has-children > a ').on('click', function(event){
-		event.preventDefault();
-		$(this).parent().find('.sub-menu').toggle();
-	});
-
 	/***************************************************************************/
 	//FIXED HEADER
 	/***************************************************************************/
