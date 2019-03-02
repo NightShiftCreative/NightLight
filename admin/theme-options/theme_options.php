@@ -173,7 +173,6 @@ function ns_core_theme_options_page() {
 
     <?php
         //load default theme option values
-        include('theme-options-loader.php');
         $theme_options = ns_core_load_theme_options();
         $bottom_bar_text_default = get_bloginfo('title').' | Theme by <a href="'.$sitelink.'" target="_blank">NightShift Creative</a> | &copy; '. date('Y');
     ?>

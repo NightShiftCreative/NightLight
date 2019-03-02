@@ -1,4 +1,7 @@
 <?php 
+    //load theme options
+    $theme_options = ns_core_load_theme_options();
+
     function ns_core_adjust_brightness($hex, $steps) {
         // Steps should be between -255 and 255. Negative = darker, positive = lighter
         $steps = max(-255, min(255, $steps));
@@ -227,7 +230,7 @@
     /************************************************************************/
     /* MISC STYLES */
     /************************************************************************/
-    $site_width = esc_attr(get_option('ns_core_site_width'));
+    $site_width = $theme_options['ns_core_site_width'];
     $global_bg = esc_attr(get_option('ns_core_global_bg'));
     $header_bg = esc_attr(get_option('ns_core_header_bg'));
     $page_banner_padding_top = esc_attr(get_option('ns_core_page_banner_padding_top'));
@@ -237,7 +240,7 @@
     $misc_css = "";
 
     //SITE WIDTH
-    if(!empty($site_width)) { $misc_css .= "@media (min-width: 1200px) { .container{ max-width: {$site_width}px; } }"; }
+    if(ns_core_option_exists('ns_core_site_width') && !empty($site_width)) { $misc_css .= "@media (min-width: 1200px) { .container{ max-width: {$site_width}px; } }"; }
 
     //GLOBAL BG IMAGE
     if(!empty($global_bg)) { $misc_css .= "body { background-image:url({$global_bg}); }"; }

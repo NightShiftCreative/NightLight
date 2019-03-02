@@ -404,6 +404,7 @@ function ns_core_get_header_member_actions($class = null, $login_class = null, $
 /*-----------------------------------------------------------------------------------*/
 /*	Include theme options
 /*-----------------------------------------------------------------------------------*/
+include('admin/theme-options/theme-options-loader.php');
 include('admin/theme-options/theme_options.php');
 
 function ns_core_bgDisplay($bg_display_class) {
