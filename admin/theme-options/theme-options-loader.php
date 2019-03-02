@@ -106,7 +106,9 @@ function ns_core_load_theme_options($single_option = null, $return_defaults = fa
     	'ns_core_style_bottom_bar_bg' => '#262a35',
     	'ns_core_style_bottom_bar_text' => '#8e95ac',
     );
+	$theme_options_init = apply_filters( 'ns_core_theme_options_filter', $theme_options_init);
 
+	//returns DEFAULT array or single option
     if($return_defaults == true) {
     	if(isset($single_option)) { 
 	    	if(array_key_exists($single_option, $theme_options_init)) {
@@ -120,6 +122,7 @@ function ns_core_load_theme_options($single_option = null, $return_defaults = fa
     	}
     }
 
+    //returns DATABASE array or single option
     if(isset($single_option)) { 
     	if(array_key_exists($single_option, $theme_options_init)) {
     		$default = $theme_options_init[$single_option];
@@ -133,7 +136,6 @@ function ns_core_load_theme_options($single_option = null, $return_defaults = fa
 	    	$theme_options[$key] = esc_attr(get_option($key, $value));
 	    }
 	    $theme_options['ns_core_default_font'] = 'Varela Round';
-	    $theme_options = apply_filters( 'ns_core_theme_options_filter', $theme_options);
     	return $theme_options;
     }	
     
