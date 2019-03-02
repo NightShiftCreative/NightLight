@@ -81,10 +81,10 @@
     $style_top_bar_text = get_option('ns_core_style_top_bar_text', '#ffffff');
     $style_top_bar_social = get_option('ns_core_style_top_bar_social', '#ffffff');
     $style_header_bg = get_option('ns_core_style_header_bg', '#ffffff');
-    $style_header_text = get_option('ns_core_style_header_text', '#464646');
+    $style_header_text = get_option('ns_core_style_header_text', '#838893');
     $style_header_text_bright = ns_core_adjust_brightness($style_header_text, 25);
-    $style_header_icon = get_option('ns_core_style_header_icon', '#59aee9');
-    $style_header_menu = get_option('ns_core_style_header_menu', '#323746');
+    $style_header_icon = get_option('ns_core_style_header_icon', '#04d2c8');
+    $style_header_menu = get_option('ns_core_style_header_menu', '#2f353d');
     $style_header_submenu = ns_core_adjust_brightness($style_header_menu, -50);
     $style_header_subsubmenu = ns_core_adjust_brightness($style_header_menu, -70);
     $style_page_banner_bg = get_option('ns_core_style_page_banner_bg', '#8d92a4');
@@ -92,7 +92,7 @@
     $style_footer_bg = get_option('ns_core_style_footer_bg', '#323746');
     $style_footer_header = get_option('ns_core_style_footer_header', '#ffffff');
     $style_footer_text = get_option('ns_core_style_footer_text', '#8e95ac');
-    $style_footer_link = get_option('ns_core_style_footer_link', '#68b4e8');
+    $style_footer_link = get_option('ns_core_style_footer_link', '#04d2c8');
     $style_bottom_bar_bg = get_option('ns_core_style_bottom_bar_bg', '#262a35');
     $style_bottom_bar_text = get_option('ns_core_style_bottom_bar_text', '#8e95ac');
 
