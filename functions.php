@@ -65,7 +65,7 @@ function ns_core_admin_scripts() {
 
         //custom scripts
         wp_enqueue_script('ns-admin-global-js', get_template_directory_uri() . '/admin/ns-admin-global.js', array('jquery','media-upload','thickbox', 'wp-color-picker'), '', true);
-		wp_enqueue_script('ns-core-theme-options-js', get_template_directory_uri() . '/admin/theme-options.js', array('jquery','media-upload','thickbox'), '', true);
+		wp_enqueue_script('ns-core-theme-options-js', get_template_directory_uri() . '/admin/theme-options/theme-options.js', array('jquery','media-upload','thickbox'), '', true);
 		wp_enqueue_style('ns-core-admin-css',  get_template_directory_uri() . '/admin/admin.css', array(), '3.0', 'all');
     	wp_enqueue_style('ns-font-awesome',  get_template_directory_uri() . '/css/font-awesome/css/all.min.css', array(), '', 'all');
         wp_enqueue_script( 'chosen', get_template_directory_uri() . '/assets/chosen_v1.8.7/chosen.jquery.min.js', array( 'jquery' ), '', true );
@@ -404,7 +404,7 @@ function ns_core_get_header_member_actions($class = null, $login_class = null, $
 /*-----------------------------------------------------------------------------------*/
 /*	Include theme options
 /*-----------------------------------------------------------------------------------*/
-include('admin/theme_options.php');
+include('admin/theme-options/theme_options.php');
 
 function ns_core_bgDisplay($bg_display_class) {
         if($bg_display_class == 'fixed') {

@@ -23,7 +23,7 @@ jQuery(document).ready(function($) {
     /********************************************/
     /* RESET DEFAULT FONTS */
     /********************************************/
-    $('.rc-theme-options').on('click', '.reset-fonts', function(e) { 
+    $('.ns-theme-options').on('click', '.reset-fonts', function(e) { 
         e.preventDefault();
         var defaultFont = $(this).find('span').text();
         $(this).closest('.admin-module-fonts').find('select').val(defaultFont);

@@ -132,12 +132,12 @@ function ns_core_theme_options_page() {
 ?>
 
 <div class="wrap ns-theme-options">
-<h2>Theme Options</h2>
+<h2><?php esc_html_e('Theme Options', 'ns-core') ?></h2>
 <br/>
 
 <?php 
-    $sitelink = 'http://nightshiftcreative.co/';
-    $siteSupportLink = 'http://nightshiftcreative.co/contact/'; 
+    $sitelink = 'https://nightshiftcreative.co/';
+    $siteSupportLink = 'https://studio.nightshiftcreative.co/support-package/'; 
 ?>
 
 <form method="post" action="options.php" id="theme-options-form">
@@ -172,8 +172,9 @@ function ns_core_theme_options_page() {
     <?php do_settings_sections( 'ns-core-settings-group' ); ?>
 
     <?php
-        //set default values
-        $site_width_default = 1170;
+        //load default theme option values
+        include('theme-options-loader.php');
+        $theme_options = ns_core_load_theme_options();
         $bottom_bar_text_default = get_bloginfo('title').' | Theme by <a href="'.$sitelink.'" target="_blank">NightShift Creative</a> | &copy; '. date('Y');
     ?>
 
@@ -208,7 +209,7 @@ function ns_core_theme_options_page() {
                                     <div class="admin-module-note"><?php echo esc_html_e('Set the site width within the range of 700 - 1200px. The default value is 1170px.', 'ns-core'); ?></div>
                                 </td>
                                 <td class="admin-module-field">
-                                    <input type="number" min="700" max="1200" id="site_width" name="ns_core_site_width" value="<?php echo esc_attr( get_option('ns_core_site_width', $site_width_default) ); ?>" />
+                                    <input type="number" min="700" max="1200" id="site_width" name="ns_core_site_width" value="<?php echo $theme_options['ns_core_site_width']; ?>" />
                                     <?php echo esc_html_e('Pixels', 'ns-core'); ?>
                                 </td>
                             </tr>
@@ -218,7 +219,7 @@ function ns_core_theme_options_page() {
                             <tr>
                                 <td class="admin-module-label"><label><?php echo esc_html_e('Global Background Image', 'ns-core'); ?></label></td>
                                 <td class="admin-module-field">
-                                    <input type="text" id="global_bg" name="ns_core_global_bg" value="<?php echo esc_attr( get_option('ns_core_global_bg') ); ?>" />
+                                    <input type="text" id="global_bg" name="ns_core_global_bg" value="<?php echo $theme_options['ns_core_global_bg']; ?>" />
                                     <input id="_btn" class="ns_upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
                                     <span class="button-secondary remove"><?php echo esc_html_e('Remove', 'ns-core'); ?></span>
                                 </td>
@@ -230,9 +231,9 @@ function ns_core_theme_options_page() {
                                 <td class="admin-module-label"><label><?php echo esc_html_e('Global Background Display', 'ns-core'); ?></label></td>
                                 <td class="admin-module-field">
                                     <select name="ns_core_global_bg_display">
-                                        <option value="cover" <?php if(esc_attr(get_option('ns_core_global_bg_display')) == 'cover') { echo 'selected'; } ?>><?php echo esc_html_e('Cover', 'ns-core'); ?></option>
-                                        <option value="fixed" <?php if(esc_attr(get_option('ns_core_global_bg_display')) == 'fixed') { echo 'selected'; } ?>><?php echo esc_html_e('Fixed', 'ns-core'); ?></option>
-                                        <option value="repeat" <?php if(esc_attr(get_option('ns_core_global_bg_display')) == 'repeat') { echo 'selected'; } ?>><?php echo esc_html_e('Tiled', 'ns-core'); ?></option>
+                                        <option value="cover" <?php if($theme_options['ns_core_global_bg_display'] == 'cover') { echo 'selected'; } ?>><?php echo esc_html_e('Cover', 'ns-core'); ?></option>
+                                        <option value="fixed" <?php if($theme_options['ns_core_global_bg_display'] == 'fixed') { echo 'selected'; } ?>><?php echo esc_html_e('Fixed', 'ns-core'); ?></option>
+                                        <option value="repeat" <?php if($theme_options['ns_core_global_bg_display'] == 'repeat') { echo 'selected'; } ?>><?php echo esc_html_e('Tiled', 'ns-core'); ?></option>
                                     </select>
                                 </td>
                             </tr>
@@ -243,9 +244,9 @@ function ns_core_theme_options_page() {
                                 <td class="admin-module-label"><label><?php echo esc_html_e('Icon Style', 'ns-core'); ?></label></td>
                                 <td class="admin-module-field">
                                     <select name="ns_core_icon_set">
-                                        <option value="fa" <?php if(esc_attr(get_option('ns_core_icon_set', 'fa')) == 'fa') { echo 'selected'; } ?>><?php echo esc_html_e('Font Awesome', 'ns-core'); ?></option>
-                                        <option value="line" <?php if(esc_attr(get_option('ns_core_icon_set', 'fa')) == 'line') { echo 'selected'; } ?>><?php echo esc_html_e('Line Icons', 'ns-core'); ?></option>
-                                        <option value="dripicon" <?php if(esc_attr(get_option('ns_core_icon_set', 'fa')) == 'dripicon') { echo 'selected'; } ?>><?php echo esc_html_e('Dripicons', 'ns-core'); ?></option>
+                                        <option value="fa" <?php if($theme_options['ns_core_icon_set'] == 'fa') { echo 'selected'; } ?>><?php echo esc_html_e('Font Awesome', 'ns-core'); ?></option>
+                                        <option value="line" <?php if($theme_options['ns_core_icon_set'] == 'line') { echo 'selected'; } ?>><?php echo esc_html_e('Line Icons', 'ns-core'); ?></option>
+                                        <option value="dripicon" <?php if($theme_options['ns_core_icon_set'] == 'dripicon') { echo 'selected'; } ?>><?php echo esc_html_e('Dripicons', 'ns-core'); ?></option>
                                     </select>
                                 </td>
                             </tr>
@@ -255,9 +256,9 @@ function ns_core_theme_options_page() {
                             <tr>
                                 <td class="admin-module-label"><label><?php echo esc_html_e('Enable RTL(Right to Left) layout', 'ns-core'); ?></label></td>
                                 <td class="admin-module-field">
-                                    <div class="toggle-switch" title="<?php if(get_option('ns_core_rtl') == 'true') { esc_html_e('Active', 'ns-core'); } else { esc_html_e('Disabled', 'ns-core'); } ?>">
-                                        <input type="checkbox" name="ns_core_rtl" value="true" class="toggle-switch-checkbox" id="rtl" <?php checked('true', get_option('ns_core_rtl'), true) ?>>
-                                        <label class="toggle-switch-label" for="rtl"><?php if(get_option('ns_core_rtl') == 'true') { echo '<span class="on">'.esc_html__('On', 'ns-core').'</span>'; } else { echo '<span>'.esc_html__('Off', 'ns-core').'</span>'; } ?></label>
+                                    <div class="toggle-switch" title="<?php if($theme_options['ns_core_rtl'] == 'true') { esc_html_e('Active', 'ns-core'); } else { esc_html_e('Disabled', 'ns-core'); } ?>">
+                                        <input type="checkbox" name="ns_core_rtl" value="true" class="toggle-switch-checkbox" id="rtl" <?php checked('true', $theme_options['ns_core_rtl'], true) ?>>
+                                        <label class="toggle-switch-label" for="rtl"><?php if($theme_options['ns_core_rtl'] == 'true') { echo '<span class="on">'.esc_html__('On', 'ns-core').'</span>'; } else { echo '<span>'.esc_html__('Off', 'ns-core').'</span>'; } ?></label>
                                     </div>
                                 </td>
                             </tr>
@@ -267,9 +268,9 @@ function ns_core_theme_options_page() {
                             <tr>
                                 <td class="admin-module-label"><label><?php echo esc_html_e('Enable Preloader', 'ns-core'); ?></label></td>
                                 <td class="admin-module-field">
-                                    <div class="toggle-switch" title="<?php if(get_option('ns_core_preloader', 'true') == 'true') { esc_html_e('Active', 'ns-core'); } else { esc_html_e('Disabled', 'ns-core'); } ?>">
-                                        <input type="checkbox" name="ns_core_preloader" value="true" class="toggle-switch-checkbox" id="preloader" <?php checked('true', get_option('ns_core_preloader', 'true'), true) ?>>
-                                        <label class="toggle-switch-label" for="preloader"><?php if(get_option('ns_core_preloader', 'true') == 'true') { echo '<span class="on">'.esc_html__('On', 'ns-core').'</span>'; } else { echo '<span>'.esc_html__('Off', 'ns-core').'</span>'; } ?></label>
+                                    <div class="toggle-switch" title="<?php if($theme_options['ns_core_preloader'] == 'true') { esc_html_e('Active', 'ns-core'); } else { esc_html_e('Disabled', 'ns-core'); } ?>">
+                                        <input type="checkbox" name="ns_core_preloader" value="true" class="toggle-switch-checkbox" id="preloader" <?php checked('true', $theme_options['ns_core_preloader'], true) ?>>
+                                        <label class="toggle-switch-label" for="preloader"><?php if($theme_options['ns_core_preloader'] == 'true') { echo '<span class="on">'.esc_html__('On', 'ns-core').'</span>'; } else { echo '<span>'.esc_html__('Off', 'ns-core').'</span>'; } ?></label>
                                     </div>
                                 </td>
                             </tr>
@@ -279,7 +280,7 @@ function ns_core_theme_options_page() {
                             <tr>
                                 <td class="admin-module-label"><label><?php echo esc_html_e('Preloader Custom Image', 'ns-core'); ?></label></td>
                                 <td class="admin-module-field">
-                                    <input type="text" id="preloader_img" name="ns_core_preloader_img" value="<?php echo esc_attr( get_option('ns_core_preloader_img') ); ?>" />
+                                    <input type="text" id="preloader_img" name="ns_core_preloader_img" value="<?php echo $theme_options['ns_core_preloader_img']; ?>" />
                                     <input id="_btn" class="ns_upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
                                     <span class="button-secondary remove"><?php echo esc_html_e('Remove', 'ns-core'); ?></span>
                                 </td>
@@ -290,8 +291,9 @@ function ns_core_theme_options_page() {
                         <div class="admin-module-fonts">
                             <h3>
                                 <?php echo esc_html_e('Font Settings', 'ns-core'); ?>
+                                <?php $default_font = $theme_options['ns_core_default_font']; ?>
                                 <p class="admin-module-note" style="margin-bottom:0;"><?php esc_html_e('All fonts are generated from', 'ns-core'); ?> <a href="https://fonts.google.com/" target="_blank"><?php esc_html_e('Google Fonts', 'ns-core'); ?></a></p>
-                                <?php if(get_option('ns_core_heading_font', $default_font) != $default_font || get_option('ns_core_body_font', $default_font) != $default_font) { ?>
+                                <?php if($theme_options['ns_core_heading_font'] != $default_font || $theme_options['ns_core_body_font'] != $default_font) { ?>
                                 <a href="#" class="admin-module-note reset-fonts">
                                     <span class="hide"><?php echo $default_font; ?></span>
                                     <?php esc_html_e('Reset to default fonts', 'ns-core'); ?>
@@ -301,8 +303,6 @@ function ns_core_theme_options_page() {
 
                             <?php
                                 $google_fonts = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyAieN5h5Kk6EzbJMGCuI-vBsE4rGFPMsSw';
-                                $default_font = 'Varela Round';
-                                
                                 $arrContextOptions=array(
                                     "ssl"=>array(
                                         "verify_peer"=>false,
@@ -324,7 +324,7 @@ function ns_core_theme_options_page() {
                                         <?php
                                             foreach ($items as $item) {
                                                 $i++; ?>
-                                                <option value="<?php echo $item['family']; ?>" <?php if(esc_attr(get_option('ns_core_heading_font', $default_font)) == $item['family']) { echo 'selected'; } ?>><?php echo $item['family']; ?></option>
+                                                <option value="<?php echo $item['family']; ?>" <?php if($theme_options['ns_core_heading_font'] == $item['family']) { echo 'selected'; } ?>><?php echo $item['family']; ?></option>
                                             <?php } ?>
                                         </select>
                                     </td>
@@ -340,7 +340,7 @@ function ns_core_theme_options_page() {
                                         <?php
                                             foreach ($items as $item) {
                                                 $i++; ?>
-                                                <option value="<?php echo $item['family']; ?>" <?php if(esc_attr(get_option('ns_core_body_font', $default_font)) == $item['family']) { echo 'selected'; } ?>><?php echo $item['family']; ?></option>
+                                                <option value="<?php echo $item['family']; ?>" <?php if($theme_options['ns_core_body_font'] == $item['family']) { echo 'selected'; } ?>><?php echo $item['family']; ?></option>
                                             <?php } ?>
                                         </select>
                                     </td>
