@@ -420,7 +420,8 @@ function ns_core_bgDisplay($bg_display_class) {
 
 /*  Add body class */
 add_filter( 'body_class', function( $classes ) {
-    $global_bg_display = ns_core_bgDisplay(esc_attr(get_option('ns_core_global_bg_display')));
+    $theme_options = ns_core_load_theme_options();
+    $global_bg_display = ns_core_bgDisplay($theme_options['ns_core_global_bg_display']);
     return array_merge( $classes, array($global_bg_display) );
 } );
 

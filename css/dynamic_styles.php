@@ -231,7 +231,7 @@
     /* MISC STYLES */
     /************************************************************************/
     $site_width = $theme_options['ns_core_site_width'];
-    $global_bg = esc_attr(get_option('ns_core_global_bg'));
+    $global_bg = $theme_options['ns_core_global_bg'];
     $header_bg = esc_attr(get_option('ns_core_header_bg'));
     $page_banner_padding_top = esc_attr(get_option('ns_core_page_banner_padding_top'));
     $page_banner_padding_bottom = esc_attr(get_option('ns_core_page_banner_padding_bottom'));
@@ -243,7 +243,7 @@
     if(ns_core_option_exists('ns_core_site_width') && !empty($site_width)) { $misc_css .= "@media (min-width: 1200px) { .container{ max-width: {$site_width}px; } }"; }
 
     //GLOBAL BG IMAGE
-    if(!empty($global_bg)) { $misc_css .= "body { background-image:url({$global_bg}); }"; }
+    if(ns_core_option_exists('ns_core_global_bg') && !empty($global_bg)) { $misc_css .= "body { background-image:url({$global_bg}); }"; }
     
     //HEADER BG IMAGE
     if(!empty($header_bg)) { $misc_css .= "header { background-image:url({$header_bg}); }"; }

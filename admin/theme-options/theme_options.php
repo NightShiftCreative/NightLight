@@ -1,6 +1,8 @@
 <?php
 
-// create settings menu
+/***************************************************************/
+/* Create settings menu
+/***************************************************************/
 add_action('admin_menu', 'ns_core_theme_options_create_menu');
 function ns_core_theme_options_create_menu() {
 
@@ -11,123 +13,24 @@ function ns_core_theme_options_create_menu() {
     add_action( 'admin_init', 'ns_core_register_theme_options' );
 }
 
+/***************************************************************/
+/* Register Options
+/* (use theme-options-loader.php to register new fields)
+/***************************************************************/
 function ns_core_register_theme_options() {
 
-    //register general settings
-    register_setting( 'ns-core-settings-group', 'ns_core_site_width' );
-    register_setting( 'ns-core-settings-group', 'ns_core_global_bg' );
-    register_setting( 'ns-core-settings-group', 'ns_core_global_bg_display' );
-    register_setting( 'ns-core-settings-group', 'ns_core_icon_set' );
-    register_setting( 'ns-core-settings-group', 'ns_core_rtl' );
-    register_setting( 'ns-core-settings-group', 'ns_core_preloader' );
-    register_setting( 'ns-core-settings-group', 'ns_core_preloader_img' );
-    register_setting( 'ns-core-settings-group', 'ns_core_heading_font' );
-    register_setting( 'ns-core-settings-group', 'ns_core_body_font' );
-
-    //register contact & social
-    register_setting( 'ns-core-settings-group', 'ns_core_phone' );
-    register_setting( 'ns-core-settings-group', 'ns_core_email' );
-    register_setting( 'ns-core-settings-group', 'ns_core_address' );
-    register_setting( 'ns-core-settings-group', 'ns_core_fb' );
-    register_setting( 'ns-core-settings-group', 'ns_core_twitter' );
-    register_setting( 'ns-core-settings-group', 'ns_core_google' );
-    register_setting( 'ns-core-settings-group', 'ns_core_linkedin' );
-    register_setting( 'ns-core-settings-group', 'ns_core_youtube' );
-    register_setting( 'ns-core-settings-group', 'ns_core_vimeo' );
-    register_setting( 'ns-core-settings-group', 'ns_core_instagram' );
-    register_setting( 'ns-core-settings-group', 'ns_core_flickr' );
-    register_setting( 'ns-core-settings-group', 'ns_core_dribbble' );
-    register_setting( 'ns-core-settings-group', 'ns_core_contact_details_display' );
-    register_setting( 'ns-core-settings-group', 'ns_core_contact_form_title' );
-    register_setting( 'ns-core-settings-group', 'ns_core_contact_form_before' );
-    register_setting( 'ns-core-settings-group', 'ns_core_contact_form_after' );
-    register_setting( 'ns-core-settings-group', 'ns_core_contact_form_source' );
-    register_setting( 'ns-core-settings-group', 'ns_core_contact_form_success' );
-    register_setting( 'ns-core-settings-group', 'ns_core_contact_form_id' );
-
-    //register header settings
-    register_setting( 'ns-core-settings-group', 'ns_core_display_topbar' );
-    register_setting( 'ns-core-settings-group', 'ns_core_topbar_first_field' );
-    register_setting( 'ns-core-settings-group', 'ns_core_topbar_first_field_custom' );
-    register_setting( 'ns-core-settings-group', 'ns_core_topbar_second_field' );
-    register_setting( 'ns-core-settings-group', 'ns_core_topbar_second_field_custom' );
-    register_setting( 'ns-core-settings-group', 'ns_core_topbar_third_field' );
-    register_setting( 'ns-core-settings-group', 'ns_core_topbar_third_field_custom' );
-    register_setting( 'ns-core-settings-group', 'ns_core_topbar_fourth_field' );
-    register_setting( 'ns-core-settings-group', 'ns_core_topbar_fourth_field_custom' );
-    register_setting( 'ns-core-settings-group', 'ns_core_members_display_avatar' );
-    register_setting( 'ns-core-settings-group', 'ns_core_header_style' );
-    register_setting( 'ns-core-settings-group', 'ns_core_sticky_header' );
-    register_setting( 'ns-core-settings-group', 'ns_core_header_container' );
-    register_setting( 'ns-core-settings-group', 'ns_core_logo' );
-    register_setting( 'ns-core-settings-group', 'ns_core_logo_transparent' );
-    register_setting( 'ns-core-settings-group', 'ns_core_favicon' );
-    register_setting( 'ns-core-settings-group', 'ns_core_above_phone_text' );
-    register_setting( 'ns-core-settings-group', 'ns_core_above_email_text' );
-    register_setting( 'ns-core-settings-group', 'ns_core_display_header_search' );
-    register_setting( 'ns-core-settings-group', 'ns_core_header_menu_align' );
-    register_setting( 'ns-core-settings-group', 'ns_core_header_menu_parent_links' );
-    register_setting( 'ns-core-settings-group', 'ns_core_header_menu_button_page' );
-    register_setting( 'ns-core-settings-group', 'ns_core_header_menu_button_text' );
-    register_setting( 'ns-core-settings-group', 'ns_core_header_bg' );
-    register_setting( 'ns-core-settings-group', 'ns_core_header_bg_display' );
-
-    //register page banner settings
-    register_setting( 'ns-core-settings-group', 'ns_core_page_banner_bg' );
-    register_setting( 'ns-core-settings-group', 'ns_core_page_banner_bg_display' );
-    register_setting( 'ns-core-settings-group', 'ns_core_page_banner_title_align' );
-    register_setting( 'ns-core-settings-group', 'ns_core_page_banner_padding_top' );
-    register_setting( 'ns-core-settings-group', 'ns_core_page_banner_padding_bottom' );
-    register_setting( 'ns-core-settings-group', 'ns_core_page_banner_overlay_display' );
-    register_setting( 'ns-core-settings-group', 'ns_core_page_banner_overlay_opacity' );
-    register_setting( 'ns-core-settings-group', 'ns_core_page_banner_overlay_color' );
-    register_setting( 'ns-core-settings-group', 'ns_core_page_banner_display_breadcrumb' );
-    register_setting( 'ns-core-settings-group', 'ns_core_page_banner_display_search' );
-    register_setting( 'ns-core-settings-group', 'ns_core_page_banner_slider_transition' ); 
-    register_setting( 'ns-core-settings-group', 'ns_core_page_banner_slider_duration' ); 
-    register_setting( 'ns-core-settings-group', 'ns_core_page_banner_slider_auto_start' ); 
-    register_setting( 'ns-core-settings-group', 'ns_core_page_sidebar_size' );  
-
-    //register member settings
-    register_setting( 'ns-core-settings-group', 'ns_core_members_display_name' );
-    register_setting( 'ns-core-settings-group', 'ns_core_members_login_page' );
-    register_setting( 'ns-core-settings-group', 'ns_core_members_register_page' ); 
-    register_setting( 'ns-core-settings-group', 'ns_core_members_dashboard_page' );
-    register_setting( 'ns-core-settings-group', 'ns_core_members_edit_profile_page' );
-    register_setting( 'ns-core-settings-group', 'ns_core_members_favorites_page' );
-
-    //register footer settings
-    register_setting( 'ns-core-settings-group', 'ns_core_hide_footer_widget_area' );
-    register_setting( 'ns-core-settings-group', 'ns_core_num_footer_cols' );
-    register_setting( 'ns-core-settings-group', 'ns_core_footer_bg' );
-    register_setting( 'ns-core-settings-group', 'ns_core_footer_bg_display' );
-    register_setting( 'ns-core-settings-group', 'ns_core_display_bottombar' );
-    register_setting( 'ns-core-settings-group', 'ns_core_bottom_bar_text' );
-
-    //register style settings
-    register_setting( 'ns-core-settings-group', 'ns_core_style_global_bg' );
-    register_setting( 'ns-core-settings-group', 'ns_core_style_global_main' );
-    register_setting( 'ns-core-settings-group', 'ns_core_style_global_comp' );
-    register_setting( 'ns-core-settings-group', 'ns_core_style_top_bar_bg' );
-    register_setting( 'ns-core-settings-group', 'ns_core_style_top_bar_text' );
-    register_setting( 'ns-core-settings-group', 'ns_core_style_top_bar_social' );
-    register_setting( 'ns-core-settings-group', 'ns_core_style_header_bg' );
-    register_setting( 'ns-core-settings-group', 'ns_core_style_header_text' );
-    register_setting( 'ns-core-settings-group', 'ns_core_style_header_icon' );
-    register_setting( 'ns-core-settings-group', 'ns_core_style_header_menu' );
-    register_setting( 'ns-core-settings-group', 'ns_core_style_page_banner_bg' );
-    register_setting( 'ns-core-settings-group', 'ns_core_style_page_banner_title' );
-    register_setting( 'ns-core-settings-group', 'ns_core_style_footer_bg' );
-    register_setting( 'ns-core-settings-group', 'ns_core_style_footer_header' );
-    register_setting( 'ns-core-settings-group', 'ns_core_style_footer_text' );
-    register_setting( 'ns-core-settings-group', 'ns_core_style_footer_link' );
-    register_setting( 'ns-core-settings-group', 'ns_core_style_bottom_bar_bg' );
-    register_setting( 'ns-core-settings-group', 'ns_core_style_bottom_bar_text' );
+    $theme_options = ns_core_load_theme_options(null, true);
+    foreach($theme_options as $key => $value) {
+        register_setting( 'ns-core-settings-group', $key);
+    } 
 
     //register add-on settings
     do_action('ns_core_theme_option_register_settings');
 }
 
+/***************************************************************/
+/* Output Theme Options Form
+/***************************************************************/
 function ns_core_theme_options_page() {
 ?>
 
@@ -138,6 +41,9 @@ function ns_core_theme_options_page() {
 <?php 
     $sitelink = 'https://nightshiftcreative.co/';
     $siteSupportLink = 'https://studio.nightshiftcreative.co/support-package/'; 
+
+    //load default theme option values
+    $theme_options = ns_core_load_theme_options();
 ?>
 
 <form method="post" action="options.php" id="theme-options-form">
@@ -170,12 +76,6 @@ function ns_core_theme_options_page() {
 
     <?php settings_fields( 'ns-core-settings-group' ); ?>
     <?php do_settings_sections( 'ns-core-settings-group' ); ?>
-
-    <?php
-        //load default theme option values
-        $theme_options = ns_core_load_theme_options();
-        $bottom_bar_text_default = get_bloginfo('title').' | Theme by <a href="'.$sitelink.'" target="_blank">NightShift Creative</a> | &copy; '. date('Y');
-    ?>
 
     <div class="ns-tabs">
         <table class="theme-options-content" cellspacing="0" cellpadding="0">
