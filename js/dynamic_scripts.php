@@ -1,19 +1,16 @@
 <?php
-$header_vars = ns_core_load_header_settings();
-$sticky_header = $header_vars['sticky_header'];
-$header_style = $header_vars['header_style'];
-$header_menu_parent_links = $header_vars['header_menu_parent_links'];
-$logo = $header_vars['logo'];
-$logo_transparent = $header_vars['logo_transparent'];
-
+$sticky_header = ns_core_load_theme_options('ns_core_sticky_header');
+$header_style = ns_core_load_theme_options('ns_core_header_style');
+$header_menu_parent_links = ns_core_load_theme_options('ns_core_header_menu_parent_links');
+$logo = ns_core_load_theme_options('ns_core_logo');
+$logo_transparent = ns_core_load_theme_options('ns_core_logo_transparent');
+$rtl = ns_core_load_theme_options('ns_core_rtl');
 $theme_url = esc_url( get_template_directory_uri() );
 
-if(isset($_GET['rtl'])) { $rtl = $_GET['rtl']; } else { $rtl = esc_attr(get_option('ns_core_rtl')); } 
-
 //Get banner settings
-$banner_slider_transition = get_option('ns_core_page_banner_slider_transition', 'horizontal');
-$banner_slider_duration = get_option('ns_core_page_banner_slider_duration', 5000);
-$banner_slider_auto_start = get_option('ns_core_page_banner_slider_auto_start', 'true');
+$banner_slider_transition = ns_core_load_theme_options('ns_core_page_banner_slider_transition');
+$banner_slider_duration = ns_core_load_theme_options('ns_core_page_banner_slider_duration');
+$banner_slider_auto_start = ns_core_load_theme_options('ns_core_page_banner_slider_auto_start');
 
 $dynamic_script = '';
 

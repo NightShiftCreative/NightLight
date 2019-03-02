@@ -89,12 +89,12 @@ add_action('admin_enqueue_scripts', 'ns_core_admin_scripts');
 function ns_core_load_stylesheets() {
 	if (!is_admin()) {
 
-        $icon_set = esc_attr(get_option('ns_core_icon_set', 'fa'));
+        $icon_set = ns_core_load_theme_options('ns_core_icon_set');
 
         //generate google font url
         function ns_core_fonts_url() {
-            $heading_font = esc_attr(get_option('ns_core_heading_font', 'Varela Round'));
-            $body_font = esc_attr(get_option('ns_core_body_font', 'Varela Round'));
+            $heading_font = ns_core_load_theme_options('ns_core_heading_font');
+            $body_font = ns_core_load_theme_options('ns_core_body_font');
             $fonts = array();
             $fonts_url = '';
 
@@ -195,70 +195,23 @@ function ns_core_add_async_to_style($html, $handle) {
 /*-----------------------------------------------------------------------------------*/
 /*  Header functions
 /*-----------------------------------------------------------------------------------*/
-/* get all header variables */
-function ns_core_load_header_settings() {
-    $header_vars = array();
-    $header_vars['icon_set'] = esc_attr(get_option('ns_core_icon_set', 'fa'));
-    if(isset($_GET['rtl'])) { $header_vars['rtl'] = $_GET['rtl']; } else { $header_vars['rtl'] = esc_attr(get_option('ns_core_rtl')); }  
-    $header_vars['preloader'] = esc_attr(get_option('ns_core_preloader', 'true'));
-    $header_vars['preloader_img_default'] = esc_url(get_template_directory_uri().'/images/loader.gif');
-    $header_vars['preloader_img'] = esc_attr(get_option('ns_core_preloader_img', $header_vars['preloader_img_default']));
-    $header_vars['display_topbar'] = esc_attr(get_option('ns_core_display_topbar', 'true'));
-    $header_vars['topbar_first_field'] = esc_attr(get_option('ns_core_topbar_first_field', 'email'));
-    $header_vars['topbar_first_field_custom'] = apply_filters('the_content', get_option('ns_core_topbar_first_field_custom'));
-    $header_vars['topbar_second_field'] = esc_attr(get_option('ns_core_topbar_second_field', 'phone'));
-    $header_vars['topbar_second_field_custom'] = apply_filters('the_content', get_option('ns_core_topbar_second_field_custom'));
-    $header_vars['topbar_third_field'] = esc_attr(get_option('ns_core_topbar_third_field', 'social'));
-    $header_vars['topbar_third_field_custom'] = apply_filters('the_content', get_option('ns_core_topbar_third_field_custom'));
-    $header_vars['topbar_fourth_field'] = esc_attr(get_option('ns_core_topbar_fourth_field', 'member'));
-    $header_vars['topbar_fourth_field_custom'] = apply_filters('the_content', get_option('ns_core_topbar_fourth_field_custom'));
-    $header_vars['sticky_header'] = esc_attr(get_option('ns_core_sticky_header', 'true'));
-    $header_vars['header_container'] = esc_attr(get_option('ns_core_header_container', 'true'));
-    $header_vars['phone'] = esc_attr(get_option('ns_core_phone'));
-    $header_vars['email'] = esc_attr(get_option('ns_core_email'));
-    $header_vars['header_bg'] = esc_attr(get_option('ns_core_header_bg'));
-    $header_vars['header_bg_display'] = esc_attr(get_option('ns_core_header_bg_display'));
-    $header_vars['header_style'] = esc_attr(get_option('ns_core_header_style', 'transparent'));
-    $default_logo = esc_url( get_template_directory_uri() ).'/images/logo-dark.png'; 
-    $default_logo_transparent = esc_url( get_template_directory_uri() ).'/images/logo.png'; 
-    $header_vars['logo'] = esc_attr(get_option('ns_core_logo', $default_logo));
-    $header_vars['logo_transparent'] = esc_attr(get_option('ns_core_logo_transparent', $default_logo_transparent));
-    $header_vars['favicon'] = esc_attr(get_option('ns_core_favicon'));
-    $header_vars['above_phone_text'] = esc_attr(get_option('ns_core_above_phone_text', esc_html__('Call us anytime', 'ns-core') ));
-    $header_vars['above_email_text'] = esc_attr(get_option('ns_core_above_email_text', esc_html__('Drop us a line', 'ns-core') ));
-    $header_vars['display_header_search'] = esc_attr(get_option('ns_core_display_header_search', 'true'));
-    $header_vars['header_menu_align'] = esc_attr(get_option('ns_core_header_menu_align', 'right'));
-    $header_vars['header_menu_parent_links'] = get_option('ns_core_header_menu_parent_links'); 
-    $header_vars['header_menu_button_page'] = esc_attr(get_option('ns_core_header_menu_button_page'));
-    $header_vars['header_menu_button_text'] = esc_attr(get_option('ns_core_header_menu_button_text'));
-    $header_vars['members_display_avatar'] = esc_attr(get_option('ns_core_members_display_avatar', 'true'));
-    $header_vars['members_display_name'] = esc_attr(get_option('ns_core_members_display_name', 'username'));
-    $header_vars['members_login_page'] = esc_attr(get_option('ns_core_members_login_page'));
-    $header_vars['members_register_page'] = esc_attr(get_option('ns_core_members_register_page'));
-    $header_vars['members_dashboard_page'] = esc_attr(get_option('ns_core_members_dashboard_page'));
-    $header_vars['members_edit_profile_page'] = esc_attr(get_option('ns_core_members_edit_profile_page'));
-    $header_vars['members_favorites_page'] = esc_attr(get_option('ns_core_members_favorites_page'));
-
-    //custom filters (for NS Basics)
-    $header_vars = apply_filters( 'ns_basics_custom_header_vars', $header_vars);
-
-    return $header_vars;
-}
 
 /* get header logo */
 function ns_core_get_header_logo() {
-    $header_vars = ns_core_load_header_settings();
+    $header_style = ns_core_load_theme_options('ns_core_header_style');
+    $logo = ns_core_load_theme_options('ns_core_logo');
+    $logo_transparent = ns_core_load_theme_options('ns_core_logo_transparent');
     ob_start(); ?>
 
-    <?php if($header_vars['header_style'] == 'transparent') { ?>
-        <?php if(!empty($header_vars['logo_transparent'])) { ?>
-            <a class="header-logo-anchor has-logo" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_attr($header_vars['logo_transparent']); ?>" alt="<?php bloginfo('title') ?>" /></a>
+    <?php if($header_style == 'transparent') { ?>
+        <?php if(!empty($logo_transparent)) { ?>
+            <a class="header-logo-anchor has-logo" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_attr($logo_transparent); ?>" alt="<?php bloginfo('title') ?>" /></a>
         <?php } else { ?>
             <a class="header-logo-anchor" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('title') ?></a>
         <?php } ?> 
     <?php } else { ?>
-        <?php if(!empty($header_vars['logo'])) { ?>
-            <a class="header-logo-anchor has-logo" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_attr($header_vars['logo']); ?>" alt="<?php bloginfo('title') ?>" /></a>
+        <?php if(!empty($logo)) { ?>
+            <a class="header-logo-anchor has-logo" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_attr($logo); ?>" alt="<?php bloginfo('title') ?>" /></a>
         <?php } else { ?>
             <a class="header-logo-anchor" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('title') ?></a>
         <?php } ?>  
@@ -270,7 +223,6 @@ function ns_core_get_header_logo() {
 
 /* get header main menu */
 function ns_core_get_header_menu() {
-    $header_vars = ns_core_load_header_settings();
     if ( has_nav_menu( 'menu-1' )) {
         $main_menu = wp_nav_menu( array(
             'theme_location' => 'menu-1',
@@ -293,7 +245,6 @@ function ns_core_add_menu_close( $items, $args ) {
 
 /* get header nav toggle */
 function ns_core_get_header_toggle() {
-    $header_vars = ns_core_load_header_settings();
     ob_start(); ?>
 
     <div class="main-menu-toggle"><i class="fa fa-bars"></i></div> 
@@ -305,36 +256,41 @@ function ns_core_get_header_toggle() {
 
 /* get header details */
 function ns_core_get_header_items($class = null, $search = true) {
-    $header_vars = ns_core_load_header_settings();
+    $icon_set = ns_core_load_theme_options('ns_core_icon_set');
+    $display_header_search = ns_core_load_theme_options('ns_core_display_header_search');
+    $phone = ns_core_load_theme_options('ns_core_phone');
+    $email = ns_core_load_theme_options('ns_core_email');
+    $above_phone_text = ns_core_load_theme_options('ns_core_above_phone_text');
+    $above_email_text = ns_core_load_theme_options('ns_core_above_email_text');
     ob_start(); ?>
     
     <div class="header-details <?php echo $class; ?>">
 
         <?php if($search == true) { ?>
-            <?php if($header_vars['display_header_search'] == 'true') { ?>
+            <?php if($display_header_search == 'true') { ?>
             <div class="header-item header-search left">
-                <div class="header-item-icon"><?php echo ns_core_get_icon($header_vars['icon_set'], 'search', 'magnifier'); ?></div>
+                <div class="header-item-icon"><?php echo ns_core_get_icon($icon_set, 'search', 'magnifier'); ?></div>
                 <div class="header-search-form"><?php get_search_form(); ?></div>
             </div>
             <?php } ?>
         <?php } ?>
 
-        <?php if(!empty($header_vars['phone'])) { ?>
+        <?php if(!empty($phone)) { ?>
         <div class="header-item header-phone left">
-            <div class="header-item-icon"><?php echo ns_core_get_icon($header_vars['icon_set'], 'phone', 'telephone'); ?></div>
+            <div class="header-item-icon"><?php echo ns_core_get_icon($icon_set, 'phone', 'telephone'); ?></div>
             <div class="header-item-text">
-            <?php if(!empty($header_vars['above_phone_text'])) { echo '<p class="above-text">'.esc_attr($header_vars['above_phone_text']).'</p>'; } ?>
-            <?php echo '<a href="tel:'.$header_vars['phone'].'"><span>'.$header_vars['phone'].'</span></a>'; ?>
+            <?php if(!empty($above_phone_text)) { echo '<p class="above-text">'.esc_attr($above_phone_text).'</p>'; } ?>
+            <?php echo '<a href="tel:'.$phone.'"><span>'.$phone.'</span></a>'; ?>
             </div>
         </div>
         <?php } ?>
 
-        <?php if(!empty($header_vars['email'])) { ?>
+        <?php if(!empty($email)) { ?>
         <div class="header-item header-email left">
-            <div class="header-item-icon"><?php echo ns_core_get_icon($header_vars['icon_set'], 'envelope', '', 'mail'); ?></div>
+            <div class="header-item-icon"><?php echo ns_core_get_icon($icon_set, 'envelope', '', 'mail'); ?></div>
             <div class="header-item-text">
-            <?php if(!empty($header_vars['above_email_text'])) { echo '<p class="above-text">'.esc_attr($header_vars['above_email_text']).'</p>'; } ?>
-            <?php echo '<a href="mailto:'.$header_vars['email'].'" title="'.$header_vars['email'].'"><span>'.$header_vars['email'].'</span></a>'; ?>
+            <?php if(!empty($above_email_text)) { echo '<p class="above-text">'.esc_attr($above_email_text).'</p>'; } ?>
+            <?php echo '<a href="mailto:'.$email.'" title="'.$email.'"><span>'.$email.'</span></a>'; ?>
             </div>
         </div>
         <?php } ?>
@@ -348,7 +304,14 @@ function ns_core_get_header_items($class = null, $search = true) {
 
 /* get header member actions */
 function ns_core_get_header_member_actions($class = null, $login_class = null, $register_class = null, $toggle_class = null) {
-    $header_vars = ns_core_load_header_settings();
+    $icon_set = ns_core_load_theme_options('ns_core_icon_set');
+    $members_login_page = ns_core_load_theme_options('ns_core_members_login_page');
+    $members_register_page = ns_core_load_theme_options('ns_core_members_register_page');
+    $members_display_avatar = ns_core_load_theme_options('ns_core_members_display_avatar');
+    $members_display_name = ns_core_load_theme_options('ns_core_members_display_name');
+    $members_dashboard_page = ns_core_load_theme_options('ns_core_members_dashboard_page');
+    $members_edit_profile_page = ns_core_load_theme_options('ns_core_members_edit_profile_page');
+    $members_favorites_page = ns_core_load_theme_options('ns_core_members_favorites_page');
     $current_user = wp_get_current_user();
     $avatar_id = get_user_meta( $current_user->ID, 'avatar', true ); 
     $avatar_img = wp_get_attachment_image($avatar_id, array('16', '16'), "", array( "class" => "avatar"));
@@ -356,13 +319,13 @@ function ns_core_get_header_member_actions($class = null, $login_class = null, $
 
     <?php if(!is_user_logged_in()) { ?>
         <div class="header-member-actions <?php echo $class; ?>">
-            <a href="<?php echo esc_url($header_vars['members_login_page']); ?>" class="login-link <?php echo $login_class; ?>"><?php echo ns_core_get_icon($header_vars['icon_set'], 'sign-in-alt', 'enter-right', 'exit'); ?><?php esc_html_e( 'Login', 'ns-core' ); ?></a>
-            <a href="<?php echo esc_url($header_vars['members_register_page']); ?>" class="register-link <?php echo $register_class; ?>"><?php echo ns_core_get_icon($header_vars['icon_set'], 'user-plus', 'user', 'user'); ?><?php esc_html_e( 'Register', 'ns-core' ); ?></a>
+            <a href="<?php echo esc_url($members_login_page); ?>" class="login-link <?php echo $login_class; ?>"><?php echo ns_core_get_icon($icon_set, 'sign-in-alt', 'enter-right', 'exit'); ?><?php esc_html_e( 'Login', 'ns-core' ); ?></a>
+            <a href="<?php echo esc_url($members_register_page); ?>" class="register-link <?php echo $register_class; ?>"><?php echo ns_core_get_icon($icon_set, 'user-plus', 'user', 'user'); ?><?php esc_html_e( 'Register', 'ns-core' ); ?></a>
         </div>
     <?php } else {  ?>
-        <div class="header-member-actions <?php echo $class; ?> <?php if($header_vars['members_display_avatar'] == 'true') { echo 'has-avatar'; } ?>">
+        <div class="header-member-actions <?php echo $class; ?> <?php if($members_display_avatar == 'true') { echo 'has-avatar'; } ?>">
             <div class="member-actions-toggle <?php echo $toggle_class; ?>">
-                <?php if($header_vars['members_display_avatar'] == 'true') { 
+                <?php if($members_display_avatar == 'true') { 
                     if (!empty($avatar_img)) {
                         echo wp_kses_post($avatar_img);
                     } else {
@@ -372,15 +335,15 @@ function ns_core_get_header_member_actions($class = null, $login_class = null, $
                 ?>
                 <?php 
                     echo '<span class="display-name">';
-                    if($header_vars['members_display_name'] == 'username') {
+                    if($members_display_name == 'username') {
                         echo esc_attr($current_user->user_login);
-                    } else if($header_vars['members_display_name'] == 'fname') {
+                    } else if($members_display_name == 'fname') {
                         echo esc_attr($current_user->user_firstname);
-                    } else if($header_vars['members_display_name'] == 'flname') {
+                    } else if($members_display_name == 'flname') {
                         echo esc_attr($current_user->user_firstname).' '.esc_attr($current_user->user_lastname);
-                    } else if($header_vars['members_display_name'] == 'email') {
+                    } else if($members_display_name == 'email') {
                         echo esc_attr($current_user->user_email);
-                    } else if($header_vars['members_display_name'] == 'display_name') {
+                    } else if($members_display_name == 'display_name') {
                         echo esc_attr($current_user->display_name);
                     }
                     echo '</span>';
@@ -388,11 +351,11 @@ function ns_core_get_header_member_actions($class = null, $login_class = null, $
                 <i class="fa icon fa-caret-down"></i>
             </div>
             <ul class="member-sub-menu">
-                <?php if(!empty($header_vars['members_dashboard_page'])) { ?><li><a href="<?php echo $header_vars['members_dashboard_page']; ?>"><?php echo ns_core_get_icon($header_vars['icon_set'], 'tachometer-alt', 'layers', 'meter'); ?><?php esc_html_e( 'Dashboard', 'ns-core' ); ?></a></li><?php } ?>
-                <?php if(!empty($header_vars['members_edit_profile_page'])) { ?><li><a href="<?php echo $header_vars['members_edit_profile_page']; ?>"><?php echo ns_core_get_icon($header_vars['icon_set'], 'cog', 'cog', 'gear'); ?><?php esc_html_e( 'Edit Profile', 'ns-core' ); ?></a></li><?php } ?>
-                <?php if(!empty($header_vars['members_favorites_page'])) { ?><li><a href="<?php echo $header_vars['members_favorites_page']; ?>"><?php echo ns_core_get_icon($header_vars['icon_set'], 'heart'); ?><?php esc_html_e( 'Favorites', 'ns-core' ); ?></a></li><?php } ?>
+                <?php if(!empty($members_dashboard_page)) { ?><li><a href="<?php echo $members_dashboard_page; ?>"><?php echo ns_core_get_icon($icon_set, 'tachometer-alt', 'layers', 'meter'); ?><?php esc_html_e( 'Dashboard', 'ns-core' ); ?></a></li><?php } ?>
+                <?php if(!empty($members_edit_profile_page)) { ?><li><a href="<?php echo $members_edit_profile_page; ?>"><?php echo ns_core_get_icon($icon_set, 'cog', 'cog', 'gear'); ?><?php esc_html_e( 'Edit Profile', 'ns-core' ); ?></a></li><?php } ?>
+                <?php if(!empty($members_favorites_page)) { ?><li><a href="<?php echo $members_favorites_page; ?>"><?php echo ns_core_get_icon($icon_set, 'heart'); ?><?php esc_html_e( 'Favorites', 'ns-core' ); ?></a></li><?php } ?>
                 <?php do_action('ns_core_after_top_bar_member_menu'); ?>
-                <li><a href="<?php echo wp_logout_url(get_permalink()); ?>"><?php echo ns_core_get_icon($header_vars['icon_set'], 'sign-out-alt', 'enter-left', 'enter'); ?><?php esc_html_e( 'Logout', 'ns-core' ); ?></a></li>
+                <li><a href="<?php echo wp_logout_url(get_permalink()); ?>"><?php echo ns_core_get_icon($icon_set, 'sign-out-alt', 'enter-left', 'enter'); ?><?php esc_html_e( 'Logout', 'ns-core' ); ?></a></li>
             </ul>
         </div>
     <?php } ?>
@@ -658,7 +621,7 @@ function ns_core_generate_page_banner($values) {
 function ns_core_get_page_col_classes($page_layout = 'full', $sidebar_size = null) {
     
     if(empty($sidebar_size)) {
-        $sidebar_size = esc_attr(get_option('ns_core_page_sidebar_size', 'small')); 
+        $sidebar_size = ns_core_load_theme_options('ns_core_page_sidebar_size');
     }
     
     $col_class = array();
@@ -712,15 +675,15 @@ if(!function_exists('ns_core_get_icon')) {
 /*-----------------------------------------------------------------------------------*/
 function ns_core_get_social_icons($class = null) {
     $output = '';
-    $fb = esc_attr(get_option('ns_core_fb'));
-    $twitter = esc_attr(get_option('ns_core_twitter'));
-    $google = esc_attr(get_option('ns_core_google'));
-    $linkedin = esc_attr(get_option('ns_core_linkedin'));
-    $youtube = esc_attr(get_option('ns_core_youtube'));
-    $vimeo = esc_attr(get_option('ns_core_vimeo'));
-    $instagram = esc_attr(get_option('ns_core_instagram'));
-    $flickr = esc_attr(get_option('ns_core_flickr'));
-    $dribbble = esc_attr(get_option('ns_core_dribbble'));
+    $fb = ns_core_load_theme_options('ns_core_fb');
+    $twitter = ns_core_load_theme_options('ns_core_twitter');
+    $google = ns_core_load_theme_options('ns_core_google');
+    $linkedin = ns_core_load_theme_options('ns_core_linkedin');
+    $youtube = ns_core_load_theme_options('ns_core_youtube');
+    $vimeo = ns_core_load_theme_options('ns_core_vimeo');
+    $instagram = ns_core_load_theme_options('ns_core_instagram');
+    $flickr = ns_core_load_theme_options('ns_core_flickr');
+    $dribbble = ns_core_load_theme_options('ns_core_dribbble');
     if(!empty($fb) || !empty($twitter) || !empty($google) || !empty($linkedin) || !empty($youtube) || !empty($vimeo) || !empty($instagram) || !empty($flickr) || !empty($dribbble)) { 
         $output .= '<ul class="social-icons '.$class.'">';
             if(!empty($fb)) { $output .= '<li><a href="'.esc_url($fb).'" target="_blank"><i class="fab fa-facebook-f icon"></i></a></li>'; }
@@ -786,7 +749,7 @@ add_filter('get_the_excerpt', 'ns_core_trim_excerpt');
 /*-----------------------------------------------------------------------------------*/
 function ns_core_comment_list($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;
-    $icon_set = get_option('ns_core_icon_set', 'fa');
+    $icon_set = ns_core_load_theme_options('ns_core_icon_set');
 	?>
 
 	<li <?php comment_class(); ?>>
@@ -802,7 +765,7 @@ function ns_core_comment_list($comment, $args, $depth) {
 					<div class="comment-details">
 						<a href="#"><?php echo ns_core_get_icon($icon_set, 'clock', 'clock3', 'clock'); ?><?php comment_date(); ?> at <?php comment_time(); ?></a>
 						<?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth'], 'login_text' => esc_html__('Login to Reply', 'ns-core'), 'reply_text' => ns_core_get_icon($icon_set, 'reply').esc_html__('Reply', 'ns-core')))); ?>
-						<?php edit_comment_link(ns_core_get_icon($icon_set, 'pencil-alt').esc_html__('Edit', 'ns-core')); ?>
+						<?php edit_comment_link(ns_core_get_icon($icon_set, 'pencil-alt', 'pencil', 'pencil').esc_html__('Edit', 'ns-core')); ?>
 						<div class="clear"></div>
 					</div>
 				</div>
@@ -841,7 +804,7 @@ function ns_core_widgets_init() {
 	) );
 	
 	/** FOOTER **/
-	$num_footer_cols = get_option('ns_core_num_footer_cols', '4');
+    $num_footer_cols = ns_core_load_theme_options('ns_core_num_footer_cols');
 	if($num_footer_cols == '1') {
 		$footer_widget_class = '<div class="col-lg-12 col-md-12 col-sm-12 widget widget-footer %2$s">';
 	} else if ($num_footer_cols == '2') {

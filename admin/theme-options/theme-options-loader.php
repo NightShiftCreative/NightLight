@@ -15,6 +15,7 @@ function ns_core_load_theme_options($single_option = null, $return_defaults = fa
     	'ns_core_icon_set' => 'fa',
     	'ns_core_rtl' => false,
     	'ns_core_preloader' => 'true',
+        'ns_core_preloader_img' => esc_url( get_template_directory_uri() ).'/images/loader.gif',
     	'ns_core_heading_font' => 'Varela Round',
     	'ns_core_body_font' => 'Varela Round',
     	'ns_core_phone' => false,
@@ -107,6 +108,11 @@ function ns_core_load_theme_options($single_option = null, $return_defaults = fa
     	'ns_core_style_bottom_bar_text' => '#8e95ac',
     );
 	$theme_options_init = apply_filters( 'ns_core_theme_options_filter', $theme_options_init);
+
+    //set RTL from url parameter
+    if(isset($_GET['rtl'])) { 
+        $theme_options_init['ns_core_rtl'] = $_GET['rtl']; 
+    }
 
 	//returns DEFAULT array or single option
     if($return_defaults == true) {

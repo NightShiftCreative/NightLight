@@ -1,6 +1,6 @@
 <?php
     //Global Settings
-    $icon_set = esc_attr(get_option('ns_core_icon_set', 'fa'));
+    $icon_set = ns_core_load_theme_options('ns_core_icon_set');
 
     //Page Settings
     if(!empty($template_args['post_id'])) {

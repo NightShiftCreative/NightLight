@@ -1,8 +1,8 @@
 <?php
-    $icon_set = esc_attr(get_option('ns_core_icon_set', 'fa'));
-    $phone = esc_attr(get_option('ns_core_phone'));
-    $email = esc_attr(get_option('ns_core_email'));
-    $address = esc_attr(get_option('ns_core_address'));
+    $icon_set = ns_core_load_theme_options('ns_core_icon_set');
+    $phone = ns_core_load_theme_options('ns_core_phone');
+    $email = ns_core_load_theme_options('ns_core_email');
+    $address = ns_core_load_theme_options('ns_core_address');
     $social_icons = ns_core_get_social_icons();
 ?>
 

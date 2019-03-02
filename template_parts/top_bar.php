@@ -1,18 +1,30 @@
 <?php
-$header_vars = ns_core_load_header_settings();
+$icon_set = ns_core_load_theme_options('ns_core_icon_set');
+$display_topbar = ns_core_load_theme_options('ns_core_display_topbar');
+$header_container = ns_core_load_theme_options('ns_core_header_container');
+$topbar_first_field = ns_core_load_theme_options('ns_core_topbar_first_field');
+$topbar_first_field_custom = ns_core_load_theme_options('ns_core_topbar_first_field_custom');
+$topbar_second_field = ns_core_load_theme_options('ns_core_topbar_second_field');
+$topbar_second_field_custom = ns_core_load_theme_options('ns_core_topbar_second_field_custom');
+$topbar_third_field = ns_core_load_theme_options('ns_core_topbar_third_field');
+$topbar_third_field_custom = ns_core_load_theme_options('ns_core_topbar_third_field_custom');
+$topbar_fourth_field = ns_core_load_theme_options('ns_core_topbar_fourth_field');
+$topbar_fourth_field_custom = ns_core_load_theme_options('ns_core_topbar_fourth_field_custom');
+$email = ns_core_load_theme_options('ns_core_email');
+$phone = ns_core_load_theme_options('ns_core_phone');
 $social_icons = ns_core_get_social_icons('top-bar-item left');
 ?>  
 
-<?php if($header_vars['display_topbar'] == 'true') { ?>
+<?php if($display_topbar == 'true') { ?>
 <div class="top-bar">
-    <div class="container <?php if($header_vars['header_container'] != 'true') { echo 'container-full'; } ?>">
+    <div class="container <?php if($header_container != 'true') { echo 'container-full'; } ?>">
 
         <?php
             $topbar_fields = array();
-            array_push($topbar_fields, array('field' => $header_vars['topbar_first_field'], 'custom' => $header_vars['topbar_first_field_custom']));
-            array_push($topbar_fields, array('field' => $header_vars['topbar_second_field'], 'custom' => $header_vars['topbar_second_field_custom']));
-            array_push($topbar_fields, array('field' => $header_vars['topbar_third_field'], 'custom' => $header_vars['topbar_third_field_custom']));
-            array_push($topbar_fields, array('field' => $header_vars['topbar_fourth_field'], 'custom' => $header_vars['topbar_fourth_field_custom']));
+            array_push($topbar_fields, array('field' => $topbar_first_field, 'custom' => $topbar_first_field_custom));
+            array_push($topbar_fields, array('field' => $topbar_second_field, 'custom' => $topbar_second_field_custom));
+            array_push($topbar_fields, array('field' => $topbar_third_field, 'custom' => $topbar_third_field_custom));
+            array_push($topbar_fields, array('field' => $topbar_fourth_field, 'custom' => $topbar_fourth_field_custom));
 
             $count = 1;
 
@@ -22,11 +34,11 @@ $social_icons = ns_core_get_social_icons('top-bar-item left');
                 
                 <?php if($topbar_field['field'] == 'email') { ?>
                     
-                    <?php if(!empty($header_vars['email'])) { echo '<a class="top-bar-item left" href="mailto:'.$header_vars['email'].'">'.ns_core_get_icon($header_vars['icon_set'], 'envelope', '', 'mail').$header_vars['email'].'</a>'; } ?>
+                    <?php if(!empty($email)) { echo '<a class="top-bar-item left" href="mailto:'.$email.'">'.ns_core_get_icon($icon_set, 'envelope', '', 'mail').$email.'</a>'; } ?>
                 
                 <?php } else if($topbar_field['field'] == 'phone') { ?>
                     
-                    <?php if(!empty($header_vars['phone'])) { echo '<a class="top-bar-item left" href="tel:'.$header_vars['phone'].'">'.ns_core_get_icon($header_vars['icon_set'], 'phone', 'telephone').$header_vars['phone'].'</a>'; } ?>
+                    <?php if(!empty($phone)) { echo '<a class="top-bar-item left" href="tel:'.$phone.'">'.ns_core_get_icon($icon_set, 'phone', 'telephone').$phone.'</a>'; } ?>
                 
                 <?php } else if($topbar_field['field'] == 'social') { 
                     

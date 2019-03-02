@@ -1,5 +1,13 @@
 <?php 
-    $header_vars = ns_core_load_header_settings();
+    $rtl = ns_core_load_theme_options('ns_core_rtl');
+    $header_style = ns_core_load_theme_options('ns_core_header_style');
+    $favicon = ns_core_load_theme_options('ns_core_favicon');
+    $sticky_header = ns_core_load_theme_options('ns_core_sticky_header');
+    $header_bg = ns_core_load_theme_options('ns_core_header_bg');
+    $header_bg_display = ns_core_load_theme_options('ns_core_header_bg_display');
+    $header_container = ns_core_load_theme_options('ns_core_header_container');
+    $preloader = ns_core_load_theme_options('ns_core_preloader');
+    $preloader_img = ns_core_load_theme_options('ns_core_preloader_img');
 
     //GET CURRENT USER INFO
     $current_user = wp_get_current_user();
@@ -8,18 +16,18 @@
 ?>
 
 <!DOCTYPE html>
-<html <?php if($header_vars['rtl'] == 'true') { echo 'dir="rtl"'; } ?> <?php language_attributes(); ?>>
+<html <?php if($rtl == 'true') { echo 'dir="rtl"'; } ?> <?php language_attributes(); ?>>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <?php
 //SET HEADER STYLE
-if(isset($_GET['header_style'])) { $header_style = $_GET['header_style']; } else { $header_style = $header_vars['header_style']; }  
+if(isset($_GET['header_style'])) { $header_style = $_GET['header_style']; } 
 
 // FAVICON
-if(!(function_exists('has_site_icon') && has_site_icon()) && !empty($header_vars['favicon'])) { ?>
-    <link rel="shortcut icon" href="<?php echo esc_url($header_vars['favicon']); ?>" />
+if(!(function_exists('has_site_icon') && has_site_icon()) && !empty($favicon)) { ?>
+    <link rel="shortcut icon" href="<?php echo esc_url($favicon); ?>" />
 <?php } 
 
 //GENERATE HEADER CLASS
@@ -33,9 +41,9 @@ if($header_style == 'default') {
     $header_class = 'header-classic'; 
 }
 if(has_nav_menu('menu-1') && !empty($main_menu_items)) { $header_class = $header_class.' has-menu'; }
-if($header_vars['sticky_header'] == 'true') { $header_class = $header_class.' navbar-fixed'; }
-if(!empty($header_vars['header_bg'])) { $header_class = $header_class.' '.ns_core_bgDisplay($header_vars['header_bg_display']);  }
-if($header_vars['header_container'] != 'true') { $header_class = $header_class.' full-width'; }
+if($sticky_header == 'true') { $header_class = $header_class.' navbar-fixed'; }
+if(!empty($header_bg)) { $header_class = $header_class.' '.ns_core_bgDisplay($header_bg_display);  }
+if($header_container != 'true') { $header_class = $header_class.' full-width'; }
 ?>
 
 <!-- wp head -->
@@ -45,10 +53,10 @@ if($header_vars['header_container'] != 'true') { $header_class = $header_class.'
 
 <body <?php body_class(); ?>>
 
-<?php if($header_vars['preloader'] == 'true') { ?>
+<?php if($preloader == 'true' && !empty($preloader_img)) { ?>
 <div class="loader">
     <table>
-        <tr><td><img src="<?php if(!empty($header_vars['preloader_img'])) { echo $header_vars['preloader_img']; } else { echo $header_vars['preloader_img_default']; } ?>" alt="" /></td></tr>
+        <tr><td><img src="<?php echo $preloader_img; ?>" alt="" /></td></tr>
     </table>
 </div>
 <?php } ?>
@@ -59,7 +67,7 @@ if($header_vars['header_container'] != 'true') { $header_class = $header_class.'
 
     <?php get_template_part('template_parts/top_bar'); ?>
 
-    <div class="container <?php if($header_vars['header_container'] != 'true') { echo 'container-full'; } ?>">
+    <div class="container <?php if($header_container != 'true') { echo 'container-full'; } ?>">
 
         <?php 
         if($header_style == 'default') {

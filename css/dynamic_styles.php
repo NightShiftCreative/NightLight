@@ -48,8 +48,8 @@
     /************************************************************************/
     /* THEME OPTION FONTS */
     /************************************************************************/
-    $heading_font = esc_attr(get_option('ns_core_heading_font', 'Varela Round'));
-    $body_font = esc_attr(get_option('ns_core_body_font', 'Varela Round'));
+    $heading_font = $theme_options['ns_core_heading_font'];
+    $body_font = $theme_options['ns_core_body_font'];
     $font_css = "";
 
     if(!empty($heading_font) && $heading_font != 'Varela Round') { 
@@ -69,35 +69,35 @@
     /************************************************************************/
     /* THEME OPTION COLOR STYLES */
     /************************************************************************/
-    $style_global_bg = get_option('ns_core_style_global_bg', '#f5f8fa');
-    $style_global_main = get_option('ns_core_style_global_main', '#04d2c8');
+    $style_global_bg = $theme_options['ns_core_style_global_bg'];
+    $style_global_main = $theme_options['ns_core_style_global_main'];
     $style_global_main_bright = ns_core_adjust_brightness($style_global_main, 25);
     $style_global_main_dark = ns_core_adjust_brightness($style_global_main, -25);
     $style_global_main_rgb = ns_core_hex2rgb($style_global_main);
     $style_global_main_rgb0 = $style_global_main_rgb[0];
     $style_global_main_rgb1 = $style_global_main_rgb[1];
     $style_global_main_rgb2 = $style_global_main_rgb[2];
-    $style_global_comp = get_option('ns_core_style_global_comp', '#ff9900');
+    $style_global_comp = $theme_options['ns_core_style_global_comp'];
     $style_global_comp_bright = ns_core_adjust_brightness($style_global_comp, 25);
-    $style_top_bar_bg = get_option('ns_core_style_top_bar_bg', '#04d2c8');
+    $style_top_bar_bg = $theme_options['ns_core_style_top_bar_bg'];
     $style_top_bar_submenu = ns_core_adjust_brightness($style_top_bar_bg, -50);
-    $style_top_bar_text = get_option('ns_core_style_top_bar_text', '#ffffff');
-    $style_top_bar_social = get_option('ns_core_style_top_bar_social', '#ffffff');
-    $style_header_bg = get_option('ns_core_style_header_bg', '#ffffff');
-    $style_header_text = get_option('ns_core_style_header_text', '#838893');
+    $style_top_bar_text = $theme_options['ns_core_style_top_bar_text'];
+    $style_top_bar_social = $theme_options['ns_core_style_top_bar_social'];
+    $style_header_bg = $theme_options['ns_core_style_header_bg'];
+    $style_header_text = $theme_options['ns_core_style_header_text'];
     $style_header_text_bright = ns_core_adjust_brightness($style_header_text, 25);
-    $style_header_icon = get_option('ns_core_style_header_icon', '#04d2c8');
-    $style_header_menu = get_option('ns_core_style_header_menu', '#2f353d');
+    $style_header_icon = $theme_options['ns_core_style_header_icon'];
+    $style_header_menu = $theme_options['ns_core_style_header_menu'];
     $style_header_submenu = ns_core_adjust_brightness($style_header_menu, -50);
     $style_header_subsubmenu = ns_core_adjust_brightness($style_header_menu, -70);
-    $style_page_banner_bg = get_option('ns_core_style_page_banner_bg', '#8d92a4');
-    $style_page_banner_title = get_option('ns_core_style_page_banner_title', '#ffffff');
-    $style_footer_bg = get_option('ns_core_style_footer_bg', '#323746');
-    $style_footer_header = get_option('ns_core_style_footer_header', '#ffffff');
-    $style_footer_text = get_option('ns_core_style_footer_text', '#8e95ac');
-    $style_footer_link = get_option('ns_core_style_footer_link', '#04d2c8');
-    $style_bottom_bar_bg = get_option('ns_core_style_bottom_bar_bg', '#262a35');
-    $style_bottom_bar_text = get_option('ns_core_style_bottom_bar_text', '#8e95ac');
+    $style_page_banner_bg = $theme_options['ns_core_style_page_banner_bg'];
+    $style_page_banner_title = $theme_options['ns_core_style_page_banner_title'];
+    $style_footer_bg = $theme_options['ns_core_style_footer_bg'];
+    $style_footer_header = $theme_options['ns_core_style_footer_header'];
+    $style_footer_text = $theme_options['ns_core_style_footer_text'];
+    $style_footer_link = $theme_options['ns_core_style_footer_link'];
+    $style_bottom_bar_bg = $theme_options['ns_core_style_bottom_bar_bg'];
+    $style_bottom_bar_text = $theme_options['ns_core_style_bottom_bar_text'];
 
     $dynamic_css = '';
     
@@ -232,10 +232,10 @@
     /************************************************************************/
     $site_width = $theme_options['ns_core_site_width'];
     $global_bg = $theme_options['ns_core_global_bg'];
-    $header_bg = esc_attr(get_option('ns_core_header_bg'));
-    $page_banner_padding_top = esc_attr(get_option('ns_core_page_banner_padding_top'));
-    $page_banner_padding_bottom = esc_attr(get_option('ns_core_page_banner_padding_bottom'));
-    $footer_bg = esc_attr(get_option('ns_core_footer_bg'));
+    $header_bg = $theme_options['ns_core_header_bg'];
+    $page_banner_padding_top = $theme_options['ns_core_page_banner_padding_top'];
+    $page_banner_padding_bottom = $theme_options['ns_core_page_banner_padding_bottom'];
+    $footer_bg = $theme_options['ns_core_footer_bg'];
 
     $misc_css = "";
 
@@ -263,7 +263,7 @@
     /************************************************************************/
     /* RTL(Right to Left) STYLES */
     /************************************************************************/
-    if(isset($_GET['rtl'])) { $rtl = $_GET['rtl']; } else { $rtl = esc_attr(get_option('ns_core_rtl')); }  
+    $rtl = ns_core_load_theme_options('ns_core_rtl');
 
     if($rtl == 'true') {
         $rtl_css = "";

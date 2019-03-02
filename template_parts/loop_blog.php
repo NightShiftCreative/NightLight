@@ -1,4 +1,4 @@
-<?php $icon_set = esc_attr(get_option('ns_core_icon_set', 'fa')); ?>
+<?php $icon_set = ns_core_load_theme_options('ns_core_icon_set'); ?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                     

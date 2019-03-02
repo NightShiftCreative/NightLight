@@ -1,9 +1,9 @@
 <?php
-$contact_form_title = esc_attr(get_option('ns_core_contact_form_title', 'Quick Contact'));
-$contact_form_before = wp_kses_post(get_option('ns_core_contact_form_before'));
-$contact_form_after = wp_kses_post(get_option('ns_core_contact_form_after'));
-$contact_form_source = esc_attr(get_option('ns_core_contact_form_source', 'default'));
-$contact_form_id = esc_attr(get_option('ns_core_contact_form_id'));
+$contact_form_title = ns_core_load_theme_options('ns_core_contact_form_title');
+$contact_form_before = ns_core_load_theme_options('ns_core_contact_form_before');
+$contact_form_after = ns_core_load_theme_options('ns_core_contact_form_after');
+$contact_form_source = ns_core_load_theme_options('ns_core_contact_form_source');
+$contact_form_id = ns_core_load_theme_options('ns_core_contact_form_id');
 ?>
 
 <?php if(!empty($contact_form_title)) { ?>

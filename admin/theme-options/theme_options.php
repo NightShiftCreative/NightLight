@@ -257,21 +257,21 @@ function ns_core_theme_options_page() {
                         <table class="admin-module">
                             <tr>
                                 <td class="admin-module-label"><label><?php echo esc_html_e('Phone', 'ns-core'); ?></label></td>
-                                <td class="admin-module-field"><input type="text" id="phone" name="ns_core_phone" value="<?php echo esc_attr( get_option('ns_core_phone') ); ?>" /></td>
+                                <td class="admin-module-field"><input type="text" id="phone" name="ns_core_phone" value="<?php echo $theme_options['ns_core_phone']; ?>" /></td>
                             </tr>
                         </table>
 
                         <table class="admin-module">
                             <tr>
                                 <td class="admin-module-label"><label><?php echo esc_html_e('Email', 'ns-core'); ?></label></td>
-                                <td class="admin-module-field"><input type="text" id="email" name="ns_core_email" value="<?php echo esc_attr( get_option('ns_core_email') ); ?>" /></td>
+                                <td class="admin-module-field"><input type="text" id="email" name="ns_core_email" value="<?php echo $theme_options['ns_core_email']; ?>" /></td>
                             </tr>
                         </table>
 
                         <table class="admin-module">
                             <tr>
                                 <td class="admin-module-label"><label><?php echo esc_html_e('Address', 'ns-core'); ?></label></td>
-                                <td class="admin-module-field"><input type="text" name="ns_core_address" value="<?php echo esc_attr( get_option('ns_core_address') ); ?>" /></td>
+                                <td class="admin-module-field"><input type="text" name="ns_core_address" value="<?php echo $theme_options['ns_core_address']; ?>" /></td>
                             </tr>
                         </table>
 
@@ -281,63 +281,63 @@ function ns_core_theme_options_page() {
                             <table class="admin-module">
                                 <tr>
                                     <td class="admin-module-label"><label>Facebook</label></td>
-                                    <td class="admin-module-field"><input type="text" id="fb" name="ns_core_fb" value="<?php echo esc_attr( get_option('ns_core_fb') ); ?>" /></td>
+                                    <td class="admin-module-field"><input type="text" id="fb" name="ns_core_fb" value="<?php echo $theme_options['ns_core_fb']; ?>" /></td>
                                 </tr>
                             </table>
 
                             <table class="admin-module">
                                 <tr>
                                     <td class="admin-module-label"><label>Twitter</label></td>
-                                    <td class="admin-module-field"><input type="text" id="twitter" name="ns_core_twitter" value="<?php echo esc_attr( get_option('ns_core_twitter') ); ?>" /></td>
+                                    <td class="admin-module-field"><input type="text" id="twitter" name="ns_core_twitter" value="<?php echo $theme_options['ns_core_twitter']; ?>" /></td>
                                 </tr>
                             </table>
 
                             <table class="admin-module">
                                 <tr>
                                     <td class="admin-module-label"><label>Google Plus</label></td>
-                                    <td class="admin-module-field"><input type="text" id="google" name="ns_core_google" value="<?php echo esc_attr( get_option('ns_core_google') ); ?>" /></td>
+                                    <td class="admin-module-field"><input type="text" id="google" name="ns_core_google" value="<?php echo $theme_options['ns_core_google']; ?>" /></td>
                                 </tr>
                             </table>
 
                             <table class="admin-module">
                                 <tr>
                                     <td class="admin-module-label"><label>LinkedIn</label></td>
-                                    <td class="admin-module-field"><input type="text" id="linkedin" name="ns_core_linkedin" value="<?php echo esc_attr( get_option('ns_core_linkedin') ); ?>" /></td>
+                                    <td class="admin-module-field"><input type="text" id="linkedin" name="ns_core_linkedin" value="<?php echo $theme_options['ns_core_linkedin']; ?>" /></td>
                                 </tr>
                             </table>
 
                             <table class="admin-module">
                                 <tr>
                                     <td class="admin-module-label"><label>Youtube</label></td>
-                                    <td class="admin-module-field"><input type="text" id="youtube" name="ns_core_youtube" value="<?php echo esc_attr( get_option('ns_core_youtube') ); ?>" /></td>
+                                    <td class="admin-module-field"><input type="text" id="youtube" name="ns_core_youtube" value="<?php echo $theme_options['ns_core_youtube']; ?>" /></td>
                                 </tr>
                             </table>
 
                             <table class="admin-module">
                                 <tr>
                                     <td class="admin-module-label"><label>Vimeo</label></td>
-                                    <td class="admin-module-field"><input type="text" id="vimeo" name="ns_core_vimeo" value="<?php echo esc_attr( get_option('ns_core_vimeo') ); ?>" /></td>
+                                    <td class="admin-module-field"><input type="text" id="vimeo" name="ns_core_vimeo" value="<?php echo $theme_options['ns_core_vimeo']; ?>" /></td>
                                 </tr>
                             </table>
 
                             <table class="admin-module">
                                 <tr>
                                     <td class="admin-module-label"><label>Instagram</label></td>
-                                    <td class="admin-module-field"><input type="text" id="instagram" name="ns_core_instagram" value="<?php echo esc_attr( get_option('ns_core_instagram') ); ?>" /></td>
+                                    <td class="admin-module-field"><input type="text" id="instagram" name="ns_core_instagram" value="<?php echo $theme_options['ns_core_instagram']; ?>" /></td>
                                 </tr>
                             </table>
 
                             <table class="admin-module">
                                 <tr>
                                     <td class="admin-module-label"><label>Flickr</label></td>
-                                    <td class="admin-module-field"><input type="text" id="flickr" name="ns_core_flickr" value="<?php echo esc_attr( get_option('ns_core_flickr') ); ?>" /></td>
+                                    <td class="admin-module-field"><input type="text" id="flickr" name="ns_core_flickr" value="<?php echo $theme_options['ns_core_flickr']; ?>" /></td>
                                 </tr>
                             </table>
 
                             <table class="admin-module">
                                 <tr>
                                     <td class="admin-module-label"><label>Dribbble</label></td>
-                                    <td class="admin-module-field"><input type="text" id="dribbble" name="ns_core_dribbble" value="<?php echo esc_attr( get_option('ns_core_dribbble') ); ?>" /></td>
+                                    <td class="admin-module-field"><input type="text" id="dribbble" name="ns_core_dribbble" value="<?php echo $theme_options['ns_core_dribbble']; ?>" /></td>
                                 </tr>
                             </table>
                         </div><!-- end social media profiles -->
@@ -347,9 +347,9 @@ function ns_core_theme_options_page() {
                             <tr>
                                 <td class="admin-module-label"><label for="contact_details_display"><?php echo esc_html_e('Display Contact Details Section', 'ns-core'); ?></label></td>
                                 <td class="admin-module-field">
-                                    <div class="toggle-switch" title="<?php if(get_option('ns_core_contact_details_display', 'true') == 'true') { esc_html_e('Active', 'ns-core'); } else { esc_html_e('Disabled', 'ns-core'); } ?>">
-                                        <input type="checkbox" name="ns_core_contact_details_display" value="true" class="toggle-switch-checkbox" id="contact_details_display" <?php checked('true', get_option('ns_core_contact_details_display', 'true'), true) ?>>
-                                        <label class="toggle-switch-label" for="contact_details_display"><?php if(get_option('ns_core_contact_details_display', 'true') == 'true') { echo '<span class="on">'.esc_html__('On', 'ns-core').'</span>'; } else { echo '<span>'.esc_html__('Off', 'ns-core').'</span>'; } ?></label>
+                                    <div class="toggle-switch" title="<?php if($theme_options['ns_core_contact_details_display'] == 'true') { esc_html_e('Active', 'ns-core'); } else { esc_html_e('Disabled', 'ns-core'); } ?>">
+                                        <input type="checkbox" name="ns_core_contact_details_display" value="true" class="toggle-switch-checkbox" id="contact_details_display" <?php checked('true', $theme_options['ns_core_contact_details_display'], true) ?>>
+                                        <label class="toggle-switch-label" for="contact_details_display"><?php if($theme_options['ns_core_contact_details_display'] == 'true') { echo '<span class="on">'.esc_html__('On', 'ns-core').'</span>'; } else { echo '<span>'.esc_html__('Off', 'ns-core').'</span>'; } ?></label>
                                     </div>
                                 </td>
                             </tr>
@@ -358,28 +358,28 @@ function ns_core_theme_options_page() {
                         <table class="admin-module">
                             <tr>
                                 <td class="admin-module-label"><label for="contact_form_title"><?php echo esc_html_e('Contact Form Title', 'ns-core'); ?></label></td>
-                                <td class="admin-module-field"><input type="text" id="contact_form_title" name="ns_core_contact_form_title" value="<?php echo esc_attr( get_option('ns_core_contact_form_title', 'Quick Contact') ); ?>" /></td>
+                                <td class="admin-module-field"><input type="text" id="contact_form_title" name="ns_core_contact_form_title" value="<?php echo $theme_options['ns_core_contact_form_title']; ?>" /></td>
                             </tr>
                         </table>
 
                         <table class="admin-module">
                             <tr>
                                 <td class="admin-module-label"><label for="contact_form_before"><?php echo esc_html_e('Text Before Form', 'ns-core'); ?></label></td>
-                                <td class="admin-module-field"><textarea id="contact_form_before" name="ns_core_contact_form_before"><?php echo esc_attr( get_option('ns_core_contact_form_before') ); ?></textarea></td>
+                                <td class="admin-module-field"><textarea id="contact_form_before" name="ns_core_contact_form_before"><?php echo $theme_options['ns_core_contact_form_before']; ?></textarea></td>
                             </tr>
                         </table>
 
                         <table class="admin-module">
                             <tr>
                                 <td class="admin-module-label"><label for="contact_form_after"><?php echo esc_html_e('Text After Form', 'ns-core'); ?></label></td>
-                                <td class="admin-module-field"><textarea id="contact_form_after" name="ns_core_contact_form_after"><?php echo esc_attr( get_option('ns_core_contact_form_after') ); ?></textarea></td>
+                                <td class="admin-module-field"><textarea id="contact_form_after" name="ns_core_contact_form_after"><?php echo $theme_options['ns_core_contact_form_after']; ?></textarea></td>
                             </tr>
                         </table>
 
                         <table class="admin-module">
                             <tr>
                                 <td class="admin-module-label"><label for="contact_form_success"><?php echo esc_html_e('Contact Form Success Message', 'ns-core'); ?></label></td>
-                                <td class="admin-module-field"><input type="text" id="contact_form_success" name="ns_core_contact_form_success" value="<?php echo esc_attr( get_option('ns_core_contact_form_success', esc_html__('Thanks! Your email has been delivered!', 'ns-core')) ); ?>" /></td>
+                                <td class="admin-module-field"><input type="text" id="contact_form_success" name="ns_core_contact_form_success" value="<?php echo $theme_options['ns_core_contact_form_success']; ?>" /></td>
                             </tr>
                         </table>
 
@@ -1127,7 +1127,7 @@ function ns_core_theme_options_page() {
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Bottom Bar Text', 'ns-core'); ?></label></td>
                                         <td class="admin-module-field">
-                                            <textarea id="bottom_bar_text" name="ns_core_bottom_bar_text"><?php echo esc_attr( get_option('ns_core_bottom_bar_text', $bottom_bar_text_default) ); ?></textarea>
+                                            <textarea id="bottom_bar_text" name="ns_core_bottom_bar_text"><?php echo $theme_options['ns_core_bottom_bar_text']; ?></textarea>
                                         </td>
                                     </tr>
                                 </table>

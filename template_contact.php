@@ -6,7 +6,7 @@
 
 <?php 
     //global settings
-    $contact_details_display = esc_attr(get_option('ns_core_contact_details_display', 'true'));
+    $contact_details_display = ns_core_load_theme_options('ns_core_contact_details_display');
 
     //page settings
     $page_id = ns_core_get_page_id();

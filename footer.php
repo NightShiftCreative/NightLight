@@ -1,11 +1,10 @@
 <?php
-	$hide_footer_widget_area = esc_attr(get_option('ns_core_hide_footer_widget_area'));
-    $footer_bg = esc_attr(get_option('ns_core_footer_bg'));
-    $footer_bg_display = esc_attr(get_option('ns_core_footer_bg_display'));
-	$display_bottombar = esc_attr(get_option('ns_core_display_bottombar', 'true'));
-    $sitelink = 'http://nightshiftcreative.co/';
-    $bottom_bar_text_default = get_bloginfo('title').' | Theme by <a href="'.$sitelink.'" target="_blank">NightShift Creative</a> | &copy; '. date('Y');
-	$bottom_bar_text = get_option('ns_core_bottom_bar_text', $bottom_bar_text_default);
+    $sitelink = 'https://nightshiftcreative.co/';
+    $hide_footer_widget_area = ns_core_load_theme_options('ns_core_hide_footer_widget_area');
+    $footer_bg = ns_core_load_theme_options('ns_core_footer_bg');
+    $footer_bg_display = ns_core_load_theme_options('ns_core_footer_bg_display');
+    $display_bottombar = ns_core_load_theme_options('ns_core_display_bottombar');
+    $bottom_bar_text = ns_core_load_theme_options('ns_core_bottom_bar_text');
 ?>
 
 <?php if($hide_footer_widget_area != "true") { ?>
