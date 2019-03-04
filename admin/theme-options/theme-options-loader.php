@@ -3,7 +3,7 @@
 /* Retrieves all Theme Options
 /* or a single option if parameter is set
 /***************************************************************/
-function ns_core_load_theme_options($single_option = null, $return_defaults = false) {
+function ns_core_load_theme_options($single_option = null, $return_defaults = false, $esc = true) {
     
     $sitelink = 'https://nightshiftcreative.co/';
 
@@ -132,8 +132,12 @@ function ns_core_load_theme_options($single_option = null, $return_defaults = fa
     if(isset($single_option)) { 
     	if(array_key_exists($single_option, $theme_options_init)) {
     		$default = $theme_options_init[$single_option];
-    		$single_option = esc_attr(get_option($single_option, $default));
-    		return $single_option;
+    		if($esc == false) {
+                $single_option = get_option($single_option, $default);
+            } else {
+                $single_option = esc_attr(get_option($single_option, $default));
+            }
+            return $single_option;
     	} else {
     		return false;
     	}
