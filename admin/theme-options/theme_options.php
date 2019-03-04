@@ -1143,21 +1143,21 @@ function ns_core_theme_options_page() {
                                 <table class="admin-module">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Background Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_global_bg" id="style_global_bg" class="color-field" data-default-color="#f5f8fa" value="<?php echo $theme_options['ns_core_style_global_bg']; ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_global_bg" id="style_global_bg" class="color-field" data-default-color="<?php echo ns_core_load_theme_options('ns_core_style_global_bg', true); ?>" value="<?php echo $theme_options['ns_core_style_global_bg']; ?>" /></td>
                                     </tr>
                                 </table>
 
                                 <table class="admin-module">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Main Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_global_main" id="style_global_main" class="color-field" data-default-color="#04d2c8" value="<?php echo $theme_options['ns_core_style_global_main']; ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_global_main" id="style_global_main" class="color-field" data-default-color="<?php echo ns_core_load_theme_options('ns_core_style_global_main', true); ?>" value="<?php echo $theme_options['ns_core_style_global_main']; ?>" /></td>
                                     </tr>
                                 </table>
 
                                 <table class="admin-module no-border">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Complementary Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_global_comp" id="style_global_comp" class="color-field" data-default-color="#ff9900" value="<?php echo $theme_options['ns_core_style_global_comp']; ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_global_comp" id="style_global_comp" class="color-field" data-default-color="<?php echo ns_core_load_theme_options('ns_core_style_global_comp', true); ?>" value="<?php echo $theme_options['ns_core_style_global_comp']; ?>" /></td>
                                     </tr>
                                 </table>
                             </div>
@@ -1170,21 +1170,21 @@ function ns_core_theme_options_page() {
                                 <table class="admin-module">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Top Bar Background Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_top_bar_bg" id="style_top_bar_bg" class="color-field" data-default-color="#04d2c8" value="<?php echo $theme_options['ns_core_style_top_bar_bg']; ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_top_bar_bg" id="style_top_bar_bg" class="color-field" data-default-color="<?php echo ns_core_load_theme_options('ns_core_style_top_bar_bg', true); ?>" value="<?php echo $theme_options['ns_core_style_top_bar_bg']; ?>" /></td>
                                     </tr>
                                 </table>
 
                                 <table class="admin-module">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Top Bar Text Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_top_bar_text" id="style_top_bar_text" class="color-field" data-default-color="#ffffff" value="<?php echo $theme_options['ns_core_style_top_bar_text']; ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_top_bar_text" id="style_top_bar_text" class="color-field" data-default-color="<?php echo ns_core_load_theme_options('ns_core_style_top_bar_text', true); ?>" value="<?php echo $theme_options['ns_core_style_top_bar_text']; ?>" /></td>
                                     </tr>
                                 </table>
 
                                 <table class="admin-module no-border">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Top Bar Social Icons Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_top_bar_social" id="style_top_bar_social" class="color-field" data-default-color="#ffffff" value="<?php echo $theme_options['ns_core_style_top_bar_social']; ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_top_bar_social" id="style_top_bar_social" class="color-field" data-default-color="<?php echo ns_core_load_theme_options('ns_core_style_top_bar_social', true); ?>" value="<?php echo $theme_options['ns_core_style_top_bar_social']; ?>" /></td>
                                     </tr>
                                 </table>
                             </div>
@@ -1197,14 +1197,14 @@ function ns_core_theme_options_page() {
                                 <table class="admin-module">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Header Background Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_header_bg" id="style_header_bg" class="color-field" data-default-color="#ffffff" value="<?php echo $theme_options['ns_core_style_header_bg']; ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_header_bg" id="style_header_bg" class="color-field" data-default-color="<?php echo ns_core_load_theme_options('ns_core_style_header_bg', true); ?>" value="<?php echo $theme_options['ns_core_style_header_bg']; ?>" /></td>
                                     </tr>
                                 </table>
 
                                 <table class="admin-module">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Header Text Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_header_text" id="style_header_text" class="color-field" data-default-color="#838893" value="<?php echo $theme_options['ns_core_style_header_text']; ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_header_text" id="style_header_text" class="color-field" data-default-color="<?php echo ns_core_load_theme_options('ns_core_style_header_text', true); ?>" value="<?php echo $theme_options['ns_core_style_header_text']; ?>" /></td>
                                     </tr>
                                 </table>
 
@@ -1214,7 +1214,7 @@ function ns_core_theme_options_page() {
                                             <label><?php echo esc_html_e('Header Icon Color', 'ns-core'); ?></label>
                                             <span class="admin-module-note"><?php echo esc_html_e('*Only for menu bar header style', 'ns-core'); ?></span>
                                         </td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_header_icon" id="style_header_icon" class="color-field" data-default-color="#04d2c8" value="<?php echo $theme_options['ns_core_style_header_icon']; ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_header_icon" id="style_header_icon" class="color-field" data-default-color="<?php echo ns_core_load_theme_options('ns_core_style_header_icon', true); ?>" value="<?php echo $theme_options['ns_core_style_header_icon']; ?>" /></td>
                                     </tr>
                                 </table>
 
@@ -1224,7 +1224,7 @@ function ns_core_theme_options_page() {
                                             <label><?php echo esc_html_e('Header Menu Background Color', 'ns-core'); ?></label>
                                             <span class="admin-module-note"><?php echo esc_html_e('*Only for menu bar header style', 'ns-core'); ?></span>
                                         </td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_header_menu" id="style_header_menu" class="color-field" data-default-color="#2f353d" value="<?php echo $theme_options['ns_core_style_header_menu']; ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_header_menu" id="style_header_menu" class="color-field" data-default-color="<?php echo ns_core_load_theme_options('ns_core_style_header_menu', true); ?>" value="<?php echo $theme_options['ns_core_style_header_menu']; ?>" /></td>
                                     </tr>
                                 </table>
                             </div>
@@ -1237,14 +1237,14 @@ function ns_core_theme_options_page() {
                                 <table class="admin-module">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Page Banner Background Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_page_banner_bg" id="style_page_banner_bg" class="color-field" data-default-color="#8d92a4" value="<?php echo $theme_options['ns_core_style_page_banner_bg']; ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_page_banner_bg" id="style_page_banner_bg" class="color-field" data-default-color="<?php echo ns_core_load_theme_options('ns_core_style_page_banner_bg', true); ?>" value="<?php echo $theme_options['ns_core_style_page_banner_bg']; ?>" /></td>
                                     </tr>
                                 </table>
 
                                 <table class="admin-module no-border">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Page Banner Title Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_page_banner_title" id="style_page_banner_title" class="color-field" data-default-color="#ffffff" value="<?php echo $theme_options['ns_core_style_page_banner_title']; ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_page_banner_title" id="style_page_banner_title" class="color-field" data-default-color="<?php echo ns_core_load_theme_options('ns_core_style_page_banner_title', true); ?>" value="<?php echo $theme_options['ns_core_style_page_banner_title']; ?>" /></td>
                                     </tr>
                                 </table>
                             </div>
@@ -1256,42 +1256,42 @@ function ns_core_theme_options_page() {
                                 <table class="admin-module">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Footer Background Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_footer_bg" id="style_footer_bg" class="color-field" data-default-color="#323746" value="<?php echo $theme_options['ns_core_style_footer_bg']; ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_footer_bg" id="style_footer_bg" class="color-field" data-default-color="<?php echo ns_core_load_theme_options('ns_core_style_footer_bg', true); ?>" value="<?php echo $theme_options['ns_core_style_footer_bg']; ?>" /></td>
                                     </tr>
                                 </table>
 
                                 <table class="admin-module">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Footer Header Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_footer_header" id="style_footer_header" class="color-field" data-default-color="#ffffff" value="<?php echo $theme_options['ns_core_style_footer_header']; ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_footer_header" id="style_footer_header" class="color-field" data-default-color="<?php echo ns_core_load_theme_options('ns_core_style_footer_header', true); ?>" value="<?php echo $theme_options['ns_core_style_footer_header']; ?>" /></td>
                                     </tr>
                                 </table>
 
                                 <table class="admin-module">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Footer Text Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_footer_text" id="style_footer_text" class="color-field" data-default-color="#8e95ac" value="<?php echo $theme_options['ns_core_style_footer_text']; ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_footer_text" id="style_footer_text" class="color-field" data-default-color="<?php echo ns_core_load_theme_options('ns_core_style_footer_text', true); ?>" value="<?php echo $theme_options['ns_core_style_footer_text']; ?>" /></td>
                                     </tr>
                                 </table>
 
                                 <table class="admin-module">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Footer Link Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_footer_link" id="style_footer_link" class="color-field" data-default-color="#04d2c8" value="<?php echo $theme_options['ns_core_style_footer_link']; ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_footer_link" id="style_footer_link" class="color-field" data-default-color="<?php echo ns_core_load_theme_options('ns_core_style_footer_link', true); ?>" value="<?php echo $theme_options['ns_core_style_footer_link']; ?>" /></td>
                                     </tr>
                                 </table>
 
                                 <table class="admin-module">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Bottom Bar Background Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_bottom_bar_bg" id="style_bottom_bar_bg" class="color-field" data-default-color="#262a35" value="<?php echo $theme_options['ns_core_style_bottom_bar_bg']; ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_bottom_bar_bg" id="style_bottom_bar_bg" class="color-field" data-default-color="<?php echo ns_core_load_theme_options('ns_core_style_bottom_bar_bg', true); ?>" value="<?php echo $theme_options['ns_core_style_bottom_bar_bg']; ?>" /></td>
                                     </tr>
                                 </table>
 
                                 <table class="admin-module no-border">
                                     <tr>
                                         <td class="admin-module-label"><label><?php echo esc_html_e('Bottom Bar Text Color', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field"><input type="text" name="ns_core_style_bottom_bar_text" id="style_bottom_bar_text" class="color-field" data-default-color="#8e95ac" value="<?php echo $theme_options['ns_core_style_bottom_bar_text']; ?>" /></td>
+                                        <td class="admin-module-field"><input type="text" name="ns_core_style_bottom_bar_text" id="style_bottom_bar_text" class="color-field" data-default-color="<?php echo ns_core_load_theme_options('ns_core_style_bottom_bar_text', true); ?>" value="<?php echo $theme_options['ns_core_style_bottom_bar_text']; ?>" /></td>
                                     </tr>
                                 </table>
                             </div>
