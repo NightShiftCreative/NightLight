@@ -163,4 +163,17 @@ function ns_core_option_exists($option_name) {
     return false;
 }
 
+/***************************************************************/
+/* Reset all options
+/***************************************************************/
+add_action('wp_ajax_nopriv_ns_reset_options', 'ns_core_reset_theme_options');
+add_action('wp_ajax_ns_reset_options', 'ns_core_reset_theme_options');
+function ns_core_reset_theme_options(){
+    $theme_options = ns_core_load_theme_options(null, true);
+    foreach($theme_options as $key => $value) {
+        delete_option($key);
+    }
+    exit();
+}
+
 ?>
