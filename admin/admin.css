@@ -357,10 +357,10 @@ input[type=checkbox].toggle-switch-checkbox { display: none; }
 }
 .ns-theme-options .theme-options-logo img { max-width:90%; }
 
-.ns-theme-options .created-by { font-size:14px; margin-left:18px; margin-top:18px; float:left; }
+.ns-theme-options .created-by { font-size:13px; margin-left:18px; margin-top:20px; float:left; }
 .ns-theme-options .created-by a { text-decoration:none; }
 
-.ns-theme-options .theme-version { float:right; margin-right:20px; }
+.ns-theme-options .theme-options-actions { float:right; margin-right:20px; }
 
 .ns-theme-options .theme-options-header .submit { margin:0; padding:0; float:none; }
 .ns-theme-options .submit .button { 
@@ -369,7 +369,7 @@ input[type=checkbox].toggle-switch-checkbox { display: none; }
     background:#5c59ed;
     box-shadow:none; 
     border-radius:4px;
-    padding:15px 45px;
+    padding:15px 35px;
     height:auto;
     font-size:16px;
     font-weight:600;
@@ -380,6 +380,14 @@ input[type=checkbox].toggle-switch-checkbox { display: none; }
 
 .ns-theme-options .theme-options-header .loader { margin-top:15px; float:left; }
 .ns-theme-options .theme-options-header .save-result { float:left; margin-top:0; }
+.ns-theme-options .theme-options-header .reset-theme-options { 
+    height:auto; 
+    margin-right:6px; 
+    padding:15px 25px; 
+}
+
+.ns-theme-options .theme-options-footer { background:transparent; margin-top:15px; box-shadow:none; }
+.ns-theme-options .theme-options-footer .theme-options-actions { margin-right:0; }
 
 /** THEME OPTIONS CONTENT **/
 .ns-theme-options .theme-options-content {
@@ -435,7 +443,7 @@ input[type=checkbox].toggle-switch-checkbox { display: none; }
     .ns-theme-options .theme-options-header td { display:block; }
     .ns-theme-options .theme-options-logo { width:100%; text-align:center;  }
     .ns-theme-options .theme-options-logo img { float:none; } 
-    .ns-theme-options .theme-version, .ns-theme-options .created-by { 
+    .ns-theme-options .theme-options-actions, .ns-theme-options .created-by { 
         padding:0; 
         margin:0; 
         width:100%; 
@@ -443,7 +451,7 @@ input[type=checkbox].toggle-switch-checkbox { display: none; }
         text-align:center;
     }
     .ns-theme-options .created-by a { padding-bottom:5px; color:rgba(0, 0, 0, 0.5); }
-    .ns-theme-options .theme-version { padding-bottom:20px; }
+    .ns-theme-options .theme-options-actions { padding-bottom:20px; }
 
     .ns-theme-options .theme-options-header .submit { margin-top:15px; }
 

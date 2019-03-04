@@ -63,7 +63,7 @@ function ns_core_theme_options_page() {
                 echo esc_html_e('Version ', 'ns-core') . $my_theme->get( 'Version' );
                 ?>
             </div>
-            <div class="theme-version">
+            <div class="theme-options-actions">
                 <div class="button reset-theme-options"><?php esc_html_e('Reset to Default', 'ns-core'); ?></div>
                 <?php submit_button( __( 'Save Changes', 'ns-core' ), 'primary', 'submit_top' ); ?>
                 <div class="loader"><img src="<?php echo esc_url(home_url('/')); ?>wp-admin/images/spinner.gif" alt="" /></div>
@@ -1308,10 +1308,18 @@ function ns_core_theme_options_page() {
             </tr>
         </table>
     </div>
-    
-    <?php submit_button(); ?>
-    <div class="loader"><img src="<?php echo esc_url(home_url('/')); ?>wp-admin/images/spinner.gif" alt="" /></div>
-    <div class="save-result" id="save-result"><?php echo esc_html_e('Settings Saved Successfully', 'ns-core'); ?></div>
+
+    <table class="theme-options-header theme-options-footer" cellspacing="0" cellpadding="0">
+        <tr>
+        <td>
+            <div class="theme-options-actions">
+                <?php submit_button( __( 'Save Changes', 'ns-core' ), 'primary', 'submit_top' ); ?>
+                <div class="loader"><img src="<?php echo esc_url(home_url('/')); ?>wp-admin/images/spinner.gif" alt="" /></div>
+                <div class="save-result" id="save-result"><?php echo esc_html_e('Settings Saved Successfully', 'ns-core'); ?></div>
+            </div>
+        </td>
+        </tr>
+    </table>
 
 </form>
 </div>
