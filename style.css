@@ -404,6 +404,7 @@ textarea.border,
 	border-radius:100%;
 }
 .social-icons.circle li a:hover { background:#04d2c8; border-color:#04d2c8; color:white; }
+.social-icons .icon { margin:0; }
 
 /** ALERT BOXES **/
 .alert-box {
