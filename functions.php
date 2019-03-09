@@ -414,12 +414,19 @@ function ns_core_get_page_id() {
 /*-----------------------------------------------------------------------------------*/
 /*  Check if slug exists
 /*-----------------------------------------------------------------------------------*/
-function ns_core_the_slug_exists($post_name) {
-    global $wpdb;
-    if($wpdb->get_row( $wpdb->prepare("SELECT post_name FROM wp_posts WHERE post_name = %s", $post_name), 'ARRAY_A')) {
-        return true;
-    } else {
+function ns_core_post_exists_by_slug($post_slug, $post_type = 'post') {
+    $args_posts = array(
+        'post_type'      => $post_type,
+        'post_status'    => 'publish',
+        'name'           => $post_slug,
+        'posts_per_page' => 1,
+    );
+    $loop_posts = new WP_Query( $args_posts );
+    if(!$loop_posts->have_posts()) {
         return false;
+    } else {
+        $loop_posts->the_post();
+        return $loop_posts->post->ID;
     }
 }
 
@@ -438,7 +445,7 @@ function ns_core_add_default_pages() {
       'post_type' => 'page', //Sometimes you want to post a page.
       'post_content' => '',
     ); 
-    if (!ns_core_the_slug_exists('contact')) { wp_insert_post($post_contact_page); }
+    if (!ns_core_post_exists_by_slug('contact', 'page')) { wp_insert_post($post_contact_page); }
 
     //Update "Hello World" blog post
     $hello_world_content = '';
@@ -458,7 +465,7 @@ function ns_core_add_default_pages() {
       'post_type' => 'post', //Sometimes you want to post a page.
       'post_content' => $hello_world_content,
     );  
-    if (!ns_core_the_slug_exists('welcome')) { wp_insert_post($post_hello_world); }
+    if (!ns_core_post_exists_by_slug('welcome', 'post')) { wp_insert_post($post_hello_world); }
 
     //Add main menu
     $menu_name = 'Main Menu';
