@@ -193,6 +193,21 @@ function ns_core_add_async_to_style($html, $handle) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/* Insert Custom Scripts
+/*-----------------------------------------------------------------------------------*/
+function ns_core_insert_custom_header_script() {
+    $header_script = ns_core_load_theme_options('ns_core_custom_scripts_header', false, false);
+    if(!empty($header_script)) { echo $header_script; }
+}
+add_action('wp_head', 'ns_core_insert_custom_header_script');
+
+function ns_core_insert_custom_footer_script() {
+    $footer_script = ns_core_load_theme_options('ns_core_custom_scripts_footer', false, false);
+    if(!empty($footer_script)) { echo $footer_script; }
+}
+add_action('wp_footer', 'ns_core_insert_custom_footer_script');
+
+/*-----------------------------------------------------------------------------------*/
 /*  Header functions
 /*-----------------------------------------------------------------------------------*/
 

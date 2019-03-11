@@ -188,7 +188,7 @@ function ns_core_theme_options_page() {
                         </table>
 
                         <br/><br/>
-                        <div class="admin-module-fonts">
+                        <div class="admin-module admin-module-fonts no-padding">
                             <h3>
                                 <?php echo esc_html_e('Font Settings', 'ns-core'); ?>
                                 <?php $default_font = $theme_options['ns_core_default_font']; ?>
@@ -247,6 +247,36 @@ function ns_core_theme_options_page() {
                                 </tr>
                             </table>
                         </div>
+
+                        <h3>
+                            <?php echo esc_html_e('Custom Scripts', 'ns-core'); ?>
+                            <span class="admin-module-note"><?php esc_html_e('Add any custom scripts, such as a Google Anayltics tracking code. Include <script> tags.', 'ns-core'); ?></span>
+                        </h3>
+
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label">
+                                    <label><?php esc_html_e('Header Scripts', 'ns-core'); ?></label>
+                                    <span class="admin-module-note"><?php esc_html_e('These scripts will be printed in the <head> section.', 'ns-core'); ?></span>
+                                </td>
+                                <td class="admin-module-field">
+                                    <textarea name="ns_core_custom_scripts_header"><?php echo $theme_options['ns_core_custom_scripts_header']; ?></textarea>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label">
+                                    <label><?php esc_html_e('Footer Scripts', 'ns-core'); ?></label>
+                                    <span class="admin-module-note"><?php esc_html_e('These scripts will be printed at the bottom of the <body> section.', 'ns-core'); ?></span>
+                                </td>
+                                <td class="admin-module-field">
+                                    <textarea name="ns_core_custom_scripts_footer"><?php echo $theme_options['ns_core_custom_scripts_footer']; ?></textarea>
+                                </td>
+                            </tr>
+                        </table>
+
 
                         <?php do_action('ns_core_after_general_theme_options'); ?>
 

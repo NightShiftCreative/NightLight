@@ -18,6 +18,8 @@ function ns_core_load_theme_options($single_option = null, $return_defaults = fa
         'ns_core_preloader_img' => esc_url( get_template_directory_uri() ).'/images/loader.gif',
     	'ns_core_heading_font' => 'Varela Round',
     	'ns_core_body_font' => 'Varela Round',
+        'ns_core_custom_scripts_header' => '',
+        'ns_core_custom_scripts_footer' => '',
     	'ns_core_phone' => false,
     	'ns_core_email' => false,
     	'ns_core_address' => false,
