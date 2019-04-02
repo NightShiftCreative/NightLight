@@ -113,6 +113,7 @@
         $dynamic_css .= "
             .button, input[type='submit'], 
             .bar, 
+            .header-member-actions .member-sub-menu li a:hover,
             .page-list .page-numbers.current,
             .chosen-container .chosen-results li.highlighted,
             .ui-accordion .ui-accordion-header-active,
