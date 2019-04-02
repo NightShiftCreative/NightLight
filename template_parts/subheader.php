@@ -19,6 +19,7 @@
 
     $banner_title = isset( $values['ns_basics_banner_title'] ) ? $values['ns_basics_banner_title'][0] : '';
     $banner_text = isset( $values['ns_basics_banner_text'] ) ? $values['ns_basics_banner_text'][0] : '';
+    $banner_class = isset( $values['ns_basics_banner_class'] ) ? esc_attr( $values['ns_basics_banner_class'][0] ) : '';
     $banner_custom_settings = isset( $values['ns_basics_banner_custom_settings'] ) ? esc_attr( $values['ns_basics_banner_custom_settings'][0] ) : '';
 
     if($banner_custom_settings == 'true') { 
@@ -35,7 +36,7 @@
     }
 ?>
 
-<section class="module subheader <?php if($page_banner_title_align == 'right') { echo 'align-right'; } else if($page_banner_title_align == 'center') { echo 'align-center'; } else { echo 'align-left'; } ?> <?php if($page_banner_display_search == 'true') { echo 'has-search-form'; } ?> <?php if(!empty($page_banner_bg)) { echo ns_core_bgDisplay($page_banner_bg_display); } ?>" 
+<section class="module subheader <?php if(!empty($banner_class)) { echo $banner_class; } ?> <?php if($page_banner_title_align == 'right') { echo 'align-right'; } else if($page_banner_title_align == 'center') { echo 'align-center'; } else { echo 'align-left'; } ?> <?php if($page_banner_display_search == 'true') { echo 'has-search-form'; } ?> <?php if(!empty($page_banner_bg)) { echo ns_core_bgDisplay($page_banner_bg_display); } ?>" 
 	<?php 
         $custom_style = '';
         if(!empty($page_banner_bg)) { $custom_style .= 'background-image:url('.$page_banner_bg.');'; }
