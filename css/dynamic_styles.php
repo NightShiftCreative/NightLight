@@ -136,6 +136,7 @@
             .top-bar-member-actions .member-sub-menu li a:hover,
             .header-member-actions .member-sub-menu li a:hover,
             .header-default .header-item td > .fa,
+            .sl-wrapper a.liked .fa,
             .subheader.subheader-slider .slider-advanced .slide .fa,
             .blog-post-content h3 a:hover,
             .comment-details a:hover,

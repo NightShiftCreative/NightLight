@@ -646,7 +646,7 @@ textarea.border,
 }
 
 /** POST LIKES **/
-.sl-wrapper a.liked .fa { color:#04d2c8 !important; }
+.sl-wrapper a.liked .fa { color:#04d2c8; }
 .sl-wrapper .sl-button-text { display:none; }
 .sl-wrapper-button .sl-button-text { display:inline-block; }
 .sl-wrapper-button .button.outline { float:none !important; width:100% !important; }
