@@ -123,6 +123,7 @@
             .widget .filter-widget-title,
             .multi-page-form-content#map .remove-pin,
             .services .service-item .fa,
+            .blog-post-date,
             .cta { background: {$style_global_main}; }
         ";
         $dynamic_css .= ".filter .ui-tabs .ui-tabs-nav li.ui-state-active a, .filter-with-slider .tabs.ui-widget, .property-share-email-input { background: {$style_global_main_dark}; }";
