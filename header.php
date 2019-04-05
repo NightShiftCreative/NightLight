@@ -1,4 +1,5 @@
 <?php 
+    //GLOBAL SETTINGS
     $rtl = ns_core_load_theme_options('ns_core_rtl');
     $header_style = ns_core_load_theme_options('ns_core_header_style');
     $favicon = ns_core_load_theme_options('ns_core_favicon');
@@ -8,6 +9,11 @@
     $header_container = ns_core_load_theme_options('ns_core_header_container');
     $preloader = ns_core_load_theme_options('ns_core_preloader');
     $preloader_img = ns_core_load_theme_options('ns_core_preloader_img');
+
+    //PAGE SETTINGS
+    $page_id = ns_core_get_page_id();
+    $values = get_post_custom($page_id);
+    $banner_header_style = isset( $values['ns_basics_banner_header_style'] ) ? esc_attr( $values['ns_basics_banner_header_style'][0] ) : '';
 
     //GET CURRENT USER INFO
     $current_user = wp_get_current_user();
@@ -23,7 +29,11 @@
 
 <?php
 //SET HEADER STYLE
-if(isset($_GET['header_style'])) { $header_style = $_GET['header_style']; } 
+if(isset($_GET['header_style'])) { 
+    $header_style = $_GET['header_style']; 
+} else if(!empty($banner_header_style)) {
+    $header_style = $banner_header_style; 
+} 
 
 // FAVICON
 if(!(function_exists('has_site_icon') && has_site_icon()) && !empty($favicon)) { ?>

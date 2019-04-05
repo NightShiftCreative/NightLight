@@ -56,7 +56,6 @@ function ns_core_register_required_plugins() {
     tgmpa( $plugins, $config );
 }
 
-
 /*-----------------------------------------------------------------------------------*/
 /*	Include Admin Scripts
 /*-----------------------------------------------------------------------------------*/
@@ -213,9 +212,24 @@ add_action('wp_footer', 'ns_core_insert_custom_footer_script');
 
 /* get header logo */
 function ns_core_get_header_logo() {
+
+    //GLOBAL SETTINGS
     $header_style = ns_core_load_theme_options('ns_core_header_style');
     $logo = ns_core_load_theme_options('ns_core_logo');
     $logo_transparent = ns_core_load_theme_options('ns_core_logo_transparent');
+
+    //PAGE SETTINGS
+    $page_id = ns_core_get_page_id();
+    $values = get_post_custom($page_id);
+    $banner_header_style = isset( $values['ns_basics_banner_header_style'] ) ? esc_attr( $values['ns_basics_banner_header_style'][0] ) : '';
+
+    //SET HEADER STYLE
+    if(isset($_GET['header_style'])) { 
+        $header_style = $_GET['header_style']; 
+    } else if(!empty($banner_header_style)) {
+        $header_style = $banner_header_style; 
+    } 
+
     ob_start(); ?>
 
     <?php if($header_style == 'transparent') { ?>

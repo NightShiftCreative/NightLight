@@ -7,6 +7,18 @@ $logo_transparent = ns_core_load_theme_options('ns_core_logo_transparent');
 $rtl = ns_core_load_theme_options('ns_core_rtl');
 $theme_url = esc_url( get_template_directory_uri() );
 
+//PAGE SETTINGS
+$page_id = ns_core_get_page_id();
+$values = get_post_custom($page_id);
+$banner_header_style = isset( $values['ns_basics_banner_header_style'] ) ? esc_attr( $values['ns_basics_banner_header_style'][0] ) : '';
+
+//SET HEADER STYLE
+if(isset($_GET['header_style'])) { 
+    $header_style = $_GET['header_style']; 
+} else if(!empty($banner_header_style)) {
+    $header_style = $banner_header_style; 
+} 
+
 //Get banner settings
 $banner_slider_transition = ns_core_load_theme_options('ns_core_page_banner_slider_transition');
 $banner_slider_duration = ns_core_load_theme_options('ns_core_page_banner_slider_duration');
