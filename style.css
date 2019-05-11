@@ -897,7 +897,7 @@ header.navbar-fixed { position:fixed; top:0; }
 
 .admin-bar header.header-classic.navbar-fixed, 
 .admin-bar header.header-transparent.navbar-fixed,
-.admin-bar .header-menu .main-menu, 
+.admin-bar .header-menu .main-menu-container, 
 .admin-bar .header-menu.fixed { top:32px; }
 
 /*====================================================================================*/

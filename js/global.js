@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
     $('.main-menu-toggle').on('click', function(event) {
         event.preventDefault();
         var overlay = $('body').find('.mobile-overlay');
-        var menu = $(this).closest('header').find('.main-menu');
+        var menu = $(this).closest('header').find('.main-menu-container');
 
         if(menu.hasClass('open')) {
             overlay.fadeOut('fast');
@@ -32,7 +32,7 @@ jQuery(document).ready(function($) {
     $('.mobile-overlay, .main-menu-close').on('click', function(event) {
         event.preventDefault();
         $('body').find('.mobile-overlay').fadeOut('fast');
-        var menu = $('header').find('.main-menu');
+        var menu = $('header').find('.main-menu-container');
         menu.fadeOut('fast', function() { menu.removeClass('mobile open'); });
     });
 

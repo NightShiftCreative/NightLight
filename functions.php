@@ -262,7 +262,7 @@ function ns_core_get_header_menu() {
             'fallback_cb' => '__return_false'
         ));
     } else { $main_menu = ''; } 
-    return $main_menu;
+    return '<div class="main-menu-container">'.$main_menu.'</div>';
 }
 
 /* add menu close button */

@@ -1,5 +1,5 @@
 /* MOBILE MENU */
-.header-menu .main-menu.mobile { 
+.header-menu .main-menu-container.mobile { 
     width:350px; 
     height:100%;
     overflow-y:auto;
@@ -11,7 +11,7 @@
     white-space:normal; 
     box-shadow:0px 0px 20px rgba(0, 0, 0, 0.1);
 }
-.header-menu .main-menu.mobile .main-menu-close {
+.header-menu .main-menu-container.mobile .main-menu-close {
     font-size:23px;
     display:block;
     width:100%;
@@ -23,12 +23,12 @@
     cursor:pointer;
 }
 
-.header-menu .main-menu.mobile li { width:100%; }
-.header-menu .main-menu.mobile > li > a { color:#838893; padding:20px 20px !important; margin:0; border-bottom:1px solid rgba(0, 0, 0, 0.1); }
-.header-menu .main-menu.mobile li:last-child a { border-bottom:none; }
-.header-menu .main-menu.mobile li.current-menu-item > a { box-shadow:none; }
-.header-menu .main-menu.mobile li.menu-item-has-children:after { margin-top:22px; right:25px; }
-.header-menu .main-menu.mobile li .sub-menu li.menu-item-has-children:after { content: "\f107"; }
+.header-menu .main-menu-container.mobile .main-menu li { width:100%; }
+.header-menu .main-menu-container.mobile .main-menu > li > a { color:#838893; padding:20px 20px !important; margin:0; border-bottom:1px solid rgba(0, 0, 0, 0.1); }
+.header-menu .main-menu-container.mobile .main-menu li:last-child a { border-bottom:none; }
+.header-menu .main-menu-container.mobile .main-menu li.current-menu-item > a { box-shadow:none; }
+.header-menu .main-menu-container.mobile .main-menu > li.menu-item-has-children:after { margin-top:22px; right:25px; color:#838893; }
+.header-menu .main-menu-container.mobile .main-menu li .sub-menu li.menu-item-has-children:after { content: "\f107"; }
 .mobile-overlay { display:none; position:fixed; background:rgba(0, 0, 0, 0.5) !important; z-index:2000; }
 
 
@@ -37,7 +37,7 @@
   /* HEADER */
   .header-menu { margin-right:15px !important; margin-left:auto !important; }
   .main-menu-toggle { display: inline-block; }
-  .header-menu .main-menu { display:none; }
+  .header-menu .main-menu-container { display:none; }
 
   .header-default .header-search { width:170px; }
   .header-default .header-item { padding:0px 10px; }
@@ -69,7 +69,7 @@
     /* WP ADMIN BAR */
     .admin-bar header.header-classic.navbar-fixed, 
     .admin-bar header.header-transparent.navbar-fixed,
-    .admin-bar .header-menu .main-menu, 
+    .admin-bar .header-menu .main-menu-container, 
     .admin-bar .header-menu.fixed { top:46px; }
 
     /** HEADER DEFAULT **/
