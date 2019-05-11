@@ -14,14 +14,16 @@ jQuery(document).ready(function($) {
     /***************************************************************************/
     $('.main-menu-toggle').on('click', function(event) {
         event.preventDefault();
-        $('body').find('.mobile-overlay').toggle();
+        var overlay = $('body').find('.mobile-overlay');
         var menu = $(this).closest('header').find('.main-menu');
 
         if(menu.hasClass('open')) {
+            overlay.fadeOut('fast');
             menu.fadeOut('fast', function() {
                 menu.removeClass('mobile open');
             });
         } else {
+            overlay.fadeIn('fast');
             menu.addClass('mobile open');
             menu.animate({width:'toggle'}, 350);
         }
@@ -29,7 +31,7 @@ jQuery(document).ready(function($) {
 
     $('.mobile-overlay, .main-menu-close').on('click', function(event) {
         event.preventDefault();
-        $('.mobile-overlay').hide();
+        $('body').find('.mobile-overlay').fadeOut('fast');
         var menu = $('header').find('.main-menu');
         menu.fadeOut('fast', function() { menu.removeClass('mobile open'); });
     });
