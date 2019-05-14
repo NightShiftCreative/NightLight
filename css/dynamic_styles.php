@@ -151,6 +151,7 @@
         $dynamic_css .= ".comment-list .arrow { border-color:transparent {$style_global_main_dark}; }";
         $dynamic_css .= ".img-overlay { background:rgba({$style_global_main_rgb0}, {$style_global_main_rgb1}, {$style_global_main_rgb2}, 0.6); }";
         $dynamic_css .= ".contact-details { background-color: {$style_global_main}; }";
+        $dynamic_css .= ".widget-sidebar h4 { border-left-color: {$style_global_main}; }";
     }
 
     //GLOBAL COMP COLOR
