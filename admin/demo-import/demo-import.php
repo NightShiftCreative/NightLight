@@ -1,4 +1,24 @@
 <?php
+/*-----------------------------------------------------------------------------------*/
+/*  One Click Demo Import
+/*
+/* NOTE: must export theme files and place in this directory (content.xml, widget.wie, etc)
+/*-----------------------------------------------------------------------------------*/
+if(!function_exists('ns_core_demo_import')) {
+    function ns_core_demo_import() {
+        return array(
+            array(
+                'import_file_name'             => 'Default Demo',
+                'local_import_file'            => trailingslashit( get_template_directory() ) . '/admin/demo-import/content.xml',
+                'local_import_widget_file'     => trailingslashit( get_template_directory() ) . '/admin/demo-import/widgets.wie',
+                'local_import_customizer_file' => trailingslashit( get_template_directory() ) . '/admin/demo-import/customizer.dat',
+                'import_preview_image_url'     => trailingslashit( get_template_directory() ) .'/admin/demo-import/screenshot.png',
+                'import_notice'                => __( 'Please waiting for a few minutes, do not close the window or refresh the page until the data is imported.', 'ns-core' ),
+            ),
+        );
+    }
+    add_filter( 'pt-ocdi/import_files', 'ns_core_demo_import' );
+}
 
 /*-----------------------------------------------------------------------------------*/
 /*  Add default theme pages, posts, and widgets
@@ -125,24 +145,5 @@ function ns_core_add_default_pages() {
 
 }
  add_action( 'after_switch_theme', 'ns_core_add_default_pages' );
-
-/*-----------------------------------------------------------------------------------*/
-/*  One Click Demo Import
-/*-----------------------------------------------------------------------------------*/
-if(!function_exists('ns_core_demo_import')) {
-    function ns_core_demo_import() {
-        return array(
-            array(
-                'import_file_name'             => 'Default Demo',
-                'local_import_file'            => trailingslashit( get_template_directory() ) . '/admin/demo-import/content.xml',
-                'local_import_widget_file'     => trailingslashit( get_template_directory() ) . '/admin/demo-import/widgets.wie',
-                'local_import_customizer_file' => trailingslashit( get_template_directory() ) . '/admin/demo-import/customizer.dat',
-                'import_preview_image_url'     => trailingslashit( get_template_directory() ) .'/admin/demo-import/screenshot.png',
-                'import_notice'                => __( 'Please waiting for a few minutes, do not close the window or refresh the page until the data is imported.', 'ns-core' ),
-            ),
-        );
-    }
-    add_filter( 'pt-ocdi/import_files', 'ns_core_demo_import' );
-}
 
 ?>
