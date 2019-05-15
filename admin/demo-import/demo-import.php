@@ -21,6 +21,22 @@ if(!function_exists('ns_core_demo_import')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/*  Assign Front Page
+/*-----------------------------------------------------------------------------------*/
+function ns_core_assign_front_page() {
+
+    $front_page_id = get_page_by_title( 'Home' );
+    $blog_page_id  = get_page_by_title( 'Blog' );
+
+    update_option( 'show_on_front', 'page' );
+    update_option( 'page_on_front', $front_page_id->ID );
+    update_option( 'page_for_posts', $blog_page_id->ID );
+
+}
+add_action( 'pt-ocdi/after_import', 'ns_core_assign_front_page' );
+
+
+/*-----------------------------------------------------------------------------------*/
 /*  Add default theme pages, posts, and widgets
 /*-----------------------------------------------------------------------------------*/
 function ns_core_add_default_pages() {
