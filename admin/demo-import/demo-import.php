@@ -41,18 +41,6 @@ add_action( 'pt-ocdi/after_import', 'ns_core_assign_front_page' );
 /*-----------------------------------------------------------------------------------*/
 function ns_core_add_default_pages() {
 
-    //Add contact page
-    $post_contact_page = array(
-      'ID' => 0,
-      'page_template' => 'template_contact.php', //Sets the template for the page.
-      'post_name' => 'contact', // The name (slug) for your post
-      'post_status' => 'publish', //Set the status of the new post.
-      'post_title' => esc_html__('Contact', 'ns-core'), //The title of your post.
-      'post_type' => 'page', //Sometimes you want to post a page.
-      'post_content' => '',
-    ); 
-    if (!ns_core_post_exists_by_slug('contact', 'page')) { wp_insert_post($post_contact_page); }
-
     //Update "Hello World" blog post
     $hello_world_content = '';
     $hello_world_content .= esc_html__('Welcome to NightLight. This is your first post. Edit or delete it, then start writing! Here are some steps to help you get started.', 'ns-core');
