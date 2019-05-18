@@ -28,7 +28,7 @@ if (!empty($main_menu)) { ?>
 <!-- AFTER MAIN MENU -->
 <div class="header-menu-after">
     <?php if(!empty($header_menu_button_page) && !empty($header_menu_button_text)) { ?>
-        <a href="<?php echo esc_url($header_menu_button_page); ?>" class="button small light button-icon"><i class="fa fa-plus icon"></i><?php echo esc_attr($header_menu_button_text); ?></a>
+        <a href="<?php echo esc_url($header_menu_button_page); ?>" class="button small light button-icon button-header-cta"><i class="fa fa-plus icon"></i><?php echo esc_attr($header_menu_button_text); ?></a>
     <?php } ?>
     <?php do_action('ns_core_after_main_menu'); ?>
 </div>

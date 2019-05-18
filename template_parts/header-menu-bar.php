@@ -21,7 +21,7 @@ if (!empty($main_menu)) { ?>
     <div class="header-menu <?php if($header_menu_align == 'left') { echo 'align-left'; } else if($header_menu_align == 'center') { echo 'align-center'; } ?>">
         <div class="container-fixed">
             <?php if(!empty($header_menu_button_page) && !empty($header_menu_button_text)) { ?>
-                <a href="<?php echo esc_url($header_menu_button_page); ?>" class="button small alt"><?php echo esc_attr($header_menu_button_text); ?></a>
+                <a href="<?php echo esc_url($header_menu_button_page); ?>" class="button small alt button-header-cta"><?php echo esc_attr($header_menu_button_text); ?></a>
             <?php } ?>
             <?php echo ns_core_get_header_toggle(); ?>
             <?php echo wp_kses_post($main_menu); ?>
