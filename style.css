@@ -52,7 +52,6 @@ body {
 
 .container { position:relative; }
 .container-full { max-width:none !important; width:auto; }
-.container-fluid { padding:15px; }
 .col-full { padding:0; }
 
 .module { position:relative; padding:70px 0px 70px 0px; }
