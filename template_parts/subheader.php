@@ -70,10 +70,10 @@
                     if(!empty($page_for_posts)) { echo get_the_title( get_option('page_for_posts', true) ); } else { esc_html_e('Blog', 'ns-core'); }
                 } else if(is_page() || is_home() || is_single()) {
                     single_post_title();
-                } else if(is_archive()) {
-                    the_archive_title();
                 } else if(is_tax()) {
                     single_term_title();
+                } else if(is_archive()) {
+                    the_archive_title();
                 } else {
                     wp_title('');
     			}
