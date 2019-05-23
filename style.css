@@ -894,6 +894,7 @@ header.navbar-fixed { position:fixed; top:0; }
 .header-default.navbar-fixed { position:relative; }
 .header-default .header-menu.fixed { position:fixed; top:0px; background:#2f353d; }
 .header-default .header-menu .container-fixed { max-width:1140px; height:55px; margin:0 auto; background:#2f353d; }
+.header-default .container-full .header-menu .container-fixed { max-width:100%; padding:0px 15px; }
 
 .admin-bar header.header-classic.navbar-fixed, 
 .admin-bar header.header-transparent.navbar-fixed,
