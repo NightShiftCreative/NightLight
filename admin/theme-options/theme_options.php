@@ -203,13 +203,9 @@ function ns_core_theme_options_page() {
 
                             <?php
                                 $google_fonts = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyAieN5h5Kk6EzbJMGCuI-vBsE4rGFPMsSw';
-                                $arrContextOptions=array(
-                                    "ssl"=>array(
-                                        "verify_peer"=>false,
-                                        "verify_peer_name"=>false,
-                                    ),
-                                );
-                                $json = file_get_contents($google_fonts, false, stream_context_create($arrContextOptions));
+                                $google_font_args = array('timeout' => 20, 'sslverify' => false);
+                                $json = wp_remote_get($google_fonts, $google_font_args );
+                                $json = wp_remote_retrieve_body($json);
                                 $data = json_decode($json,true);
                                 $items = $data['items'];
                                 $i = 0;
