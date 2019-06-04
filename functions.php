@@ -423,9 +423,7 @@ add_filter( 'body_class', function( $classes ) {
 function ns_core_get_page_id() {
     global $post;
 
-    if(is_post_type_archive('job_listing') || is_singular('companies')) {
-        $page_id = esc_attr(get_option('job_manager_jobs_page_id'));
-    } else if(is_home()) {
+    if(is_home()) {
         $queried_object = get_queried_object();
         if(!empty($queried_object)) {
             $page_id = $queried_object->ID;
