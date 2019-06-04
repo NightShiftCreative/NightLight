@@ -12,6 +12,9 @@
     //Individual page banner settings (these overwrite global settings)
     if(!empty($template_args['post_id'])) {
         $values = get_post_custom( $template_args['post_id'] );
+    } else if(is_tax()) {
+        $page_id = -1;
+        $values = get_post_custom( $page_id );
     } else {
         $page_id = ns_core_get_page_id();
         $values = get_post_custom( $page_id );
