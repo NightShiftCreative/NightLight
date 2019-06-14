@@ -229,6 +229,7 @@
         }
     }
 
+    $dynamic_css = apply_filters( 'ns_core_dynamic_styles_filter', $dynamic_css);
     wp_add_inline_style( 'ns-core-dynamic-styles', $dynamic_css );
 
     /************************************************************************/
