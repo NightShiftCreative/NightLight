@@ -88,7 +88,7 @@
     $style_header_text_bright = ns_core_adjust_brightness($style_header_text, 25);
     $style_header_icon = $theme_options['ns_core_style_header_icon'];
     $style_header_menu = $theme_options['ns_core_style_header_menu'];
-    $style_header_submenu = ns_core_adjust_brightness($style_header_menu, -50);
+    $style_header_submenu = ns_core_adjust_brightness($style_header_menu, -20);
     $style_header_subsubmenu = ns_core_adjust_brightness($style_header_menu, -70);
     $style_page_banner_bg = $theme_options['ns_core_style_page_banner_bg'];
     $style_page_banner_title = $theme_options['ns_core_style_page_banner_title'];
