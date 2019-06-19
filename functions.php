@@ -306,7 +306,7 @@ function ns_core_get_header_items($class = null, $search = true) {
 
         <?php if(!empty($phone)) { ?>
         <div class="header-item header-phone left">
-            <div class="header-item-icon"><?php echo ns_core_get_icon($icon_set, 'phone', 'telephone'); ?></div>
+            <a href="tel:<?php echo $phone; ?>" class="header-item-icon"><?php echo ns_core_get_icon($icon_set, 'phone', 'telephone'); ?></a>
             <div class="header-item-text">
             <?php if(!empty($above_phone_text)) { echo '<p class="above-text">'.esc_attr($above_phone_text).'</p>'; } ?>
             <?php echo '<a href="tel:'.$phone.'"><span>'.$phone.'</span></a>'; ?>
@@ -316,7 +316,7 @@ function ns_core_get_header_items($class = null, $search = true) {
 
         <?php if(!empty($email)) { ?>
         <div class="header-item header-email left">
-            <div class="header-item-icon"><?php echo ns_core_get_icon($icon_set, 'envelope', '', 'mail'); ?></div>
+            <a href="mailto:<?php echo $email; ?>" class="header-item-icon"><?php echo ns_core_get_icon($icon_set, 'envelope', '', 'mail'); ?></a>
             <div class="header-item-text">
             <?php if(!empty($above_email_text)) { echo '<p class="above-text">'.esc_attr($above_email_text).'</p>'; } ?>
             <?php echo '<a href="mailto:'.$email.'" title="'.$email.'"><span>'.$email.'</span></a>'; ?>
