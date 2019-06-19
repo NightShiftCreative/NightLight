@@ -15,6 +15,7 @@
 
     $cta_title = isset( $values['ns_basics_cta_title'] ) ? $values['ns_basics_cta_title'][0] : '';
     $cta_text = isset( $values['ns_basics_cta_text'] ) ? $values['ns_basics_cta_text'][0] : '';
+    $cta_text = apply_filters('the_content', $cta_text);
     $cta_button_text = isset( $values['ns_basics_cta_button_text'] ) ? esc_attr( $values['ns_basics_cta_button_text'][0] ) : '';
     $cta_button_url = isset( $values['ns_basics_cta_button_url'] ) ? esc_attr( $values['ns_basics_cta_button_url'][0] ) : '';
     $cta_bg_img = isset( $values['ns_basics_cta_bg_img'] ) ? esc_attr( $values['ns_basics_cta_bg_img'][0] ) : '';
