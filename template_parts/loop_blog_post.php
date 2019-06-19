@@ -2,7 +2,7 @@
 $icon_set = ns_core_load_theme_options('ns_core_icon_set');
  ?>
 
-<article <?php post_class(); ?>>
+<article <?php post_class(); ?>> 
     <div class="blog-post shadow-hover">
                                     
         <?php if ( has_post_thumbnail() ) { ?>
@@ -25,8 +25,8 @@ $icon_set = ns_core_load_theme_options('ns_core_icon_set');
             if(is_single()) { 
                 the_content(); 
                 wp_link_pages();
-            } else {
-                the_excerpt(); ?>
+            } else { ?>
+                <p><?php if(!empty($excerpt_length)) { echo wp_trim_words(get_the_excerpt(), $excerpt_length); } else { echo get_the_excerpt(); } ?></p>
                 <a class="button button-icon small alt" href="<?php the_permalink(); ?>"><i class="fa fa-angle-right"></i><?php esc_html_e('Read More', 'ns-core'); ?></a>
             <?php } ?>
                                         
