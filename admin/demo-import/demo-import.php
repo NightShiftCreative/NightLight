@@ -43,7 +43,7 @@ function ns_core_add_default_pages() {
 
     //Update "Hello World" blog post
     $hello_world_content = '';
-    $hello_world_content .= esc_html__('Welcome to NightLight. This is your first post. Edit or delete it, then start writing! Here are some steps to help you get started.', 'ns-core');
+    $hello_world_content .= esc_html__('This is your first post. Edit or delete it, then start writing! Here are some steps to help you get started.', 'ns-core');
     $hello_world_content .= '<ul>';
     $hello_world_content .= '<li><a href="http://nightshiftcreative.co/homely-wp/doc/#configure-permalinks" target="_blank">'.esc_html__('1. Configure Permalinks', 'ns-core').'</a></li>';
     $hello_world_content .= '<li><a href="http://nightshiftcreative.co/homely-wp/doc/#create-home-page" target="_blank">'.esc_html__('2. Creating the Home Page', 'ns-core').'</a></li>';
