@@ -42,20 +42,19 @@ add_action( 'pt-ocdi/after_import', 'ns_core_assign_front_page' );
 function ns_core_add_default_pages() {
 
     //Update "Hello World" blog post
+    $theme_info = wp_get_theme();
+    $theme_name = $theme_info->name;
+    $theme_slug = sanitize_title($theme_name);
     $hello_world_content = '';
-    $hello_world_content .= esc_html__('This is your first post. Edit or delete it, then start writing! Here are some steps to help you get started.', 'ns-core');
-    $hello_world_content .= '<ul>';
-    $hello_world_content .= '<li><a href="http://nightshiftcreative.co/homely-wp/doc/#configure-permalinks" target="_blank">'.esc_html__('1. Configure Permalinks', 'ns-core').'</a></li>';
-    $hello_world_content .= '<li><a href="http://nightshiftcreative.co/homely-wp/doc/#create-home-page" target="_blank">'.esc_html__('2. Creating the Home Page', 'ns-core').'</a></li>';
-    $hello_world_content .= '<li><a href="http://nightshiftcreative.co/homely-wp/doc/#reading-settings" target="_blank">'.esc_html__('3. Update Reading Settings', 'ns-core').'</a></li>';
-    $hello_world_content .= '<li><a href="http://nightshiftcreative.co/homely-wp/doc/#create-properties-listing-page" target="_blank">'.esc_html__('4. Creating Properties Listing Page', 'ns-core').'</a></li>';
-    $hello_world_content .= '</ul>';
+    $hello_world_content .= __('This is your first post. Edit or delete it, then start writing! Read our', 'ns-core');
+    $hello_world_content .= ' <a href="https://studio.nightshiftcreative.co/docs/'.$theme_slug.'/installing-the-theme/" target="_blank">Getting Started</a>';
+    $hello_world_content .= __('docs to help you configure your site!', 'ns-core');
 
     $post_hello_world = array(
       'ID' => 1,
       'post_name' => 'welcome', // The name (slug) for your post
       'post_status' => 'publish', //Set the status of the new post.
-      'post_title' => esc_html__('Welcome to NightLight', 'ns-core'), //The title of your post.
+      'post_title' => esc_html__('Welcome to', 'ns-core').' '.$theme_name, //The title of your post.
       'post_type' => 'post', //Sometimes you want to post a page.
       'post_content' => $hello_world_content,
     );  
