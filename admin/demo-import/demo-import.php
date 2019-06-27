@@ -35,7 +35,6 @@ function ns_core_assign_front_page() {
 }
 add_action( 'pt-ocdi/after_import', 'ns_core_assign_front_page' );
 
-
 /*-----------------------------------------------------------------------------------*/
 /*  Add default theme pages, posts, and widgets
 /*-----------------------------------------------------------------------------------*/
@@ -69,9 +68,9 @@ function ns_core_add_default_pages() {
         $menu_id = wp_create_nav_menu($menu_name);
 
         wp_update_nav_menu_item($menu_id, 0, array(
-            'menu-item-title' =>  esc_html__('Contact', 'ns-core'),
+            'menu-item-title' =>  esc_html__('Sample Page', 'ns-core'),
             'menu-item-object' => 'page',
-            'menu-item-object-id' => get_page_by_path('contact')->ID,
+            'menu-item-object-id' => get_page_by_path('sample-page')->ID,
             'menu-item-type' => 'post_type',
             'menu-item-status' => 'publish'));
 
