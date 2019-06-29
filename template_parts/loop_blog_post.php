@@ -9,7 +9,7 @@ $icon_set = ns_core_load_theme_options('ns_core_icon_set');
         <a href="<?php the_permalink(); ?>" class="blog-post-img">
             <div class="img-fade"></div>
             <div class="blog-post-date"><?php the_time('\<\s\p\a\n\>j\<\/\s\p\a\n\> M') ?></div>
-            <?php the_post_thumbnail('full'); ?>
+            <?php if($blog_thumb == true) { the_post_thumbnail('ns-blog-thumb'); } else { the_post_thumbnail('ns-blog-full'); } ?>
         </a>
         <?php } ?>
 

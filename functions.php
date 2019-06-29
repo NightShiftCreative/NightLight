@@ -15,10 +15,16 @@ if ( ! isset( $content_width ) ) $content_width = 828;
 add_theme_support( 'automatic-feed-links' ); //Add RSS Feed Links
 add_theme_support( 'title-tag' ); //Add Title Tag Support
 add_theme_support( 'post-thumbnails' ); //Add post thumbnail support
-add_image_size( 'listing-thumbnail', 200, 200, array( 'center', 'center' ) );
-add_image_size( 'listing-thumbnail-small', 150, 100, false );
 add_theme_support( 'ns-basics' ); //NS Basics support
 do_action('ns_core_theme_support');
+
+/*-----------------------------------------------------------------------------------*/
+/*  Add Image Sizes
+/*-----------------------------------------------------------------------------------*/
+add_image_size( 'ns-blog-thumb', 700, 500, array( 'center', 'center' ) );
+add_image_size( 'ns-blog-full', 1200, 600, array( 'center', 'center' ) );
+add_image_size( 'listing-thumbnail', 200, 200, array( 'center', 'center' ) );
+add_image_size( 'listing-thumbnail-small', 150, 100, false );
 
 /*-----------------------------------------------------------------------------------*/
 /*  Require plugins (using TGM activation)
