@@ -135,11 +135,12 @@ function ns_core_load_theme_options($single_option = null, $return_defaults = fa
     	if(array_key_exists($single_option, $theme_options_init)) {
     		$default = $theme_options_init[$single_option];
     		if($esc == false) {
-                $single_option = get_option($single_option, $default);
+                $single_option_value = get_option($single_option, $default);
             } else {
-                $single_option = esc_attr(get_option($single_option, $default));
+                $single_option_value = esc_attr(get_option($single_option, $default));
             }
-            return $single_option;
+            $single_option_value = apply_filters( 'ns_core_theme_options_single_filter', $single_option_value, $single_option);
+            return $single_option_value;
     	} else {
     		return false;
     	}
@@ -148,6 +149,7 @@ function ns_core_load_theme_options($single_option = null, $return_defaults = fa
 	    	$theme_options[$key] = esc_attr(get_option($key, $value));
 	    }
 	    $theme_options['ns_core_default_font'] = 'Varela Round';
+        $theme_options = apply_filters( 'ns_core_theme_options_saved_filter', $theme_options);
     	return $theme_options;
     }	
     
