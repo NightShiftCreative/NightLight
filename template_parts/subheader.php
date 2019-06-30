@@ -40,7 +40,8 @@
 ?>
 
 <section class="module subheader <?php if(!empty($banner_class)) { echo $banner_class; } ?> <?php if($page_banner_title_align == 'right') { echo 'align-right'; } else if($page_banner_title_align == 'center') { echo 'align-center'; } else { echo 'align-left'; } ?> <?php if($page_banner_display_search == 'true') { echo 'has-search-form'; } ?> <?php if(!empty($page_banner_bg)) { echo ns_core_bgDisplay($page_banner_bg_display); } ?>" 
-	<?php 
+
+    <?php 
         $custom_style = '';
         if(!empty($page_banner_bg)) { $custom_style .= 'background-image:url('.$page_banner_bg.');'; }
         if(!empty($banner_padding_top)) {$custom_style .= 'padding-top:'.$banner_padding_top.'px;'; }
