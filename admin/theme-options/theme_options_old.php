@@ -103,75 +103,90 @@ $admin_obj = new NS_Basics_Admin(); ?>
                     <div id="general" class="tab-content">
                         <h2><?php echo esc_html_e('General', 'ns-core'); ?></h2>
 
-                        <?php
-                        //Site Width Field
-                        $site_width_field = array(
-                            'title' => esc_html__('Site Width', 'ns-core'),
-                            'name' => 'ns_core_site_width',
-                            'value' => $theme_options['ns_core_site_width'],
-                            'description' => esc_html__('Set the site width within the range of 700 - 1200px. The default value is 1170px.', 'ns-core'),
-                            'type' => 'number',
-                            'min' => 700,
-                            'max' => 1200,
-                        );
-                        $admin_obj->build_admin_field($site_width_field);
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label">
+                                    <label><?php echo esc_html_e('Site Width', 'ns-core'); ?></label>
+                                    <div class="admin-module-note"><?php echo esc_html_e('Set the site width within the range of 700 - 1200px. The default value is 1170px.', 'ns-core'); ?></div>
+                                </td>
+                                <td class="admin-module-field">
+                                    <input type="number" min="700" max="1200" id="site_width" name="ns_core_site_width" value="<?php echo $theme_options['ns_core_site_width']; ?>" />
+                                    <?php echo esc_html_e('Pixels', 'ns-core'); ?>
+                                </td>
+                            </tr>
+                        </table>
 
-                        //Global Background Field
-                        $global_bg_field = array(
-                            'title' => esc_html__('Global Background Image', 'ns-core'),
-                            'name' => 'ns_core_global_bg',
-                            'value' => $theme_options['ns_core_global_bg'],
-                            'type' => 'image_upload',
-                        );
-                        $admin_obj->build_admin_field($global_bg_field);
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label"><label><?php echo esc_html_e('Global Background Image', 'ns-core'); ?></label></td>
+                                <td class="admin-module-field">
+                                    <input type="text" id="global_bg" name="ns_core_global_bg" value="<?php echo $theme_options['ns_core_global_bg']; ?>" />
+                                    <input id="_btn" class="ns_upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
+                                    <span class="button-secondary remove"><?php echo esc_html_e('Remove', 'ns-core'); ?></span>
+                                </td>
+                            </tr>
+                        </table>
 
-                        //Global Background Display Field
-                        $global_bg_display_field = array(
-                            'title' => esc_html__('Global Background Display', 'ns-core'),
-                            'name' => 'ns_core_global_bg_display',
-                            'value' => $theme_options['ns_core_global_bg_display'],
-                            'type' => 'select',
-                            'options' => array('Cover' => 'cover', 'Fixed' => 'fixed', 'Tiled' => 'repeat'),
-                        );
-                        $admin_obj->build_admin_field($global_bg_display_field);
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label"><label><?php echo esc_html_e('Global Background Display', 'ns-core'); ?></label></td>
+                                <td class="admin-module-field">
+                                    <select name="ns_core_global_bg_display">
+                                        <option value="cover" <?php if($theme_options['ns_core_global_bg_display'] == 'cover') { echo 'selected'; } ?>><?php echo esc_html_e('Cover', 'ns-core'); ?></option>
+                                        <option value="fixed" <?php if($theme_options['ns_core_global_bg_display'] == 'fixed') { echo 'selected'; } ?>><?php echo esc_html_e('Fixed', 'ns-core'); ?></option>
+                                        <option value="repeat" <?php if($theme_options['ns_core_global_bg_display'] == 'repeat') { echo 'selected'; } ?>><?php echo esc_html_e('Tiled', 'ns-core'); ?></option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
 
-                        //Icon Style Field
-                        $icon_style_field = array(
-                            'title' => esc_html__('Icon Style', 'ns-core'),
-                            'name' => 'ns_core_icon_set',
-                            'value' => $theme_options['ns_core_icon_set'],
-                            'type' => 'select',
-                            'options' => array('Font Awesome' => 'fa', 'Line Icons' => 'line', 'Dripicons' => 'dripicon'),
-                        );
-                        $admin_obj->build_admin_field($icon_style_field);
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label"><label><?php echo esc_html_e('Icon Style', 'ns-core'); ?></label></td>
+                                <td class="admin-module-field">
+                                    <select name="ns_core_icon_set">
+                                        <option value="fa" <?php if($theme_options['ns_core_icon_set'] == 'fa') { echo 'selected'; } ?>><?php echo esc_html_e('Font Awesome', 'ns-core'); ?></option>
+                                        <option value="line" <?php if($theme_options['ns_core_icon_set'] == 'line') { echo 'selected'; } ?>><?php echo esc_html_e('Line Icons', 'ns-core'); ?></option>
+                                        <option value="dripicon" <?php if($theme_options['ns_core_icon_set'] == 'dripicon') { echo 'selected'; } ?>><?php echo esc_html_e('Dripicons', 'ns-core'); ?></option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
 
-                        //RTL Field
-                        $rtl_field = array(
-                            'title' => esc_html__('Enable RTL(Right to Left) layout', 'ns-core'),
-                            'name' => 'ns_core_rtl',
-                            'value' => $theme_options['ns_core_rtl'],
-                            'type' => 'switch',
-                        );
-                        $admin_obj->build_admin_field($rtl_field);
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label"><label><?php echo esc_html_e('Enable RTL(Right to Left) layout', 'ns-core'); ?></label></td>
+                                <td class="admin-module-field">
+                                    <div class="toggle-switch" title="<?php if($theme_options['ns_core_rtl'] == 'true') { esc_html_e('Active', 'ns-core'); } else { esc_html_e('Disabled', 'ns-core'); } ?>">
+                                        <input type="checkbox" name="ns_core_rtl" value="true" class="toggle-switch-checkbox" id="rtl" <?php checked('true', $theme_options['ns_core_rtl'], true) ?>>
+                                        <label class="toggle-switch-label" for="rtl"><?php if($theme_options['ns_core_rtl'] == 'true') { echo '<span class="on">'.esc_html__('On', 'ns-core').'</span>'; } else { echo '<span>'.esc_html__('Off', 'ns-core').'</span>'; } ?></label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
 
-                        //Enable Preloader Field
-                        $preloader_field = array(
-                            'title' => esc_html__('Enable Preloader', 'ns-core'),
-                            'name' => 'ns_core_preloader',
-                            'value' => $theme_options['ns_core_preloader'],
-                            'type' => 'switch',
-                        );
-                        $admin_obj->build_admin_field($preloader_field);
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label"><label><?php echo esc_html_e('Enable Preloader', 'ns-core'); ?></label></td>
+                                <td class="admin-module-field">
+                                    <div class="toggle-switch" title="<?php if($theme_options['ns_core_preloader'] == 'true') { esc_html_e('Active', 'ns-core'); } else { esc_html_e('Disabled', 'ns-core'); } ?>">
+                                        <input type="checkbox" name="ns_core_preloader" value="true" class="toggle-switch-checkbox" id="preloader" <?php checked('true', $theme_options['ns_core_preloader'], true) ?>>
+                                        <label class="toggle-switch-label" for="preloader"><?php if($theme_options['ns_core_preloader'] == 'true') { echo '<span class="on">'.esc_html__('On', 'ns-core').'</span>'; } else { echo '<span>'.esc_html__('Off', 'ns-core').'</span>'; } ?></label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
 
-                        //Preloader Image Field
-                        $preloader_img_field = array(
-                            'title' => esc_html__('Preloader Custom Image', 'ns-core'),
-                            'name' => 'ns_core_preloader_img',
-                            'value' => $theme_options['ns_core_preloader_img'],
-                            'type' => 'image_upload',
-                        );
-                        $admin_obj->build_admin_field($preloader_img_field);
-                        ?>
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label"><label><?php echo esc_html_e('Preloader Custom Image', 'ns-core'); ?></label></td>
+                                <td class="admin-module-field">
+                                    <input type="text" id="preloader_img" name="ns_core_preloader_img" value="<?php echo $theme_options['ns_core_preloader_img']; ?>" />
+                                    <input id="_btn" class="ns_upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
+                                    <span class="button-secondary remove"><?php echo esc_html_e('Remove', 'ns-core'); ?></span>
+                                </td>
+                            </tr>
+                        </table>
 
                         <br/><br/>
                         <div class="admin-module admin-module-fonts no-padding">
@@ -188,36 +203,46 @@ $admin_obj = new NS_Basics_Admin(); ?>
                             </h3>
 
                             <?php
-                            $google_fonts = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyAieN5h5Kk6EzbJMGCuI-vBsE4rGFPMsSw';
-                            $google_font_args = array('timeout' => 20, 'sslverify' => false);
-                            $json = wp_remote_get($google_fonts, $google_font_args );
-                            $json = wp_remote_retrieve_body($json);
-                            $data = json_decode($json,true);
-                            $items = $data['items'];
-                            $google_font_options = array();
-                            foreach($items as $item) { $google_font_options[$item['family']] = $item['family']; }
-                            $i = 0;
-                            
-                            //Heading Font Field
-                            $heading_font_field = array(
-                                'title' => esc_html__('Heading Font Face', 'ns-core'),
-                                'name' => 'ns_core_heading_font',
-                                'value' => $theme_options['ns_core_heading_font'],
-                                'type' => 'select',
-                                'options' => $google_font_options,
-                            );
-                            $admin_obj->build_admin_field($heading_font_field);
-
-                            //Body Font Field
-                            $body_font_field = array(
-                                'title' => esc_html__('Body Font Face', 'ns-core'),
-                                'name' => 'ns_core_body_font',
-                                'value' => $theme_options['ns_core_body_font'],
-                                'type' => 'select',
-                                'options' => $google_font_options,
-                            );
-                            $admin_obj->build_admin_field($body_font_field);
+                                $google_fonts = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyAieN5h5Kk6EzbJMGCuI-vBsE4rGFPMsSw';
+                                $google_font_args = array('timeout' => 20, 'sslverify' => false);
+                                $json = wp_remote_get($google_fonts, $google_font_args );
+                                $json = wp_remote_retrieve_body($json);
+                                $data = json_decode($json,true);
+                                $items = $data['items'];
+                                $i = 0;
                             ?>
+
+                            <table class="admin-module">
+                                <tr>
+                                    <td class="admin-module-label"><label><?php esc_html_e('Heading Font Face', 'ns-core'); ?></label></td>
+                                    <td class="admin-module-field">
+                                        <select name="ns_core_heading_font">
+                                        <option value=""><?php esc_html_e('Choose a font...', 'ns-core'); ?></option>
+                                        <?php
+                                            foreach ($items as $item) {
+                                                $i++; ?>
+                                                <option value="<?php echo $item['family']; ?>" <?php if($theme_options['ns_core_heading_font'] == $item['family']) { echo 'selected'; } ?>><?php echo $item['family']; ?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table class="admin-module">
+                                <tr>
+                                    <td class="admin-module-label"><label><?php esc_html_e('Body Font Face', 'ns-core'); ?></label></td>
+                                    <td class="admin-module-field">
+                                        <select name="ns_core_body_font">
+                                        <option value=""><?php esc_html_e('Choose a font...', 'ns-core'); ?></option>
+                                        <?php
+                                            foreach ($items as $item) {
+                                                $i++; ?>
+                                                <option value="<?php echo $item['family']; ?>" <?php if($theme_options['ns_core_body_font'] == $item['family']) { echo 'selected'; } ?>><?php echo $item['family']; ?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
 
                         <h3>
@@ -225,27 +250,30 @@ $admin_obj = new NS_Basics_Admin(); ?>
                             <span class="admin-module-note"><?php esc_html_e('Add any custom scripts, such as a Google Anayltics tracking code. Include <script> tags.', 'ns-core'); ?></span>
                         </h3>
 
-                        <?php
-                        //Header Scripts Field
-                        $header_scripts_field = array(
-                            'title' => esc_html__('Header Scripts', 'ns-core'),
-                            'name' => 'ns_core_custom_scripts_header',
-                            'description' => esc_html__('These scripts will be printed in the <head> section.', 'ns-core'),
-                            'value' => $theme_options['ns_core_custom_scripts_header'],
-                            'type' => 'textarea',
-                        );
-                        $admin_obj->build_admin_field($header_scripts_field);
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label">
+                                    <label><?php esc_html_e('Header Scripts', 'ns-core'); ?></label>
+                                    <span class="admin-module-note"><?php esc_html_e('These scripts will be printed in the <head> section.', 'ns-core'); ?></span>
+                                </td>
+                                <td class="admin-module-field">
+                                    <textarea name="ns_core_custom_scripts_header"><?php echo $theme_options['ns_core_custom_scripts_header']; ?></textarea>
+                                </td>
+                            </tr>
+                        </table>
 
-                        //Footer Scripts Field
-                        $footer_scripts_field = array(
-                            'title' => esc_html__('Footer Scripts', 'ns-core'),
-                            'name' => 'ns_core_custom_scripts_footer',
-                            'description' => esc_html__('These scripts will be printed at the bottom of the <body> section.', 'ns-core'),
-                            'value' => $theme_options['ns_core_custom_scripts_footer'],
-                            'type' => 'textarea',
-                        );
-                        $admin_obj->build_admin_field($footer_scripts_field);
-                        ?>
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label">
+                                    <label><?php esc_html_e('Footer Scripts', 'ns-core'); ?></label>
+                                    <span class="admin-module-note"><?php esc_html_e('These scripts will be printed at the bottom of the <body> section.', 'ns-core'); ?></span>
+                                </td>
+                                <td class="admin-module-field">
+                                    <textarea name="ns_core_custom_scripts_footer"><?php echo $theme_options['ns_core_custom_scripts_footer']; ?></textarea>
+                                </td>
+                            </tr>
+                        </table>
+
 
                         <?php do_action('ns_core_after_general_theme_options'); ?>
 
@@ -254,170 +282,134 @@ $admin_obj = new NS_Basics_Admin(); ?>
                     <div id="contact" class="tab-content">
                         <h2><?php echo esc_html_e('Global Contact Details', 'ns-core'); ?></h2>
 
-                        <?php
-                        //Phone Field
-                        $phone_field = array(
-                            'title' => esc_html__('Phone', 'ns-core'),
-                            'name' => 'ns_core_phone',
-                            'value' => $theme_options['ns_core_phone'],
-                            'type' => 'text',
-                        );
-                        $admin_obj->build_admin_field($phone_field);
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label"><label><?php echo esc_html_e('Phone', 'ns-core'); ?></label></td>
+                                <td class="admin-module-field"><input type="text" id="phone" name="ns_core_phone" value="<?php echo $theme_options['ns_core_phone']; ?>" /></td>
+                            </tr>
+                        </table>
 
-                        //Email Field
-                        $email_field = array(
-                            'title' => esc_html__('Email', 'ns-core'),
-                            'name' => 'ns_core_email',
-                            'value' => $theme_options['ns_core_email'],
-                            'type' => 'text',
-                        );
-                        $admin_obj->build_admin_field($email_field);
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label"><label><?php echo esc_html_e('Email', 'ns-core'); ?></label></td>
+                                <td class="admin-module-field"><input type="text" id="email" name="ns_core_email" value="<?php echo $theme_options['ns_core_email']; ?>" /></td>
+                            </tr>
+                        </table>
 
-                        //Address Field
-                        $address_field = array(
-                            'title' => esc_html__('Address', 'ns-core'),
-                            'name' => 'ns_core_address',
-                            'value' => $theme_options['ns_core_address'],
-                            'type' => 'text',
-                        );
-                        $admin_obj->build_admin_field($address_field);
-                        ?>
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label"><label><?php echo esc_html_e('Address', 'ns-core'); ?></label></td>
+                                <td class="admin-module-field"><input type="text" name="ns_core_address" value="<?php echo $theme_options['ns_core_address']; ?>" /></td>
+                            </tr>
+                        </table>
 
                         <br/><h3><?php echo esc_html_e('Social Media', 'ns-core'); ?></h3>
                         <div class="social-media-profiles">
 
-                            <?php
-                            //Facebook Field
-                            $fb_field = array(
-                                'title' => esc_html__('Facebook', 'ns-core'),
-                                'name' => 'ns_core_fb',
-                                'value' => $theme_options['ns_core_fb'],
-                                'type' => 'text',
-                            );
-                            $admin_obj->build_admin_field($fb_field);
+                            <table class="admin-module">
+                                <tr>
+                                    <td class="admin-module-label"><label>Facebook</label></td>
+                                    <td class="admin-module-field"><input type="text" id="fb" name="ns_core_fb" value="<?php echo $theme_options['ns_core_fb']; ?>" /></td>
+                                </tr>
+                            </table>
 
-                            //Twitter Field
-                            $twitter_field = array(
-                                'title' => esc_html__('Twitter', 'ns-core'),
-                                'name' => 'ns_core_twitter',
-                                'value' => $theme_options['ns_core_twitter'],
-                                'type' => 'text',
-                            );
-                            $admin_obj->build_admin_field($twitter_field);
+                            <table class="admin-module">
+                                <tr>
+                                    <td class="admin-module-label"><label>Twitter</label></td>
+                                    <td class="admin-module-field"><input type="text" id="twitter" name="ns_core_twitter" value="<?php echo $theme_options['ns_core_twitter']; ?>" /></td>
+                                </tr>
+                            </table>
 
-                            //Google Plus Field
-                            $google_field = array(
-                                'title' => esc_html__('Google Plus', 'ns-core'),
-                                'name' => 'ns_core_google',
-                                'value' => $theme_options['ns_core_google'],
-                                'type' => 'text',
-                            );
-                            $admin_obj->build_admin_field($google_field);
+                            <table class="admin-module">
+                                <tr>
+                                    <td class="admin-module-label"><label>Google Plus</label></td>
+                                    <td class="admin-module-field"><input type="text" id="google" name="ns_core_google" value="<?php echo $theme_options['ns_core_google']; ?>" /></td>
+                                </tr>
+                            </table>
 
-                            //Linkedin Field
-                            $linkedin_field = array(
-                                'title' => esc_html__('LinkedIn', 'ns-core'),
-                                'name' => 'ns_core_linkedin',
-                                'value' => $theme_options['ns_core_linkedin'],
-                                'type' => 'text',
-                            );
-                            $admin_obj->build_admin_field($linkedin_field);
+                            <table class="admin-module">
+                                <tr>
+                                    <td class="admin-module-label"><label>LinkedIn</label></td>
+                                    <td class="admin-module-field"><input type="text" id="linkedin" name="ns_core_linkedin" value="<?php echo $theme_options['ns_core_linkedin']; ?>" /></td>
+                                </tr>
+                            </table>
 
-                            //Youtube Field
-                            $youtube_field = array(
-                                'title' => esc_html__('Youtube', 'ns-core'),
-                                'name' => 'ns_core_youtube',
-                                'value' => $theme_options['ns_core_youtube'],
-                                'type' => 'text',
-                            );
-                            $admin_obj->build_admin_field($youtube_field);
+                            <table class="admin-module">
+                                <tr>
+                                    <td class="admin-module-label"><label>Youtube</label></td>
+                                    <td class="admin-module-field"><input type="text" id="youtube" name="ns_core_youtube" value="<?php echo $theme_options['ns_core_youtube']; ?>" /></td>
+                                </tr>
+                            </table>
 
-                            //Vimeo Field
-                            $vimeo_field = array(
-                                'title' => esc_html__('Vimeo', 'ns-core'),
-                                'name' => 'ns_core_vimeo',
-                                'value' => $theme_options['ns_core_vimeo'],
-                                'type' => 'text',
-                            );
-                            $admin_obj->build_admin_field($vimeo_field);
+                            <table class="admin-module">
+                                <tr>
+                                    <td class="admin-module-label"><label>Vimeo</label></td>
+                                    <td class="admin-module-field"><input type="text" id="vimeo" name="ns_core_vimeo" value="<?php echo $theme_options['ns_core_vimeo']; ?>" /></td>
+                                </tr>
+                            </table>
 
-                            //Instagram Field
-                            $instagram_field = array(
-                                'title' => esc_html__('Instagram', 'ns-core'),
-                                'name' => 'ns_core_instagram',
-                                'value' => $theme_options['ns_core_instagram'],
-                                'type' => 'text',
-                            );
-                            $admin_obj->build_admin_field($instagram_field);
+                            <table class="admin-module">
+                                <tr>
+                                    <td class="admin-module-label"><label>Instagram</label></td>
+                                    <td class="admin-module-field"><input type="text" id="instagram" name="ns_core_instagram" value="<?php echo $theme_options['ns_core_instagram']; ?>" /></td>
+                                </tr>
+                            </table>
 
-                            //Flickr Field
-                            $flickr_field = array(
-                                'title' => esc_html__('Flickr', 'ns-core'),
-                                'name' => 'ns_core_flickr',
-                                'value' => $theme_options['ns_core_flickr'],
-                                'type' => 'text',
-                            );
-                            $admin_obj->build_admin_field($flickr_field);
+                            <table class="admin-module">
+                                <tr>
+                                    <td class="admin-module-label"><label>Flickr</label></td>
+                                    <td class="admin-module-field"><input type="text" id="flickr" name="ns_core_flickr" value="<?php echo $theme_options['ns_core_flickr']; ?>" /></td>
+                                </tr>
+                            </table>
 
-                            //Dribbble Field
-                            $dribbble_field = array(
-                                'title' => esc_html__('Dribbble', 'ns-core'),
-                                'name' => 'ns_core_dribbble',
-                                'value' => $theme_options['ns_core_dribbble'],
-                                'type' => 'text',
-                            );
-                            $admin_obj->build_admin_field($dribbble_field);
-                            ?>
+                            <table class="admin-module">
+                                <tr>
+                                    <td class="admin-module-label"><label>Dribbble</label></td>
+                                    <td class="admin-module-field"><input type="text" id="dribbble" name="ns_core_dribbble" value="<?php echo $theme_options['ns_core_dribbble']; ?>" /></td>
+                                </tr>
+                            </table>
                         </div><!-- end social media profiles -->
 
                         <br/><h3><?php echo esc_html_e('Contact Page', 'ns-core'); ?></h3>
-                        
-                        <?php
-                        //Contact Details Field
-                        $contact_details_field = array(
-                            'title' => esc_html__('Display Contact Details Section', 'ns-core'),
-                            'name' => 'ns_core_contact_details_display',
-                            'value' => $theme_options['ns_core_contact_details_display'],
-                            'type' => 'switch',
-                        );
-                        $admin_obj->build_admin_field($contact_details_field);
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label"><label for="contact_details_display"><?php echo esc_html_e('Display Contact Details Section', 'ns-core'); ?></label></td>
+                                <td class="admin-module-field">
+                                    <div class="toggle-switch" title="<?php if($theme_options['ns_core_contact_details_display'] == 'true') { esc_html_e('Active', 'ns-core'); } else { esc_html_e('Disabled', 'ns-core'); } ?>">
+                                        <input type="checkbox" name="ns_core_contact_details_display" value="true" class="toggle-switch-checkbox" id="contact_details_display" <?php checked('true', $theme_options['ns_core_contact_details_display'], true) ?>>
+                                        <label class="toggle-switch-label" for="contact_details_display"><?php if($theme_options['ns_core_contact_details_display'] == 'true') { echo '<span class="on">'.esc_html__('On', 'ns-core').'</span>'; } else { echo '<span>'.esc_html__('Off', 'ns-core').'</span>'; } ?></label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
 
-                        //Contact Form Title Field
-                        $contact_form_title_field = array(
-                            'title' => esc_html__('Contact Form Title', 'ns-core'),
-                            'name' => 'ns_core_contact_form_title',
-                            'value' => $theme_options['ns_core_contact_form_title'],
-                            'type' => 'text',
-                        );
-                        $admin_obj->build_admin_field($contact_form_title_field);
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label"><label for="contact_form_title"><?php echo esc_html_e('Contact Form Title', 'ns-core'); ?></label></td>
+                                <td class="admin-module-field"><input type="text" id="contact_form_title" name="ns_core_contact_form_title" value="<?php echo $theme_options['ns_core_contact_form_title']; ?>" /></td>
+                            </tr>
+                        </table>
 
-                        //Text Before Form Field
-                        $text_before_form_field = array(
-                            'title' => esc_html__('Text Before Form', 'ns-core'),
-                            'name' => 'ns_core_contact_form_before',
-                            'value' => $theme_options['ns_core_contact_form_before'],
-                            'type' => 'textarea',
-                        );
-                        $admin_obj->build_admin_field($text_before_form_field);
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label"><label for="contact_form_before"><?php echo esc_html_e('Text Before Form', 'ns-core'); ?></label></td>
+                                <td class="admin-module-field"><textarea id="contact_form_before" name="ns_core_contact_form_before"><?php echo $theme_options['ns_core_contact_form_before']; ?></textarea></td>
+                            </tr>
+                        </table>
 
-                        //Text after Form Field
-                        $text_after_form_field = array(
-                            'title' => esc_html__('Text After Form', 'ns-core'),
-                            'name' => 'ns_core_contact_form_after',
-                            'value' => $theme_options['ns_core_contact_form_after'],
-                            'type' => 'textarea',
-                        );
-                        $admin_obj->build_admin_field($text_after_form_field);
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label"><label for="contact_form_after"><?php echo esc_html_e('Text After Form', 'ns-core'); ?></label></td>
+                                <td class="admin-module-field"><textarea id="contact_form_after" name="ns_core_contact_form_after"><?php echo $theme_options['ns_core_contact_form_after']; ?></textarea></td>
+                            </tr>
+                        </table>
 
-                        //Contact Form Success Message Field
-                        $contact_form_success_field = array(
-                            'title' => esc_html__('Contact Form Success Message', 'ns-core'),
-                            'name' => 'ns_core_contact_form_success',
-                            'value' => $theme_options['ns_core_contact_form_success'],
-                            'type' => 'text',
-                        );
-                        $admin_obj->build_admin_field($contact_form_success_field);
-                        ?>
+                        <table class="admin-module">
+                            <tr>
+                                <td class="admin-module-label"><label for="contact_form_success"><?php echo esc_html_e('Contact Form Success Message', 'ns-core'); ?></label></td>
+                                <td class="admin-module-field"><input type="text" id="contact_form_success" name="ns_core_contact_form_success" value="<?php echo $theme_options['ns_core_contact_form_success']; ?>" /></td>
+                            </tr>
+                        </table>
 
                         <table class="admin-module no-border">
                             <tr>
@@ -431,7 +423,7 @@ $admin_obj = new NS_Basics_Admin(); ?>
                                 
                                     <div class="admin-module no-border admin-module-contact-form-default hide-soft <?php if($contact_form_source == 'default') { echo 'show'; } ?>">
                                         <?php if(!function_exists('ns_basics_template_loader')) { 
-                                            echo '<i>You need to install and/or activate the required bundled plugin: <b>Nightshift Basics</b></i>'; 
+                                            echo '<i>You need to install and/or activate the required bundled plugin: <b>NightShift Basics</b></i>'; 
                                         } ?>
                                     </div>
 
