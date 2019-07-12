@@ -919,7 +919,7 @@ $admin_obj = new NS_Basics_Admin(); ?>
                         //Member Dashboard Page
                         $member_dashboard_page_field = array(
                             'title' => esc_html__('Select Member Dashboard Page', 'ns-core'),
-                            'name' => 'ns_core_members_register_page',
+                            'name' => 'ns_core_members_dashboard_page',
                             'description' => esc_html__('Create a page and assign it the Dashboard template, or insert the User Dashboard shortcode.', 'ns-core'),
                             'value' => $theme_options['ns_core_members_dashboard_page'],
                             'type' => 'select',

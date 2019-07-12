@@ -342,7 +342,7 @@ function ns_core_get_header_member_actions($class = null, $login_class = null, $
             <a href="<?php echo esc_url($members_login_page); ?>" class="login-link <?php echo $login_class; ?>"><?php echo ns_core_get_icon($icon_set, 'sign-in-alt', 'enter-right', 'exit'); ?><?php esc_html_e( 'Login', 'ns-core' ); ?></a>
             <a href="<?php echo esc_url($members_register_page); ?>" class="register-link <?php echo $register_class; ?>"><?php echo ns_core_get_icon($icon_set, 'user-plus', 'user', 'user'); ?><?php esc_html_e( 'Register', 'ns-core' ); ?></a>
         </div>
-    <?php } else {  ?>
+    <?php } else { ?>
         <div class="header-member-actions <?php echo $class; ?> <?php if($members_display_avatar == 'true') { echo 'has-avatar'; } ?>">
             <div class="member-actions-toggle <?php echo $toggle_class; ?>">
                 <?php if($members_display_avatar == 'true') { 
