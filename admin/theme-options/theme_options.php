@@ -425,12 +425,16 @@ $admin_obj = new NS_Basics_Admin(); ?>
                             'value' => $theme_options['ns_core_contact_form_source'],
                             'type' => 'radio_image',
                             'options' => array(
-                                esc_html__('Default Contact Form', 'ns-basics') => array(
-                                    'value' => 'default',
-                                ), 
-                                esc_html__('Contact Form 7 Plugin', 'ns-basics') => array(
-                                    'value' => 'contact-form-7', 
-
+                                esc_html__('Default Contact Form', 'ns-core') => array('value' => 'default'), 
+                                esc_html__('Contact Form 7 Plugin', 'ns-core') => array('value' => 'contact-form-7'),
+                            ),
+                            'children' => array(
+                                'banner_title' => array(
+                                    'title' => esc_html__('Contact From 7 ID', 'ns-core'),
+                                    'name' => 'ns_core_contact_form_id',
+                                    'type' => 'number',
+                                    'value' => $theme_options['ns_core_contact_form_id'],
+                                    'parent_val' => 'contact-form-7',
                                 ),
                             ),
                         );
@@ -448,316 +452,267 @@ $admin_obj = new NS_Basics_Admin(); ?>
                             <div class="ns-accordion-header"><i class="fa fa-chevron-right"></i> <?php echo esc_html_e('Top Bar Options', 'ns-core'); ?></div>
                             <div class="ns-accordion-content">
 
-                                <table class="admin-module">
-                                    <tr>
-                                        <td class="admin-module-label"><label><?php echo esc_html_e('Display top bar', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field">                             
-                                            <div class="toggle-switch" title="<?php if($theme_options['ns_core_display_topbar'] == 'true') { esc_html_e('Active', 'ns-core'); } else { esc_html_e('Disabled', 'ns-core'); } ?>">
-                                                <input type="checkbox" name="ns_core_display_topbar" value="true" class="toggle-switch-checkbox" id="display_topbar" <?php checked('true', $theme_options['ns_core_display_topbar'], true) ?>>
-                                                <label class="toggle-switch-label" for="display_topbar"><?php if($theme_options['ns_core_display_topbar'] == 'true') { echo '<span class="on">'.esc_html__('On', 'ns-core').'</span>'; } else { echo '<span>'.esc_html__('Off', 'ns-core').'</span>'; } ?></label>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
+                                <?php 
+                                //Display top bar Field
+                                $display_top_bar_field = array(
+                                    'title' => esc_html__('Display top bar', 'ns-core'),
+                                    'name' => 'ns_core_display_topbar',
+                                    'value' => $theme_options['ns_core_display_topbar'],
+                                    'type' => 'switch',
+                                );
+                                $admin_obj->build_admin_field($display_top_bar_field);
 
-                                <table class="admin-module">
-                                    <tr>
-                                        <td class="admin-module-label"><label><?php echo esc_html_e('Top Bar First Field', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field">
-                                            <?php $topbar_first_field = $theme_options['ns_core_topbar_first_field']; ?>
-                                            <select name="ns_core_topbar_first_field" class="top-bar-field-select">
-                                                <option value="email" <?php if(esc_attr($topbar_first_field) == 'email') { echo 'selected'; } ?>>Email</option>
-                                                <option value="phone" <?php if(esc_attr($topbar_first_field) == 'phone') { echo 'selected'; } ?>>Phone</option>
-                                                <option value="social" <?php if(esc_attr($topbar_first_field) == 'social') { echo 'selected'; } ?>>Social Links</option>
-                                                <option value="member" <?php if(esc_attr($topbar_first_field) == 'member') { echo 'selected'; } ?>>Member Actions</option>
-                                                <option value="custom" <?php if(esc_attr($topbar_first_field) == 'custom') { echo 'selected'; } ?>>Custom</option>
-                                                <option value="" <?php if(esc_attr($topbar_first_field) == '') { echo 'selected'; } ?>>None</option>
-                                            </select>
-                                            <div class="top-bar-custom <?php if($topbar_first_field != 'custom') { echo 'hide-soft'; } ?>">
-                                                <label><?php echo esc_html_e('Custom Content', 'ns-core'); ?></label>
-                                                <textarea class="" name="ns_core_topbar_first_field_custom"><?php echo $theme_options['ns_core_topbar_first_field_custom']; ?></textarea>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
+                                //Top bar First Field
+                                $top_bar_first_field = array(
+                                    'title' => esc_html__('Top Bar First Field', 'ns-core'),
+                                    'name' => 'ns_core_topbar_first_field',
+                                    'value' => $theme_options['ns_core_topbar_first_field'],
+                                    'type' => 'select',
+                                    'options' => array('Email' => 'email', 'Phone' => 'phone', 'Social Links' => 'social', 'Member Actions' => 'member', 'Custom' => 'custom', 'None' => ''),
+                                    'children' => array(
+                                        'custom_content' => array(
+                                            'title' => esc_html__('Custom Content', 'ns-basics'),
+                                            'name' => 'ns_core_topbar_first_field_custom',
+                                            'type' => 'textarea',
+                                            'value' => $theme_options['ns_core_topbar_first_field_custom'],
+                                            'parent_val' => 'custom',
+                                        ),
+                                    ),
+                                );
+                                $admin_obj->build_admin_field($top_bar_first_field);
 
-                                <table class="admin-module">
-                                    <tr>
-                                        <td class="admin-module-label"><label><?php echo esc_html_e('Top Bar Second Field', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field">
-                                            <?php $topbar_second_field = $theme_options['ns_core_topbar_second_field']; ?>
-                                            <select name="ns_core_topbar_second_field" class="top-bar-field-select">
-                                                <option value="email" <?php if(esc_attr($topbar_second_field) == 'email') { echo 'selected'; } ?>>Email</option>
-                                                <option value="phone" <?php if(esc_attr($topbar_second_field) == 'phone') { echo 'selected'; } ?>>Phone</option>
-                                                <option value="social" <?php if(esc_attr($topbar_second_field) == 'social') { echo 'selected'; } ?>>Social Links</option>
-                                                <option value="member" <?php if(esc_attr($topbar_second_field) == 'member') { echo 'selected'; } ?>>Member Actions</option>
-                                                <option value="custom" <?php if(esc_attr($topbar_second_field) == 'custom') { echo 'selected'; } ?>>Custom</option>
-                                                <option value="" <?php if(esc_attr($topbar_second_field) == '') { echo 'selected'; } ?>>None</option>
-                                            </select>
-                                            <div class="top-bar-custom <?php if($topbar_second_field != 'custom') { echo 'hide-soft'; } ?>">
-                                                <label><?php echo esc_html_e('Custom Content', 'ns-core'); ?></label>
-                                                <textarea class="" name="ns_core_topbar_second_field_custom"><?php echo $theme_options['ns_core_topbar_second_field_custom']; ?></textarea>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
+                                //Top bar Second Field
+                                $top_bar_second_field = array(
+                                    'title' => esc_html__('Top Bar Second Field', 'ns-core'),
+                                    'name' => 'ns_core_topbar_second_field',
+                                    'value' => $theme_options['ns_core_topbar_second_field'],
+                                    'type' => 'select',
+                                    'options' => array('Email' => 'email', 'Phone' => 'phone', 'Social Links' => 'social', 'Member Actions' => 'member', 'Custom' => 'custom', 'None' => ''),
+                                    'children' => array(
+                                        'custom_content' => array(
+                                            'title' => esc_html__('Custom Content', 'ns-basics'),
+                                            'name' => 'ns_core_topbar_second_field_custom',
+                                            'type' => 'textarea',
+                                            'value' => $theme_options['ns_core_topbar_second_field_custom'],
+                                            'parent_val' => 'custom',
+                                        ),
+                                    ),
+                                );
+                                $admin_obj->build_admin_field($top_bar_second_field);
 
-                                <table class="admin-module">
-                                    <tr>
-                                        <td class="admin-module-label"><label><?php echo esc_html_e('Top Bar Third Field', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field">
-                                            <?php $topbar_third_field = $theme_options['ns_core_topbar_third_field']; ?>
-                                            <select name="ns_core_topbar_third_field" class="top-bar-field-select">
-                                                <option value="email" <?php if(esc_attr($topbar_third_field) == 'email') { echo 'selected'; } ?>>Email</option>
-                                                <option value="phone" <?php if(esc_attr($topbar_third_field) == 'phone') { echo 'selected'; } ?>>Phone</option>
-                                                <option value="social" <?php if(esc_attr($topbar_third_field) == 'social') { echo 'selected'; } ?>>Social Links</option>
-                                                <option value="member" <?php if(esc_attr($topbar_third_field) == 'member') { echo 'selected'; } ?>>Member Actions</option>
-                                                <option value="custom" <?php if(esc_attr($topbar_third_field) == 'custom') { echo 'selected'; } ?>>Custom</option>
-                                                <option value="" <?php if(esc_attr($topbar_third_field) == '') { echo 'selected'; } ?>>None</option>
-                                            </select>
-                                            <div class="top-bar-custom <?php if($topbar_third_field != 'custom') { echo 'hide-soft'; } ?>">
-                                                <label><?php echo esc_html_e('Custom Content', 'ns-core'); ?></label>
-                                                <textarea class="" name="ns_core_topbar_third_field_custom"><?php echo $theme_options['ns_core_topbar_third_field_custom']; ?></textarea>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
+                                //Top bar Third Field
+                                $top_bar_third_field = array(
+                                    'title' => esc_html__('Top Bar Third Field', 'ns-core'),
+                                    'name' => 'ns_core_topbar_third_field',
+                                    'value' => $theme_options['ns_core_topbar_third_field'],
+                                    'type' => 'select',
+                                    'options' => array('Email' => 'email', 'Phone' => 'phone', 'Social Links' => 'social', 'Member Actions' => 'member', 'Custom' => 'custom', 'None' => ''),
+                                    'children' => array(
+                                        'custom_content' => array(
+                                            'title' => esc_html__('Custom Content', 'ns-basics'),
+                                            'name' => 'ns_core_topbar_third_field_custom',
+                                            'type' => 'textarea',
+                                            'value' => $theme_options['ns_core_topbar_third_field_custom'],
+                                            'parent_val' => 'custom',
+                                        ),
+                                    ),
+                                );
+                                $admin_obj->build_admin_field($top_bar_third_field);
 
-                                <table class="admin-module">
-                                    <tr>
-                                        <td class="admin-module-label"><label><?php echo esc_html_e('Top Bar Fourth Field', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field">
-                                            <?php $topbar_fourth_field = $theme_options['ns_core_topbar_fourth_field']; ?>
-                                            <select name="ns_core_topbar_fourth_field" class="top-bar-field-select">
-                                                <option value="email" <?php if(esc_attr($topbar_fourth_field) == 'email') { echo 'selected'; } ?>>Email</option>
-                                                <option value="phone" <?php if(esc_attr($topbar_fourth_field) == 'phone') { echo 'selected'; } ?>>Phone</option>
-                                                <option value="social" <?php if(esc_attr($topbar_fourth_field) == 'social') { echo 'selected'; } ?>>Social Links</option>
-                                                <option value="member" <?php if(esc_attr($topbar_fourth_field) == 'member') { echo 'selected'; } ?>>Member Actions</option>
-                                                <option value="custom" <?php if(esc_attr($topbar_third_field) == 'custom') { echo 'selected'; } ?>>Custom</option>
-                                                <option value="" <?php if(esc_attr($topbar_fourth_field) == '') { echo 'selected'; } ?>>None</option>
-                                            </select>
-                                            <div class="top-bar-custom <?php if($topbar_fourth_field != 'custom') { echo 'hide-soft'; } ?>">
-                                                <label><?php echo esc_html_e('Custom Content', 'ns-core'); ?></label>
-                                                <textarea class="" name="ns_core_topbar_fourth_field_custom"><?php echo $theme_options['ns_core_topbar_fourth_field_custom'];  ?></textarea>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
+                                //Top bar Fourth Field
+                                $top_bar_fourth_field = array(
+                                    'title' => esc_html__('Top Bar Fourth Field', 'ns-core'),
+                                    'name' => 'ns_core_topbar_fourth_field',
+                                    'value' => $theme_options['ns_core_topbar_fourth_field'],
+                                    'type' => 'select',
+                                    'options' => array('Email' => 'email', 'Phone' => 'phone', 'Social Links' => 'social', 'Member Actions' => 'member', 'Custom' => 'custom', 'None' => ''),
+                                    'children' => array(
+                                        'custom_content' => array(
+                                            'title' => esc_html__('Custom Content', 'ns-basics'),
+                                            'name' => 'ns_core_topbar_fourth_field_custom',
+                                            'type' => 'textarea',
+                                            'value' => $theme_options['ns_core_topbar_fourth_field_custom'],
+                                            'parent_val' => 'custom',
+                                        ),
+                                    ),
+                                );
+                                $admin_obj->build_admin_field($top_bar_fourth_field);
 
-                                <table class="admin-module no-border">
-                                    <tr>
-                                        <td class="admin-module-label"><label><?php esc_html_e('Display member avatar in header?', 'ns-core'); ?></label></td>
-                                        <td class="admin-module-field">
-                                            <div class="toggle-switch" title="<?php if($theme_options['ns_core_members_display_avatar'] == 'true') { esc_html_e('Active', 'ns-core'); } else { esc_html_e('Disabled', 'ns-core'); } ?>">
-                                                <input type="checkbox" name="ns_core_members_display_avatar" value="true" class="toggle-switch-checkbox" id="members_display_avatar" <?php checked('true', $theme_options['ns_core_members_display_avatar'], true) ?>>
-                                                <label class="toggle-switch-label" for="members_display_avatar"><?php if($theme_options['ns_core_members_display_avatar'] == 'true') { echo '<span class="on">'.esc_html__('On', 'ns-core').'</span>'; } else { echo '<span>'.esc_html__('Off', 'ns-core').'</span>'; } ?></label>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
+                                //Display avatar 
+                                $display_avatar_field = array(
+                                    'title' => esc_html__('Display member avatar in header?', 'ns-core'),
+                                    'name' => 'ns_core_members_display_avatar',
+                                    'value' => $theme_options['ns_core_members_display_avatar'],
+                                    'type' => 'switch',
+                                );
+                                $admin_obj->build_admin_field($display_avatar_field);
+                                ?>
 
                             </div>
                         </div><!-- end topbar options -->
 
-                        <div class="admin-module admin-module-header-style no-border">
-                            <label style="font-weight:700;"><?php echo esc_html_e('Select a header style', 'ns-core'); ?></label><br/>
-                            <?php $header_style = $theme_options['ns_core_header_style']; ?>
-                            <label class="selectable-item <?php if($header_style == 'default') { echo 'active'; } ?>" for="header_style_default">
-                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/admin/images/default-header.png" alt="" /><br/>
-                                <input type="radio" id="header_style_default" name="ns_core_header_style" value="default" <?php checked('default', $header_style, true) ?> />
-                                <?php echo esc_html_e('Menu Bar Header', 'ns-core'); ?>
-                            </label>
-                            <label class="selectable-item <?php if($header_style == 'classic') { echo 'active'; } ?>" for="header_style_classic">
-                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/admin/images/classic-header.png" alt="" /><br/>
-                                <input type="radio" id="header_style_classic" name="ns_core_header_style" value="classic" <?php checked('classic', $header_style, true) ?> /><?php echo esc_html_e('Classic Header', 'ns-core'); ?><br/>
-                            </label>
-                            <label class="selectable-item <?php if($header_style == 'transparent') { echo 'active'; } ?>" for="header_style_transparent">
-                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/admin/images/transparent-header.png" alt="" /><br/>
-                                <input type="radio" id="header_style_transparent" name="ns_core_header_style" value="transparent" <?php checked('transparent', $header_style, true) ?> /><?php echo esc_html_e('Transparent Header', 'ns-core'); ?><br/>
-                            </label>
-                        </div>
+                        <?php
+                        //Header Style
+                        $header_style_field = array(
+                            'title' => esc_html__('Select a header style', 'ns-core'),
+                            'name' => 'ns_core_header_style',
+                            'value' => $theme_options['ns_core_header_style'],
+                            'type' => 'radio_image',
+                            'options' => array(
+                                esc_html__('Menu Bar Header', 'ns-core') => array(
+                                    'value' => 'default', 
+                                    'icon' => esc_url( get_template_directory_uri() ).'/admin/images/default-header.png',
+                                ), 
+                                esc_html__('Classic Header', 'ns-core') => array(
+                                    'value' => 'classic', 
+                                    'icon' => esc_url( get_template_directory_uri() ).'/admin/images/classic-header.png',
+                                ),
+                                esc_html__('Transparent Header', 'ns-core') => array(
+                                    'value' => 'transparent', 
+                                    'icon' => esc_url( get_template_directory_uri() ).'/admin/images/transparent-header.png',
+                                ),
+                            ),
+                            'children' => array(
+                                'above_phone_text' => array(
+                                    'title' => esc_html__('Above Phone Text', 'ns-core'),
+                                    'name' => 'ns_core_above_phone_text',
+                                    'type' => 'text',
+                                    'value' => $theme_options['ns_core_above_phone_text'],
+                                    'parent_val' => 'default',
+                                ),
+                                'above_email_text' => array(
+                                    'title' => esc_html__('Above Email Text', 'ns-core'),
+                                    'name' => 'ns_core_above_email_text',
+                                    'type' => 'text',
+                                    'value' => $theme_options['ns_core_above_email_text'],
+                                    'parent_val' => 'default',
+                                ),
+                            ),
+                        );
+                        $admin_obj->build_admin_field($header_style_field);
 
-                        <table class="admin-module">
-                            <tr>
-                                <td class="admin-module-label"><label><?php echo esc_html_e('Enable sticky header', 'ns-core'); ?></label></td>
-                                <td class="admin-module-field">
-                                    <div class="toggle-switch" title="<?php if($theme_options['ns_core_sticky_header'] == 'true') { esc_html_e('Active', 'ns-core'); } else { esc_html_e('Disabled', 'ns-core'); } ?>">
-                                        <input type="checkbox" name="ns_core_sticky_header" value="true" class="toggle-switch-checkbox" id="sticky_header" <?php checked('true', $theme_options['ns_core_sticky_header'], true) ?>>
-                                        <label class="toggle-switch-label" for="sticky_header"><?php if($theme_options['ns_core_sticky_header'] == 'true') { echo '<span class="on">'.esc_html__('On', 'ns-core').'</span>'; } else { echo '<span>'.esc_html__('Off', 'ns-core').'</span>'; } ?></label>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
+                        //Enable Sticky Header
+                        $sticky_header_field = array(
+                            'title' => esc_html__('Enable sticky header', 'ns-core'),
+                            'name' => 'ns_core_sticky_header',
+                            'value' => $theme_options['ns_core_sticky_header'],
+                            'type' => 'switch',
+                        );
+                        $admin_obj->build_admin_field($sticky_header_field);
 
-                        <table class="admin-module">
-                            <tr>
-                                <td class="admin-module-label"><label><?php echo esc_html_e('Enable header container', 'ns-core'); ?></label></td>
-                                <td class="admin-module-field">
-                                    <div class="toggle-switch" title="<?php if($theme_options['ns_core_header_container'] == 'true') { esc_html_e('Active', 'ns-core'); } else { esc_html_e('Disabled', 'ns-core'); } ?>">
-                                        <input type="checkbox" name="ns_core_header_container" value="true" class="toggle-switch-checkbox" id="header_container" <?php checked('true', $theme_options['ns_core_header_container'], true) ?>>
-                                        <label class="toggle-switch-label" for="header_container"><?php if($theme_options['ns_core_header_container'] == 'true') { echo '<span class="on">'.esc_html__('On', 'ns-core').'</span>'; } else { echo '<span>'.esc_html__('Off', 'ns-core').'</span>'; } ?></label>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
+                        //Enable Header Container
+                        $header_container_field = array(
+                            'title' => esc_html__('Enable header container', 'ns-core'),
+                            'name' => 'ns_core_header_container',
+                            'value' => $theme_options['ns_core_header_container'],
+                            'type' => 'switch',
+                        );
+                        $admin_obj->build_admin_field($header_container_field);
 
-                        <table class="admin-module">
-                            <tr>
-                                <td class="admin-module-label">
-                                    <label><?php echo esc_html_e('Logo', 'ns-core'); ?></label>
-                                    <div class="admin-module-note"><?php echo esc_html_e('Recommended size: 172 x 50 pixels.', 'ns-core'); ?></div>
-                                </td>
-                                <td class="admin-module-field">
-                                    <input type="text" id="logo" name="ns_core_logo" value="<?php echo $theme_options['ns_core_logo']; ?>" />
-                                    <input id="_btn" class="ns_upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
-                                    <span class="button-secondary remove"><?php echo esc_html_e('Remove', 'ns-core'); ?></span>
-                                    <?php if(!empty($theme_options['ns_core_logo'])) { ?><div class="option-preview logo-preview"><img src="<?php echo $theme_options['ns_core_logo']; ?>" alt="" /></div><?php } ?>
-                                </td>
-                            </tr>
-                        </table>
+                        //Logo
+                        $logo_field = array(
+                            'title' => esc_html__('Logo', 'ns-core'),
+                            'name' => 'ns_core_logo',
+                            'description' => esc_html__('Recommended size: 172 x 50 pixels.', 'ns-core'),
+                            'value' => $theme_options['ns_core_logo'],
+                            'type' => 'image_upload',
+                            'display_img' => true,
+                        );
+                        $admin_obj->build_admin_field($logo_field);
 
-                        <table class="admin-module">
-                            <tr>
-                                <td class="admin-module-label">
-                                    <label><?php echo esc_html_e('Logo Transparent', 'ns-core'); ?></label>
-                                    <div class="admin-module-note"><?php echo esc_html_e('This logo will be used if the transparent header is activated. Recommended size: 172 x 50 pixels.', 'ns-core'); ?></div>
-                                </td>
-                                <td class="admin-module-field">
-                                    <input type="text" id="logo_transparent" name="ns_core_logo_transparent" value="<?php echo $theme_options['ns_core_logo_transparent']; ?>" />
-                                    <input id="_btn" class="ns_upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
-                                    <span class="button-secondary remove"><?php echo esc_html_e('Remove', 'ns-core'); ?></span>
-                                    <?php if(!empty($theme_options['ns_core_logo_transparent'])) { ?><div class="option-preview logo-preview"><img src="<?php echo $theme_options['ns_core_logo_transparent']; ?>" alt="" /></div><?php } ?>
-                                </td>
-                            </tr>
-                        </table>
+                        //Logo Transparent
+                        $logo_transparent_field = array(
+                            'title' => esc_html__('Logo Transparent', 'ns-core'),
+                            'name' => 'ns_core_logo_transparent',
+                            'description' => esc_html__('This logo will be used if the transparent header is activated. Recommended size: 172 x 50 pixels.', 'ns-core'),
+                            'value' => $theme_options['ns_core_logo_transparent'],
+                            'type' => 'image_upload',
+                            'display_img' => true,
+                        );
+                        $admin_obj->build_admin_field($logo_transparent_field);
 
-                        <table class="admin-module">
-                            <tr>
-                                <td class="admin-module-label">
-                                    <label><?php echo esc_html_e('Favicon', 'ns-core'); ?></label>
-                                    <div class="admin-module-note"><?php echo esc_html_e('A favicon, also known as a shortcut icon, website icon, tab icon, URL icon or bookmark icon, is a file named favicon.ico and 
-                                    containing one or more small icons, most commonly 16x16 pixels.', 'ns-core'); ?></div>
-                                </td>
-                                <td class="admin-module-field">
-                                    <input type="text" id="favicon" name="ns_core_favicon" value="<?php echo $theme_options['ns_core_favicon']; ?>" />
-                                    <input id="_btn" class="ns_upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
-                                    <span class="button-secondary remove"><?php echo esc_html_e('Remove', 'ns-core'); ?></span>
-                                    <?php if(!empty($theme_options['ns_core_favicon'])) { ?><div class="option-preview favicon-preview"><img src="<?php echo $theme_options['ns_core_favicon']; ?>" alt="" /></div><?php } ?>
-                                </td>
-                            </tr>
-                        </table>
+                        //Favicon
+                        $favicon_field = array(
+                            'title' => esc_html__('Favicon', 'ns-core'),
+                            'name' => 'ns_core_favicon',
+                            'description' => esc_html__('A favicon, also known as a shortcut icon, website icon, tab icon, URL icon or bookmark icon, is a file named favicon.ico and containing one or more small icons, most commonly 16x16 pixels.', 'ns-core'),
+                            'value' => $theme_options['ns_core_favicon'],
+                            'type' => 'image_upload',
+                            'display_img' => true,
+                        );
+                        $admin_obj->build_admin_field($favicon_field);
 
-                        <table class="admin-module">
-                            <tr>
-                                <td class="admin-module-label">
-                                    <label><?php echo esc_html_e('Above Phone Text', 'ns-core'); ?></label>
-                                    <div class="admin-module-note"><?php echo esc_html_e('*Only for default header style', 'ns-core'); ?></div>
-                                </td>
-                                <td class="admin-module-field"><input type="text" id="above_phone_text" name="ns_core_above_phone_text" value="<?php echo $theme_options['ns_core_above_phone_text']; ?>" /></td>
-                            </tr>
-                        </table>
+                        //Display Header Search
+                        $header_search_field = array(
+                            'title' => esc_html__('Display Header Search Form', 'ns-core'),
+                            'name' => 'ns_core_display_header_search',
+                            'value' => $theme_options['ns_core_display_header_search'],
+                            'type' => 'switch',
+                        );
+                        $admin_obj->build_admin_field($header_search_field);
 
-                        <table class="admin-module">
-                            <tr>
-                                <td class="admin-module-label">
-                                     <label><?php echo esc_html_e('Above Email Text', 'ns_core'); ?></label>
-                                    <div class="admin-module-note"><?php echo esc_html_e('*Only for default header style', 'ns-core'); ?></div>
-                                </td>
-                                <td class="admin-module-field"><input type="text" id="above_email_text" name="ns_core_above_email_text" value="<?php echo $theme_options['ns_core_above_email_text']; ?>" /></td>
-                            </tr>
-                        </table>
+                        //Menu Alignment
+                        $menu_align_field = array(
+                            'title' => esc_html__('Menu Alignment', 'ns-core'),
+                            'name' => 'ns_core_header_menu_align',
+                            'value' => $theme_options['ns_core_header_menu_align'],
+                            'type' => 'select',
+                            'options' => array('Right' => 'right', 'Left' => 'left', 'Center' => 'center'),
+                        );
+                        $admin_obj->build_admin_field($menu_align_field);
 
-                        <table class="admin-module">
-                            <tr>
-                                <td class="admin-module-label"><label><?php echo esc_html_e('Display Header Search Form', 'ns-core'); ?></label></td>
-                                <td class="admin-module-field">
-                                    <div class="toggle-switch" title="<?php if($theme_options['ns_core_display_header_search'] == 'true') { esc_html_e('Active', 'ns-core'); } else { esc_html_e('Disabled', 'ns-core'); } ?>">
-                                        <input type="checkbox" name="ns_core_display_header_search" value="true" class="toggle-switch-checkbox" id="display_header_search" <?php checked('true', $theme_options['ns_core_display_header_search'], true) ?>>
-                                        <label class="toggle-switch-label" for="display_header_search"><?php if($theme_options['ns_core_display_header_search'] == 'true') { echo '<span class="on">'.esc_html__('On', 'ns-core').'</span>'; } else { echo '<span>'.esc_html__('Off', 'ns-core').'</span>'; } ?></label>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
+                        //Menu Parent Link
+                        $menu_parent_link_field = array(
+                            'title' => esc_html__('Menu Parent Link Behavior', 'ns-core'),
+                            'name' => 'ns_core_header_menu_parent_links',
+                            'value' => $theme_options['ns_core_header_menu_parent_links'],
+                            'type' => 'select',
+                            'options' => array('Toggle Sub-Menu' => 'toggle-submenu', 'Go to Page' => 'open-page'),
+                        );
+                        $admin_obj->build_admin_field($menu_parent_link_field);
 
-                        <table class="admin-module">
-                            <tr>
-                                <td class="admin-module-label"><label><?php echo esc_html_e('Menu Alignment', 'ns-core'); ?></label></td>
-                                <td class="admin-module-field">
-                                    <?php $header_menu_align = $theme_options['ns_core_header_menu_align']; ?>
-                                    <select name="ns_core_header_menu_align">
-                                        <option value="right" <?php if(esc_attr($header_menu_align) == 'right') { echo 'selected'; } ?>>Right</option>
-                                        <option value="left" <?php if(esc_attr($header_menu_align) == 'left') { echo 'selected'; } ?>>Left</option>
-                                        <option value="center" <?php if(esc_attr($header_menu_align) == 'center') { echo 'selected'; } ?>>Center</option>
-                                    </select>
-                                </td>
-                            </tr>
-                        </table>
+                        //Menu Call to Action
+                        $pages = get_pages(); 
+                        $page_options_array == array();
+                        $page_options_array['Select page'] = '';
+                        foreach ( $pages as $page ) { $page_options_array[$page->post_title] = get_page_link( $page->ID ); } 
+                        $menu_call_to_action_field = array(
+                            'title' => esc_html__('Menu Call to Action Page', 'ns-core'),
+                            'name' => 'ns_core_header_menu_button_page',
+                            'value' => $theme_options['ns_core_header_menu_button_page'],
+                            'type' => 'select',
+                            'options' => $page_options_array,
+                        );
+                        $admin_obj->build_admin_field($menu_call_to_action_field);
 
-                        <table class="admin-module">
-                            <tr>
-                                <td class="admin-module-label">
-                                    <label><?php echo esc_html_e('Menu Parent Link Behavior', 'ns-core'); ?></label>
-                                    <span class="admin-module-note"><?php echo esc_html_e('Decide how links with sub-menus should be behave when clicked', 'ns-core'); ?></span>
-                                </td>
-                                <td class="admin-module-field">
-                                    <?php $header_menu_parent_links = $theme_options['ns_core_header_menu_parent_links']; ?>
-                                    <select name="ns_core_header_menu_parent_links">
-                                        <option value="toggle-submenu" <?php if(esc_attr($header_menu_parent_links) == 'toggle-submenu') { echo 'selected'; } ?>><?php echo esc_html_e('Toggle Sub-Menu', 'ns-core'); ?></option>
-                                        <option value="open-page" <?php if(esc_attr($header_menu_parent_links) == 'open-page') { echo 'selected'; } ?>><?php echo esc_html_e('Go to Page', 'ns-core'); ?></option>
-                                    </select>
-                                </td>
-                            </tr>
-                        </table>
+                        //Menu Call to Action Text
+                        $menu_call_to_action_text_field = array(
+                            'title' => esc_html__('Menu Call to Action Text', 'ns-core'),
+                            'name' => 'ns_core_header_menu_button_text',
+                            'value' => $theme_options['ns_core_header_menu_button_text'],
+                            'type' => 'text',
+                        );
+                        $admin_obj->build_admin_field($menu_call_to_action_text_field);
 
-                        <?php $header_menu_button_page = $theme_options['ns_core_header_menu_button_page']; ?>
-                        <table class="admin-module">
-                            <tr>
-                                <td class="admin-module-label"><label><?php echo esc_html_e('Menu Call to Action Page', 'ns-core'); ?></label></td>
-                                <td class="admin-module-field">
-                                    <select name="ns_core_header_menu_button_page">
-                                        <option value=""><?php echo esc_attr( esc_html__( 'Select page', 'ns-core' ) ); ?></option> 
-                                        <?php 
-                                        $pages = get_pages(); 
-                                        foreach ( $pages as $page ) { ?>
-                                                <option value="<?php echo get_page_link( $page->ID ); ?>" <?php if(esc_attr($header_menu_button_page) == get_page_link( $page->ID )) { echo 'selected'; } ?>>
-                                                    <?php echo esc_attr($page->post_title); ?>
-                                                </option>
-                                        <?php } ?>
-                                    </select>
-                                </td>
-                            </tr>
-                        </table>
+                        //Header background
+                        $header_bg_field = array(
+                            'title' => esc_html__('Header Background Image', 'ns-core'),
+                            'name' => 'ns_core_header_bg',
+                            'value' => $theme_options['ns_core_header_bg'],
+                            'type' => 'image_upload',
+                        );
+                        $admin_obj->build_admin_field($header_bg_field);
 
-                        <table class="admin-module">
-                            <tr>
-                                <td class="admin-module-label"><label><?php echo esc_html_e('Menu Call to Action Text', 'ns-core'); ?></label></td>
-                                <td class="admin-module-field"><input type="text" id="header_menu_button_text" name="ns_core_header_menu_button_text" value="<?php echo $theme_options['ns_core_header_menu_button_text']; ?>" /></td>
-                            </tr>
-                        </table>
-
-                        <table class="admin-module">
-                            <tr>
-                                <td class="admin-module-label"><label><?php echo esc_html_e('Header Background Image', 'ns-core'); ?></label></td>
-                                <td class="admin-module-field">
-                                    <input type="text" id="header_bg" name="ns_core_header_bg" value="<?php echo $theme_options['ns_core_header_bg']; ?>" />
-                                    <input id="_btn" class="ns_upload_image_button" type="button" value="<?php echo esc_html_e('Upload Image', 'ns-core'); ?>" />
-                                    <span class="button-secondary remove"><?php echo esc_html_e('Remove', 'ns-core'); ?></span>
-                                </td>
-                            </tr>
-                        </table>
-
-                        <table class="admin-module no-border">
-                            <tr>
-                                <td class="admin-module-label"><label><?php echo esc_html_e('Header Background Display', 'ns-core'); ?></label></td>
-                                <td class="admin-module-field">
-                                    <select name="ns_core_header_bg_display">
-                                        <option value="cover" <?php if($theme_options['ns_core_header_bg_display'] == 'cover') { echo 'selected'; } ?>><?php echo esc_html_e('Cover', 'ns-core'); ?></option>
-                                        <option value="fixed" <?php if($theme_options['ns_core_header_bg_display'] == 'fixed') { echo 'selected'; } ?>><?php echo esc_html_e('Fixed', 'ns-core'); ?></option>
-                                        <option value="repeat" <?php if($theme_options['ns_core_header_bg_display'] == 'repeat') { echo 'selected'; } ?>><?php echo esc_html_e('Tiled', 'ns-core'); ?></option>
-                                    </select>
-                                </td>
-                            </tr>
-                        </table>
+                        //Header background display
+                        $header_bg_display_field = array(
+                            'title' => esc_html__('Header Background Display', 'ns-core'),
+                            'name' => 'ns_core_header_bg_display',
+                            'value' => $theme_options['ns_core_header_bg_display'],
+                            'type' => 'select',
+                            'options' => array('Cover' => 'cover', 'Fixed' => 'fixed', 'Tiled' => 'repeat'),
+                        );
+                        $admin_obj->build_admin_field($header_bg_display_field);
+                        ?>
 
                         <?php do_action('ns_core_after_header_theme_options'); ?>
 
