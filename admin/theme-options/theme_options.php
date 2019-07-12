@@ -417,39 +417,25 @@ $admin_obj = new NS_Basics_Admin(); ?>
                             'type' => 'text',
                         );
                         $admin_obj->build_admin_field($contact_form_success_field);
+
+                        //Contact Form Source
+                        $contact_form_source_field = array(
+                            'title' => esc_html__('Contact Form Source', 'ns-core'),
+                            'name' => 'ns_core_contact_form_source',
+                            'value' => $theme_options['ns_core_contact_form_source'],
+                            'type' => 'radio_image',
+                            'options' => array(
+                                esc_html__('Default Contact Form', 'ns-basics') => array(
+                                    'value' => 'default',
+                                ), 
+                                esc_html__('Contact Form 7 Plugin', 'ns-basics') => array(
+                                    'value' => 'contact-form-7', 
+
+                                ),
+                            ),
+                        );
+                        $admin_obj->build_admin_field($contact_form_source_field);
                         ?>
-
-                        <table class="admin-module no-border">
-                            <tr>
-                                <td class="admin-module-label"><label><?php echo esc_html_e('Contact Form Source', 'ns-core'); ?></label></td>
-                                <td class="admin-module-field">
-                                    <?php $contact_form_source = $theme_options['ns_core_contact_form_source']; ?>
-                                    <input type="radio" id="contact_form_source_default" name="ns_core_contact_form_source" value="default" <?php checked('default', $contact_form_source, true) ?> /> 
-                                    <label class="contact-form-source-label" for="contact_form_source_default"><?php echo esc_html_e('Default Contact Form', 'ns-core'); ?></label>
-                                    <input type="radio" id="contact_form_source_contact_7" name="ns_core_contact_form_source" value="contact-form-7" <?php checked('contact-form-7', $contact_form_source, true) ?> /> 
-                                    <label for="contact_form_source_contact_7"><?php echo esc_html_e('Contact Form 7 Plugin', 'ns-core'); ?></label>
-                                
-                                    <div class="admin-module no-border admin-module-contact-form-default hide-soft <?php if($contact_form_source == 'default') { echo 'show'; } ?>">
-                                        <?php if(!function_exists('ns_basics_template_loader')) { 
-                                            echo '<i>You need to install and/or activate the required bundled plugin: <b>Nightshift Basics</b></i>'; 
-                                        } ?>
-                                    </div>
-
-                                    <div class="admin-module no-border admin-module-contact-form-id hide-soft <?php if($contact_form_source == 'contact-form-7') { echo 'show'; } ?>">
-                                        <?php 
-                                        include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-                                        if( is_plugin_active('contact-form-7/wp-contact-form-7.php') ) { ?>
-                                            <label for="contact_form_id"><?php echo esc_html_e('Contact From 7 ID', 'ns-core'); ?></label><br/>
-                                            <input type="number" min="0" name="ns_core_contact_form_id" value="<?php echo $theme_options['ns_core_contact_form_id']; ?>" />
-                                            <span class="admin-module-note"><?php echo esc_html_e('Provide the ID of the contact form you would like displayed', 'ns-core'); ?></span>
-                                        <?php } else {
-                                            echo '<i>You need to install and/or activate the <a href="https://wordpress.org/plugins/contact-form-7/" target="_blank">Contact Form 7</a> plugin.</i>';
-                                        }
-                                        ?>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
 
                         <?php do_action('ns_core_after_contact_theme_options'); ?>
 
