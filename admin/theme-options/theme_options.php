@@ -367,6 +367,15 @@ $admin_obj = new NS_Basics_Admin(); ?>
                                 'type' => 'text',
                             );
                             $admin_obj->build_admin_field($dribbble_field);
+
+                            //Github Field
+                            $github_field = array(
+                                'title' => esc_html__('Github', 'ns-core'),
+                                'name' => 'ns_core_github',
+                                'value' => $theme_options['ns_core_github'],
+                                'type' => 'text',
+                            );
+                            $admin_obj->build_admin_field($github_field);
                             ?>
                         </div><!-- end social media profiles -->
 

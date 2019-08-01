@@ -32,6 +32,7 @@ function ns_core_load_theme_options($single_option = null, $return_defaults = fa
     	'ns_core_instagram' => false,
     	'ns_core_flickr' => false,
     	'ns_core_dribbble' => false,
+        'ns_core_github' => false,
     	'ns_core_contact_details_display' => 'true',
     	'ns_core_contact_form_title' => 'Quick Contact',
     	'ns_core_contact_form_before' => false,

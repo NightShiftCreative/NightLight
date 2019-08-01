@@ -591,6 +591,7 @@ function ns_core_get_social_icons($class = null) {
     $instagram = ns_core_load_theme_options('ns_core_instagram');
     $flickr = ns_core_load_theme_options('ns_core_flickr');
     $dribbble = ns_core_load_theme_options('ns_core_dribbble');
+    $github = ns_core_load_theme_options('ns_core_github');
     if(!empty($fb) || !empty($twitter) || !empty($google) || !empty($linkedin) || !empty($youtube) || !empty($vimeo) || !empty($instagram) || !empty($flickr) || !empty($dribbble)) { 
         $output .= '<ul class="social-icons '.$class.'">';
             if(!empty($fb)) { $output .= '<li><a href="'.esc_url($fb).'" target="_blank"><i class="fab fa-facebook-f icon"></i></a></li>'; }
@@ -602,6 +603,7 @@ function ns_core_get_social_icons($class = null) {
             if(!empty($instagram)) { $output .= '<li><a href="'.esc_url($instagram).'" target="_blank"><i class="fab fa-instagram icon"></i></a></li>'; }
             if(!empty($flickr)) { $output .= '<li><a href="'.esc_url($flickr).'" target="_blank"><i class="fab fa-flickr icon"></i></a></li>'; }
             if(!empty($dribbble)) { $output .= '<li><a href="'.esc_url($dribbble).'" target="_blank"><i class="fab fa-dribbble icon"></i></a></li>'; }
+            if(!empty($github)) { $output .= '<li><a href="'.esc_url($github).'" target="_blank"><i class="fab fa-github icon"></i></a></li>'; }
         $output .= '</ul>';
     } 
     return $output;
