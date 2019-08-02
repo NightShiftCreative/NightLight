@@ -122,7 +122,7 @@
             .widget #wp-calendar a,
             .widget .filter-widget-title,
             .multi-page-form-content#map .remove-pin,
-            .services .service-item .fa,
+            .service-item .fa,
             .blog-post-date,
             .cta { background: {$style_global_main}; }
         ";
