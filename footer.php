@@ -1,5 +1,4 @@
 <?php
-    $sitelink = 'https://nightshiftcreative.co/';
     $hide_footer_widget_area = ns_core_load_theme_options('ns_core_hide_footer_widget_area');
     $footer_bg = ns_core_load_theme_options('ns_core_footer_bg');
     $footer_bg_display = ns_core_load_theme_options('ns_core_footer_bg_display');
