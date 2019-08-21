@@ -8,7 +8,7 @@
 <?php endwhile; ?>
 
     <?php 
-	wp_reset_postdata();
+    wp_reset_postdata();
     $big = 999999999; // need an unlikely integer
 
     $args = array(

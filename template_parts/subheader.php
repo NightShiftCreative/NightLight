@@ -47,7 +47,7 @@
         if(!empty($banner_padding_top)) {$custom_style .= 'padding-top:'.$banner_padding_top.'px;'; }
         if(!empty($banner_padding_bottom)) {$custom_style .= 'padding-bottom:'.$banner_padding_bottom.'px;'; }
         if(!empty($custom_style)) { echo 'style="'.$custom_style.'"'; }
-	?>>
+    ?>>
 
     <?php if($page_banner_overlay == 'true') { 
         $page_banner_overlay_rgb = ns_core_hex2rgb($page_banner_overlay_color); ?>
