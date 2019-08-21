@@ -13,8 +13,6 @@
             <a href="<?php the_permalink(); ?>" class="blog-post shadow-hover search-result-item">
                 <?php if($post->post_type == 'post') { esc_html_e( 'Blog Post >', 'ns-core' ); } ?>
                 <?php if($post->post_type == 'page') { esc_html_e( 'Page >', 'ns-core' ); } ?>
-                <?php if($post->post_type == 'properties') { esc_html_e( 'Property >', 'ns-core' ); } ?>
-                <?php if($post->post_type == 'agents') { esc_html_e( 'Agent >', 'ns-core' ); } ?>
                 <h4><?php the_title(); ?></h4>
             </a>
 
