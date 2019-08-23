@@ -199,7 +199,7 @@
 
     //FOOTER
     if(!empty($style_footer_bg) && $style_footer_bg != '#323746') {
-        $dynamic_css .= "#footer { background: {$style_footer_bg}; }";
+        $dynamic_css .= "#footer { background-color: {$style_footer_bg}; }";
     }
     if(!empty($style_footer_header) && $style_footer_header != '#ffffff') {
         $dynamic_css .= "#footer h4 { color: {$style_footer_header}; }";
