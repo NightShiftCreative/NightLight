@@ -41,11 +41,11 @@
 			    	<?php
 				    	$slide_values = get_post_custom( $post->ID );
                         $slide_text_align = isset( $slide_values['ns_basics_slide_text_align'] ) ? esc_attr( $slide_values['ns_basics_slide_text_align'][0] ) : '';
-						$slide_button_link = isset( $slide_values['ns_slide_button_link'] ) ? $slide_values['ns_slide_button_link'][0] : '';
-						$slide_button_text = isset( $slide_values['ns_slide_button_text'] ) ? $slide_values['ns_slide_button_text'][0] : 'Contact Us';	
-                        $slide_overlay = isset( $slide_values['ns_slide_overlay'] ) ? $slide_values['ns_slide_overlay'][0] : 'true';
-                        $slide_overlay_opacity = isset( $slide_values['ns_slide_overlay_opacity'] ) ? $slide_values['ns_slide_overlay_opacity'][0] : '0.25';
-                        $slide_overlay_color = isset( $slide_values['ns_slide_overlay_color'] ) ? $slide_values['ns_slide_overlay_color'][0] : '#000000';
+						$slide_button_link = isset( $slide_values['ns_basics_slide_button_link'] ) ? $slide_values['ns_basics_slide_button_link'][0] : '';
+						$slide_button_text = isset( $slide_values['ns_basics_slide_button_text'] ) ? $slide_values['ns_basics_slide_button_text'][0] : 'Contact Us';	
+                        $slide_overlay = isset( $slide_values['ns_basics_slide_overlay'] ) ? $slide_values['ns_basics_slide_overlay'][0] : 'true';
+                        $slide_overlay_opacity = isset( $slide_values['ns_basics_slide_overlay_opacity'] ) ? $slide_values['ns_basics_slide_overlay_opacity'][0] : '0.25';
+                        $slide_overlay_color = isset( $slide_values['ns_basics_slide_overlay_color'] ) ? $slide_values['ns_basics_slide_overlay_color'][0] : '#000000';
                         $slide_overlay_rgb = ns_core_hex2rgb($slide_overlay_color);
 
 			    		$url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); 
