@@ -546,10 +546,10 @@ function ns_core_get_page_col_classes($page_layout = 'full', $sidebar_size = nul
 
     if($page_layout == 'left sidebar') {
         $col_class['content'] = 'col-lg-'.$col_num_content.' col-md-'.$col_num_content.' col-md-push-'.$col_num_sidebar;
-        $col_class['sidebar'] = 'col-lg-'.$col_num_sidebar.' col-md-'.$col_num_sidebar.' col-md-pull-'.$col_num_content.' sidebar-left';
+        $col_class['sidebar'] = 'col-lg-'.$col_num_sidebar.' col-md-'.$col_num_sidebar.' col-md-pull-'.$col_num_content.' sidebar sidebar-left';
     } else {
         $col_class['content'] = 'col-lg-'.$col_num_content.' col-md-'.$col_num_content;
-        $col_class['sidebar'] = 'col-lg-'.$col_num_sidebar.' col-md-'.$col_num_sidebar.' sidebar';
+        $col_class['sidebar'] = 'col-lg-'.$col_num_sidebar.' col-md-'.$col_num_sidebar.' sidebar sidebar-right';
     }
 
     return $col_class;
