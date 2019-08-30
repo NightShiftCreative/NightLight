@@ -979,7 +979,7 @@ header.navbar-fixed { position:fixed; top:0; }
 /** SUBHEADER SLIDER **/
 .subheader.subheader-slider { background:#e1e5f1; padding:0px; }
 .subheader.subheader-slider h1 { float:none; font-size:55px; display:block; margin-bottom:20px; }
-.subheader.subheader-slider p { font-size:24px; margin-bottom:20px; }
+.subheader.subheader-slider .slide-text { font-size:24px; margin-bottom:20px; }
 .subheader.subheader-slider p a { color:white; }
 .subheader.subheader-slider .slide { 
 	background-size:cover;
