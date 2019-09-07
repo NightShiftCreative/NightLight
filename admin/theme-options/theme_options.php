@@ -882,22 +882,6 @@ $admin_obj = new NS_Basics_Admin(); ?>
                         <h2><?php echo esc_html_e('Members', 'ns-core'); ?></h2>
 
                         <?php
-                        //Member Display Name
-                        $member_display_name_field = array(
-                            'title' => esc_html__('Member Display Name', 'ns-core'),
-                            'name' => 'ns_core_members_display_name',
-                            'value' => $theme_options['ns_core_members_display_name'],
-                            'type' => 'select',
-                            'options' => array(
-                                esc_html__('Username', 'ns-core') => 'username', 
-                                esc_html__('First Name', 'ns-core') => 'fname', 
-                                esc_html__('First & Last Name', 'ns-core') => 'flname',
-                                esc_html__('Display Name', 'ns-core') => 'display_name',
-                                esc_html__('Email', 'ns-core') => 'email',
-                            ),
-                        );
-                        $admin_obj->build_admin_field($member_display_name_field);
-
                         //Member Login Page
                         $pages = get_pages(); 
                         $member_page_options_array == array();

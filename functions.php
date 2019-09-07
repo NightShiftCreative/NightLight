@@ -328,11 +328,11 @@ function ns_core_get_header_member_actions($class = null, $login_class = null, $
     $members_login_page = ns_core_load_theme_options('ns_core_members_login_page');
     $members_register_page = ns_core_load_theme_options('ns_core_members_register_page');
     $members_display_avatar = ns_core_load_theme_options('ns_core_members_display_avatar');
-    $members_display_name = ns_core_load_theme_options('ns_core_members_display_name');
     $members_dashboard_page = ns_core_load_theme_options('ns_core_members_dashboard_page');
     $members_edit_profile_page = ns_core_load_theme_options('ns_core_members_edit_profile_page');
     $members_favorites_page = ns_core_load_theme_options('ns_core_members_favorites_page');
     $current_user = wp_get_current_user();
+    $members_display_name = $current_user->display_name;
     $avatar_id = get_user_meta( $current_user->ID, 'avatar', true ); 
     $avatar_img = wp_get_attachment_image($avatar_id, array('16', '16'), "", array( "class" => "avatar"));
     ob_start(); ?>
@@ -352,22 +352,7 @@ function ns_core_get_header_member_actions($class = null, $login_class = null, $
                         echo '<img width="16" height="16" class="avatar" src="'. esc_url( get_template_directory_uri() ) .'/images/avatar-default.png" alt="avatar" />';
                     } 
                 } 
-                ?>
-                <?php 
-                    echo '<span class="display-name">';
-                    if($members_display_name == 'username') {
-                        echo esc_attr($current_user->user_login);
-                    } else if($members_display_name == 'fname') {
-                        echo esc_attr($current_user->user_firstname);
-                    } else if($members_display_name == 'flname') {
-                        echo esc_attr($current_user->user_firstname).' '.esc_attr($current_user->user_lastname);
-                    } else if($members_display_name == 'email') {
-                        echo esc_attr($current_user->user_email);
-                    } else if($members_display_name == 'display_name') {
-                        echo esc_attr($current_user->display_name);
-                    }
-                    echo '</span>';
-                ?>
+                echo '<span class="display-name">'.$members_display_name.'</span>'; ?>
                 <i class="fa icon fa-caret-down"></i>
             </div>
             <ul class="member-sub-menu">

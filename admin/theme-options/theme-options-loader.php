@@ -79,7 +79,6 @@ function ns_core_load_theme_options($single_option = null, $return_defaults = fa
     	'ns_core_page_banner_slider_duration' => '5000',
     	'ns_core_page_banner_slider_auto_start' => 'true',
     	'ns_core_page_sidebar_size' => 'small',
-    	'ns_core_members_display_name' => 'username',
     	'ns_core_members_login_page' => false,
     	'ns_core_members_register_page' => false,
     	'ns_core_members_dashboard_page' => false,
