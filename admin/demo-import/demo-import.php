@@ -46,7 +46,7 @@ function ns_core_add_default_pages() {
     $theme_slug = sanitize_title($theme_name);
     $hello_world_content = '';
     $hello_world_content .= __('This is your first post. Edit or delete it, then start writing! Read our', 'ns-core');
-    $hello_world_content .= ' <a href="https://studio.nightshiftcreative.co/docs/'.$theme_slug.'/installing-the-theme/" target="_blank">Getting Started</a>';
+    $hello_world_content .= ' <a href="https://products.nightshiftcreative.co/docs/'.$theme_slug.'/installing-the-theme/" target="_blank">Getting Started</a> ';
     $hello_world_content .= __('docs to help you configure your site!', 'ns-core');
 
     $post_hello_world = array(
