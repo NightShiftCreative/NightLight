@@ -41,12 +41,14 @@ jQuery(document).ready(function($) {
 	/***************************************************************************/
 	var navToggle = $('.header-default.navbar-fixed .navbar-toggle');
 	var mainMenuWrap = $('.header-default.navbar-fixed .header-menu');
+    var header = $('.main-header');
     var transparentHeader = $('.header-transparent.navbar-fixed');
     var stickPoint = $('.navbar-fixed').outerHeight();
 	
 	if ($(window).scrollTop() > stickPoint) { 
 		navToggle.addClass('fixed'); 
 		mainMenuWrap.addClass('fixed');
+        header.addClass('scrolled');
         transparentHeader.addClass('fixed');
         transparentHeader.addClass('header-classic');
         transparentHeader.removeClass('header-transparent');
@@ -57,6 +59,7 @@ jQuery(document).ready(function($) {
 		if ($(window).scrollTop() > stickPoint) {
 		    navToggle.addClass('fixed');
 		    mainMenuWrap.addClass('fixed');
+            header.addClass('scrolled');
             transparentHeader.addClass('fixed');
             transparentHeader.addClass('header-classic');
             transparentHeader.removeClass('header-transparent');
@@ -64,6 +67,7 @@ jQuery(document).ready(function($) {
 		} else {
 		    navToggle.removeClass('fixed');
 		    mainMenuWrap.removeClass('fixed');
+            header.removeClass('scrolled');
             transparentHeader.removeClass('fixed');
             transparentHeader.removeClass('header-classic');
             transparentHeader.addClass('header-transparent');
