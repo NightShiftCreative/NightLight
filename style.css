@@ -280,6 +280,7 @@ a:hover { color:#04b0a8; text-decoration:none; }
 
 /** PAGINATION **/
 .page-list .page-numbers {
+	display:inline-block;
     background:white;
     border:1px solid rgba(0, 0, 0, 0.08);
     padding:8px 12px;
