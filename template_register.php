@@ -34,7 +34,11 @@
                     <?php get_template_part('template_parts/loop_page'); ?>
                     <?php if(function_exists('ns_basics_template_loader')) { ns_basics_template_loader('register_form.php'); } ?>
                 </div>
-                <div class="<?php echo $col_class['sidebar']; ?>"><?php if(is_active_sidebar($page_layout_widget_area)) { dynamic_sidebar( $page_layout_widget_area ); } ?></div>
+                <div class="<?php echo $col_class['sidebar']; ?>">
+                    <?php 
+                    do_action('ns_core_before_sidebar');
+                    if(is_active_sidebar($page_layout_widget_area)) { dynamic_sidebar( $page_layout_widget_area ); } ?>    
+                </div>
             <?php } ?>
         </div><!-- end row -->
 
