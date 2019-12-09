@@ -23,7 +23,11 @@
 
 			<?php if($page_layout == 'right sidebar' || $page_layout == 'left sidebar') { ?>
 				<div class="<?php echo $col_class['content']; ?>"><?php get_template_part('template_parts/loop_blog'); ?></div>
-				<div class="<?php echo $col_class['sidebar']; ?>"><?php if(is_active_sidebar($page_layout_widget_area)) { dynamic_sidebar( $page_layout_widget_area ); } ?></div>
+				<div class="<?php echo $col_class['sidebar']; ?>">
+                    <?php 
+                    do_action('ns_core_before_sidebar');
+                    if(is_active_sidebar($page_layout_widget_area)) { dynamic_sidebar( $page_layout_widget_area ); } ?>
+                </div>
 			<?php } ?>
 		</div><!-- end row -->
 
