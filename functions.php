@@ -689,7 +689,7 @@ function ns_core_widgets_init() {
 		'id' => 'page_sidebar',
 		'before_widget' => '<div class="widget widget-sidebar %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4>',
+		'before_title' => '<h4 class="widget-header">',
 		'after_title' => '</h4>',
 	) );
 
@@ -699,7 +699,7 @@ function ns_core_widgets_init() {
 		'id' => 'blog_sidebar',
 		'before_widget' => '<div class="widget widget-sidebar %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4>',
+		'before_title' => '<h4 class="widget-header">',
 		'after_title' => '</h4>',
 	) );
 	
@@ -724,7 +724,7 @@ function ns_core_widgets_init() {
 		'id' => 'footer-widgets',
 		'before_widget' => $footer_widget_class,
 		'after_widget' => '</div>',
-		'before_title' => '<h4><span>',
+		'before_title' => '<h4 class="widget-header"><span>',
 		'after_title' => '</span></h4><div class="widget-divider"><div class="bar"></div></div>',
 	) );
 }
