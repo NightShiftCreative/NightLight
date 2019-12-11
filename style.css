@@ -1171,7 +1171,7 @@ header.navbar-fixed { position:fixed; top:0; }
     border:1px solid rgba(0, 0, 0, 0.07);
 }
 
-.widget-sidebar h4 { 
+.widget-sidebar > h4 { 
     line-height:1.3;
     margin-left:-20px;
     margin-right:-20px;
