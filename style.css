@@ -1249,6 +1249,7 @@ header.navbar-fixed { position:fixed; top:0; }
     font-size:20px;
     width:35px;
     height:35px;
+    line-height:35px;
 }
 .widget.widget-sidebar.testimonials-widget .slider-nav-testimonials .slider-prev,
 .widget.widget-footer.testimonials-widget .slider-nav-testimonials .slider-prev { margin-left:15%; }
