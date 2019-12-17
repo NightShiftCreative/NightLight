@@ -87,14 +87,6 @@
     float:right;
 }
 
-.option-preview { 
-    width:250px; 
-    border:1px solid rgba(0, 0, 0, 0.08); 
-    padding:10px; 
-    margin-top:5px;
-    background:rgba(0, 0, 0, 0.03);
-}
-.option-preview img { max-width:100%; height:auto; }
 .favicon-preview { width:20px; }
 
 .ns-theme-options .reset-fonts { display:block; margin-top:10px; }
