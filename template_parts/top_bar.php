@@ -51,7 +51,7 @@ $social_icons = ns_core_get_social_icons('top-bar-item left');
                     echo ns_core_get_header_member_actions($member_actions_class);
 
                 } else if($topbar_field['field'] == 'custom') {
-                    if(!empty($topbar_field['custom'])) { echo '<div class="top-bar-item left">'.$topbar_field['custom'].'</div>'; }
+                    if(!empty($topbar_field['custom'])) { echo '<div class="top-bar-item left">'.apply_filters('the_content', $topbar_field['custom']).'</div>'; }
                 } ?>
                 <?php if($count == 2 || $count == 4) { echo '</div>'; } ?>
                 <?php $count++; ?>
