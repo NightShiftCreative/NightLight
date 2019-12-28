@@ -11,7 +11,7 @@ $author_display_name = get_the_author_meta('user_nicename');
         <a href="<?php the_permalink(); ?>" class="blog-post-img">
             <div class="img-fade"></div>
             <div class="blog-post-date"><?php the_time('\<\s\p\a\n\>j\<\/\s\p\a\n\> M') ?></div>
-            <?php if($blog_thumb == true) { the_post_thumbnail('ns-blog-thumb'); } else { the_post_thumbnail('ns-blog-full'); } ?>
+            <?php if(isset($blog_thumb) && $blog_thumb == true) { the_post_thumbnail('ns-blog-thumb'); } else { the_post_thumbnail('ns-blog-full'); } ?>
         </a>
         <?php } ?>
 
