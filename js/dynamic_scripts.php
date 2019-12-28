@@ -69,7 +69,6 @@ $dynamic_script .= "var rtl = '{$rtl}';";
 $dynamic_script .= "var banner_slider_transition = '{$banner_slider_transition}';";
 $dynamic_script .= "var banner_slider_duration = '{$banner_slider_duration}';";
 $dynamic_script .= "var banner_slider_auto_start = '{$banner_slider_auto_start}';";
-$dynamic_script .= "var contact_form_success = '{$contact_form_success}';";
 
 //CHOSEN SELECT RTL SUPPORT
 if($rtl == 'true') {
