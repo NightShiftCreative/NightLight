@@ -682,7 +682,7 @@ $admin_obj = new NS_Basics_Admin(); ?>
 
                         //Menu Call to Action
                         $pages = get_pages(); 
-                        $page_options_array == array();
+                        $page_options_array = array();
                         $page_options_array['Select page'] = '';
                         foreach ( $pages as $page ) { $page_options_array[$page->post_title] = get_page_link( $page->ID ); } 
                         $menu_call_to_action_field = array(
@@ -884,7 +884,7 @@ $admin_obj = new NS_Basics_Admin(); ?>
                         <?php
                         //Member Login Page
                         $pages = get_pages(); 
-                        $member_page_options_array == array();
+                        $member_page_options_array = array();
                         $member_page_options_array['Select page'] = '';
                         foreach ( $pages as $page ) { $member_page_options_array[$page->post_title] = get_page_link( $page->ID ); } 
 
