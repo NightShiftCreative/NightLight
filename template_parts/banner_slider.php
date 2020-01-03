@@ -3,8 +3,8 @@
     $icon_set = ns_core_load_theme_options('ns_core_icon_set');
 
     //Page Settings
-    if(!empty($template_args['post_id'])) {
-        $values = get_post_custom( $template_args['post_id'] );
+    if(!empty($template_args['values'])) {
+        $values = $template_args['values'];
     } else {
         $values = get_post_custom( $post->ID );
     }

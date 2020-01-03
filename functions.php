@@ -501,7 +501,8 @@ function ns_core_generate_page_banner($values) {
     if($banner_display == 'true') {
         do_action('ns_core_before_page_banner', $values);
         if($banner_source == 'slides' ) {
-            ns_core_get_template_part('template_parts/banner_slider', ['post_id' => $page_id]); 
+            //ns_core_get_template_part('template_parts/banner_slider', ['post_id' => $page_id]); 
+            ns_core_get_template_part('template_parts/banner_slider', ['values' => $values]); 
         } else if($banner_source == 'shortcode') {
             if(!empty($banner_shortcode)) { echo do_shortcode($banner_shortcode); } else { get_template_part('template_parts/subheader'); }
         } else if($banner_source == 'image_banner') {
