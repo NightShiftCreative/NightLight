@@ -21,7 +21,7 @@ function ns_core_load_theme_options($single_option = null, $return_defaults = fa
         'ns_core_custom_scripts_header' => '',
         'ns_core_custom_scripts_footer' => '',
     	'ns_core_phone' => false,
-    	'ns_core_email' => false,
+    	'ns_core_email' => get_option('admin_email'),
     	'ns_core_address' => false,
     	'ns_core_fb' => false,
     	'ns_core_twitter' => false,
