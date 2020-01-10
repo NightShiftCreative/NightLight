@@ -42,20 +42,28 @@ function ns_core_add_default_pages() {
 
     //Add main menu
     $menu_name = 'Main Menu';
-    $menu_exists = wp_get_nav_menu_object( $menu_name );
+    $menu_exists = wp_get_nav_menu_object($menu_name);
     $menu_location = 'menu-1';
 
     if(!$menu_exists) {
+
         $menu_id = wp_create_nav_menu($menu_name);
 
-        wp_update_nav_menu_item($menu_id, 0, array(
-            'menu-item-title' =>  esc_html__('Sample Page', 'ns-core'),
-            'menu-item-object' => 'page',
-            'menu-item-object-id' => get_page_by_path('sample-page')->ID,
-            'menu-item-type' => 'post_type',
-            'menu-item-status' => 'publish'));
+        // add sample page to menu
+        $menu_item_data = array();
+        if(get_page_by_path('sample-page') != null) {
+            $menu_item_data = array(
+                'menu-item-title' =>  esc_html__('Sample Page', 'ns-core'),
+                'menu-item-object' => 'page',
+                'menu-item-object-id' => get_page_by_path('sample-page')->ID,
+                'menu-item-type' => 'post_type',
+                'menu-item-status' => 'publish',
+            );
+            wp_update_nav_menu_item($menu_id, 0, $menu_item_data);
+        }
 
-        if( !has_nav_menu( $menu_location ) ){
+        // set menu display location to Primary
+        if(!has_nav_menu($menu_location)) {
             $locations = get_theme_mod('nav_menu_locations');
             $locations[$menu_location] = $menu_id;
             set_theme_mod( 'nav_menu_locations', $locations );
