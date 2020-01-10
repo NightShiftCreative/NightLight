@@ -40,25 +40,6 @@ add_action( 'pt-ocdi/after_import', 'ns_core_assign_front_page' );
 /*-----------------------------------------------------------------------------------*/
 function ns_core_add_default_pages() {
 
-    //Update "Hello World" blog post
-    $theme_info = wp_get_theme();
-    $theme_name = $theme_info->name;
-    $theme_slug = sanitize_title($theme_name);
-    $hello_world_content = '';
-    $hello_world_content .= __('This is your first post. Edit or delete it, then start writing! Read our', 'ns-core');
-    $hello_world_content .= ' <a href="https://products.nightshiftcreative.co/docs/'.$theme_slug.'/installing-the-theme/" target="_blank">Getting Started</a> ';
-    $hello_world_content .= __('docs to help you configure your site!', 'ns-core');
-
-    $post_hello_world = array(
-      'ID' => 1,
-      'post_name' => 'welcome', // The name (slug) for your post
-      'post_status' => 'publish', //Set the status of the new post.
-      'post_title' => esc_html__('Welcome to', 'ns-core').' '.$theme_name, //The title of your post.
-      'post_type' => 'post', //Sometimes you want to post a page.
-      'post_content' => $hello_world_content,
-    );  
-    if (!ns_core_post_exists_by_slug('welcome', 'post')) { wp_insert_post($post_hello_world); }
-
     //Add main menu
     $menu_name = 'Main Menu';
     $menu_exists = wp_get_nav_menu_object( $menu_name );
