@@ -407,19 +407,23 @@ add_filter( 'body_class', function( $classes ) {
 /*-----------------------------------------------------------------------------------*/
 function ns_core_get_page_id() {
     global $post;
+    $page_id = null;
 
-    if(is_home()) {
-        $queried_object = get_queried_object();
-        if(!empty($queried_object)) {
-            $page_id = $queried_object->ID;
+    if(is_object($post)) {
+        if(is_home()) {
+            $queried_object = get_queried_object();
+            if(!empty($queried_object)) {
+                $page_id = $queried_object->ID;
+            } else {
+                $page_id = $post->ID;
+            }
+        } else if(is_singular('post')) {
+            $page_id = get_option('page_for_posts');
         } else {
             $page_id = $post->ID;
         }
-    } else if(is_singular('post')) {
-        $page_id = get_option('page_for_posts');
-    } else {
-        $page_id = $post->ID;
     }
+    
     return $page_id; 
 }
 
@@ -501,7 +505,6 @@ function ns_core_generate_page_banner($values) {
     if($banner_display == 'true') {
         do_action('ns_core_before_page_banner', $values);
         if($banner_source == 'slides' ) {
-            //ns_core_get_template_part('template_parts/banner_slider', ['post_id' => $page_id]); 
             ns_core_get_template_part('template_parts/banner_slider', ['values' => $values]); 
         } else if($banner_source == 'shortcode') {
             if(!empty($banner_shortcode)) { echo do_shortcode($banner_shortcode); } else { get_template_part('template_parts/subheader'); }
