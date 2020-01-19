@@ -52,7 +52,7 @@ $admin_obj = new NS_Basics_Admin(); ?>
     <table class="theme-options-header" cellspacing="0" cellpadding="0">
         <tr>
         <td class="theme-options-logo">
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/admin/images/logo.svg" alt="" />
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/admin/images/logo.svg" />
         </td>
         <td>
             <div class="created-by">
@@ -67,7 +67,7 @@ $admin_obj = new NS_Basics_Admin(); ?>
             <div class="theme-options-actions">
                 <div class="button reset-theme-options"><?php esc_html_e('Reset to Default', 'ns-core'); ?></div>
                 <?php submit_button( __( 'Save Changes', 'ns-core' ), 'primary', 'submit_top' ); ?>
-                <div class="loader"><img src="<?php echo esc_url(home_url('/')); ?>wp-admin/images/spinner.gif" alt="" /></div>
+                <div class="loader"><img src="<?php echo esc_url(home_url('/')); ?>wp-admin/images/spinner.gif" /></div>
                 <div class="save-result" id="save-result"><?php echo esc_html_e('Settings Saved Successfully', 'ns-core'); ?></div>
             </div>
         </td>
@@ -98,7 +98,7 @@ $admin_obj = new NS_Basics_Admin(); ?>
 
                 <td class="ns-tabs-content theme-options-tab-container" valign="top">
 
-                    <div class="tab-loader"><img src="<?php echo esc_url(home_url('/')); ?>wp-admin/images/spinner.gif" alt="" /> <?php esc_html_e('Loading...', 'ns-core'); ?></div>
+                    <div class="tab-loader"><img src="<?php echo esc_url(home_url('/')); ?>wp-admin/images/spinner.gif" /> <?php esc_html_e('Loading...', 'ns-core'); ?></div>
 
                     <div id="general" class="tab-content">
                         <h2><?php echo esc_html_e('General', 'ns-core'); ?></h2>
@@ -1266,7 +1266,7 @@ $admin_obj = new NS_Basics_Admin(); ?>
         <td>
             <div class="theme-options-actions">
                 <?php submit_button( __( 'Save Changes', 'ns-core' ), 'primary', 'submit_top' ); ?>
-                <div class="loader"><img src="<?php echo esc_url(home_url('/')); ?>wp-admin/images/spinner.gif" alt="" /></div>
+                <div class="loader"><img src="<?php echo esc_url(home_url('/')); ?>wp-admin/images/spinner.gif" /></div>
                 <div class="save-result" id="save-result"><?php echo esc_html_e('Settings Saved Successfully', 'ns-core'); ?></div>
             </div>
         </td>
