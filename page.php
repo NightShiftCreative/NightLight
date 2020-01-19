@@ -22,8 +22,8 @@
 			<?php } ?>
 
 			<?php if($page_layout == 'right sidebar' || $page_layout == 'left sidebar') { ?>
-				<div class="<?php echo $col_class['content']; ?>"><?php get_template_part('template_parts/loop_page'); ?></div>
-				<div class="<?php echo $col_class['sidebar']; ?>">
+				<div class="<?php echo esc_attr($col_class['content']); ?>"><?php get_template_part('template_parts/loop_page'); ?></div>
+				<div class="<?php echo esc_attr($col_class['sidebar']); ?>">
                     <?php 
                     do_action('ns_core_before_sidebar');
                     if(is_active_sidebar($page_layout_widget_area)) { dynamic_sidebar( $page_layout_widget_area ); } ?>       
