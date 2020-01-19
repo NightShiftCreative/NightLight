@@ -181,14 +181,15 @@ $admin_obj = new NS_Basics_Admin(); ?>
                                 <p class="admin-module-note" style="margin-bottom:0;"><?php esc_html_e('All fonts are generated from', 'ns-core'); ?> <a href="https://fonts.google.com/" target="_blank"><?php esc_html_e('Google Fonts', 'ns-core'); ?></a></p>
                                 <?php if($theme_options['ns_core_heading_font'] != $default_font || $theme_options['ns_core_body_font'] != $default_font) { ?>
                                 <a href="#" class="admin-module-note reset-fonts">
-                                    <span class="hide"><?php echo $default_font; ?></span>
+                                    <span class="hide"><?php echo esc_attr($default_font); ?></span>
                                     <?php esc_html_e('Reset to default fonts', 'ns-core'); ?>
                                 </a>
                                 <?php } ?>
                             </h3>
 
                             <?php
-                            $google_fonts = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyAieN5h5Kk6EzbJMGCuI-vBsE4rGFPMsSw';
+                            $google_fonts_key = 'AIzaSyAieN5h5Kk6EzbJMGCuI-vBsE4rGFPMsSw';
+                            $google_fonts = 'https://www.googleapis.com/webfonts/v1/webfonts?key='.$google_fonts_key;
                             $google_font_args = array('timeout' => 20, 'sslverify' => false);
                             $json = wp_remote_get($google_fonts, $google_font_args );
                             $json = wp_remote_retrieve_body($json);

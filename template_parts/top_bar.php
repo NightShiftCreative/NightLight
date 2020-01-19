@@ -42,7 +42,7 @@ $social_icons = ns_core_get_social_icons('top-bar-item left');
                 
                 <?php } else if($topbar_field['field'] == 'social') { 
                     
-                    if(!empty($social_icons)) { echo $social_icons; }
+                    if(!empty($social_icons)) { echo wp_kses_post($social_icons); }
 
                 } else if($topbar_field['field'] == 'member') {
 

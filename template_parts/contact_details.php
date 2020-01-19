@@ -38,7 +38,7 @@
             <div class="contact-item">
                 <?php echo ns_core_get_icon($icon_set, 'share-alt', 'share2', 'forward'); ?>
                 <h4><?php esc_html_e( 'Connect With Us', 'ns-core' ); ?></h4>
-                <?php echo $social_icons; ?>
+                <?php echo wp_kses_post($social_icons); ?>
             </div>
             <?php } ?>
 

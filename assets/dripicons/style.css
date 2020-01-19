@@ -1,5 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);
-  * {transition:all 0.15s;}
+* {transition:all 0.15s;}
   ::selection{background:#374347;color:#fff;}
   ::-moz-selection{background:#374347;color:#fff;}
   html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-family:inherit;font-size:100%;vertical-align:baseline}
@@ -9,7 +8,7 @@
   caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}
   a img{border:none}
   *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
-  body{font-family:'Noto Sans','Helvetica','Arial',sans-serif;font-weight:400;}
+  body{font-family:'Helvetica','Arial',sans-serif;font-weight:400;}
   .container{margin:15px auto;width:90%;max-width:1140px;}
   h1{margin-bottom:30px;font-weight:700;font-size:120px;line-height:134px;color:#398FF7;text-align:center;text-transform:normal;letter-spacing:1px;}
   h4{font-size:12px;line-height:20px;letter-spacing:8px;font-weight:400;text-transform:uppercase;color:#161616;margin-bottom:20px;margin-top:130px;text-align:center;}

@@ -158,34 +158,21 @@ add_action( 'wp_enqueue_scripts', 'ns_core_load_scripts' );
 /*-----------------------------------------------------------------------------------*/
 /* Adds async/defer attributes to scripts/styles
 /*-----------------------------------------------------------------------------------*/
-add_filter( 'script_loader_tag', 'ns_core_add_async_to_script', 10, 3 );
-function ns_core_add_async_to_script( $tag, $handle, $src ) {
-    if (!is_admin()) {
-
-        $script_array = array('html5shiv', 'respond');
-        $script_array = apply_filters( 'ns_core_async_scripts', $script_array);
-
-        if (in_array($handle, $script_array)) {
-            $tag = '<script async type="text/javascript" src="' . esc_url( $src ) . '"></script>';
-        }
-    }
-    return $tag;
+add_filter('ns_basics_async_scripts', 'ns_core_async_scripts');
+function ns_core_async_scripts($script_array) {
+    $script_array[] = 'html5shiv'; 
+    $script_array[] = 'respond'; 
+    return $script_array;
 }
 
-add_filter( 'style_loader_tag', 'ns_core_add_async_to_style', 10, 3 );
-function ns_core_add_async_to_style($html, $handle) {
-    if (!is_admin()) {
-
-        $style_array = array('chosen', 'ns-font-awesome', 'linear-icons', 'dripicons', 'fancybox');
-        $style_array = apply_filters( 'ns_core_async_styles', $style_array);
-
-        $onload = "if(media!='all')media='all'";
-        $media = 'media="none" onload="'.$onload.'"';
-        if(in_array($handle, $style_array)) {
-            return str_replace( "media='all'", $media, $html );
-        }
-    }
-    return $html;
+add_filter('ns_basics_async_styles', 'ns_core_defer_styles');
+function ns_core_defer_styles($style_array) {
+    $style_array[] = 'chosen'; 
+    $style_array[] = 'ns-font-awesome';
+    $style_array[] = 'linear-icons'; 
+    $style_array[] = 'dripicons'; 
+    $style_array[] = 'fancybox';  
+    return $style_array;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -290,7 +277,7 @@ function ns_core_get_header_items($class = null, $search = true) {
     $above_email_text = ns_core_load_theme_options('ns_core_above_email_text');
     ob_start(); ?>
     
-    <div class="header-details <?php echo $class; ?>">
+    <div class="header-details <?php echo esc_attr($class); ?>">
 
         <?php if($search == true) { ?>
             <?php if($display_header_search == 'true') { ?>
@@ -303,20 +290,20 @@ function ns_core_get_header_items($class = null, $search = true) {
 
         <?php if(!empty($phone)) { ?>
         <div class="header-item header-phone left">
-            <a href="tel:<?php echo $phone; ?>" class="header-item-icon"><?php echo ns_core_get_icon($icon_set, 'phone', 'telephone'); ?></a>
+            <a href="tel:<?php echo esc_attr($phone); ?>" class="header-item-icon"><?php echo ns_core_get_icon($icon_set, 'phone', 'telephone'); ?></a>
             <div class="header-item-text">
             <?php if(!empty($above_phone_text)) { echo '<p class="above-text">'.esc_attr($above_phone_text).'</p>'; } ?>
-            <?php echo '<a href="tel:'.$phone.'"><span>'.$phone.'</span></a>'; ?>
+            <?php echo '<a href="tel:'.esc_attr($phone).'"><span>'.esc_attr($phone).'</span></a>'; ?>
             </div>
         </div>
         <?php } ?>
 
         <?php if(!empty($email)) { ?>
         <div class="header-item header-email left">
-            <a href="mailto:<?php echo $email; ?>" class="header-item-icon"><?php echo ns_core_get_icon($icon_set, 'envelope', '', 'mail'); ?></a>
+            <a href="mailto:<?php echo esc_attr($email); ?>" class="header-item-icon"><?php echo ns_core_get_icon($icon_set, 'envelope', '', 'mail'); ?></a>
             <div class="header-item-text">
             <?php if(!empty($above_email_text)) { echo '<p class="above-text">'.esc_attr($above_email_text).'</p>'; } ?>
-            <?php echo '<a href="mailto:'.$email.'" title="'.$email.'"><span>'.$email.'</span></a>'; ?>
+            <?php echo '<a href="mailto:'.esc_attr($email).'" title="'.esc_attr($email).'"><span>'.esc_attr($email).'</span></a>'; ?>
             </div>
         </div>
         <?php } ?>
@@ -344,13 +331,13 @@ function ns_core_get_header_member_actions($class = null, $login_class = null, $
     ob_start(); ?>
 
     <?php if(!is_user_logged_in()) { ?>
-        <div class="header-member-actions <?php echo $class; ?>">
-            <a href="<?php echo esc_url($members_login_page); ?>" class="login-link <?php echo $login_class; ?>"><?php echo ns_core_get_icon($icon_set, 'sign-in-alt', 'enter-right', 'exit'); ?><?php esc_html_e( 'Login', 'ns-core' ); ?></a>
-            <a href="<?php echo esc_url($members_register_page); ?>" class="register-link <?php echo $register_class; ?>"><?php echo ns_core_get_icon($icon_set, 'user-plus', 'user', 'user'); ?><?php esc_html_e( 'Register', 'ns-core' ); ?></a>
+        <div class="header-member-actions <?php echo esc_attr($class); ?>">
+            <a href="<?php echo esc_url($members_login_page); ?>" class="login-link <?php echo esc_attr($login_class); ?>"><?php echo ns_core_get_icon($icon_set, 'sign-in-alt', 'enter-right', 'exit'); ?><?php esc_html_e( 'Login', 'ns-core' ); ?></a>
+            <a href="<?php echo esc_url($members_register_page); ?>" class="register-link <?php echo esc_attr($register_class); ?>"><?php echo ns_core_get_icon($icon_set, 'user-plus', 'user', 'user'); ?><?php esc_html_e( 'Register', 'ns-core' ); ?></a>
         </div>
     <?php } else { ?>
-        <div class="header-member-actions <?php echo $class; ?> <?php if($members_display_avatar == 'true') { echo 'has-avatar'; } ?>">
-            <div class="member-actions-toggle <?php echo $toggle_class; ?>">
+        <div class="header-member-actions <?php echo esc_attr($class); ?> <?php if($members_display_avatar == 'true') { echo 'has-avatar'; } ?>">
+            <div class="member-actions-toggle <?php echo esc_attr($toggle_class); ?>">
                 <?php if($members_display_avatar == 'true') { 
                     if (!empty($avatar_img)) {
                         echo wp_kses_post($avatar_img);
@@ -362,9 +349,9 @@ function ns_core_get_header_member_actions($class = null, $login_class = null, $
                 <i class="fa icon fa-caret-down"></i>
             </div>
             <ul class="member-sub-menu">
-                <?php if(!empty($members_dashboard_page)) { ?><li><a href="<?php echo $members_dashboard_page; ?>"><?php echo ns_core_get_icon($icon_set, 'tachometer-alt', 'layers', 'meter'); ?><?php esc_html_e( 'Dashboard', 'ns-core' ); ?></a></li><?php } ?>
-                <?php if(!empty($members_edit_profile_page)) { ?><li><a href="<?php echo $members_edit_profile_page; ?>"><?php echo ns_core_get_icon($icon_set, 'cog', 'cog', 'gear'); ?><?php esc_html_e( 'Edit Profile', 'ns-core' ); ?></a></li><?php } ?>
-                <?php if(!empty($members_favorites_page)) { ?><li><a href="<?php echo $members_favorites_page; ?>"><?php echo ns_core_get_icon($icon_set, 'heart'); ?><?php esc_html_e( 'Favorites', 'ns-core' ); ?></a></li><?php } ?>
+                <?php if(!empty($members_dashboard_page)) { ?><li><a href="<?php echo esc_url($members_dashboard_page); ?>"><?php echo ns_core_get_icon($icon_set, 'tachometer-alt', 'layers', 'meter'); ?><?php esc_html_e( 'Dashboard', 'ns-core' ); ?></a></li><?php } ?>
+                <?php if(!empty($members_edit_profile_page)) { ?><li><a href="<?php echo esc_url($members_edit_profile_page); ?>"><?php echo ns_core_get_icon($icon_set, 'cog', 'cog', 'gear'); ?><?php esc_html_e( 'Edit Profile', 'ns-core' ); ?></a></li><?php } ?>
+                <?php if(!empty($members_favorites_page)) { ?><li><a href="<?php echo esc_url($members_favorites_page); ?>"><?php echo ns_core_get_icon($icon_set, 'heart'); ?><?php esc_html_e( 'Favorites', 'ns-core' ); ?></a></li><?php } ?>
                 <?php do_action('ns_core_after_top_bar_member_menu'); ?>
                 <li><a href="<?php echo wp_logout_url(get_permalink()); ?>"><?php echo ns_core_get_icon($icon_set, 'sign-out-alt', 'enter-left', 'enter'); ?><?php esc_html_e( 'Logout', 'ns-core' ); ?></a></li>
             </ul>
@@ -622,31 +609,6 @@ add_action( 'init', 'ns_core_register_menus' );
 function ns_core_excerpt($limit) {
     return wp_trim_words(get_the_excerpt(), $limit);
 }
-
-function ns_core_trim_excerpt($text) {
-  $raw_excerpt = $text;
-  if ( '' == $text ) {
-    $text = get_the_content('');
-    $text = strip_shortcodes( $text );
-    $text = apply_filters('the_content', $text);
-    $text = str_replace(']]>', ']]>', $text);
-    $text = strip_tags($text, '<a>');
-    $excerpt_length = apply_filters('excerpt_length', 55);
-    $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
-    $words = preg_split('/(<a.*?a>)|\n|\r|\t|\s/', $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY|PREG_SPLIT_DELIM_CAPTURE );
-    if ( count($words) > $excerpt_length ) {
-      array_pop($words);
-      $text = implode(' ', $words);
-      $text = $text . $excerpt_more;
-      } 
-    else {
-      $text = implode(' ', $words);
-      }
-    }
-  return apply_filters('new_wp_trim_excerpt', $text, $raw_excerpt);
-  }
-remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-add_filter('get_the_excerpt', 'ns_core_trim_excerpt');
 
 /*-----------------------------------------------------------------------------------*/
 /*	Comment List
