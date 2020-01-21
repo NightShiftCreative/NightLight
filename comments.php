@@ -39,6 +39,7 @@ if ( post_password_required() ) {
                 </span> 
             </h4>
             <div class="widget-divider"><div class="bar"></div></div>
+            <div class="clear"></div>
         </div>
 		<ul>
 			<?php wp_list_comments('type=comment&callback=ns_core_comment_list&max_depth=3') ?>
