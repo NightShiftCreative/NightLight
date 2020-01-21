@@ -1091,6 +1091,7 @@ header.navbar-fixed { position:fixed; top:0; }
 .blog-post-details .sl-wrapper > .button.sl-button:hover { background:transparent; color:#9eaab2; }
 
 .blog-post-content { padding:5%; }
+.blog-post-content h3 { word-break:break-all; }
 .blog-post-content h3 a { font-weight:300; color:#3a464e; }
 .blog-post-content h3 a:hover { color:#04d2c8; }
 .blog-post-content .tag-list { color:#9eaab2; margin-top:10px; font-size:13px; }
