@@ -37,7 +37,7 @@ function ns_core_register_required_plugins() {
 
     $plugins = array(
         array(
-            'name'         => 'NightShift Basics', // The plugin name.
+            'name'         => 'Nightshift Basics', // The plugin name.
             'slug'         => 'ns-basics', // The plugin slug (typically the folder name).
             'source'       => 'https://github.com/NightShiftCreative/NS-Basics/archive/1.0.0.zip', // The plugin source.
             'required'     => true, // If false, the plugin is only 'recommended' instead of required.
