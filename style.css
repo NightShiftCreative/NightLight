@@ -1191,7 +1191,6 @@ header.navbar-fixed { position:fixed; top:0; }
     margin-top:-20px;
     padding:14px 15px 12px 15px;
     border-bottom:1px solid rgba(0, 0, 0, 0.06); 
-    border-left:2px solid #04d2c8;
 }
 
 /** SEARCH WIDGET **/
@@ -1199,7 +1198,7 @@ header.navbar-fixed { position:fixed; top:0; }
 
 /** CALENDAR WIDGET **/
 .widget .calendar_wrap { background:white; padding:5%; }
-.widget #wp-calendar { width:100%; }
+.widget #wp-calendar { width:100%; margin:0; }
 .widget #wp-calendar a { 
     background:#04d2c8; 
     color:white; 
