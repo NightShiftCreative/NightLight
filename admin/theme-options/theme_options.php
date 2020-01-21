@@ -481,7 +481,7 @@ $admin_obj = new NS_Basics_Admin(); ?>
                                     'options' => array('Email' => 'email', 'Phone' => 'phone', 'Social Links' => 'social', 'Member Actions' => 'member', 'Custom' => 'custom', 'None' => ''),
                                     'children' => array(
                                         'custom_content' => array(
-                                            'title' => esc_html__('Custom Content', 'ns-basics'),
+                                            'title' => esc_html__('Custom Content', 'ns-core'),
                                             'name' => 'ns_core_topbar_first_field_custom',
                                             'type' => 'textarea',
                                             'value' => $theme_options['ns_core_topbar_first_field_custom'],
@@ -500,7 +500,7 @@ $admin_obj = new NS_Basics_Admin(); ?>
                                     'options' => array('Email' => 'email', 'Phone' => 'phone', 'Social Links' => 'social', 'Member Actions' => 'member', 'Custom' => 'custom', 'None' => ''),
                                     'children' => array(
                                         'custom_content' => array(
-                                            'title' => esc_html__('Custom Content', 'ns-basics'),
+                                            'title' => esc_html__('Custom Content', 'ns-core'),
                                             'name' => 'ns_core_topbar_second_field_custom',
                                             'type' => 'textarea',
                                             'value' => $theme_options['ns_core_topbar_second_field_custom'],
@@ -519,7 +519,7 @@ $admin_obj = new NS_Basics_Admin(); ?>
                                     'options' => array('Email' => 'email', 'Phone' => 'phone', 'Social Links' => 'social', 'Member Actions' => 'member', 'Custom' => 'custom', 'None' => ''),
                                     'children' => array(
                                         'custom_content' => array(
-                                            'title' => esc_html__('Custom Content', 'ns-basics'),
+                                            'title' => esc_html__('Custom Content', 'ns-core'),
                                             'name' => 'ns_core_topbar_third_field_custom',
                                             'type' => 'textarea',
                                             'value' => $theme_options['ns_core_topbar_third_field_custom'],
@@ -538,7 +538,7 @@ $admin_obj = new NS_Basics_Admin(); ?>
                                     'options' => array('Email' => 'email', 'Phone' => 'phone', 'Social Links' => 'social', 'Member Actions' => 'member', 'Custom' => 'custom', 'None' => ''),
                                     'children' => array(
                                         'custom_content' => array(
-                                            'title' => esc_html__('Custom Content', 'ns-basics'),
+                                            'title' => esc_html__('Custom Content', 'ns-core'),
                                             'name' => 'ns_core_topbar_fourth_field_custom',
                                             'type' => 'textarea',
                                             'value' => $theme_options['ns_core_topbar_fourth_field_custom'],
