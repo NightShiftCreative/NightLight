@@ -134,6 +134,7 @@
         $dynamic_css .= ".tabs li.ui-state-active .ui-tabs-anchor { color: {$style_global_main}; }";
         $dynamic_css .= "
             a, .accordion-footer a, 
+            .social-icons.circle li a,
             .top-bar-member-actions .member-sub-menu li a:hover,
             .header-member-actions .member-sub-menu li a:hover,
             .header-default .header-item td > .fa,

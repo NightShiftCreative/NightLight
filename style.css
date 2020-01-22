@@ -882,7 +882,6 @@ header.full-width .header-logo { padding:15px 15px; }
 .header-default .header-search button[type="submit"] { top:14px; }
 .header-default .header-search .header-item-icon > .fa { display:none; }
 .header-default .header-item .header-item-icon > .fa { 
-    color:#04d2c8; 
     font-size:21px; 
     margin-right:10px; 
     width:42px;
