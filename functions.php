@@ -563,7 +563,6 @@ if(!function_exists('ns_core_get_icon')) {
 /*  Get Social Icons
 /*-----------------------------------------------------------------------------------*/
 function ns_core_get_social_icons($class = null) {
-    $output = '';
     $fb = ns_core_load_theme_options('ns_core_fb');
     $twitter = ns_core_load_theme_options('ns_core_twitter');
     $google = ns_core_load_theme_options('ns_core_google');
@@ -574,20 +573,26 @@ function ns_core_get_social_icons($class = null) {
     $flickr = ns_core_load_theme_options('ns_core_flickr');
     $dribbble = ns_core_load_theme_options('ns_core_dribbble');
     $github = ns_core_load_theme_options('ns_core_github');
+
+    ob_start();
+
     if(!empty($fb) || !empty($twitter) || !empty($google) || !empty($linkedin) || !empty($youtube) || !empty($vimeo) || !empty($instagram) || !empty($flickr) || !empty($dribbble)) { 
-        $output .= '<ul class="social-icons '.$class.'">';
-            if(!empty($fb)) { $output .= '<li><a href="'.esc_url($fb).'" target="_blank"><i class="fab fa-facebook-f icon"></i></a></li>'; }
-            if(!empty($twitter)) { $output .= '<li><a href="'.esc_url($twitter).'" target="_blank"><i class="fab fa-twitter icon"></i></a></li>'; }
-            if(!empty($google)) { $output .= '<li><a href="'.esc_url($google).'" target="_blank"><i class="fab fa-google-plus-g icon"></i></a></li>'; }
-            if(!empty($linkedin)) { $output .= '<li><a href="'.esc_url($linkedin).'" target="_blank"><i class="fab fa-linkedin-in icon"></i></a></li>'; }
-            if(!empty($youtube)) { $output .= '<li><a href="'.esc_url($youtube).'" target="_blank"><i class="fab fa-youtube icon"></i></a></li>'; }
-            if(!empty($vimeo)) { $output .= '<li><a href="'.esc_url($vimeo).'" target="_blank"><i class="fab fa-vimeo icon"></i></a></li>'; }
-            if(!empty($instagram)) { $output .= '<li><a href="'.esc_url($instagram).'" target="_blank"><i class="fab fa-instagram icon"></i></a></li>'; }
-            if(!empty($flickr)) { $output .= '<li><a href="'.esc_url($flickr).'" target="_blank"><i class="fab fa-flickr icon"></i></a></li>'; }
-            if(!empty($dribbble)) { $output .= '<li><a href="'.esc_url($dribbble).'" target="_blank"><i class="fab fa-dribbble icon"></i></a></li>'; }
-            if(!empty($github)) { $output .= '<li><a href="'.esc_url($github).'" target="_blank"><i class="fab fa-github icon"></i></a></li>'; }
-        $output .= '</ul>';
+        echo '<ul class="social-icons '.$class.'">';
+            if(!empty($fb)) { echo '<li><a href="'.esc_url($fb).'" target="_blank"><i class="fab fa-facebook-f icon"></i></a></li>'; }
+            if(!empty($twitter)) { echo '<li><a href="'.esc_url($twitter).'" target="_blank"><i class="fab fa-twitter icon"></i></a></li>'; }
+            if(!empty($google)) { echo '<li><a href="'.esc_url($google).'" target="_blank"><i class="fab fa-google-plus-g icon"></i></a></li>'; }
+            if(!empty($linkedin)) { echo '<li><a href="'.esc_url($linkedin).'" target="_blank"><i class="fab fa-linkedin-in icon"></i></a></li>'; }
+            if(!empty($youtube)) { echo '<li><a href="'.esc_url($youtube).'" target="_blank"><i class="fab fa-youtube icon"></i></a></li>'; }
+            if(!empty($vimeo)) { echo '<li><a href="'.esc_url($vimeo).'" target="_blank"><i class="fab fa-vimeo icon"></i></a></li>'; }
+            if(!empty($instagram)) { echo '<li><a href="'.esc_url($instagram).'" target="_blank"><i class="fab fa-instagram icon"></i></a></li>'; }
+            if(!empty($flickr)) { echo '<li><a href="'.esc_url($flickr).'" target="_blank"><i class="fab fa-flickr icon"></i></a></li>'; }
+            if(!empty($dribbble)) { echo '<li><a href="'.esc_url($dribbble).'" target="_blank"><i class="fab fa-dribbble icon"></i></a></li>'; }
+            if(!empty($github)) { echo '<li><a href="'.esc_url($github).'" target="_blank"><i class="fab fa-github icon"></i></a></li>'; }
+            do_action('ns_core_after_social_icons');
+        echo '</ul>';
     } 
+
+    $output = ob_get_clean();
     return $output;
 }
 
