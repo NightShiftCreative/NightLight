@@ -378,6 +378,8 @@ $admin_obj = new NS_Basics_Admin(); ?>
                             );
                             $admin_obj->build_admin_field($github_field);
                             ?>
+
+                            <?php do_action('ns_core_after_social_theme_options'); ?>
                         </div><!-- end social media profiles -->
 
                         <br/><h3><?php echo esc_html_e('Contact Page', 'ns-core'); ?></h3>
