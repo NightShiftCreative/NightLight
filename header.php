@@ -63,6 +63,8 @@ if($header_container != 'true') { $header_class = $header_class.' full-width'; }
 
 <body <?php body_class(); ?>>
 
+<?php do_action('ns_core_before_body'); ?>
+
 <?php if($preloader == 'true' && !empty($preloader_img)) { ?>
 <div class="loader">
     <table>

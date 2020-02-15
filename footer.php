@@ -32,5 +32,7 @@
 
 <?php wp_footer(); ?>
 
+<?php do_action('ns_core_after_body'); ?>
+
 </body>
 </html>
