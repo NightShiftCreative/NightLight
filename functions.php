@@ -404,6 +404,8 @@ function ns_core_get_page_id() {
             } else {
                 $page_id = $post->ID;
             }
+        } else if(class_exists('WooCommerce') && is_shop()) {
+            $page_id = get_option( 'woocommerce_shop_page_id' ); 
         } else if(is_singular('post')) {
             $page_id = get_option('page_for_posts');
         } else {
