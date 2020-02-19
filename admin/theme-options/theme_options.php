@@ -56,7 +56,7 @@ $admin_obj = new NS_Basics_Admin(); ?>
         </td>
         <td>
             <div class="created-by">
-                <a href="<?php echo esc_url($sitelink); ?>" target="_blank"><?php echo esc_html_e('Made by', 'ns-core'); ?> NightShift Creative</a> 
+                <a href="<?php echo esc_url($sitelink); ?>" target="_blank"><?php echo esc_html_e('Made by', 'ns-core'); ?> Nightshift Creative</a> 
                 | <a href="<?php echo esc_url($siteSupportLink); ?>" target="_blank"><?php echo esc_html_e('Support', 'ns-core'); ?></a>
                 <?php
                 $my_theme = wp_get_theme();
