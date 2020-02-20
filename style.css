@@ -1452,6 +1452,7 @@ header.navbar-fixed { position:fixed; top:0; }
 .contact-item .social-icons li { padding:0; }
 .contact-item .social-icons .icon { border:none; color:white; font-size:17px; width:35px; height:35px; padding-top:10px; margin-bottom:0px; }
 .contact-item p { margin-bottom:0px; overflow:hidden; text-overflow:ellipsis; }
+.contact-item a { color:white; }
 
 .contact-form-before { margin-bottom:30px; }
 .contact-form-after { margin-top:30px; padding-top:30px; border-top:1px solid rgba(0, 0, 0, 0.1); }

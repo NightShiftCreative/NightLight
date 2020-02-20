@@ -14,7 +14,7 @@
             <div class="contact-item">
                 <?php echo ns_core_get_icon($icon_set, 'envelope', '', 'mail'); ?>
                 <h4><?php esc_html_e( 'Email Us', 'ns-core' ); ?></h4>
-                <p title="<?php echo esc_attr($email); ?>"><?php echo esc_attr($email); ?></p>
+                <p title="<?php echo esc_attr($email); ?>"><a href="mailto:<?php echo esc_attr($email); ?>"><?php echo esc_attr($email); ?></a></p>
             </div>
             <?php } ?>
 
@@ -22,7 +22,7 @@
             <div class="contact-item">
                 <?php echo ns_core_get_icon($icon_set, 'phone', 'telephone'); ?>
                 <h4><?php esc_html_e( 'Call Us', 'ns-core' ); ?></h4>
-                <p><?php echo esc_attr($phone); ?></p>
+                <p><a href="tel:<?php echo esc_attr($phone); ?>"><?php echo esc_attr($phone); ?></a></p>
             </div>
             <?php } ?>
 
