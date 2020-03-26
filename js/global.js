@@ -171,6 +171,44 @@ jQuery(document).ready(function($) {
     });
 
     /***************************************************************************/
+    //SLICK SLIDER - DYNAMIC
+    /***************************************************************************/
+    $('.slider-wrap-dynamic').each(function (idx, item) {
+        var carouselId = "slider-wrap-dynamic-" + idx;
+        this.id = carouselId;
+
+        var slidesToShow = $(this).data('slides-to-show');
+        var slidesToScroll = $(this).data('slides-to-scroll');
+        var transition = $(this).data('transition');
+        if(transition == 'slide') { transition = false; } else { transition = true; } 
+        var autoplay = $(this).data('autoplay');
+        var autoplaySpeed = $(this).data('autoplay-speed');
+        var adaptiveHeight = $(this).data('adaptive-height');
+        if(adaptiveHeight == 'true') { adaptiveHeight = true; } else { adaptiveHeight = false; }
+
+        $(this).find('.slider.slider-dynamic').slick({
+            prevArrow: $('#' + carouselId + ' .slider-nav-dynamic .slider-prev'),
+            nextArrow: $('#' + carouselId + ' .slider-nav-dynamic .slider-next'),
+            rtl: rtl,
+            slidesToShow: slidesToShow,
+            slidesToScroll: slidesToScroll,
+            fade: transition,
+            autoplay: autoplay,
+            autoplaySpeed: autoplaySpeed,
+            adaptiveHeight: adaptiveHeight,
+            responsive: [
+                {
+                  breakpoint: 600,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                  }
+                }
+            ]
+        });
+    });
+
+    /***************************************************************************/
     //SLICK SLIDER - TAXONOMY
     /***************************************************************************/
     $('.slider-wrap-tax').each(function (idx, item) {
