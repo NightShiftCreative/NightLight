@@ -10,7 +10,9 @@
     $page_banner_display_search = ns_core_load_theme_options('ns_core_page_banner_display_search');
 
     //Individual page banner settings (these overwrite global settings)
-    if(!empty($template_args['post_id'])) {
+    if(!empty($template_args['values'])) {
+        $values = $template_args['values'];
+    } else if(!empty($template_args['post_id'])) {
         $values = get_post_custom( $template_args['post_id'] );
     } else if(is_tax()) {
         $page_id = -1;

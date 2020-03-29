@@ -498,7 +498,7 @@ function ns_core_generate_page_banner($values) {
         } else if($banner_source == 'shortcode') {
             if(!empty($banner_shortcode)) { echo do_shortcode($banner_shortcode); } else { get_template_part('template_parts/subheader'); }
         } else if($banner_source == 'image_banner') {
-            get_template_part('template_parts/subheader'); 
+            ns_core_get_template_part('template_parts/subheader', ['values' => $values]);
         } else {
             do_action('ns_core_custom_banner_source', $banner_source);
         }
