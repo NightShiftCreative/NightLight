@@ -52,7 +52,7 @@ $admin_obj = new NS_Basics_Admin(); ?>
     <table class="theme-options-header" cellspacing="0" cellpadding="0">
         <tr>
         <td class="theme-options-logo">
-            <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/admin/images/logo.svg" />
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/admin/images/logo.svg" />
         </td>
         <td>
             <div class="created-by">
