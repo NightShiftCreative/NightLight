@@ -183,6 +183,8 @@ jQuery(document).ready(function($) {
         if(transition == 'slide') { transition = false; } else { transition = true; } 
         var autoplay = $(this).data('autoplay');
         var autoplaySpeed = $(this).data('autoplay-speed');
+        var dots = $(this).data('dots');
+        if(dots == 'true' || dots == true) { dots = true; } else { dots = false; }
         var adaptiveHeight = $(this).data('adaptive-height');
         if(adaptiveHeight == 'true') { adaptiveHeight = true; } else { adaptiveHeight = false; }
 
@@ -195,6 +197,7 @@ jQuery(document).ready(function($) {
             fade: transition,
             autoplay: autoplay,
             autoplaySpeed: autoplaySpeed,
+            dots: dots,
             adaptiveHeight: adaptiveHeight,
             responsive: [
                 {
