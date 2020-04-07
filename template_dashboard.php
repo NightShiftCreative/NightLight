@@ -11,7 +11,6 @@
     $col_class = ns_core_get_page_col_classes($page_layout);
     $page_layout_widget_area = isset( $values['ns_basics_page_layout_widget_area'] ) ? esc_attr( $values['ns_basics_page_layout_widget_area'][0] ) : 'blog_sidebar';
     $page_layout_container = isset( $values['ns_basics_page_layout_container'] ) ? esc_attr( $values['ns_basics_page_layout_container'][0] ) : 'true';
-    $cta_display = isset( $values['ns_basics_cta_display'] ) ? esc_attr( $values['ns_basics_cta_display'][0] ) : '';
 ?>
 
 <?php get_header() ?>
@@ -49,6 +48,6 @@
     <section class="module module-comments no-padding-top"><div class="container"><?php comments_template(); ?></div></section>
 <?php } ?>
 
-<?php if($cta_display == 'true') { get_template_part('template_parts/call_to_action'); } ?>
+<?php get_template_part('template_parts/call_to_action'); ?>
 
 <?php get_footer() ?>

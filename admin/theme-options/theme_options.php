@@ -953,6 +953,81 @@ $admin_obj = new NS_Basics_Admin(); ?>
                     <div id="footer" class="tab-content">
                         <h2><?php echo esc_html_e('Footer', 'ns-core'); ?></h2>
 
+                        <div class="ns-accordion">
+                            <div class="ns-accordion-header"><i class="fa fa-chevron-right icon"></i> <?php echo esc_html_e('Global Call to Action', 'ns-core'); ?></div>
+                            <div class="ns-accordion-content">
+
+                                <div class="admin-module-note"><?php esc_html_e('These fields can be overwritten on singular pages/posts.', 'ns-core') ?></div>
+
+                                <?php
+                                //Display Call to Action
+                                $display_cta_field = array(
+                                    'title' => esc_html__('Display Call to Action', 'ns-core'),
+                                    'name' => 'ns_core_display_cta',
+                                    'value' => $theme_options['ns_core_display_cta'],
+                                    'type' => 'switch',
+                                );
+                                $admin_obj->build_admin_field($display_cta_field);
+
+                                //Call to Action Title
+                                $cta_title_field = array(
+                                    'title' => esc_html__('Call to Action Title', 'ns-core'),
+                                    'name' => 'ns_core_cta_title',
+                                    'value' => $theme_options['ns_core_cta_title'],
+                                    'type' => 'text',
+                                );
+                                $admin_obj->build_admin_field($cta_title_field);
+
+                                //Call to Action Text
+                                $cta_text_field = array(
+                                    'title' => esc_html__('Call to Action Text', 'ns-core'),
+                                    'name' => 'ns_core_cta_text',
+                                    'value' => $theme_options['ns_core_cta_text'],
+                                    'type' => 'textarea',
+                                );
+                                $admin_obj->build_admin_field($cta_text_field);
+
+                                //Call to Action Button Text
+                                $cta_button_text_field = array(
+                                    'title' => esc_html__('Call to Action Button Text', 'ns-core'),
+                                    'name' => 'ns_core_cta_button_text',
+                                    'value' => $theme_options['ns_core_cta_button_text'],
+                                    'type' => 'text',
+                                );
+                                $admin_obj->build_admin_field($cta_button_text_field);
+
+                                //Call to Action Button URL
+                                $cta_button_url_field = array(
+                                    'title' => esc_html__('Call to Action Button URL', 'ns-core'),
+                                    'name' => 'ns_core_cta_button_url',
+                                    'value' => $theme_options['ns_core_cta_button_url'],
+                                    'type' => 'text',
+                                );
+                                $admin_obj->build_admin_field($cta_button_url_field);
+
+                                //Call to Action Background Image
+                                $cta_bg_img_field = array(
+                                    'title' => esc_html__('Call to Action Background Image', 'ns-core'),
+                                    'name' => 'ns_core_cta_bg_img',
+                                    'value' => $theme_options['ns_core_cta_bg_img'],
+                                    'type' => 'image_upload',
+                                );
+                                $admin_obj->build_admin_field($cta_bg_img_field);
+
+                                //Call to Action Background display
+                                $cta_bg_display_field = array(
+                                    'title' => esc_html__('Call to Action Background Display', 'ns-core'),
+                                    'name' => 'ns_core_cta_bg_display',
+                                    'value' => $theme_options['ns_core_cta_bg_display'],
+                                    'type' => 'select',
+                                    'options' => array(esc_html__('Cover', 'ns-core') => 'cover', esc_html__('Fixed', 'ns-core') => 'fixed', esc_html__('Tile', 'ns-core') => 'repeat'),
+                                );
+                                $admin_obj->build_admin_field($cta_bg_display_field);
+                                ?>
+
+                            </div>
+                        </div>
+
                         <?php
                         //Hide Footer Widget Area
                         $hide_footer_widget_area_field = array(
