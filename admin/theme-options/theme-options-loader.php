@@ -85,7 +85,7 @@ function ns_core_load_theme_options($single_option = null, $return_defaults = fa
     	'ns_core_members_edit_profile_page' => false,
     	'ns_core_members_favorites_page' => false,
     	'ns_core_cta_global_block' => '',
-        'ns_core_display_cta' => 'true',
+        'ns_core_display_cta' => false,
         'ns_core_cta_title' => '',
         'ns_core_cta_text' => '',
         'ns_core_cta_button_text' => '',
