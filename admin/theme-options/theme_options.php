@@ -33,7 +33,8 @@ function ns_core_register_theme_options() {
 /***************************************************************/
 function ns_core_theme_options_page() { 
 
-$admin_obj = new NS_Basics_Admin(); ?>
+$admin_obj = new NS_Basics_Admin(); 
+$modules = new NS_Basics_Modules(); ?>
 
 <div class="wrap ns-theme-options">
 <h2><?php esc_html_e('Theme Options', 'ns-core') ?></h2>
@@ -960,6 +961,18 @@ $admin_obj = new NS_Basics_Admin(); ?>
                                 <div class="admin-module-note"><?php esc_html_e('These fields can be overwritten on singular pages/posts.', 'ns-core') ?></div>
 
                                 <?php
+                                // Call to Action Global Block
+                                if($modules->is_module_active('ns_basics_global_blocks')) { 
+                                    $cta_global_block = array(
+                                        'title' => esc_html__('Global Block ID', 'ns-core'),
+                                        'name' => 'ns_core_cta_global_block',
+                                        'value' => $theme_options['ns_core_cta_global_block'],
+                                        'description' => esc_html__('Enter a global block ID to display it.', 'ns-core'),
+                                        'type' => 'number',
+                                    );
+                                    $admin_obj->build_admin_field($cta_global_block);
+                                }
+
                                 //Display Call to Action
                                 $display_cta_field = array(
                                     'title' => esc_html__('Display Call to Action', 'ns-core'),

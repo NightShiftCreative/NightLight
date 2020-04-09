@@ -1,5 +1,6 @@
 <?php 
     // Global Settings
+    $cta_global_block = ns_core_load_theme_options('ns_core_cta_global_block');
     $cta_display = ns_core_load_theme_options('ns_core_display_cta');
     $cta_title = ns_core_load_theme_options('ns_core_cta_title');
     $cta_text = ns_core_load_theme_options('ns_core_cta_text');
@@ -15,6 +16,7 @@
 
     $cta_custom_settings = isset( $values['ns_basics_cta_custom_settings'] ) ? $values['ns_basics_cta_custom_settings'][0] : '';
     if($cta_custom_settings == 'true') {
+        $cta_global_block = isset( $values['ns_basics_cta_global_block'] ) ? esc_attr( $values['ns_basics_cta_global_block'][0] ) : '';
         $cta_display = isset( $values['ns_basics_cta_display'] ) ? esc_attr( $values['ns_basics_cta_display'][0] ) : '';
         $cta_title = isset( $values['ns_basics_cta_title'] ) ? $values['ns_basics_cta_title'][0] : '';
         $cta_text = isset( $values['ns_basics_cta_text'] ) ? $values['ns_basics_cta_text'][0] : '';
@@ -26,21 +28,23 @@
     }
 ?>
 
+<?php if(!empty($cta_global_block)) { echo do_shortcode('[ns_block id="'.$cta_global_block.'"]'); } ?>
+
 <?php if($cta_display == 'true') { ?>
-<section class="module cta <?php if(!empty($cta_bg_img)) { echo ns_core_bgDisplay($cta_bg_display); } ?>"
-    <?php 
-         if(!empty($cta_bg_img)) { echo 'style="background-image:url('.$cta_bg_img.');"';  }
-    ?>>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-8">
-                <?php if(!empty($cta_title)) { ?><h3><?php echo wp_kses_post($cta_title); ?></h3><?php } ?>
-                <?php if(!empty($cta_text)) { ?><p><?php echo wp_kses_post($cta_text); ?></p><?php } ?>
-            </div>
-            <div class="col-lg-4 col-md-4">
-                <?php if(!empty($cta_button_text)) { ?><a href="<?php echo esc_url($cta_button_url); ?>" class="button right large"><?php echo esc_attr($cta_button_text); ?></a><?php } ?>
-            </div>
-        </div><!-- end row -->
-    </div>
-</section>
+    <section class="module cta <?php if(!empty($cta_bg_img)) { echo ns_core_bgDisplay($cta_bg_display); } ?>"
+        <?php 
+             if(!empty($cta_bg_img)) { echo 'style="background-image:url('.$cta_bg_img.');"';  }
+        ?>>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8">
+                    <?php if(!empty($cta_title)) { ?><h3><?php echo wp_kses_post($cta_title); ?></h3><?php } ?>
+                    <?php if(!empty($cta_text)) { ?><p><?php echo wp_kses_post($cta_text); ?></p><?php } ?>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <?php if(!empty($cta_button_text)) { ?><a href="<?php echo esc_url($cta_button_url); ?>" class="button right large"><?php echo esc_attr($cta_button_text); ?></a><?php } ?>
+                </div>
+            </div><!-- end row -->
+        </div>
+    </section>
 <?php } ?>
