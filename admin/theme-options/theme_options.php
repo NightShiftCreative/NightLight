@@ -962,13 +962,14 @@ $modules = new NS_Basics_Modules(); ?>
 
                                 <?php
                                 // Call to Action Global Block
-                                if($modules->is_module_active('ns_basics_global_blocks')) { 
+                                if($modules->is_module_active('ns_basics_global_blocks')) {
                                     $cta_global_block = array(
-                                        'title' => esc_html__('Global Block ID', 'ns-core'),
+                                        'title' => esc_html__('Display a Global Block', 'ns-core'),
                                         'name' => 'ns_core_cta_global_block',
                                         'value' => $theme_options['ns_core_cta_global_block'],
-                                        'description' => esc_html__('Enter a global block ID to display it.', 'ns-core'),
-                                        'type' => 'number',
+                                        'description' => esc_html__('Select a global content block to display it.', 'ns-core'),
+                                        'type' => 'select',
+                                        'options' => NS_Basics_Global_Blocks::get_blocks(true),
                                     );
                                     $admin_obj->build_admin_field($cta_global_block);
                                 }
