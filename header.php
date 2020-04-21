@@ -68,7 +68,7 @@ if($header_container != 'true') { $header_class = $header_class.' full-width'; }
 <?php if($preloader == 'true' && !empty($preloader_img)) { ?>
 <div class="loader">
     <table>
-        <tr><td><img src="<?php echo esc_url($preloader_img); ?>" /></td></tr>
+        <tr><td><img src="<?php echo esc_url($preloader_img); ?>" alt="Loading..." /></td></tr>
     </table>
 </div>
 <?php } ?>
