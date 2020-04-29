@@ -238,6 +238,16 @@ $modules = new NS_Basics_Modules(); ?>
                         );
                         $admin_obj->build_admin_field($header_scripts_field);
 
+                        //Body Scripts Field
+                        $body_scripts_field = array(
+                            'title' => esc_html__('Body Scripts', 'ns-core'),
+                            'name' => 'ns_core_custom_scripts_body',
+                            'description' => esc_html__('These scripts will be printed in the <body> section.', 'ns-core'),
+                            'value' => $theme_options['ns_core_custom_scripts_body'],
+                            'type' => 'textarea',
+                        );
+                        $admin_obj->build_admin_field($body_scripts_field);
+
                         //Footer Scripts Field
                         $footer_scripts_field = array(
                             'title' => esc_html__('Footer Scripts', 'ns-core'),

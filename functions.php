@@ -184,6 +184,13 @@ function ns_core_insert_custom_header_script() {
 }
 add_action('wp_head', 'ns_core_insert_custom_header_script');
 
+function ns_core_insert_custom_body_script() {
+    $body_script = ns_core_load_theme_options('ns_core_custom_scripts_body', false, false);
+    if(!empty($body_script)) { echo $body_script; }
+}
+add_action('ns_core_before_body', 'ns_core_insert_custom_body_script');
+
+
 function ns_core_insert_custom_footer_script() {
     $footer_script = ns_core_load_theme_options('ns_core_custom_scripts_footer', false, false);
     if(!empty($footer_script)) { echo $footer_script; }
