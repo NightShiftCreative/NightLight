@@ -16,7 +16,7 @@ $author_display_name = get_the_author_meta('user_nicename');
         <?php } ?>
 
         <div class="content blog-post-content">
-            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+            <h3 class="blog-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
             <ul class="blog-post-details">
                 <li class="blog-post-details-author"><?php echo ns_core_get_icon($icon_set, 'user'); ?><?php esc_html_e('Posted by', 'ns-core'); ?> <?php echo '<a href="'.get_author_posts_url($author_id).'">'.$author_display_name.'</a>'; ?> <?php esc_html_e('in', 'ns-core'); ?> <?php the_category(', '); ?></li>
                 <li class="blog-post-details-comments"><?php echo ns_core_get_icon($icon_set, 'comment', 'bubble-dots', 'pencil'); ?><?php comments_number(); ?></li>
