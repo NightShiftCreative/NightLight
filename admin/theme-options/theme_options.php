@@ -388,6 +388,15 @@ $modules = new NS_Basics_Modules(); ?>
                                 'type' => 'text',
                             );
                             $admin_obj->build_admin_field($github_field);
+
+                            //Yelp Field
+                            $yelp_field = array(
+                                'title' => esc_html__('Yelp', 'ns-core'),
+                                'name' => 'ns_core_yelp',
+                                'value' => $theme_options['ns_core_yelp'],
+                                'type' => 'text',
+                            );
+                            $admin_obj->build_admin_field($yelp_field);
                             ?>
 
                             <?php do_action('ns_core_after_social_theme_options'); ?>
