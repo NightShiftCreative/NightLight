@@ -1125,7 +1125,7 @@ $modules = new NS_Basics_Modules(); ?>
                                     'title' => esc_html__('Bottom Bar Text', 'ns-core'),
                                     'name' => 'ns_core_bottom_bar_text',
                                     'value' => $theme_options['ns_core_bottom_bar_text'],
-                                    'type' => 'textarea',
+                                    'type' => 'editor',
                                 );
                                 $admin_obj->build_admin_field($bottom_bar_text_field);
                                 ?>

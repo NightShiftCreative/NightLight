@@ -4,6 +4,7 @@
     $footer_bg_display = ns_core_load_theme_options('ns_core_footer_bg_display');
     $display_bottombar = ns_core_load_theme_options('ns_core_display_bottombar');
     $bottom_bar_text = ns_core_load_theme_options('ns_core_bottom_bar_text', false, false);
+    $bottom_bar_text = apply_filters('the_content', $bottom_bar_text);
 ?>
 
 <?php if($hide_footer_widget_area != "true") { ?>
@@ -25,7 +26,9 @@
 <?php if($display_bottombar == "true") { ?>
 <div class="bottom-bar">
 	<div class="container">
-		<?php if(!empty($bottom_bar_text)) { ?><span><?php echo wp_kses_post($bottom_bar_text); ?></span><?php } ?>
+		<?php if(!empty($bottom_bar_text)) { ?>
+            <span><?php echo wp_kses_post($bottom_bar_text); ?></span>
+        <?php } ?>
 	</div>
 </div>
 <?php } ?>
