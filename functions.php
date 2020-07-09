@@ -213,6 +213,8 @@ function ns_core_get_header_logo() {
     $page_id = ns_core_get_page_id();
     $values = get_post_custom($page_id);
     $banner_header_style = isset( $values['ns_basics_banner_header_style'] ) ? esc_attr( $values['ns_basics_banner_header_style'][0] ) : '';
+    $banner_header_logo = isset( $values['ns_basics_banner_header_logo'] ) ? esc_attr( $values['ns_basics_banner_header_logo'][0] ) : '';
+    $banner_header_logo_transparent = isset( $values['ns_basics_banner_header_logo_transparent'] ) ? esc_attr( $values['ns_basics_banner_header_logo_transparent'][0] ) : '';
 
     //SET HEADER STYLE
     if(isset($_GET['header_style'])) { 
@@ -220,6 +222,10 @@ function ns_core_get_header_logo() {
     } else if(!empty($banner_header_style)) {
         $header_style = $banner_header_style; 
     } 
+
+    //SET HEADER LOGO
+    if(isset($banner_header_logo) && !empty($banner_header_logo)) { $logo = $banner_header_logo; }
+    if(isset($banner_header_logo_transparent) && !empty($banner_header_logo_transparent)) { $logo_transparent = $banner_header_logo_transparent; }
 
     ob_start(); ?>
 

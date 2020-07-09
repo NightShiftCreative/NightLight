@@ -1,4 +1,5 @@
 <?php
+// GLOBAL SETTINGS
 $sticky_header = ns_core_load_theme_options('ns_core_sticky_header');
 $header_style = ns_core_load_theme_options('ns_core_header_style');
 $header_menu_parent_links = ns_core_load_theme_options('ns_core_header_menu_parent_links');
@@ -11,6 +12,8 @@ $theme_url = esc_url( get_template_directory_uri() );
 $page_id = ns_core_get_page_id();
 $values = get_post_custom($page_id);
 $banner_header_style = isset( $values['ns_basics_banner_header_style'] ) ? esc_attr( $values['ns_basics_banner_header_style'][0] ) : '';
+$banner_header_logo = isset( $values['ns_basics_banner_header_logo'] ) ? esc_attr( $values['ns_basics_banner_header_logo'][0] ) : '';
+$banner_header_logo_transparent = isset( $values['ns_basics_banner_header_logo_transparent'] ) ? esc_attr( $values['ns_basics_banner_header_logo_transparent'][0] ) : '';
 
 //SET HEADER STYLE
 if(isset($_GET['header_style'])) { 
@@ -18,6 +21,10 @@ if(isset($_GET['header_style'])) {
 } else if(!empty($banner_header_style)) {
     $header_style = $banner_header_style; 
 } 
+
+//SET HEADER LOGO
+if(isset($banner_header_logo) && !empty($banner_header_logo)) { $logo = $banner_header_logo; }
+if(isset($banner_header_logo_transparent) && !empty($banner_header_logo_transparent)) { $logo_transparent = $banner_header_logo_transparent; }
 
 //Get banner settings
 $banner_slider_transition = ns_core_load_theme_options('ns_core_page_banner_slider_transition');
