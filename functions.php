@@ -248,13 +248,13 @@ function ns_core_get_header_logo() {
 }
 
 /* get header main menu */
-function ns_core_get_header_menu() {
+function ns_core_get_header_menu($depth = 3) {
     if ( has_nav_menu( 'menu-1' )) {
         $main_menu = wp_nav_menu( array(
             'theme_location' => 'menu-1',
             'container'      => false,
             'menu_class'     => 'main-menu',
-            'depth'          => 3,
+            'depth'          => $depth,
             'echo' => FALSE,
             'fallback_cb' => '__return_false'
         ));
