@@ -1121,10 +1121,11 @@ $modules = new NS_Basics_Modules(); ?>
                                 $admin_obj->build_admin_field($display_bottom_bar_field);
 
                                 //Bottom Bar Text
+                                $bottom_bar_text_val = ns_core_load_theme_options('ns_core_bottom_bar_text', false, false);
                                 $bottom_bar_text_field = array(
                                     'title' => esc_html__('Bottom Bar Text', 'ns-core'),
                                     'name' => 'ns_core_bottom_bar_text',
-                                    'value' => $theme_options['ns_core_bottom_bar_text'],
+                                    'value' => $bottom_bar_text_val,
                                     'type' => 'editor',
                                 );
                                 $admin_obj->build_admin_field($bottom_bar_text_field);
