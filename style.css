@@ -51,7 +51,7 @@ body {
 }
 
 .container { position:relative; }
-.container-full { max-width:none !important; width:auto; }
+.container.container-full { max-width:none !important; width:auto; }
 .col-full { padding:0; }
 
 .module { position:relative; padding:70px 0px 70px 0px; }
