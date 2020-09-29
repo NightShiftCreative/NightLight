@@ -186,8 +186,6 @@
     }
     if(!empty($style_header_menu) && $style_header_menu != '#2f353d') {
         $dynamic_css .= ".header-default .header-menu .container-fixed, .header-default .header-menu.fixed { background: {$style_header_menu}; }";
-        $dynamic_css .= ".header-default .sub-menu { background: {$style_header_submenu}; }";
-        $dynamic_css .= ".header-menu .main-menu li .sub-menu li .sub-menu { background: {$style_header_subsubmenu}; }";
     }
 
     //PAGE BANNER
