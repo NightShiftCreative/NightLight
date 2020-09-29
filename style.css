@@ -265,6 +265,9 @@ a:hover { color:#04b0a8; text-decoration:none; }
 }
 .button.outline:hover { color:white; border-color:#ff9900; background:#ff9900; }
 
+.button-icon .fa,
+.button-icon .icon { margin-right:6px; }
+
 /** PAGINATION **/
 .page-list .page-numbers {
 	display:inline-block;
