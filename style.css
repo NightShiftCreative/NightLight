@@ -190,6 +190,7 @@ h6 { font-size:17px; }
 a { 
 	color:#04d2c8;
 	outline:0 !important;
+	text-decoration:none;
 	-webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
     -ms-transition: all 0.2s linear;
