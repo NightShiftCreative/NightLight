@@ -1517,6 +1517,13 @@ header.navbar-fixed { position:fixed; top:0; }
 /** FAVORITES **/
 .favorites-listing-type { text-transform: capitalize; }
 
+/*====================================================================================*/
+ /* 08 WOOCOMMERCE
+/*====================================================================================*/
+.woocommerce .col2-set .col-1, 
+.woocommerce .col-2,
+.woocommerce-page .col2-set .col-1 { max-width:48%; }
+
 
 /*====================================================================================*/
  /* 09 FOOTER
