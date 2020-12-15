@@ -28,7 +28,7 @@ $author_display_name = get_the_author_meta('user_nicename');
                 the_content(); 
                 wp_link_pages();
             } else { ?>
-                <p><?php if(!empty($excerpt_length)) { echo wp_trim_words(get_the_excerpt(), $excerpt_length); } else { echo get_the_excerpt(); } ?></p>
+                <p class="blog-post-excerpt"><?php if(!empty($excerpt_length)) { echo wp_trim_words(get_the_excerpt(), $excerpt_length); } else { echo get_the_excerpt(); } ?></p>
                 <a class="button button-icon small alt" href="<?php the_permalink(); ?>"><i class="fa fa-angle-right"></i><?php esc_html_e('Read More', 'ns-core'); ?></a>
             <?php } ?>
                                         
