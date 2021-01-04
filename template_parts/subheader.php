@@ -78,6 +78,8 @@
                     single_post_title();
                 } else if(is_tax()) {
                     single_term_title();
+                } else if(function_exists('is_woocommerce') && is_woocommerce()) {
+                    woocommerce_page_title();
                 } else if(is_archive()) {
                     the_archive_title();
                 } else {
