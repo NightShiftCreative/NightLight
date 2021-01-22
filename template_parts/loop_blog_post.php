@@ -1,7 +1,7 @@
 <?php
 $icon_set = ns_core_load_theme_options('ns_core_icon_set');
 $author_id = get_the_author_meta('ID');
-$author_display_name = get_the_author_meta('user_nicename');
+$author_display_name = get_the_author_meta('display_name');
  ?>
 
 <article <?php post_class(); ?>> 
