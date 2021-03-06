@@ -18,8 +18,6 @@
         </div><!-- end row -->
     </div><!-- end footer container -->
 
-
-
     <?php do_action('ns_core_after_footer'); ?>
 
 </footer>
