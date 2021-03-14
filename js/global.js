@@ -110,7 +110,7 @@ jQuery(document).ready(function($) {
     /***************************************************************************/
     //ACTIVATE CHOSEN 
     /***************************************************************************/
-    $("select").chosen({disable_search_threshold: 11});
+    $("select:not(.select2-hidden-accessible)").chosen({disable_search_threshold: 11});
 
 	/***************************************************************************/
 	//SLICK SLIDER - SIMPLE SLIDER
