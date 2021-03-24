@@ -187,6 +187,8 @@ jQuery(document).ready(function($) {
         if(dots == 'true' || dots == true) { dots = true; } else { dots = false; }
         var adaptiveHeight = $(this).data('adaptive-height');
         if(adaptiveHeight == 'true') { adaptiveHeight = true; } else { adaptiveHeight = false; }
+        var centerMode = $(this).data('center-mode');
+        if(centerMode == 'true' || centerMode == true) { centerMode = true; } else { centerMode = false; }
 
         $(this).find('.slider.slider-dynamic').slick({
             prevArrow: $('#' + carouselId + ' .slider-nav-dynamic .slider-prev'),
@@ -199,6 +201,7 @@ jQuery(document).ready(function($) {
             autoplaySpeed: autoplaySpeed,
             dots: dots,
             adaptiveHeight: adaptiveHeight,
+            centerMode: centerMode,
             responsive: [
                 {
                   breakpoint: 600,
