@@ -1521,7 +1521,7 @@ header.navbar-fixed { position:fixed; top:0; }
 /*====================================================================================*/
 .woocommerce .col2-set .col-1, 
 .woocommerce .col-2,
-.woocommerce-page .col2-set .col-1 { max-width:48%; }
+.woocommerce-page .col2-set .col-1 { max-width:100%; }
 
 
 /*====================================================================================*/

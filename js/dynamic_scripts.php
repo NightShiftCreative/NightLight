@@ -7,6 +7,7 @@ $logo = ns_core_load_theme_options('ns_core_logo');
 $logo_transparent = ns_core_load_theme_options('ns_core_logo_transparent');
 $rtl = ns_core_load_theme_options('ns_core_rtl');
 $theme_url = esc_url( get_template_directory_uri() );
+$site_url = esc_url(site_url());
 
 //PAGE SETTINGS
 $page_id = ns_core_get_page_id();
@@ -69,6 +70,7 @@ if($header_menu_parent_links != 'open-page') {
 }
 
 //OUTPUT VARIABLES FOR USE IN GLOBAL.JS
+$dynamic_script .= "var site_url = '{$site_url}';";
 $dynamic_script .= "var home_url = '{$theme_url}';";
 $dynamic_script .= "var logo = '{$logo}';";
 $dynamic_script .= "var logo_transparent = '{$logo_transparent}';";
