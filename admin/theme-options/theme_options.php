@@ -198,6 +198,7 @@ $modules = new NS_Basics_Modules(); ?>
                             $items = $data['items'];
                             $google_font_options = array();
                             foreach($items as $item) { $google_font_options[$item['family']] = $item['family']; }
+                            $google_font_options['Custom'] = 'custom';
                             $i = 0;
                             
                             //Heading Font Field

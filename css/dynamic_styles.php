@@ -52,16 +52,20 @@
     $body_font = $theme_options['ns_core_body_font'];
     $font_css = "";
 
-    if(!empty($heading_font) && $heading_font != 'Varela Round') { 
-        $font_css .= "h1,h2,h3,h4,h5,h6 { font-family:'{$heading_font}', Helvetica; }";
-        $font_css .= ".ui-tabs .ui-tabs-nav .ui-tabs-anchor { font-family:'{$heading_font}', Helvetica; }";
+    if($heading_font != 'custom') {
+        if(!empty($heading_font) && $heading_font != 'Varela Round') { 
+            $font_css .= "h1,h2,h3,h4,h5,h6 { font-family:'{$heading_font}', Helvetica; }";
+            $font_css .= ".ui-tabs .ui-tabs-nav .ui-tabs-anchor { font-family:'{$heading_font}', Helvetica; }";
+        }
     }
 
-    if(!empty($body_font) && $body_font != 'Varela Round') { 
-        $font_css .= "body { font-family:'{$body_font}', Arial; }";
-        $font_css .= ".ui-accordion .ui-accordion-content, .tabs { font-family:'{$body_font}', Arial; }";
-        $font_css .= "input, textarea, select { font-family:'{$body_font}', Arial !important; }";
-        $font_css .= ".button, input[type='submit'] { font-family:'{$body_font}', Arial; }";
+    if($body_font != 'custom') {
+        if(!empty($body_font) && $body_font != 'Varela Round') { 
+            $font_css .= "body { font-family:'{$body_font}', Arial; }";
+            $font_css .= ".ui-accordion .ui-accordion-content, .tabs { font-family:'{$body_font}', Arial; }";
+            $font_css .= "input, textarea, select { font-family:'{$body_font}', Arial !important; }";
+            $font_css .= ".button, input[type='submit'] { font-family:'{$body_font}', Arial; }";
+        }
     }
 
     wp_add_inline_style( 'ns-core-dynamic-styles', $font_css );
