@@ -166,6 +166,7 @@ jQuery(document).ready(function($) {
             prevArrow: $('#' + carouselId + ' .slider-nav-testimonials .slider-prev'),
             nextArrow: $('#' + carouselId + ' .slider-nav-testimonials .slider-next'),
             adaptiveHeight: true,
+            autoplay: true,
             rtl: rtl
         });
     });
