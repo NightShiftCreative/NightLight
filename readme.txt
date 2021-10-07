@@ -6,3 +6,4 @@
 * FIXED: WooCommerce col CSS responsive issue
 * ADDED: Custom font option to theme font fields
 * ADDED: Testimonial slider default autoplay
+* ADDED: Slide title class in slider template
