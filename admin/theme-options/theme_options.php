@@ -398,6 +398,15 @@ $modules = new NS_Basics_Modules(); ?>
                                 'type' => 'text',
                             );
                             $admin_obj->build_admin_field($yelp_field);
+
+                            //TikTok Field
+                            $tiktok_field = array(
+                                'title' => esc_html__('TikTok', 'ns-core'),
+                                'name' => 'ns_core_tiktok',
+                                'value' => $theme_options['ns_core_tiktok'],
+                                'type' => 'text',
+                            );
+                            $admin_obj->build_admin_field($tiktok_field);
                             ?>
 
                             <?php do_action('ns_core_after_social_theme_options'); ?>

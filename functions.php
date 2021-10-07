@@ -588,6 +588,7 @@ function ns_core_get_social_icons($class = null) {
     $dribbble = ns_core_load_theme_options('ns_core_dribbble');
     $github = ns_core_load_theme_options('ns_core_github');
     $yelp = ns_core_load_theme_options('ns_core_yelp');
+    $tiktok = ns_core_load_theme_options('ns_core_tiktok');
 
     ob_start();
 
@@ -604,6 +605,7 @@ function ns_core_get_social_icons($class = null) {
             if(!empty($dribbble)) { echo '<li class="social-icon-dribbble"><a href="'.esc_url($dribbble).'" target="_blank"><i class="fab fa-dribbble icon"></i></a></li>'; }
             if(!empty($github)) { echo '<li class="social-icon-github"><a href="'.esc_url($github).'" target="_blank"><i class="fab fa-github icon"></i></a></li>'; }
             if(!empty($yelp)) { echo '<li class="social-icon-yelp"><a href="'.esc_url($yelp).'" target="_blank"><i class="fab fa-yelp icon"></i></a></li>'; }
+            if(!empty($tiktok)) { echo '<li class="social-icon-tiktok"><a href="'.esc_url($tiktok).'" target="_blank"><i class="fab fa-tiktok icon"></i></a></li>'; }
             do_action('ns_core_after_social_icons');
         echo '</ul>';
     } 
