@@ -702,7 +702,9 @@ function ns_core_widgets_init() {
 		$footer_widget_class = '<div class="col-lg-4 col-md-4 col-sm-6 widget widget-footer %2$s">';
 	} else if($num_footer_cols == '4') {
 		$footer_widget_class = '<div class="col-lg-3 col-md-3 col-sm-6 widget widget-footer %2$s">';
-	} else if($num_footer_cols == '6') {
+	} else if($num_footer_cols == '5') {
+        $footer_widget_class = '<div class="col widget widget-footer %2$s">';
+    } else if($num_footer_cols == '6') {
 		$footer_widget_class = '<div class="col-lg-2 col-md-2 col-sm-6 widget widget-footer %2$s">';
 	} else {
 		$footer_widget_class = '<div class="col-lg-3 col-md-3 col-sm-6 widget widget-footer %2$s">';

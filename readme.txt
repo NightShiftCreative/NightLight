@@ -9,3 +9,4 @@
 * ADDED: Slide title class in slider template
 * ADDED: Tiktok social media profile in theme options
 * UPDATED: Included Font Awesome version to 5.15.4
+* FIXED: Footer 5 column layout
