@@ -47,13 +47,14 @@
                         $slide_overlay_opacity = isset( $slide_values['ns_basics_slide_overlay_opacity'] ) ? $slide_values['ns_basics_slide_overlay_opacity'][0] : '0.25';
                         $slide_overlay_color = isset( $slide_values['ns_basics_slide_overlay_color'] ) ? $slide_values['ns_basics_slide_overlay_color'][0] : '#000000';
                         $slide_overlay_rgb = ns_core_hex2rgb($slide_overlay_color);
+                        $slide_class = isset( $slide_values['ns_basics_slide_class'] ) ? $slide_values['ns_basics_slide_class'][0] : '';
 
 			    		$url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); 
 					    
 			    	?>
 
 			    	<?php if($banner_slider_layout == 'detailed') { ?>
-			    		<div class="slide slide-detailed <?php if($slide_text_align == 'left') { echo 'slide-left'; } else if($slide_text_align == 'right') { echo 'slide-right'; } else if($slide_text_align == 'center') { echo 'slide-center'; } ?>" style="background-image:url('<?php echo esc_url($url); ?>');">
+			    		<div class="slide slide-detailed <?php if(!empty($slide_class)) { echo $slide_class; } ?> <?php if($slide_text_align == 'left') { echo 'slide-left'; } else if($slide_text_align == 'right') { echo 'slide-right'; } else if($slide_text_align == 'center') { echo 'slide-center'; } ?>" style="background-image:url('<?php echo esc_url($url); ?>');">
 							
                             <?php if($slide_overlay == 'true') { ?>
                                 <div class="img-overlay black" style="<?php if(!empty($slide_overlay_rgb)) { echo 'background:rgba('.$slide_overlay_rgb[0].', '.$slide_overlay_rgb[1].', '.$slide_overlay_rgb[2].', '.$slide_overlay_opacity.');'; } ?>"></div>
@@ -68,7 +69,7 @@
 							</div>
 						</div>
 			    	<?php } else { ?>
-			    		<div class="slide <?php if($slide_text_align == 'left') { echo 'slide-left'; } else if($slide_text_align == 'right') { echo 'slide-right'; } ?>" style="background-image:url('<?php echo esc_url($url); ?>');">
+			    		<div class="slide <?php if(!empty($slide_class)) { echo $slide_class; } ?> <?php if($slide_text_align == 'left') { echo 'slide-left'; } else if($slide_text_align == 'right') { echo 'slide-right'; } ?>" style="background-image:url('<?php echo esc_url($url); ?>');">
 							
                             <?php if($slide_overlay == 'true') { ?>
                                 <div class="img-overlay black" style="<?php if(!empty($slide_overlay_rgb)) { echo 'background:rgba('.$slide_overlay_rgb[0].', '.$slide_overlay_rgb[1].', '.$slide_overlay_rgb[2].', '.$slide_overlay_opacity.');'; } ?>"></div>
