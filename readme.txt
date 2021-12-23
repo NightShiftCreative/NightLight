@@ -11,3 +11,5 @@
 * UPDATED: Included Font Awesome version to 5.15.4
 * FIXED: Footer 5 column layout
 * ADDED: Slide class in /template_parts/banner_slider.php
+* FIXED: Contact template - clear floating items
+* FIXED: Module header styling issues
